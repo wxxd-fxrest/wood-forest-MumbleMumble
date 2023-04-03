@@ -1,35 +1,44 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
 
 const SignUp = () => {
-    const [displayName, setDisplayName] = useState("") ; 
+    const navigate = useNavigate();
     const [email, setEmail] = useState("") ; 
     const [password, setPassword] = useState("") ;
 
     const onChange = (event) => {
         const {target : {name, value}} = event ; 
-        if (name == "displayName") {
-            setDisplayName(value) ; 
-        } else if (name == "email") {
+        if (name == "email") {
             setEmail(value) ;
         } else if (name == "password") {
             setPassword(value) ; 
         }
     } ; 
+
+    const onSubmit = async(event) => {
+        event.preventDefault();
+        try {
+            const authData = await createUserWithEmailAndPassword(auth, email, password) ;
+            await setDoc(doc(db, "UserInfo", `${authData.user.uid}`), {
+                uid: authData.user.uid,
+                email: email, 
+                displayName: "",
+                attachmentUrl: "",
+            })
+            navigate("/");
+            console.log("회원가입 완료") ;
+        } catch(error) {
+            console.log(error) ;
+        }
+    } ; 
     
     return(
         <div>
-            <p> SignUp </p>``
-            <form>
-                <input type="text"
-                        name="displayName"
-                        placeholder="Display name"
-                        required 
-                        maxLength="6"
-                        value={displayName}
-                        onChange={onChange} />
+            <p> SignUp </p>
+            <form onSubmit={onSubmit}>
                 <input type="email"
                         name="email"
                         placeholder="이메일"

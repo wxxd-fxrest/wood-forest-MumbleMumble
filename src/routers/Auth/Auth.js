@@ -5,18 +5,14 @@ import SignUp from "./Sign_up";
 const Auth = () => {
     const [open, setOpen] = useState(false) ; 
 
-    const onClick = () => {
-        setOpen(!open)
-    }
-
     return(
         <div>
             {open ? <div>
                 <SignUp />
-                <button onClick={onClick}> Login </button>
+                <button onClick={(() => {setOpen(!open)})}> Login </button>
             </div> : <div>
                 <LogIn />
-                <button onClick={onClick}> SignUp </button>
+                <button onClick={(() => {setOpen(!open)})}> SignUp </button>
             </div>}
         </div>
     )
