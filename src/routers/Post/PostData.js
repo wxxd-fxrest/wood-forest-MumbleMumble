@@ -29,7 +29,6 @@ const PostData = () => {
 
     return (
         <div>
-            {/* <span>PostData</span> */}
             {postData.map((p, i) => (
                 <Post key={i} postData={p}/>
             ))}

@@ -1,7 +1,9 @@
 import { addDoc, collection, getDocs, query, Timestamp, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
-import { db } from "../../firebase";
+import { db, storage } from "../../firebase";
+import { v4 as uuidv4 } from 'uuid';
+import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage";
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -12,12 +14,15 @@ const Home = () => {
     const [text, setText] = useState("") ;
     const [searchMusic, setSearchMusic] = useState("") ; 
     const [serchArtist, setSerchArtist] = useState("") ; 
+    const [cardImg, setCardImg] = useState("") ; 
 
     const [music, setMusic] = useState([]) ; 
     const [select, setSelect] = useState([]) ; 
     const [currentData, setCurrentData] = useState([]) ; 
 
-
+    const selectList = ["감정을 선택", "좋아", "화나", "슬퍼"] ;
+    const [selected, setSelected] = useState("") ; 
+    
     const onChange = (event) => {
         const {target : {name, value}} = event ; 
         if(name == "text") {
@@ -34,40 +39,101 @@ const Home = () => {
         const querySnapshot = await getDocs(getUserData);
         querySnapshot.forEach((doc) => {
             setCurrentData(doc.data()) ;
-            // console.log(doc.data())
         }); 
     } ; 
 
-
+    const onFileChange = (event) => {
+        setCardImg(null) ;
+        const {target: {files}} = event ; 
+        const theFile = files[0] ; 
+        const reader = new FileReader() ; 
+        reader.onloadend = (finishedEvent) => {
+            const {currentTarget: {result}} = finishedEvent ; 
+            setCardImg(result) ; 
+        } ;
+        if (Boolean(theFile)) {
+            reader.readAsDataURL(theFile) ; 
+        }
+    } ; 
 
     const onSaveBtn = async () => {
-        if(select[0] == null) {
-            await addDoc(collection(db, "Post"), {
-                displayName: currentData.displayName, 
-                attachmentUrl: currentData.attachmentUrl, 
-                UID: currentUser.uid,
-                PostText: text, 
-                date: Timestamp.now(),
-                music: false, 
-                anonymous
-            })
-        } else {
-            await addDoc(collection(db, "Post"), {
-                displayName: currentData.displayName, 
-                attachmentUrl: currentData.attachmentUrl, 
-                UID: currentUser.uid,
-                PostText: text, 
-                date: Timestamp.now(),
-                artist: select[0].artist, 
-                Music: select[0].name,
-                musicImage: select[0].image[2], 
-                musicURL: select[0].url,
-                anonymous
-            })
-        } 
+        try {
+            let cardImgUrl = "" ; 
+            let uploadTask ; 
+            if(cardImg !== "") {
+                const cardImgRef = ref(storage, `images/${currentUser.uid + uuidv4()}`)
+                uploadTask = uploadBytes(cardImgRef, cardImg)
+                uploadString(cardImgRef, cardImg, 'data_url')
+
+                uploadTask.then(async (snapshot) => {
+                    cardImgUrl = await getDownloadURL(snapshot.ref)
+
+                    if(select[0] == null) {
+                        await addDoc(collection(db, "Post"), {
+                            displayName: currentData.displayName, 
+                            attachmentUrl: currentData.attachmentUrl, 
+                            UID: currentUser.uid,
+                            PostText: text, 
+                            date: Timestamp.now(),
+                            music: false, 
+                            anonymous, 
+                            selected,
+                            cardImgUrl,
+                        })
+                    } else {
+                        await addDoc(collection(db, "Post"), {
+                            displayName: currentData.displayName, 
+                            attachmentUrl: currentData.attachmentUrl, 
+                            UID: currentUser.uid,
+                            PostText: text, 
+                            date: Timestamp.now(),
+                            artist: select[0].artist, 
+                            Music: select[0].name,
+                            musicImage: select[0].image[2], 
+                            musicURL: select[0].url,
+                            anonymous, 
+                            selected,
+                            cardImgUrl,
+                        })
+                    }
+                })
+                setCardImg("") ; 
+            } 
+            else if(cardImg == "") {
+                if(select[0] == null) {
+                    await addDoc(collection(db, "Post"), {
+                        displayName: currentData.displayName, 
+                        attachmentUrl: currentData.attachmentUrl, 
+                        UID: currentUser.uid,
+                        PostText: text, 
+                        date: Timestamp.now(),
+                        music: false, 
+                        anonymous, 
+                        selected,
+                    })
+                } else {
+                    await addDoc(collection(db, "Post"), {
+                        displayName: currentData.displayName, 
+                        attachmentUrl: currentData.attachmentUrl, 
+                        UID: currentUser.uid,
+                        PostText: text, 
+                        date: Timestamp.now(),
+                        artist: select[0].artist, 
+                        Music: select[0].name,
+                        musicImage: select[0].image[2], 
+                        musicURL: select[0].url,
+                        anonymous, 
+                        selected,
+                    })
+                }
+            }
+        } catch(error) {
+            console.log(error) ;
+        }         
         setText("") ; 
         setSelect([]) ; 
         setWrite(!write) ; 
+        setSelected("") ;
     } ; 
 
     const getMusic = async(event) => {
@@ -78,6 +144,13 @@ const Home = () => {
         const json = await response.json() ; 
         setMusic(json.results.trackmatches.track) ; 
         console.log(json) ;
+    } ; 
+
+    const onSelectMusic = () => {
+        setSelect(music) ;  
+        setSearchMusic("") ; 
+        setSerchArtist("") ;
+        setMusic([]) ; 
     } ; 
 
     const musicList = () => {
@@ -97,12 +170,7 @@ const Home = () => {
         return serchList; 
     } ; 
 
-    const onSelectMusic = () => {
-        setSelect(music) ;  
-        setSearchMusic("") ; 
-        setSerchArtist("") ;
-        setMusic([]) ; 
-    } ; 
+
 
     useEffect(() => {
         CurrentUserInfo() ; 
@@ -115,20 +183,44 @@ const Home = () => {
                 <button onClick={(() => {setWrite(!write)})}> write </button>
 
                 {write ? 
-                <div style={{backgroundColor:"green"}}>
+                <div style={{backgroundColor:"green", width: "270px"}}>
                     <input type="text"
                             name="text"
-                            placeholder="버리고 싶은 감정을 입력하세요."
+                            placeholder="버리고 싶은 일이나 감정을 입력하세요."
+                            maxLength="200"
                             required 
                             value={text}
-                            onChange={onChange} />
+                            onChange={onChange} 
+                            style={{width: "200px"}}/>
                     <button onClick={onSaveBtn}> 버리기 </button>
+
+                    <select onChange={((e) => {setSelected(e.target.value)})} value={selected}>
+                        {selectList.map((item) => (
+                            <option value={item} key={item}>
+                                {item}
+                            </option>
+                        ))}
+                    </select>
+                    <div> 
+                        {selected == selectList[1] && <p>🤗</p>}
+                        {selected == selectList[2] && <p>🤬</p>}
+                        {selected == selectList[3] && <p>😢</p>}
+                    </div>
+
                     {anonymous == true ? <span>공개</span> : <span>익명</span>}
                     <button onClick={(() => setAnonymous(!anonymous))}> 익명 or 공개 </button>
                     <button onClick={(() => {setOpen(!open)})}> 노래 on / off </button>
 
-                    {open ? <>
-                        {select[0] ? 
+                    <input type="file"
+                            style={{display:"none"}}
+                            id="inputFile"
+                            onChange={onFileChange}
+                            required />
+                    <label htmlFor="inputFile">
+                        {cardImg ? <img src={cardImg} alt="" width="50px"/> : <p> card select </p>}
+                    </label>
+
+                    {open ? <> {select[0] ? 
                         <div>
                             <p> {select[0].name} </p> 
                             <button onClick={(() => {
@@ -153,8 +245,7 @@ const Home = () => {
                                 </div>
                                 {musicList()}
                             </div>}
-                        </> : null}
-                </div> : null} 
+                    </> : null} </div> : null} 
             </form>
         </div>
     )
