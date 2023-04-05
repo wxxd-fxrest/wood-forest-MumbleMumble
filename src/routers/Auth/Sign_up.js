@@ -25,7 +25,7 @@ const SignUp = () => {
             await setDoc(doc(db, "UserInfo", `${authData.user.uid}`), {
                 uid: authData.user.uid,
                 email: email, 
-                displayName: "",
+                displayName: "Unkown",
                 attachmentUrl: "",
             })
             navigate("/");

@@ -1,13 +1,25 @@
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthContext';
 import None  from '../../Image/Mumble_Profile_None.PNG' ; 
 
 const Post = ({postData}) => {
+    const {currentUser} = useContext(AuthContext) ; 
+    const navigate = useNavigate();
+    // console.log(postData)
+
+    // /card-page/:doc-id
+
+    const onCardPage = (e) => {
+        e.preventDefault();
+        navigate(`/card-page/${postData.Data.UUID}`) ; 
+    }
 
     return (
-        <div>
+        <div onClick={onCardPage} >
         {postData.Data.cardImgUrl ? 
             <div style={{backgroundImage: `url(${postData.Data.cardImgUrl})`, height:"300px"}}>
-                {postData.Data.anonymous == true && 
-                    <h5 style={{backgroundColor:"red"}}> {postData.Data.displayName} </h5>}
+                {postData.Data.anonymous == true && <h5 style={{backgroundColor:"red"}}> {postData.Data.displayName} </h5>}
                 {postData.Data.anonymous == true ?
                     <img src={postData.Data.attachmentUrl} width="80px"/>: 
                     <img src={None} width="80px"/>}

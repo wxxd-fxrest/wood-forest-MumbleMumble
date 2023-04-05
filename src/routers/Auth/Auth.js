@@ -9,10 +9,10 @@ const Auth = () => {
         <div>
             {open ? <div>
                 <SignUp />
-                <button onClick={(() => {setOpen(!open)})}> Login </button>
+                <button onClick={() => {setOpen(!open)}}> Login </button>
             </div> : <div>
                 <LogIn />
-                <button onClick={(() => {setOpen(!open)})}> SignUp </button>
+                <button onClick={() => {setOpen(!open)}}> SignUp </button>
             </div>}
         </div>
     )

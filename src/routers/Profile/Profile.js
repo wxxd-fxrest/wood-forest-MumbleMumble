@@ -1,9 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import None  from '../../Image/Mumble_Profile_None.PNG' ; 
 
 const Profile = ({currentPost}) => {
+    const navigate = useNavigate();
+
     // console.log(currentPost)
+
+    const onCardPage = (e) => {
+        e.preventDefault();
+        navigate(`/card-page/${currentPost.Data.UUID}`) ; 
+    }
+
     return(
-        <div>
+        <div onClick={onCardPage}>
         {currentPost.Data.cardImgUrl ? 
             <div style={{backgroundImage: `url(${currentPost.Data.cardImgUrl})`, height:"300px"}}>
                 {currentPost.Data.anonymous == true && 

@@ -6,7 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage";
 
 const Home = () => {
-    const {currentUser} = useContext(AuthContext) ; 
+    const {currentUser} = useContext(AuthContext) ;
+    const uuidv4ID = uuidv4()
     const [write, setWrite] = useState(false) ;
     const [open, setOpen] = useState(true) ; 
     const [anonymous, setAnonymous] = useState(true) ; 
@@ -73,6 +74,7 @@ const Home = () => {
                             displayName: currentData.displayName, 
                             attachmentUrl: currentData.attachmentUrl, 
                             UID: currentUser.uid,
+                            UUID: uuidv4ID, 
                             PostText: text, 
                             date: Timestamp.now(),
                             music: false, 
@@ -85,6 +87,7 @@ const Home = () => {
                             displayName: currentData.displayName, 
                             attachmentUrl: currentData.attachmentUrl, 
                             UID: currentUser.uid,
+                            UUID: uuidv4ID, 
                             PostText: text, 
                             date: Timestamp.now(),
                             artist: select[0].artist, 
@@ -105,6 +108,7 @@ const Home = () => {
                         displayName: currentData.displayName, 
                         attachmentUrl: currentData.attachmentUrl, 
                         UID: currentUser.uid,
+                        UUID: uuidv4ID, 
                         PostText: text, 
                         date: Timestamp.now(),
                         music: false, 
@@ -116,6 +120,7 @@ const Home = () => {
                         displayName: currentData.displayName, 
                         attachmentUrl: currentData.attachmentUrl, 
                         UID: currentUser.uid,
+                        UUID: uuidv4ID, 
                         PostText: text, 
                         date: Timestamp.now(),
                         artist: select[0].artist, 
@@ -178,9 +183,9 @@ const Home = () => {
 
     return (
         <div style={{backgroundColor:"grey"}}>
-            <form onSubmit={((event) => {event.preventDefault() ; })}>
-                <span> Home </span>
-                <button onClick={(() => {setWrite(!write)})}> write </button>
+            <form onSubmit={(event) => {event.preventDefault()}}>
+                <span> Home </span>      
+                <button type="button" onClick={() => {setWrite(!write)}}> write </button>
 
                 {write ? 
                 <div style={{backgroundColor:"green", width: "270px"}}>
@@ -192,9 +197,9 @@ const Home = () => {
                             value={text}
                             onChange={onChange} 
                             style={{width: "200px"}}/>
-                    <button onClick={onSaveBtn}> 버리기 </button>
+                    <button type="button" onClick={onSaveBtn}> 버리기 </button>
 
-                    <select onChange={((e) => {setSelected(e.target.value)})} value={selected}>
+                    <select onChange={(e) => {setSelected(e.target.value)}} value={selected}>
                         {selectList.map((item) => (
                             <option value={item} key={item}>
                                 {item}
@@ -208,8 +213,8 @@ const Home = () => {
                     </div>
 
                     {anonymous == true ? <span>공개</span> : <span>익명</span>}
-                    <button onClick={(() => setAnonymous(!anonymous))}> 익명 or 공개 </button>
-                    <button onClick={(() => {setOpen(!open)})}> 노래 on / off </button>
+                    <button type="button" onClick={() => setAnonymous(!anonymous)}> 익명 or 공개 </button>
+                    <button type="button" onClick={() => {setOpen(!open)}}> 노래 on / off </button>
 
                     <input type="file"
                             style={{display:"none"}}
@@ -223,9 +228,9 @@ const Home = () => {
                     {open ? <> {select[0] ? 
                         <div>
                             <p> {select[0].name} </p> 
-                            <button onClick={(() => {
+                            <button type="button" onClick={() => {
                                 setSelect([])                     
-                            })}> Cancle </button>
+                            }}> Cancle </button>
                         </div> : <div style={{backgroundColor:"skyblue"}}>
                                 <div>
                                     <span> search </span>
@@ -241,7 +246,7 @@ const Home = () => {
                                         value={serchArtist} 
                                         onChange={onChange} 
                                         placeholder="아티스트 이름을 입력하세요."/>
-                                    <button onClick={getMusic}> ok </button> 
+                                    <button type="submit" onClick={getMusic}> ok </button> 
                                 </div>
                                 {musicList()}
                             </div>}

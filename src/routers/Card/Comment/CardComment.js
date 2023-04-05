@@ -1,15 +1,15 @@
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db } from "../../firebase";
-import Post from "./Post";
+import { db } from "../../../firebase";
+import Comment from "./Comment";
 
-const PostData = () => {
-    const [postData, setPostData] = useState([]) ; 
+const CardComment = ({card}) => {
+    const [commentData, setCommentData] = useState([]) ; 
 
-    const getPostData = () => {
+    const getCommentData = () => {
         const FeedCollection = query(
-            collection(db, "Post"), 
-            orderBy("date", "desc"));
+            collection(db, "Post", `${card.DocID}`, "Comment"), 
+            orderBy("date"));
         onSnapshot(FeedCollection, (querySnapshot) => {
             let feedArray = []
             querySnapshot.forEach((doc) => {
@@ -18,22 +18,22 @@ const PostData = () => {
                     Data: doc.data(),
                 })
             });
-            setPostData(feedArray) ;
+            setCommentData(feedArray) ;
         });
-        console.log(postData)
     } ; 
+    // console.log(commentData)
 
     useEffect(() => {
-        getPostData() ;
+        getCommentData() ;
     }, []) ; 
-
-    return (
+    
+    return(
         <div>
-            {postData.map((p, i) => (
-                <Post key={i} postData={p}/>
+            {commentData.map((c, i) => (
+                <Comment key={i} commentData={c}/>
             ))}
         </div>
     )
 }
 
-export default PostData ; 
+export default CardComment ; 

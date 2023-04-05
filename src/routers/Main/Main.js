@@ -15,8 +15,8 @@ const Main = () => {
             <button onClick={(() => {
                 signOut(auth) 
                 console.log("로그아웃 완료")})}> Log Out </button>
-            <button onClick={(() => {navigate("/profile")})}> Profile Edit </button>
-            <button onClick={(() => {setChange(!change)})}> change </button>
+            <button onClick={() => {navigate("/profile")}}> Profile Edit </button>
+            <button onClick={() => {setChange(!change)}}> change </button>
             <Home />
             {change ? <ProfileData /> : <PostData />}
         </div>

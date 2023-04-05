@@ -76,8 +76,8 @@ const ProfileEdit = () => {
 
     return (
         <div>
-            <form onSubmit={((event) => {event.preventDefault()})}>
-                <button onClick={(() => {navigate("/")})}> 이전 </button>
+            <form onSubmit={(event) => {event.preventDefault()}}>
+                <button onClick={() => {navigate("/")}}> 이전 </button>
                 {attachment ? <>
                     <input type="file"
                         style={{display:"none"}}
