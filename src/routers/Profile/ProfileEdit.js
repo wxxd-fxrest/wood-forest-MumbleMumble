@@ -22,11 +22,13 @@ const ProfileEdit = () => {
     }
 
     const CurrentInfo = async() => {
-        const getUserData = query(collection(db, "UserInfo"), where("uid", "==", `${currentUser.uid}`));
+        const getUserData = query(
+            collection(db, "UserInfo"), 
+            where("uid", "==", `${currentUser.uid}`));
         const querySnapshot = await getDocs(getUserData);
         querySnapshot.forEach((doc) => {
             setCurrentInfo(doc.data())
-            console.log(currentInfo)
+            // console.log(currentInfo)
         }); 
     } ;
 
@@ -59,16 +61,24 @@ const ProfileEdit = () => {
                 uploadString(attachmentRef, attachment, 'data_url')
                 uploadTask.then(async (snapshot) => {
                     attachmentUrl = await getDownloadURL(snapshot.ref) ;
-                    await updateDoc(doc(db, "UserInfo", `${currentUser.uid}`), {
-                        attachmentUrl,
-                    })
+
+                    if(displayName !== "") {
+                        await updateDoc(doc(db, "UserInfo", `${currentUser.uid}`), {
+                            attachmentUrl,
+                            displayName,
+                        })
+                    } else {
+                        await updateDoc(doc(db, "UserInfo", `${currentUser.uid}`), {
+                            attachmentUrl,
+                        }) 
+                    }
                 })
-            } else if (displayName != "") {
+            } else if (displayName !== "") {
                 await updateDoc(doc(db, "UserInfo", `${currentUser.uid}`), {
                     displayName,
                 })
             }
-            navigate("/profile");
+            navigate("/");
         } catch(error) {
             console.log(error) ;
         }

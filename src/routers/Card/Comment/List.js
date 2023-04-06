@@ -1,10 +1,15 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
 import None  from '../../../Image/Mumble_Profile_None.PNG' ; 
 
 const List = ({plusComment, commentData}) => {
-    const [sendUserInfo, setSendUserInfo] = useState([]) ; 
+    const [sendUserInfo, setSendUserInfo] = useState([]) ;
+    const {currentUser} = useContext(AuthContext) ; 
+    const navigate = useNavigate();
+
     // console.log("plusComment =>", plusComment)
     // console.log("commentData =>", commentData)
 
@@ -16,8 +21,14 @@ const List = ({plusComment, commentData}) => {
         querySnapshot.forEach((doc) => {
             setSendUserInfo(doc.data()) ;
         }); 
-        console.log(sendUserInfo) 
+        // console.log(sendUserInfo) 
     } ; 
+
+    const onProfilePage = (e) => {
+        e.preventDefault();
+        navigate(`/profile/${plusComment.Data.Comment_SendUID}`) ; 
+    } ; 
+
 
     useEffect(() => {
         getSendUserInfo() ; 
@@ -26,7 +37,7 @@ const List = ({plusComment, commentData}) => {
     return(
         <div>
             {commentData.DocID == plusComment.Data.CommentDocID ? 
-                <div>
+                <div onClick={onProfilePage}>
                     {sendUserInfo.attachmentUrl ? 
                         <img src={sendUserInfo.attachmentUrl} width="30px"/> : 
                         <img src={None} width="30px"/>}

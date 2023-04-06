@@ -20,7 +20,7 @@ const PostData = () => {
             });
             setPostData(feedArray) ;
         });
-        console.log(postData)
+        // console.log(postData)
     } ; 
 
     useEffect(() => {

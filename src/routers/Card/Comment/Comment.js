@@ -1,5 +1,6 @@
-import { addDoc, collection, doc, getDocs, query, Timestamp, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, query, Timestamp, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
 import None  from '../../../Image/Mumble_Profile_None.PNG' ; 
@@ -8,10 +9,11 @@ import CommentMore from "./CommentMore";
 
 const Comment = ({commentData}) => {
     const {currentUser} = useContext(AuthContext) ; 
+    const navigate = useNavigate();
     const [sendUserInfo, setSendUserInfo] = useState([]) ; 
     const [comment, setComment] = useState("") ; 
     const [open, setOpen] = useState(false) ; 
-    console.log(commentData); 
+    // console.log(commentData); 
 
     const onPlusComment = async () => {
         let CardDocID = commentData.Data.CardDocID ;
@@ -29,6 +31,21 @@ const Comment = ({commentData}) => {
     }
 
 
+    const onDelete = async() => {
+        const ok = window.confirm("이 댓글을 삭제하면 하위 모든 댓글이 함께 삭제됩니다. 삭제하시겠습니까?")
+        if(ok) {
+            await deleteDoc(doc(db, 
+                    "Post", `${commentData.Data.CardDocID}`, 
+                    "Comment", `${commentData.DocID}`)); 
+            // navigate("/") ;
+        }
+    } ;
+
+    const onProfilePage = (e) => {
+        e.preventDefault();
+        navigate(`/profile/${commentData.Data.Card_SendUID}`) ; 
+    } ; 
+
     const getSendUserInfo = async () => {
         const getUserData = query(
             collection(db, "UserInfo"), 
@@ -37,7 +54,7 @@ const Comment = ({commentData}) => {
         querySnapshot.forEach((doc) => {
             setSendUserInfo(doc.data()) ;
         }); 
-        console.log(sendUserInfo) ; 
+        // console.log(sendUserInfo) ; 
     } ; 
 
     useEffect(() => {
@@ -46,11 +63,17 @@ const Comment = ({commentData}) => {
 
     return(
         <div>
-            {sendUserInfo.attachmentUrl ? 
-                <img src={sendUserInfo.attachmentUrl} width="100px"/> : 
-                <img src={None} width="100px"/>}
-            <h4> {sendUserInfo.displayName} </h4>
-            <span> {commentData.Data.Comment} </span>
+            {commentData.Data.Card_SendUID == currentUser.uid && 
+                <button type='button' onClick={onDelete}> 삭제 </button>} 
+            <div onClick={onProfilePage}>
+                {sendUserInfo.attachmentUrl ? 
+                    <img src={sendUserInfo.attachmentUrl} width="100px"/> : 
+                    <img src={None} width="100px"/>}
+                <h4> {sendUserInfo.displayName} </h4>
+                <span> {commentData.Data.Comment} </span>
+            </div>
+
+
             {commentData.Data.Card_OwnerUID == currentUser.uid || 
             commentData.Data.Card_SendUID == currentUser.uid ? 
                 <button type="button" onClick={() => setOpen(!open)}> 대댓글 </button> : null}

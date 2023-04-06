@@ -1,24 +1,21 @@
 import { signOut } from "firebase/auth";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
 import { auth } from "../../firebase";
 import PostData from "../Post/PostData";
 import ProfileData from "../Profile/ProfileData";
 import Home from "./Home";
 
 const Main = () => {
-    const [change, setChange] = useState(false) ; 
+    const {currentUser} = useContext(AuthContext) ;
     const navigate = useNavigate();
 
     return (
         <div>
-            <button onClick={(() => {
-                signOut(auth) 
-                console.log("로그아웃 완료")})}> Log Out </button>
-            <button onClick={() => {navigate("/profile")}}> Profile Edit </button>
-            <button onClick={() => {setChange(!change)}}> change </button>
+            <button onClick={() => {navigate(`/profile/${currentUser.uid}`)}}> Profile </button>
             <Home />
-            {change ? <ProfileData /> : <PostData />}
+            <PostData />
         </div>
     )
 }

@@ -1,13 +1,22 @@
 import { addDoc, collection, getDocs, query, Timestamp, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
-import { db, storage } from "../../firebase";
+import { auth, db, storage } from "../../firebase";
 import { v4 as uuidv4 } from 'uuid';
 import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage";
+import ANGER from '../../Image/Mumble_anger.png' ; 
+import CONFUSION from '../../Image/Mumble_confusion.png' ; 
+import DAZED from '../../Image/Mumble_dazed.png' ; 
+import HAPPY from '../../Image/Mumble_happy.png' ; 
+import SADNESS from '../../Image/Mumble_sadness.png' ; 
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
-    const uuidv4ID = uuidv4()
+    const uuidv4ID = uuidv4() ;
+    const navigate = useNavigate();
+
     const [write, setWrite] = useState(false) ;
     const [open, setOpen] = useState(true) ; 
     const [anonymous, setAnonymous] = useState(true) ; 
@@ -19,9 +28,8 @@ const Home = () => {
 
     const [music, setMusic] = useState([]) ; 
     const [select, setSelect] = useState([]) ; 
-    const [currentData, setCurrentData] = useState([]) ; 
 
-    const selectList = ["감정을 선택", "좋아", "화나", "슬퍼"] ;
+    const selectList = ["감정을 선택", "좋아", "화나", "슬퍼", "멍...", "혼란"] ;
     const [selected, setSelected] = useState("") ; 
     
     const onChange = (event) => {
@@ -33,14 +41,6 @@ const Home = () => {
         } else if(name == "serchArtist") {
             setSerchArtist(value) ; 
         }
-    } ; 
-
-    const CurrentUserInfo = async () => {
-        const getUserData = query(collection(db, "UserInfo"), where("uid", "==", `${currentUser.uid}`));
-        const querySnapshot = await getDocs(getUserData);
-        querySnapshot.forEach((doc) => {
-            setCurrentData(doc.data()) ;
-        }); 
     } ; 
 
     const onFileChange = (event) => {
@@ -71,8 +71,6 @@ const Home = () => {
 
                     if(select[0] == null) {
                         await addDoc(collection(db, "Post"), {
-                            displayName: currentData.displayName, 
-                            attachmentUrl: currentData.attachmentUrl, 
                             UID: currentUser.uid,
                             UUID: uuidv4ID, 
                             PostText: text, 
@@ -84,8 +82,6 @@ const Home = () => {
                         })
                     } else {
                         await addDoc(collection(db, "Post"), {
-                            displayName: currentData.displayName, 
-                            attachmentUrl: currentData.attachmentUrl, 
                             UID: currentUser.uid,
                             UUID: uuidv4ID, 
                             PostText: text, 
@@ -105,8 +101,6 @@ const Home = () => {
             else if(cardImg == "") {
                 if(select[0] == null) {
                     await addDoc(collection(db, "Post"), {
-                        displayName: currentData.displayName, 
-                        attachmentUrl: currentData.attachmentUrl, 
                         UID: currentUser.uid,
                         UUID: uuidv4ID, 
                         PostText: text, 
@@ -117,8 +111,6 @@ const Home = () => {
                     })
                 } else {
                     await addDoc(collection(db, "Post"), {
-                        displayName: currentData.displayName, 
-                        attachmentUrl: currentData.attachmentUrl, 
                         UID: currentUser.uid,
                         UUID: uuidv4ID, 
                         PostText: text, 
@@ -177,18 +169,26 @@ const Home = () => {
 
 
 
-    useEffect(() => {
-        CurrentUserInfo() ; 
-    }, []) ;
+    // useEffect(() => {
+    //     CurrentUserInfo() ; 
+    // }, []) ;
 
     return (
         <div style={{backgroundColor:"grey"}}>
             <form onSubmit={(event) => {event.preventDefault()}}>
                 <span> Home </span>      
                 <button type="button" onClick={() => {setWrite(!write)}}> write </button>
+                <button type="button"
+                    onClick={() => {
+                        signOut(auth) 
+                        console.log("로그아웃 완료")}}> Log Out </button>
+                <button type="button" 
+                    onClick={() => {
+                        navigate("/profile-edit")}}> Profile Edit </button>
 
                 {write ? 
                 <div style={{backgroundColor:"green", width: "270px"}}>
+                    <p onClick={() => {setWrite(!write)}}> X </p>
                     <input type="text"
                             name="text"
                             placeholder="버리고 싶은 일이나 감정을 입력하세요."
@@ -207,9 +207,11 @@ const Home = () => {
                         ))}
                     </select>
                     <div> 
-                        {selected == selectList[1] && <p>🤗</p>}
-                        {selected == selectList[2] && <p>🤬</p>}
-                        {selected == selectList[3] && <p>😢</p>}
+                        {selected == selectList[1] && <img src={HAPPY} width="50px"/>}
+                        {selected == selectList[2] && <img src={ANGER} width="50px"/>}
+                        {selected == selectList[3] && <img src={SADNESS} width="50px"/>}
+                        {selected == selectList[4] && <img src={DAZED} width="50px"/>}
+                        {selected == selectList[5] && <img src={CONFUSION} width="50px"/>}
                     </div>
 
                     {anonymous == true ? <span>공개</span> : <span>익명</span>}
