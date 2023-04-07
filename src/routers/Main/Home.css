@@ -1,0 +1,21 @@
+.Home {
+    display: block;
+    background-color: cadetblue;
+    width: 100%;
+}
+
+.HomeForm {
+    display: flex;
+    background-color: aliceblue;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HomeForm > img {
+    width: 80px;
+    margin: 10px;
+}
+
+.WriteContainer {
+    z-index: 100;
+}

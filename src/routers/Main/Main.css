@@ -1,0 +1,61 @@
+.Main {
+    position: relative;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.MainContainer {
+    /* background-color: rgb(85, 121, 152); */
+    display: flex;
+	flex-flow: row wrap;
+    margin: 0px 100px 0px 100px;
+    width: 100%;
+    height: 100%;
+}
+
+.MainHome {
+    /* background-color: rgb(58, 94, 126); */
+    display: inline-flex;
+    /* width: 259px; */
+    width: 20%;
+    /* max-width: 186px;
+    min-width: 50px; */
+    height: 100%;
+}
+
+.MainPost {
+    /* background-color: rgb(28, 120, 201); */
+    display: inline-flex;
+    width: 80%;
+    /* max-width: 1054px;  */
+    /* min-width: 1054px;  */
+    height: 100%;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 1200px) {
+    .MainContainer {
+        margin: 0px 50px 0px 50px;
+    }
+    .MainHome {
+        width: 15%;
+    }
+    .MainPost {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .MainContainer {
+        margin: 0px;
+    }
+    .MainHome {
+        width: 10%;
+    }
+    .MainPost {
+        width: 90%;
+    }
+}

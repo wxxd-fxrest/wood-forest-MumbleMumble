@@ -3,6 +3,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
+import '../../routers/Auth/AuthComponent.css';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -36,9 +37,9 @@ const SignUp = () => {
     } ; 
     
     return(
-        <div>
-            <p> SignUp </p>
-            <form onSubmit={onSubmit}>
+        <div className="ComponentContainer">
+            <p> 회원가입 </p>
+            <form onSubmit={onSubmit} className="ComponentForm">
                 <input type="email"
                         name="email"
                         placeholder="이메일"
@@ -51,7 +52,7 @@ const SignUp = () => {
                         required 
                         value={password}
                         onChange={onChange} />
-                <button> 회원가입하기 </button>
+                <button> 회원가입 </button>
             </form>
         </div>
     )

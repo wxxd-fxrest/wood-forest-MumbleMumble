@@ -28,10 +28,15 @@ const PostData = () => {
     }, []) ; 
 
     return (
-        <div>
-            {postData.map((p, i) => (
-                <Post key={i} postData={p}/>
-            ))}
+        <div className="PostData">
+            <div className="PostDataHeader">
+                <h4> Home </h4>
+            </div>
+            <div className="PostList">
+                {postData.map((p, i) => (
+                    <Post key={i} postData={p}/>
+                ))}
+            </div>
         </div>
     )
 }

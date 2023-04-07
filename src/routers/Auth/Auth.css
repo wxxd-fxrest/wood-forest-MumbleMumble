@@ -1,0 +1,54 @@
+.Auth {
+    display: flex;
+    background-color: bisque;
+    justify-content: center;
+	flex-flow: row wrap;
+    height: 500px; 
+    border: solid 1px black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.Auth_Img {
+    flex: 1;
+    background-color: aqua;
+    width: 500px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.Auth_Img > img {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Auth_Component {
+    background-color: cadetblue;
+    position: relative;
+    flex: 1;
+    width: 500px;
+    margin: 0px;
+    padding: 0px;
+    height: 500px; 
+}
+
+.Auth_Component > button {
+    background-color: tomato;
+    border-radius: 50px;
+    border: solid 1px tomato;
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    width: 380px;
+    height: 50px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .Auth {
+        width: 500px;
+    }
+    .Auth_Img {
+        display: none;
+    }
+}

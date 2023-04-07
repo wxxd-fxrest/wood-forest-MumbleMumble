@@ -11,6 +11,8 @@ import HAPPY from '../../Image/Mumble_happy.png' ;
 import SADNESS from '../../Image/Mumble_sadness.png' ; 
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
+import '../../routers/Main/Home.css';
+import None  from '../../Image/Mumble_Profile_None.PNG' ; 
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
@@ -174,85 +176,93 @@ const Home = () => {
     // }, []) ;
 
     return (
-        <div style={{backgroundColor:"grey"}}>
-            <form onSubmit={(event) => {event.preventDefault()}}>
-                <span> Home </span>      
-                <button type="button" onClick={() => {setWrite(!write)}}> write </button>
+        <div className="Home">
+            <form className="HomeForm" 
+                onSubmit={(event) => {event.preventDefault()}}>
+                <img src={None} />
+
+                <button type="button" 
+                    onClick={() => {setWrite(!write)}}> write </button>
+                <button type="button" 
+                    onClick={() => {navigate(`/profile/${currentUser.uid}`)}}> Profile </button>
                 <button type="button"
                     onClick={() => {
                         signOut(auth) 
+                        navigate("/")
                         console.log("로그아웃 완료")}}> Log Out </button>
                 <button type="button" 
                     onClick={() => {
                         navigate("/profile-edit")}}> Profile Edit </button>
 
-                {write ? 
-                <div style={{backgroundColor:"green", width: "270px"}}>
-                    <p onClick={() => {setWrite(!write)}}> X </p>
-                    <input type="text"
-                            name="text"
-                            placeholder="버리고 싶은 일이나 감정을 입력하세요."
-                            maxLength="200"
-                            required 
-                            value={text}
-                            onChange={onChange} 
-                            style={{width: "200px"}}/>
-                    <button type="button" onClick={onSaveBtn}> 버리기 </button>
+                <div className="WriteContainer">
+                    {write ? 
+                    <div style={{backgroundColor:"green", width: "270px"}}>
+                        <p onClick={() => {setWrite(!write)}}> X </p>
+                        <input type="text"
+                                name="text"
+                                placeholder="버리고 싶은 일이나 감정을 입력하세요."
+                                maxLength="300"
+                                required 
+                                value={text}
+                                onChange={onChange} 
+                                style={{width: "200px"}}/>
+                        <button type="button" onClick={onSaveBtn}> 버리기 </button>
 
-                    <select onChange={(e) => {setSelected(e.target.value)}} value={selected}>
-                        {selectList.map((item) => (
-                            <option value={item} key={item}>
-                                {item}
-                            </option>
-                        ))}
-                    </select>
-                    <div> 
-                        {selected == selectList[1] && <img src={HAPPY} width="50px"/>}
-                        {selected == selectList[2] && <img src={ANGER} width="50px"/>}
-                        {selected == selectList[3] && <img src={SADNESS} width="50px"/>}
-                        {selected == selectList[4] && <img src={DAZED} width="50px"/>}
-                        {selected == selectList[5] && <img src={CONFUSION} width="50px"/>}
-                    </div>
+                        <select onChange={(e) => {setSelected(e.target.value)}} value={selected}>
+                            {selectList.map((item) => (
+                                <option value={item} key={item}>
+                                    {item}
+                                </option>
+                            ))}
+                        </select>
+                        <div> 
+                            {selected == selectList[1] && <img src={HAPPY} width="50px"/>}
+                            {selected == selectList[2] && <img src={ANGER} width="50px"/>}
+                            {selected == selectList[3] && <img src={SADNESS} width="50px"/>}
+                            {selected == selectList[4] && <img src={DAZED} width="50px"/>}
+                            {selected == selectList[5] && <img src={CONFUSION} width="50px"/>}
+                        </div>
 
-                    {anonymous == true ? <span>공개</span> : <span>익명</span>}
-                    <button type="button" onClick={() => setAnonymous(!anonymous)}> 익명 or 공개 </button>
-                    <button type="button" onClick={() => {setOpen(!open)}}> 노래 on / off </button>
+                        {anonymous == true ? <span>공개</span> : <span>익명</span>}
+                        <button type="button" onClick={() => setAnonymous(!anonymous)}> 익명 or 공개 </button>
+                        <button type="button" onClick={() => {setOpen(!open)}}> 노래 on / off </button>
 
-                    <input type="file"
-                            style={{display:"none"}}
-                            id="inputFile"
-                            onChange={onFileChange}
-                            required />
-                    <label htmlFor="inputFile">
-                        {cardImg ? <img src={cardImg} alt="" width="50px"/> : <p> card select </p>}
-                    </label>
+                        <input type="file"
+                                style={{display:"none"}}
+                                id="inputFile"
+                                onChange={onFileChange}
+                                required />
+                        <label htmlFor="inputFile">
+                            {cardImg ? <img src={cardImg} alt="" width="50px"/> : <p> card select </p>}
+                        </label>
 
-                    {open ? <> {select[0] ? 
-                        <div>
-                            <p> {select[0].name} </p> 
-                            <button type="button" onClick={() => {
-                                setSelect([])                     
-                            }}> Cancle </button>
-                        </div> : <div style={{backgroundColor:"skyblue"}}>
-                                <div>
-                                    <span> search </span>
-                                    <input type="text"
-                                        required
-                                        name="searchMusic"
-                                        value={searchMusic} 
-                                        onChange={onChange} 
-                                        placeholder="노래 이름을 입력하세요."/>
-                                    <input type="text"
-                                        required
-                                        name="serchArtist"
-                                        value={serchArtist} 
-                                        onChange={onChange} 
-                                        placeholder="아티스트 이름을 입력하세요."/>
-                                    <button type="submit" onClick={getMusic}> ok </button> 
-                                </div>
-                                {musicList()}
-                            </div>}
+                        {open ? <> {select[0] ? 
+                            <div>
+                                <p> {select[0].name} </p> 
+                                <button type="button" onClick={() => {
+                                    setSelect([])                     
+                                }}> Cancle </button>
+                            </div> : <div style={{backgroundColor:"skyblue"}}>
+                                    <div>
+                                        <span> search </span>
+                                        <input type="text"
+                                            required
+                                            name="searchMusic"
+                                            value={searchMusic} 
+                                            onChange={onChange} 
+                                            placeholder="노래 이름을 입력하세요."/>
+                                        <input type="text"
+                                            required
+                                            name="serchArtist"
+                                            value={serchArtist} 
+                                            onChange={onChange} 
+                                            placeholder="아티스트 이름을 입력하세요."/>
+                                        <button type="submit" onClick={getMusic}> ok </button> 
+                                    </div>
+                                    {musicList()}
+                                </div>}
                     </> : null} </div> : null} 
+                </div>
             </form>
         </div>
     )

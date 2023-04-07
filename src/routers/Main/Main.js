@@ -6,16 +6,22 @@ import { auth } from "../../firebase";
 import PostData from "../Post/PostData";
 import ProfileData from "../Profile/ProfileData";
 import Home from "./Home";
+import '../../routers/Main/Main.css';
 
 const Main = () => {
     const {currentUser} = useContext(AuthContext) ;
     const navigate = useNavigate();
 
     return (
-        <div>
-            <button onClick={() => {navigate(`/profile/${currentUser.uid}`)}}> Profile </button>
-            <Home />
-            <PostData />
+        <div className="Main">
+            <div className="MainContainer">
+                <div className="MainHome">
+                    <Home />
+                </div>
+                <div className="MainPost">
+                    <PostData />
+                </div>
+            </div>
         </div>
     )
 }

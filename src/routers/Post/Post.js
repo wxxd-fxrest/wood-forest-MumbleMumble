@@ -10,12 +10,14 @@ import None  from '../../Image/Mumble_Profile_None.PNG' ;
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase';
 import PostEmoticon from './PostEmoticon';
+import '../../routers/Post/Post.css' ;
 
 const Post = ({postData}) => {
     const {currentUser} = useContext(AuthContext) ; 
     const navigate = useNavigate();
     const [currentData, setCurrentData] = useState([]) ; 
     const [my, setMy] = useState(false) ; 
+    const [next, setNext] = useState(false) ; 
 
     // /profile/:uid
 
@@ -47,44 +49,76 @@ const Post = ({postData}) => {
     }, []) ; 
 
     return (
-        <div>
-        {postData.Data.cardImgUrl ? 
-            <div style={{backgroundImage: `url(${postData.Data.cardImgUrl})`, height:"300px"}}>
+        <div className='Post'>
+            {postData.Data.cardImgUrl ? 
+            <div className='PostBackGroundImg'>
+                <img src={postData.Data.cardImgUrl} />
+                <div className='PostProfile' 
+                    onClick={onProfilePage}>
+                    {postData.Data.anonymous == true && <> 
+                        {postData.Data.UID == currentData.uid ? <div className='PostProfileTrue'>
+                            <img src={currentData.attachmentUrl} />
+                            <h5> {currentData.displayName} </h5>
+                        </div> : <img src={None} width="180px"/>} </> }
+                    <div className='PostEmotion'>
+                        <PostEmoticon postData={postData}/>
+                    </div>
+                </div>
+                        
+                <div className='PostForm' 
+                    onClick={onCardPage}>
+                    {next == false ? 
+                        <h3> {postData.Data.PostText} </h3> : <>
+                        {postData.Data.music == false ? null :
+                            <div>
+                                <h4> {postData.Data.Music} </h4>
+                                <h4> {postData.Data.artist} </h4>
+                            </div>}
+                        </>}
+                </div>
+                
+                {postData.Data.music == false ? null : <>
+                    {next == false ? 
+                    <button className='PostNextButton1'
+                        type='button'
+                        onClick={() => {setNext(!next)}}> 다음 </button> :
+                    <button className='PostNextButton2'
+                        type='button'
+                        onClick={() => {setNext(!next)}}> 이전 </button> }
+                </> }
+
+            </div> : <div className="PostBackGroundImg" style={{backgroundColor:"skyblue"}}>
                 <div onClick={onProfilePage}>
-                    {postData.Data.anonymous == true && <> 
-                        {postData.Data.UID == currentData.uid && 
-                            <h5 style={{backgroundColor:"red"}}> {currentData.displayName} </h5>} 
-                        </> }
-                    {postData.Data.anonymous == true && <> 
-                        {postData.Data.UID == currentData.uid ?
-                            <img src={currentData.attachmentUrl} width="180px"/>: 
-                            <img src={None} width="180px"/>}
-                    </>}
+                {postData.Data.anonymous == true && <> 
+                        {postData.Data.UID == currentData.uid ? <div className='PostProfileTrue'>
+                            <img src={currentData.attachmentUrl} />
+                            <h5> {currentData.displayName} </h5>
+                        </div> : <img src={None} width="180px"/>} </> }
+                    <div className='PostEmotion'>
+                        <PostEmoticon postData={postData}/>
+                    </div>
                 </div>
-                <div onClick={onCardPage}>
-                    <h3> {postData.Data.PostText} </h3>
-                    <h4> {postData.Data.Music} </h4>
-                    <h4> {postData.Data.artist} </h4>
-                    <PostEmoticon postData={postData}/>
+
+                <div className='PostForm' 
+                    onClick={onCardPage}>
+                    {next == false ? 
+                        <h3> {postData.Data.PostText} </h3> : <>
+                        {postData.Data.music == false ? null :
+                            <div>
+                                <h4> {postData.Data.Music} </h4>
+                                <h4> {postData.Data.artist} </h4>
+                            </div>}
+                        </>}
                 </div>
-            </div> : <div style={{backgroundColor:"skyblue"}}>
-                <div onClick={onProfilePage}>
-                    {postData.Data.anonymous == true && <> 
-                        {postData.Data.UID == currentData.uid && 
-                            <h5 style={{backgroundColor:"red"}}> {currentData.displayName} </h5>} 
-                        </> }
-                    {postData.Data.anonymous == true && <> 
-                        {postData.Data.UID == currentData.uid ?
-                            <img src={currentData.attachmentUrl} width="180px"/>: 
-                            <img src={None} width="180px"/>}
-                    </>}
-                </div>
-                <div onClick={onCardPage}>
-                    <h3> {postData.Data.PostText} </h3>
-                    <h4> {postData.Data.Music} </h4>
-                    <h4> {postData.Data.artist} </h4>
-                    <PostEmoticon postData={postData}/>
-                </div>
+                {postData.Data.music == false ? null : <>
+                    {next == false ? 
+                    <button className='PostNextButton1'
+                        type='button'
+                        onClick={() => {setNext(!next)}}> 다음 </button> :
+                    <button className='PostNextButton2'
+                        type='button'
+                        onClick={() => {setNext(!next)}}> 이전 </button> }
+                </> }
             </div>}
         </div>
     )
