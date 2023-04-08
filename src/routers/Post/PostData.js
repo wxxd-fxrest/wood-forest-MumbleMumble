@@ -2,6 +2,7 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import Post from "./Post";
+import '../../routers/Post/Post.css' ;
 
 const PostData = () => {
     const [postData, setPostData] = useState([]) ; 

@@ -3,7 +3,9 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 import { db } from "../../firebase";
+import Home from "../Main/Home";
 import Card from "./Card";
+import '../../routers/Card/Card.css';
 
 const CardPage = () => {
     const location = useLocation() ;
@@ -33,10 +35,31 @@ const CardPage = () => {
     }, []) ; 
 
     return(
-        <div>
-            {card.map((c, i) => (
-                <Card key={i} card={c}/>
-            ))}
+        // <div className="Main">
+        //     <div className="MainContainer">
+
+        //         <div className="MainHome">
+        //             <Home />
+        //         </div>
+
+        //         <div className="MainPost">
+        //             <PostData />
+        //         </div>
+
+        //     </div>
+        // </div>
+
+        <div className="CardPage">
+            <div className="CardPageContainer">
+                <div className="CardPageHome">
+                    <Home />
+                </div>
+                <div className="CardPageList">
+                    {card.map((c, i) => (
+                        <Card key={i} card={c}/>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

@@ -201,7 +201,7 @@ const Home = () => {
                         <input type="text"
                                 name="text"
                                 placeholder="버리고 싶은 일이나 감정을 입력하세요."
-                                maxLength="300"
+                                maxLength="400"
                                 required 
                                 value={text}
                                 onChange={onChange} 

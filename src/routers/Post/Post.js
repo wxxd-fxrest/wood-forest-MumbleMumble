@@ -11,6 +11,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase';
 import PostEmoticon from './PostEmoticon';
 import '../../routers/Post/Post.css' ;
+import Music from '../../Image/Mumble_Music.png' ;
 
 const Post = ({postData}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -70,11 +71,16 @@ const Post = ({postData}) => {
                     {next == false ? 
                         <h3> {postData.Data.PostText} </h3> : <>
                         {postData.Data.music == false ? null :
-                            <div>
-                                <h4> {postData.Data.Music} </h4>
-                                <h4> {postData.Data.artist} </h4>
+                            <div className='PostMusicForm'>
+                                <div className='PostMusicName'>
+                                    <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
+                                </div>
+                                <div className='PostMusic'>
+                                    <img src={Music} />
+                                    <div className='PostMusicBox'></div>
+                                </div>
                             </div>}
-                        </>}
+                    </>}
                 </div>
                 
                 {postData.Data.music == false ? null : <>
@@ -89,7 +95,7 @@ const Post = ({postData}) => {
 
             </div> : <div className="PostBackGroundImg" style={{backgroundColor:"skyblue"}}>
                 <div onClick={onProfilePage}>
-                {postData.Data.anonymous == true && <> 
+                    {postData.Data.anonymous == true && <> 
                         {postData.Data.UID == currentData.uid ? <div className='PostProfileTrue'>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
@@ -104,11 +110,16 @@ const Post = ({postData}) => {
                     {next == false ? 
                         <h3> {postData.Data.PostText} </h3> : <>
                         {postData.Data.music == false ? null :
-                            <div>
-                                <h4> {postData.Data.Music} </h4>
-                                <h4> {postData.Data.artist} </h4>
-                            </div>}
-                        </>}
+                        <div className='PostMusicForm'>
+                            <div className='PostMusicName'>
+                                <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
+                            </div>
+                            <div className='PostMusic'>
+                                <img src={Music} />
+                                <div className='PostMusicBox'></div>
+                            </div>
+                        </div>}
+                    </>}
                 </div>
                 {postData.Data.music == false ? null : <>
                     {next == false ? 
@@ -118,7 +129,7 @@ const Post = ({postData}) => {
                     <button className='PostNextButton2'
                         type='button'
                         onClick={() => {setNext(!next)}}> 이전 </button> }
-                </> }
+                </>}
             </div>}
         </div>
     )

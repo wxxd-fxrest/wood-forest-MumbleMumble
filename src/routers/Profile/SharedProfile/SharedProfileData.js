@@ -6,6 +6,7 @@ import { db } from "../../../firebase";
 import Home from "../../Main/Home";
 import SharedProfile from "./SharedProfile";
 import { v4 as uuidv4 } from 'uuid';
+import '../../../routers/Profile/SharedProfile/SharedProfile.css';
 
 const SharedProfileData = () => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -52,15 +53,26 @@ const SharedProfileData = () => {
     }, []) ; 
 
     return(
-        <div>
-            <div style={{backgroundColor:"skyblue"}}>
-                <Home />                
-                <img src={profileInfo.attachmentUrl} width="100px" />
-                <p> {profileInfo.displayName} </p>
+        <div className="SharedProfileMain">
+            <div className="SharedProfileContainer">
+
+                <div className="SharedProfileHome">
+                    <Home />        
+                </div>
+                       
+                <div className="SharedProfile">
+                    <div className="SharedProfileBox">
+                        <img src={profileInfo.attachmentUrl} width="100px" />
+                        <p> {profileInfo.displayName} </p>
+                    </div>
+                    <div className="SharedProfileMap">
+                        {pofilePost.map((p, i) => (
+                            <SharedProfile key={i} pofilePost={p} profileInfo={profileInfo}/>
+                        ))}
+                    </div>
+                </div>
+
             </div>
-            {pofilePost.map((p, i) => (
-                <SharedProfile key={i} pofilePost={p} profileInfo={profileInfo}/>
-            ))}
         </div>
     )
 }

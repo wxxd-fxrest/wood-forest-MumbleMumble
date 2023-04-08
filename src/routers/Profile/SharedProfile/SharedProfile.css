@@ -1,14 +1,12 @@
-.Main {
+.SharedProfileMain {
     position: relative;
-    /* background-color: antiquewhite; */
     display: flex;
     flex-direction: row;
     width: 100vw;
     height: 100vh;
 }
 
-.MainContainer {
-    /* background-color: rgb(85, 121, 152); */
+.SharedProfileContainer {
     display: flex;
 	flex-flow: row wrap;
     margin: 0px 100px 0px 100px;
@@ -16,45 +14,53 @@
     height: 100%;
 }
 
-.MainHome {
-    /* background-color: rgb(58, 94, 126); */
+.SharedProfileHome {
     display: inline-flex;
-    /* width: 259px; */
     width: 20%;
-    /* max-width: 186px;
-    min-width: 50px; */
     height: 100%;
 }
 
-.MainPost {
-    /* background-color: rgb(28, 120, 201); */
+.SharedProfile {
+    background-color: rgb(28, 120, 201);
     display: inline-flex;
     width: 80%;
-    /* max-width: 1054px;  */
-    /* min-width: 1054px;  */
     height: 100%;
+    flex-direction: column;
+}
+
+.SharedProfileBox {
+    background-color: turquoise;
+    padding: 10px;
+    text-align: start;
+    flex-direction: row;
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+.SharedProfileMap {
+    overflow: scroll;
 }
 
 @media screen and (max-width: 1200px) {
-    .MainContainer {
+    .SharedProfileContainer {
         margin: 0px 50px 0px 50px;
     }
-    .MainHome {
+    .SharedProfileHome {
         width: 15%;
     }
-    .MainPost {
+    .SharedProfile {
         width: 85%;
     }
 }
 
 @media screen and (max-width: 980px) {
-    .MainContainer {
+    .SharedProfileContainer {
         margin: 0px;
     }
-    .MainHome {
+    .SharedProfileHome {
         width: 10%;
     }
-    .MainPost {
+    .SharedProfile {
         width: 90%;
     }
 }

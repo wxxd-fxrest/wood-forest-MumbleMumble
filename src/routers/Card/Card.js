@@ -6,12 +6,16 @@ import { db } from '../../firebase';
 import None  from '../../Image/Mumble_Profile_None.PNG' ; 
 import CardEmoticon from './CardEmoticon';
 import CardComment from './Comment/CardComment';
+import '../../routers/Card/Card.css';
+import Music from '../../Image/Mumble_Music.png' ;
+
 
 const Card = ({card}) => {
     const {currentUser} = useContext(AuthContext) ; 
     const navigate = useNavigate();
     const [comment, setComment] = useState("") ; 
-    const [currentData, setCurrentData] = useState([]) ; 
+    const [currentData, setCurrentData] = useState([]) ;
+    const [next, setNext] = useState(false) ; 
 
     const CurrentUserInfo = async () => {
         const getUserData = query(
@@ -61,45 +65,95 @@ const Card = ({card}) => {
     } ; 
     
     return(
-        <div>
+        <div className='Card'>
         {card.Data.cardImgUrl ? 
-            <div style={{backgroundImage: `url(${card.Data.cardImgUrl})`, height:"300px"}}>
-                <div onClick={onProfilePage}>
+            <div className='CardBackGroundImg'>
+                <img src={card.Data.cardImgUrl} />
+                <div className='CardProfile'  
+                    onClick={onProfilePage}>
                     {card.Data.anonymous == true && <> 
-                        {card.Data.UID == currentData.uid && 
-                            <h5 style={{backgroundColor:"red"}}> {currentData.displayName} </h5>} 
-                        </> }
-                    {card.Data.anonymous == true && <> 
-                        {card.Data.UID == currentData.uid ?
-                            <img src={currentData.attachmentUrl} width="50px"/>: 
-                            <img src={None} width="50px"/>}
-                    </>}
+                        {card.Data.UID == currentData.uid ? <div className='CardProfileTrue'>
+                            <img src={currentData.attachmentUrl} />
+                            <h5> {currentData.displayName} </h5>
+                        </div> : <img src={None} width="180px"/>} </> }
+                    <div className='CardEmotion'>
+                        <CardEmoticon card={card}/>
+                    </div>
+                    {card.Data.UID == currentUser.uid && 
+                        <button type='button' 
+                            className='CardDeleteButton'
+                            onClick={onDelete}> 삭제 </button>}
                 </div>
-                {card.Data.UID == currentUser.uid && 
-                    <button type='button' onClick={onDelete}> 삭제 </button>}
-                <h3> {card.Data.PostText} </h3>
-                <h4> {card.Data.Music} </h4>
-                <h4> {card.Data.artist} </h4>
-                <CardEmoticon card={card} />
-            </div> : <div style={{backgroundColor:"skyblue"}}>
 
-                <div onClick={onProfilePage}>
-                    {card.Data.anonymous == true && <> 
-                        {card.Data.UID == currentData.uid && 
-                            <h5 style={{backgroundColor:"red"}}> {currentData.displayName} </h5>} 
-                        </> }
-                    {card.Data.anonymous == true && <> 
-                        {card.Data.UID == currentData.uid ?
-                            <img src={currentData.attachmentUrl} width="50px"/>: 
-                            <img src={None} width="50px"/>}
+                <div className='CardForm'>
+                    {next == false ? 
+                        <h3> {card.Data.PostText} </h3> : <>
+                        {card.Data.music == false ? null :
+                            <div className='CardMusicForm'>
+                                <div className='CardMusicName'>
+                                    <h4> {card.Data.Music} - {card.Data.artist}</h4>
+                                </div>
+                                <div className='CardMusic'>
+                                    <img src={Music} />
+                                    <div className='CardMusicBox'></div>
+                                </div>
+                            </div>}
                     </>}
                 </div>
-                {card.Data.UID == currentUser.uid && 
-                    <button type='button' onClick={onDelete}> 삭제 </button>}
-                <h3> {card.Data.PostText} </h3>
-                <h4> {card.Data.Music} </h4>
-                <h4> {card.Data.artist} </h4>
-                <CardEmoticon card={card} />
+                
+                {card.Data.music == false ? null : <>
+                    {next == false ? 
+                    <button className='CardNextButton1'
+                        type='button'
+                        onClick={() => {setNext(!next)}}> 다음 </button> :
+                    <button className='CardNextButton2'
+                        type='button'
+                        onClick={() => {setNext(!next)}}> 이전 </button> }
+                </> }
+
+            </div> : <div className='CardBackGroundImg'>
+                <div className='CardProfile'   
+                    onClick={onProfilePage}>
+                    {card.Data.anonymous == true && <> 
+                        {card.Data.UID == currentData.uid ? <div className='CardProfileTrue'>
+                            <img src={currentData.attachmentUrl} />
+                            <h5> {currentData.displayName} </h5>
+                        </div> : <img src={None} width="180px"/>} </> }
+                    <div className='CardEmotion'>
+                        <CardEmoticon card={card}/>
+                    </div>
+                    {card.Data.UID == currentUser.uid && 
+                        <button type='button' 
+                            className='CardDeleteButton'
+                            onClick={onDelete}> 삭제 </button>}
+                </div>
+
+                <div className='CardForm'>
+                    {next == false ? 
+                        <h3> {card.Data.PostText} </h3> : <>
+                        {card.Data.music == false ? null :
+                            <div className='CardMusicForm'>
+                                <div className='CardMusicName'>
+                                    <h4> {card.Data.Music} - {card.Data.artist}</h4>
+                                </div>
+                                <div className='CardMusic'>
+                                    <img src={Music} />
+                                    <div className='CardMusicBox'></div>
+                                </div>
+                            </div>}
+                    </>}
+                </div>
+                
+                {card.Data.music == false ? null : <>
+                    {next == false ? 
+                    <button className='CardNextButton1'
+                        type='button'
+                        onClick={() => {setNext(!next)}}> 다음 </button> :
+                    <button className='CardNextButton2'
+                        type='button'
+                        onClick={() => {setNext(!next)}}> 이전 </button> }
+                </> }
+
             </div>}
 
             <input type="textarea"
