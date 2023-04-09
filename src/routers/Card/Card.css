@@ -229,7 +229,7 @@
     background-color: tomato;
     display: block;
     overflow: scroll;
-    height: 420px;
+    height: 360px;
 }
 
 @keyframes rotate_image{

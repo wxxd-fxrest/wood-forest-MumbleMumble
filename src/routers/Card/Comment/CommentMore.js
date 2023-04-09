@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
 import List from "./List";
+import '../../../routers/Card/Comment/CommentMore.css' ;
 
 const CommentMore = ({commentData}) => {
     const [plusComment, setPlusComment] = useState([]) ; 
@@ -33,7 +34,7 @@ const CommentMore = ({commentData}) => {
         getCommentList() ;
     }, []) ; 
     return(
-        <div style={{backgroundColor:"green"}}>
+        <div className="CommentMore">
             {plusComment.map((p, i) => (
                 <More key={i} plusComment={p} commentData={commentData}/>
             ))}

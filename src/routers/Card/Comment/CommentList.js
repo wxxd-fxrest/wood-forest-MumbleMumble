@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
 import List from "./List";
+import '../../../routers/Card/Comment/CommentMore.css' ;
 
 const CommentList = ({commentData}) => {
     const {currentUser} = useContext(AuthContext) ; 

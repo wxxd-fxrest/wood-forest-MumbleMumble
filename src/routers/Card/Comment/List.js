@@ -3,7 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
-import None  from '../../../Image/Mumble_Profile_None.PNG' ; 
+import None  from '../../../Image/Mumble_Profile_None.PNG' ;
+import '../../../routers/Card/Comment/CommentMore.css' ;
 
 const List = ({plusComment, commentData}) => {
     const [sendUserInfo, setSendUserInfo] = useState([]) ;
@@ -35,14 +36,50 @@ const List = ({plusComment, commentData}) => {
     }, []) ; 
     
     return(
-        <div>
+
+    //     <div>
+    //         {commentData.DocID == plusComment.Data.CommentDocID ? 
+    //         <div className="More">
+    //             <div className="MoreProfile">
+    //                 <div onClick={onProfilePage}>
+    //                     {sendUserInfo.attachmentUrl ? <>
+    //                         <h4> ➥ </h4>
+    //                         <img src={sendUserInfo.attachmentUrl} width="30px"/> 
+    //                     </> : <>
+    //                         <h4> ➥ </h4>
+    //                         <img src={None} width="30px"/>
+    //                     </>}
+    //                     <p>{sendUserInfo.displayName}</p>
+    //                 </div>
+    //                 {plusComment.Data.Comment_SendUID == currentUser.uid ? 
+    //                     <button type='button' onClick={onDelete}> 삭제 </button> : null} 
+    //             </div>
+    //             <div className="MoreComment">
+    //                 <h3> {plusComment.Data.Comment} </h3> 
+    //             </div>
+    //         </div> : null}
+    // </div>
+
+
+        <div> 
             {commentData.DocID == plusComment.Data.CommentDocID ? 
-                <div onClick={onProfilePage}>
-                    {sendUserInfo.attachmentUrl ? 
-                        <img src={sendUserInfo.attachmentUrl} width="30px"/> : 
-                        <img src={None} width="30px"/>}
-                    <h3> {plusComment.Data.Comment} </h3> 
-                    <p>{sendUserInfo.displayName}</p>
+                <div className="More">
+                    <div className="MoreProfile">
+                        <div onClick={onProfilePage}>
+                            {sendUserInfo.attachmentUrl ? <>
+                                <h4> ➥ </h4>
+                                <img src={sendUserInfo.attachmentUrl} width="30px"/> 
+                            </> : <>
+                                <h4> ➥ </h4>
+                                <img src={None} width="30px"/>
+                            </>}
+                            <p>{sendUserInfo.displayName}</p>
+                        </div>
+                    </div>
+
+                    <div className="MoreComment">
+                        <h3> {plusComment.Data.Comment} </h3> 
+                    </div>
                 </div> : null}
         </div>
     )

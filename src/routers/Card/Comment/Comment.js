@@ -6,7 +6,7 @@ import { db } from "../../../firebase";
 import None  from '../../../Image/Mumble_Profile_None.PNG' ; 
 import CommentList from "./CommentList";
 import CommentMore from "./CommentMore";
-import '../../../routers/Card/Comment/Coment.css';
+import '../../../routers/Card/Comment/Comment.css';
 
 const Comment = ({commentData}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -84,7 +84,6 @@ const Comment = ({commentData}) => {
             {open == true ? <div className="CommentMoreProps">
                 <div className="CommentMoreModal">
                     <CommentMore commentData={commentData}/>    
-                {/* {inputOpen == true && <> */}
                     <div>
                         <textarea type="textarea"
                             name="comment"
@@ -102,9 +101,6 @@ const Comment = ({commentData}) => {
                                 onClick={() => setOpen(!open)}> 이전 </button>
                     </div>
                 </div>
-                
-                {/* </>} */}
-                {/* <button type="button" onClick={() => setInputOpen(!inputOpen)}> 댓글 달기 </button> */}
             </div> : <div className="CommentListProps">
                 <CommentList commentData={commentData}/>    
                 {open == false && <div className="CommentRE">
