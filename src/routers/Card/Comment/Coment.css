@@ -1,0 +1,130 @@
+.commentData {
+    display: inline-block;
+    width: 100%;
+    /* margin-bottom: 30px; */
+}
+
+.Comment {
+    background-color: thistle;
+    width: 100%;
+    /* display: inline-block; */
+    position: relative;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.6);
+}
+
+.CommentFrom {
+    /* background-color: aliceblue; */
+    position: relative;
+    margin-bottom: 28px;
+    display: inline;
+    width: 100%;
+}
+
+.CommentText {
+    display: flex;
+}
+
+.CommentText > span {
+    background-color: violet;
+    display: inline-flex;
+    padding: 20px 20px 20px 20px;
+    text-align: start;
+    width: 100%;
+    min-height: 100px;
+}
+
+.CommentProfile {
+    background-color: turquoise;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+.CommentProfile > img {
+    border: solid 1px rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.CommentProfile > h4 {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.CommentProfile > button {
+    position: absolute;
+    right: 10px;
+}
+
+.CommentRE {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.CommentBack {
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+.CommentMoreProps {
+    background-color: aliceblue;
+    position: relative;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.6);
+    margin: 0px 0px 15px 50px;
+}
+
+.CommentMoreModal {
+    background-color: rgb(39, 72, 102);
+}
+
+.CommentMoreModal > div > textarea {
+    display: inline-flex;
+    width: 95%;
+    height: 80px;
+    resize: none;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.CommentOKbtn {
+    width: 80px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: tomato;
+    border: none;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.CommentBackbtn {
+    width: 80px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: tomato;
+    border: none;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.CommentListProps {
+    background-color: aqua;
+    /* display: inline-block; */
+    margin: 0px 0px 0px 50px;
+}
+
+.CommentRE {
+    display: inline-flex;
+    margin: 10px;
+}

@@ -6,6 +6,7 @@ import { db } from "../../../firebase";
 import None  from '../../../Image/Mumble_Profile_None.PNG' ; 
 import CommentList from "./CommentList";
 import CommentMore from "./CommentMore";
+import '../../../routers/Card/Comment/Coment.css';
 
 const Comment = ({commentData}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -13,6 +14,7 @@ const Comment = ({commentData}) => {
     const [sendUserInfo, setSendUserInfo] = useState([]) ; 
     const [comment, setComment] = useState("") ; 
     const [open, setOpen] = useState(false) ; 
+    // const [inputOpen, setInputOpen] = useState(false) ; 
     // console.log(commentData); 
 
     const onPlusComment = async () => {
@@ -28,6 +30,7 @@ const Comment = ({commentData}) => {
             Comment : comment, 
         })
         setComment("") ; 
+        // setOpen(false) ;
     }
 
 
@@ -62,34 +65,54 @@ const Comment = ({commentData}) => {
     }, []) ; 
 
     return(
-        <div>
-            {commentData.Data.Card_SendUID == currentUser.uid && 
-                <button type='button' onClick={onDelete}> 삭제 </button>} 
-            <div onClick={onProfilePage}>
-                {sendUserInfo.attachmentUrl ? 
-                    <img src={sendUserInfo.attachmentUrl} width="100px"/> : 
-                    <img src={None} width="100px"/>}
-                <h4> {sendUserInfo.displayName} </h4>
-                <span> {commentData.Data.Comment} </span>
+        <div className="Comment">
+            <div className="CommentFrom">
+                <div className="CommentProfile"
+                    onClick={onProfilePage}>
+                    {sendUserInfo.attachmentUrl ? 
+                        <img src={sendUserInfo.attachmentUrl} width="100px"/> : 
+                        <img src={None} width="100px"/>}
+                    <h4> {sendUserInfo.displayName} </h4>
+                    {commentData.Data.Card_SendUID == currentUser.uid && 
+                    <button type='button' onClick={onDelete}> 삭제 </button>} 
+                </div>
+                <div className="CommentText">
+                    <span> {commentData.Data.Comment} </span>
+                </div>
             </div>
 
-
-            {commentData.Data.Card_OwnerUID == currentUser.uid || 
-            commentData.Data.Card_SendUID == currentUser.uid ? 
-                <button type="button" onClick={() => setOpen(!open)}> 대댓글 </button> : null}
-
-            {open == true ? <>
-                <CommentMore commentData={commentData}/>
-                <input type="textarea"
-                    name="comment"
-                    placeholder="댓글" 
-                    value={comment}
-                    onChange={(e) => {
-                        const {target : {value}} = e ; 
-                        setComment(value) ; 
-                    }}/>
-                <button type='submit' onClick={onPlusComment}> OK </button>
-            </> : <CommentList commentData={commentData}/>}
+            {open == true ? <div className="CommentMoreProps">
+                <div className="CommentMoreModal">
+                    <CommentMore commentData={commentData}/>    
+                {/* {inputOpen == true && <> */}
+                    <div>
+                        <textarea type="textarea"
+                            name="comment"
+                            placeholder="댓글" 
+                            value={comment}
+                            onChange={(e) => {
+                                const {target : {value}} = e ; 
+                                setComment(value) ; 
+                        }}/>
+                        <button type='submit' 
+                                className="CommentOKbtn"
+                                onClick={onPlusComment}> OK </button>
+                        <button type='button' 
+                                className="CommentBackbtn"
+                                onClick={() => setOpen(!open)}> 이전 </button>
+                    </div>
+                </div>
+                
+                {/* </>} */}
+                {/* <button type="button" onClick={() => setInputOpen(!inputOpen)}> 댓글 달기 </button> */}
+            </div> : <div className="CommentListProps">
+                <CommentList commentData={commentData}/>    
+                {open == false && <div className="CommentRE">
+                    {commentData.Data.Card_OwnerUID == currentUser.uid || 
+                    commentData.Data.Card_SendUID == currentUser.uid ? 
+                        <button type="button" onClick={() => setOpen(!open)}> 더보기 </button> : null}
+                </div>}
+            </div>}
         </div>
     )
 }

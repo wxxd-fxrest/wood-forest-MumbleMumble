@@ -60,11 +60,11 @@
 }
 
 .CardBackGroundImg {
-    border: solid 1px rgba(0, 0, 0, 0.6);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.6);
     /* display: block; */
     /* background-color: violet; */
     height: 200px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: hidden;
     position: relative;
 }
@@ -80,12 +80,6 @@
     width: 100%;
     position: absolute;
     top: 0px;
-}
-
-.CardDeleteButton {
-    z-index: 100;
-    position: absolute;
-    top: 0;
 }
 
 .CardEmotion {
@@ -140,14 +134,21 @@
 
 .CardNextButton1 {
     position: absolute;
-    bottom: 70px;
+    bottom: 80px;
     right: 15px;
 }
 
 .CardNextButton2 {
     position: absolute;
-    bottom: 70px;
+    bottom: 80px;
     left: 15px;   
+}
+
+.CardDeleteButton {
+    z-index: 100;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;   
 }
 
 .CardMusicForm {
@@ -184,6 +185,51 @@
     right: 22px;
     /* opacity: 0.9; */
     border-radius: 0px 3px 3px 0px;
+}
+
+.CardCommentInput {
+    display: block;
+    /* background-color: cadetblue; */
+    position: relative;
+    height: 130px;
+    margin: 5px 0px 0px 0px;
+}
+
+.CardInputBox {
+    /* background-color: rgb(52, 81, 107); */
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.6);
+}
+
+.CardInputBox > textarea {
+    /* background-color: tomato; */
+    display: inline-block;
+    width: 100%;
+    height: 80px;
+    resize: none;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.CardCommentInput > button {
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+    width: 80px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: tomato;
+    border: none;
+}
+
+.Cardcomment {
+    background-color: tomato;
+    display: block;
+    overflow: scroll;
+    height: 420px;
 }
 
 @keyframes rotate_image{
@@ -232,10 +278,10 @@
         height: 160px;
     }
     .CardNextButton1{
-        bottom: 80px;
+        bottom: 90px;
     }
     .CardNextButton2{
-        bottom: 80px;
+        bottom: 90px;
     }
 }
 
@@ -251,10 +297,10 @@
         height: 160px;
     }
     .CardNextButton1{
-        bottom: 90px;
+        bottom: 100px;
     }
     .CardNextButton2{
-        bottom: 90px;
+        bottom: 100px;
     }
 }
 
@@ -273,10 +319,10 @@
         height: 180px;
     }
     .CardNextButton1{
-        bottom: 110px;
+        bottom: 120px;
     }
     .CardNextButton2{
-        bottom: 110px;
+        bottom: 120px;
     }
 }
 

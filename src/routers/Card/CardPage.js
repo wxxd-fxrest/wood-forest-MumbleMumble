@@ -35,20 +35,6 @@ const CardPage = () => {
     }, []) ; 
 
     return(
-        // <div className="Main">
-        //     <div className="MainContainer">
-
-        //         <div className="MainHome">
-        //             <Home />
-        //         </div>
-
-        //         <div className="MainPost">
-        //             <PostData />
-        //         </div>
-
-        //     </div>
-        // </div>
-
         <div className="CardPage">
             <div className="CardPageContainer">
                 <div className="CardPageHome">

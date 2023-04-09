@@ -2,6 +2,7 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 import Comment from "./Comment";
+import '../../../routers/Card/Comment/Coment.css';
 
 const CardComment = ({card}) => {
     const [commentData, setCommentData] = useState([]) ; 
@@ -28,7 +29,7 @@ const CardComment = ({card}) => {
     }, []) ; 
     
     return(
-        <div>
+        <div className="commentData">
             {commentData.map((c, i) => (
                 <Comment key={i} commentData={c}/>
             ))}

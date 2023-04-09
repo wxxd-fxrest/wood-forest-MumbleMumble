@@ -198,7 +198,7 @@ const Home = () => {
                     {write ? 
                     <div style={{backgroundColor:"green", width: "270px"}}>
                         <p onClick={() => {setWrite(!write)}}> X </p>
-                        <input type="text"
+                        <textarea type="text"
                                 name="text"
                                 placeholder="버리고 싶은 일이나 감정을 입력하세요."
                                 maxLength="400"

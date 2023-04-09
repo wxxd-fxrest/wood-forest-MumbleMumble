@@ -111,13 +111,13 @@
 
 .PostNextButton1 {
     position: absolute;
-    bottom: 70px;
+    bottom: 80px;
     right: 15px;
 }
 
 .PostNextButton2 {
     position: absolute;
-    bottom: 70px;
+    bottom: 80px;
     left: 15px;   
 }
 
@@ -203,10 +203,10 @@
         height: 160px;
     }
     .PostNextButton1{
-        bottom: 80px;
+        bottom: 90px;
     }
     .PostNextButton2{
-        bottom: 80px;
+        bottom: 90px;
     }
 }
 
@@ -222,10 +222,10 @@
         height: 160px;
     }
     .PostNextButton1{
-        bottom: 90px;
+        bottom: 100px;
     }
     .PostNextButton2{
-        bottom: 90px;
+        bottom: 100px;
     }
 }
 
@@ -244,10 +244,10 @@
         height: 180px;
     }
     .PostNextButton1{
-        bottom: 110px;
+        bottom: 120px;
     }
     .PostNextButton2{
-        bottom: 110px;
+        bottom: 120px;
     }
 }
 

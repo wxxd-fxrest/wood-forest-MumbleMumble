@@ -79,10 +79,6 @@ const Card = ({card}) => {
                     <div className='CardEmotion'>
                         <CardEmoticon card={card}/>
                     </div>
-                    {card.Data.UID == currentUser.uid && 
-                        <button type='button' 
-                            className='CardDeleteButton'
-                            onClick={onDelete}> 삭제 </button>}
                 </div>
 
                 <div className='CardForm'>
@@ -110,7 +106,10 @@ const Card = ({card}) => {
                         type='button'
                         onClick={() => {setNext(!next)}}> 이전 </button> }
                 </> }
-
+                {card.Data.UID == currentUser.uid && 
+                        <button type='button' 
+                            className='CardDeleteButton'
+                            onClick={onDelete}> 삭제 </button>}
             </div> : <div className='CardBackGroundImg'>
                 <div className='CardProfile'   
                     onClick={onProfilePage}>
@@ -122,10 +121,6 @@ const Card = ({card}) => {
                     <div className='CardEmotion'>
                         <CardEmoticon card={card}/>
                     </div>
-                    {card.Data.UID == currentUser.uid && 
-                        <button type='button' 
-                            className='CardDeleteButton'
-                            onClick={onDelete}> 삭제 </button>}
                 </div>
 
                 <div className='CardForm'>
@@ -153,20 +148,29 @@ const Card = ({card}) => {
                         type='button'
                         onClick={() => {setNext(!next)}}> 이전 </button> }
                 </> }
-
+                {card.Data.UID == currentUser.uid && 
+                        <button type='button' 
+                            className='CardDeleteButton'
+                            onClick={onDelete}> 삭제 </button>}
             </div>}
 
-            <input type="textarea"
-                    name="comment"
-                    placeholder="댓글" 
-                    value={comment}
-                    onChange={(e) => {
-                        const {target : {value}} = e ; 
-                        setComment(value) ; 
-                    }}/>
-            <button type='submit' onClick={onSaveComment}> OK </button>
-
-            <CardComment card={card} />
+            <div className='CardCommentInput'>
+                <div className='CardInputBox'>
+                    <textarea type="textarea"
+                        name="comment"
+                        placeholder="댓글" 
+                        value={comment}
+                        onChange={(e) => {
+                            const {target : {value}} = e ; 
+                            setComment(value) ; 
+                        }}/>
+                </div>
+                <button type='submit' onClick={onSaveComment}> OK </button>
+            </div>
+            
+            <div className='Cardcomment'>
+                <CardComment card={card} />
+            </div>
         </div>
     )
 }
