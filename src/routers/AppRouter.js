@@ -5,8 +5,6 @@ import Auth from "./Auth/Auth";
 import CardPage from "./Card/CardPage";
 import Home from "./Main/Home";
 import Main from "./Main/Main";
-import Profile from "./Profile/Profile";
-import ProfileData from "./Profile/ProfileData";
 import ProfileEdit from "./Profile/ProfileEdit";
 import SharedProfileData from "./Profile/SharedProfile/SharedProfileData";
 
@@ -28,10 +26,6 @@ const AppRouter = () => {
                         <Route index element={
                             <ProtectedRoute>
                                 <Main />
-                            </ProtectedRoute> } />
-                        <Route path='/profile-edit' element={
-                            <ProtectedRoute>
-                                <ProfileEdit />
                             </ProtectedRoute> } />
                             
                         <Route path='/auth' element={<Auth />} />

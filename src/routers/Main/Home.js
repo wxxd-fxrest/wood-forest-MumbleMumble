@@ -14,6 +14,7 @@ import { signOut } from "firebase/auth";
 import '../../routers/Main/Home.css';
 import None  from '../../Image/Mumble_Profile_None.PNG' ; 
 import IMG from '../../Image/Mumble_imgIcon.png' ;
+import ProfileEdit from "../Profile/ProfileEdit";
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
@@ -23,6 +24,7 @@ const Home = () => {
     const [write, setWrite] = useState(false) ;
     const [open, setOpen] = useState(true) ; 
     const [anonymous, setAnonymous] = useState(true) ; 
+    const [editOpen, setEditOpen] = useState(false) ; 
 
     const [text, setText] = useState("") ;
     const [searchMusic, setSearchMusic] = useState("") ; 
@@ -160,7 +162,7 @@ const Home = () => {
                 <div key={i}>
                     {music[i] && 
                         <ul onClick={onSelectMusic}>
-                            <li> {music[i].name} - {music[i].artist}</li>
+                            <li className="musicListLI"> 🎶 {music[i].name} - {music[i].artist}</li>
                             {/* <img src={music[0].image[2]} width="30px"/> */}
                         </ul>}
                 </div>
@@ -179,20 +181,44 @@ const Home = () => {
         <div className="Home">
             <form className="HomeForm" 
                 onSubmit={(event) => {event.preventDefault()}}>
-                <img src={None} />
 
-                <button type="button" 
-                    onClick={() => {setWrite(!write)}}> write </button>
-                <button type="button" 
-                    onClick={() => {navigate(`/profile/${currentUser.uid}`)}}> Profile </button>
-                <button type="button"
-                    onClick={() => {
-                        signOut(auth) 
-                        navigate("/")
-                        console.log("로그아웃 완료")}}> Log Out </button>
-                <button type="button" 
-                    onClick={() => {
-                        navigate("/profile-edit")}}> Profile Edit </button>
+                <div className="HomeButtonForm">
+                    <img src={None} />
+                    <div className="HomeButton">
+                        <div className="Btn">
+                            <button type="button"
+                                onClick={() => {navigate("/")}}> Home </button>
+                            <h4> Home </h4>
+                        </div>
+
+                        <div className="Btn">
+                            <button type="button" 
+                                onClick={() => {setWrite(!write)}}> write </button>
+                            <h4> Wirte </h4>
+                        </div>
+
+                        <div className="Btn">
+                            <button type="button" 
+                                onClick={() => {navigate(`/profile/${currentUser.uid}`)}}> Profile </button>
+                            <h4> Profile </h4>
+                        </div>
+
+                        <div className="Btn">
+                            <button onClick={() => setEditOpen(!editOpen)}> Edit </button>
+                            <h4> Edit </h4>
+                            {editOpen == true && <ProfileEdit setEditOpen={setEditOpen} editOpen={editOpen}/>}
+                        </div>
+
+                        <div className="Btn">
+                            <button type="button"
+                                onClick={() => {
+                                    signOut(auth) 
+                                    navigate("/")
+                                    console.log("로그아웃 완료")}}> Log Out </button>
+                            <h4> Log Out </h4>
+                        </div>
+                    </div>
+                </div>
 
                 {write ? 
                 <div className="WriteContainer">
@@ -222,55 +248,64 @@ const Home = () => {
                                 </div>
 
                                 <div className="MusicImgAnonymous">
-                                    <div className="anonymousForm">
-                                        <h4> 카드를 업로드한 사용자의 익영 여부를 선택할 수 있습니다. </h4>
-                                        {anonymous == true ? <span> 공개</span> : <span>익명</span>}
-                                        <button type="button" onClick={() => setAnonymous(!anonymous)}> 익명 or 공개 </button>
-                                    </div>
+                                    <div className="ImgAnonymous">
+                                        <div className="anonymousForm">
+                                            <h4> 프로필 숨기기 </h4>
+                                            {anonymous == true ? 
+                                                <span onClick={() => setAnonymous(!anonymous)}> 공개 </span> : 
+                                                <span onClick={() => setAnonymous(!anonymous)}> 숨기기 </span>}
+                                        </div>
 
-                                    <div className="imgForm">
-                                        <h4> 버리고 싶은 감정과 어울리는 사진이 있다면 선택하세요. </h4>
-                                        <input type="file"
-                                                style={{display:"none"}}
-                                                id="inputFile"
-                                                onChange={onFileChange}
-                                                required />
-                                        <label htmlFor="inputFile">
-                                            {cardImg ? 
-                                                <img src={cardImg} alt="" width="50px"/> : 
-                                                <img src={IMG} className="inputImgSelect"/>}
-                                        </label>
+                                        <div className="imgForm">
+                                            <h4> 사진 선택 </h4>
+                                            <input type="file"
+                                                    style={{display:"none"}}
+                                                    id="inputFile"
+                                                    onChange={onFileChange}
+                                                    required />
+                                            <label htmlFor="inputFile">
+                                                {cardImg ? 
+                                                    <img src={cardImg} alt="" width="50px"/> : 
+                                                    <img src={IMG} className="inputImgSelect"/>}
+                                            </label>
+                                        </div>
+                                        <div className="musicOnOff">
+                                            <h4> 노래 선택 </h4>
+                                            {open == true ? 
+                                                <span onClick={() => setOpen(!open)}> off </span> : 
+                                                <span onClick={() => setOpen(!open)}> on </span>}
+                                        </div>
                                     </div>
 
                                     <div className="musicForm">
-                                        <button type="button" onClick={() => {setOpen(!open)}}> 노래 on / off </button>
                                         {open ? <> {select[0] ? 
-                                            <div>
+                                            <div className="musicCancleForm">
                                                 <p> {select[0].name} </p> 
                                                 <button type="button" onClick={() => {
                                                     setSelect([])                     
                                                 }}> Cancle </button>
                                             </div> : <div style={{backgroundColor:"skyblue"}}>
                                                     <div className="musicSelect">
-                                                        <span> 감정을 버릴 때 도움이 될만한 노래가 있다면 선택해주세요. </span>
                                                         <input type="text"
                                                             required
                                                             name="searchMusic"
                                                             value={searchMusic} 
                                                             onChange={onChange} 
-                                                            placeholder="노래 이름을 입력하세요."/>
+                                                            className="searchMusic"
+                                                            placeholder="제목"/>
                                                         <input type="text"
                                                             required
                                                             name="serchArtist"
                                                             value={serchArtist} 
                                                             onChange={onChange} 
-                                                            placeholder="아티스트 이름을 입력하세요."/>
+                                                            className="serchArtist"
+                                                            placeholder="아티스트"/>
                                                         <button type="submit" onClick={getMusic}> ok </button> 
                                                     </div>
-                                                    <div>
-                                                        {musicList()}
-                                                    </div>
-                                                </div>}
+                                                <div className="musicList">
+                                                    {musicList()}
+                                                </div>
+                                            </div>}
                                         </> : null} 
                                     </div>
                                 </div>
@@ -284,13 +319,13 @@ const Home = () => {
                                         required 
                                         value={text}
                                         onChange={onChange}/>
+                                <button className="WriteDeleteBtn"
+                                        type="button" 
+                                        onClick={onSaveBtn}> 버리기 </button>
                             </div>
                         </div>
                     </div>
                 </div> : null} 
-                <button className="WriteDeleteBtn"
-                        type="button" 
-                        onClick={onSaveBtn}> 버리기 </button>
             </form>
         </div>
     )

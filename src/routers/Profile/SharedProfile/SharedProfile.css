@@ -28,6 +28,11 @@
     flex-direction: column;
 }
 
+.ProfileAnonymous {
+    margin-left: 10px;
+    font-size: 12px;
+}
+
 .SharedProfileBox {
     background-color: turquoise;
     padding: 10px;
@@ -35,6 +40,7 @@
     flex-direction: row;
     display: inline-flex;
     align-items: flex-end;
+    position: relative;
 }
 
 .SharedProfileMap {
@@ -46,10 +52,10 @@
         margin: 0px 50px 0px 50px;
     }
     .SharedProfileHome {
-        width: 15%;
+        width: 20%;
     }
     .SharedProfile {
-        width: 85%;
+        width: 80%;
     }
 }
 
@@ -58,9 +64,9 @@
         margin: 0px;
     }
     .SharedProfileHome {
-        width: 10%;
+        width: 18%;
     }
     .SharedProfile {
-        width: 90%;
+        width: 82%;
     }
 }

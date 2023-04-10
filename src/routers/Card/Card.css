@@ -31,10 +31,10 @@
         margin: 0px 50px 0px 50px;
     }
     .CardPageHome {
-        width: 15%;
+        width: 20%;
     }
     .CardPageList {
-        width: 85%;
+        width: 80%;
     }
 }
 
@@ -43,10 +43,10 @@
         margin: 0px;
     }
     .CardPageHome {
-        width: 10%;
+        width: 18%;
     }
     .CardPageList {
-        width: 90%;
+        width: 82%;
     }
 }
 
@@ -110,6 +110,11 @@
 .CardProfileTrue > h5 {
     font-weight: 500;
     font-size: 15px;
+}
+
+.ProfileAnonymous {
+    margin-left: 10px;
+    font-size: 12px;
 }
 
 .CardForm { 

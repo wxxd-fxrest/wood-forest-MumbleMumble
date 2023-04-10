@@ -27,25 +27,23 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
         e.preventDefault();
         navigate(`/profile/${pofilePost.Data.UID}`) ; 
     } ; 
-
+    
     // console.log(pofilePost)
     return(
         <div className="Post">
             {currentUser.uid == profileInfo.uid ?
             <div className="PostBackGroundImg">
                 <img src={pofilePost.Data.cardImgUrl} />
-                <div className='PostProfile' 
-                    onClick={onProfilePage}>
+                <div className='PostProfile'>
                     {pofilePost.Data.UID == profileInfo.uid ? 
-                        <div className='PostProfileTrue'>
+                        <div className='PostProfileTrue' onClick={onProfilePage}>
                             <img src={profileInfo.attachmentUrl} />
                             <h5> {profileInfo.displayName} </h5>
-                            {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
+                            {pofilePost.Data.anonymous == false && <p className="ProfileAnonymous"> 익명으로 올라간 카드입니다. </p>}
                         </div> : <div>
                             <img src={None} width="180px"/>
-                            {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
+                            {pofilePost.Data.anonymous == false && <p className="ProfileAnonymous"> 익명으로 올라간 카드입니다. </p>}
                         </div>} 
-
                     <div className='PostEmotion'>
                         <SharedEmoticon pofilePost={pofilePost}/>
                     </div>
@@ -81,10 +79,9 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                     {pofilePost.Data.cardImgUrl ? <div>
                         <div className="PostBackGroundImg">
                             <img src={pofilePost.Data.cardImgUrl} />
-                            <div className='PostProfile' 
-                                onClick={onProfilePage}>
+                            <div className='PostProfile'>
                                 {pofilePost.Data.UID == profileInfo.uid ? 
-                                    <div className='PostProfileTrue'>
+                                    <div className='PostProfileTrue' onClick={onProfilePage}>
                                         <img src={profileInfo.attachmentUrl} />
                                         <h5> {profileInfo.displayName} </h5>
                                         {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
@@ -125,10 +122,9 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                             </> }
                         </div>
                     </div> : <div className="PostBackGroundImg">
-                        <div className='PostProfile' 
-                            onClick={onProfilePage}>
+                        <div className='PostProfile'>
                             {pofilePost.Data.UID == profileInfo.uid ? 
-                                <div className='PostProfileTrue'>
+                                <div className='PostProfileTrue' onClick={onProfilePage}>
                                     <img src={profileInfo.attachmentUrl} />
                                     <h5> {profileInfo.displayName} </h5>
                                     {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}

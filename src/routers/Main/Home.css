@@ -5,29 +5,61 @@
 }
 
 .HomeForm {
-    display: flex;
-    background-color: aliceblue;
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    background-color: rgb(67, 86, 102);
     position: relative;
+    height: 100%;
 }
 
-.HomeForm > img {
+.HomeButtonForm {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.HomeButtonForm > img {
     width: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.HomeButton {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.Btn {
+    flex-direction: row;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
+}
+
+.Btn > button {
+    background-color: bisque;
+    width: 70px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .WriteContainer {
     background-color: rgb(64, 150, 226);
     display: inline-flex;
-    z-index: 100;
+    z-index: 1000;
     width: 790px;
-    height: 400px;
-    top: 100px;
-    left: 340px;
+    /* height: 400px; */
+    top: 10%;
+    left:  130%;
     position: absolute;
     border-radius: 10px;
     overflow: hidden;
+    border: solid 1px rgba(0, 0, 0, 0.6);
+
+    flex: 1;
 }
 
 .Write {
@@ -60,17 +92,20 @@
     display: flex;
     padding: 10px;
     flex-direction: column;
-    width: 400px;
+    /* width: 400px; */
+
+    flex: 0.3;
 }
 
 .Select {
     /* background-color: rgb(131, 195, 255); */
     display: inline-block;
-    width: 200px;
+    /* width: 200px; */
     height: 100px;
     border-radius: 5px;
     overflow: hidden;
     border: solid 1px rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
 }
 
 .Select > select {
@@ -87,41 +122,42 @@
 }
 
 .MusicImgAnonymous {
-    background-color: aliceblue;
-    margin-left: 10%;
-    /* width: 485px; */
+    background-color: rgb(77, 140, 195);
     display: flex;
     flex-direction: column;
+    border:  solid 1px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.ImgAnonymous {
+    flex-direction: row;
+    display: flex;
+    flex: 1;
 }
 
 .anonymousForm {
-    background-color: teal;
+    /* background-color: teal; */
     flex-direction: row;
     display: flex;
     padding: 10px;
     justify-content: center;
     align-items: center;
+    flex: 0.4;
 }
 
 .anonymousForm > h4 {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .anonymousForm > span {
     border-radius: 5px;
     background-color: wheat;
-    font-size: 10px;
-    padding: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 7px;
     margin-left: 5px;
-}
-
-.anonymousForm > button {
-    border-radius: 5px;
-    background-color: wheat;
-    font-size: 10px;
-    padding: 10px;
-    border: none;
-    margin-left: 5px;
+    cursor: pointer;
 }
 
 .imgForm {
@@ -131,40 +167,131 @@
     padding: 10px;
     justify-content: center;
     align-items: center;
+    flex: 0.3;
 }
 
 .imgForm > h4 {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .inputImgSelect {
-    width: 25px;
+    width: 27px;
     margin-left: 5px;
+    cursor: pointer;
+    padding: 6px 0px 0px 0px;
 }
 
-.musicForm {
+.musicOnOff {
+    background-color: rgb(33, 79, 79);
+    flex-direction: row;
     display: flex;
-    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex: 0.3;
+}
+
+.musicOnOff > span {
+    border-radius: 5px;
+    background-color: wheat;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 7px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.musicOnOff > h4 {
+    font-size: 12px;
 }
 
 .musicSelect {
-    background-color: tomato;
+    background-color: rgb(94, 54, 47);
+    display: inline-flex;
+    flex-direction: row;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
 }
 
-.musicSelect > h4 {
-    font-size: 13px;
+.musicSelect > span {
+    font-size: 12px;
+    width: 80px;
+    display: inline-block;
+}
+
+.serchArtist, .searchMusic {
+    border-radius: 3px;
+    border: none;
+    font-size: 12px;
+    width: 130px;
+    height: 20px;
+}
+
+.searchMusic {
+    margin-right: 10px;
+}
+
+.musicSelect > button {
+    width: 30px;
+    height: 22px;
+    border-radius: 3px;
+    background-color: tomato;
+    border: none;
+    margin-left: 10px;
+}
+
+.musicList {
+    /* background-color: aliceblue; */
+    display: inline-flex;
+    margin: 10px;
+    height: 20px;
+    flex: 0.3;
+}
+
+.musicListLI {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 3px;
+}
+
+.musicCancleForm {
+    /* background-color: aliceblue; */
+    margin: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 310px;
+}
+
+.musicCancleForm > p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.musicCancleForm > button {
+    width: 50px;
+    height: 22px;
+    border-radius: 3px;
+    background-color: tomato;
+    border: none;
+    margin-left: 10px;
+    font-size: 12px;
 }
 
 .WriteFrom {
     background-color: turquoise;
     width: 100%;
+    display: flex;
+    flex: 0.7;
 }
 
 .WriteFrom > textarea {
-    background-color: tomato;
-    display: block;
+    /* background-color: tomato; */
+    display: inline-flex;
     width: 100%;
-    height: 100px;
+    height: 75%;
     resize: none;
     border: none;
     outline: none;
@@ -174,7 +301,169 @@
 
 .WriteDeleteBtn {
     position: absolute;
-    right: 0px;
-    bottom: 0px;
+    right: 10px;
+    bottom: 6px;
+    width: 50px;
+    height: 22px;
+    border-radius: 3px;
+    background-color: tomato;
+    border: none;
+    margin-left: 10px;
+    font-size: 12px;
 }
 
+
+@media screen and (max-width: 1300px) {
+    .anonymousForm > h4 {
+        display: none;
+    }
+    .imgForm > h4 {
+        display: none;
+    }
+    .musicOnOff > h4 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .WriteContainer {
+        width: 770px;
+        /* height: 400px; */
+        left:  100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .Btn > h4 {
+        display: none;
+    }
+    .Btn > button {
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .Btn > button {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .WriteContainer {
+        /* height: 400px; */
+        left:  80%;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .WriteContainer {
+        width: 720px;
+        /* height: 400px; */
+        left:  50%;
+    }
+    /* .HomeButtonForm > img {
+        display: none;
+    }
+    .HomeButton {
+        display: none;
+    } */
+}
+
+@media screen and (max-width: 800px) {
+    .WriteContainer {
+        width: 500px;
+        /* height: 400px; */
+        left:  130%;
+        /* height: 500px; */
+    }
+    .HomeWrite {
+        flex-direction: column;
+    }
+    .WriteSelectForm {
+        width: 480px;
+    }
+    .WriteDeleteBtn {
+        top: 5px;
+    }
+    .WriteFrom {
+        position: relative;
+    }
+    .WriteFrom > textarea {
+        width: 100%;
+        height: 160px;
+        margin-top: 30px;
+    }
+    .musicSelect {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .WriteContainer {
+        left:  100%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .WriteContainer {
+        left:  80%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .WriteContainer {
+        left:  70%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .WriteContainer {
+        left:  60%;
+        width: 480px;
+    }
+    .WriteSelectForm {
+        width: 460px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .WriteContainer {
+        left:  90%;
+        width: 460px;
+    }
+    .WriteSelectForm {
+        width: 440px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .WriteContainer {
+        left:  60%;
+        width: 450px;
+    }
+    .WriteSelectForm {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .WriteContainer {
+        left:  40%;
+        width: 450px;
+    }
+    .WriteSelectForm {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .WriteContainer {
+        left:  5%;
+        top: 10%;
+    }
+    /* .WriteSelectForm {
+        width: 430px;
+    } */
+}

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 import { auth } from "../../firebase";
 import PostData from "../Post/PostData";
-import ProfileData from "../Profile/ProfileData";
 import Home from "./Home";
 import '../../routers/Main/Main.css';
 

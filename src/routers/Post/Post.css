@@ -86,7 +86,7 @@
 
 .PostProfileTrue > h5 {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .PostForm { 
@@ -107,6 +107,11 @@
     margin-left: 60px;
     margin-right: 60px;
     word-break: break-all;
+}
+
+.PostForm > h3 {
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .PostNextButton1 {

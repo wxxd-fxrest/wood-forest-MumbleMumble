@@ -6,8 +6,9 @@ import { db, storage } from '../../firebase';
 import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage";
 import { useNavigate } from 'react-router-dom';
 import None  from '../../Image/Mumble_Profile_None.PNG' ; 
+import '../../routers/Profile/ProfileEdit.css'; 
 
-const ProfileEdit = () => {
+const ProfileEdit = ({setEditOpen, editOpen}) => {
     const navigate = useNavigate();
     const {currentUser} = useContext(AuthContext) ; 
     const [displayName, setDisplayName] = useState("") ; 
@@ -85,9 +86,16 @@ const ProfileEdit = () => {
     } ;
 
     return (
-        <div>
-            <form onSubmit={(event) => {event.preventDefault()}}>
-                <button onClick={() => {navigate("/")}}> 이전 </button>
+        <div className='ProfileEdit'>
+            <form className='ProfileEditContainer' 
+                onSubmit={(event) => {event.preventDefault()}}>
+                <div className='EditHeader'>
+                    <button className='EditBackBtn'
+                            onClick={() => setEditOpen(!editOpen)}> 이전 </button>
+                    <h4 className='ProfileEditTitle'> Profile Edit </h4>
+                    <button className='EditOkkBtn'
+                            onClick={onClick}> ok </button>
+                </div>
                 {attachment ? <>
                     <input type="file"
                         style={{display:"none"}}
@@ -96,9 +104,9 @@ const ProfileEdit = () => {
                         required />
                     <label htmlFor="inputFile">
                         {attachment ? 
-                            <img src={attachment} width="200px" height="200px" /> 
+                            <img src={attachment} className='EditImg'/> 
                             : 
-                            <img src={None} alt="" width="50px"/>}
+                            <img src={None} alt="" className='EditImg'/>}
                     </label>
                 </> : <>
                     {currentInfo.attachmentUrl ? <>
@@ -108,7 +116,7 @@ const ProfileEdit = () => {
                             onChange={onFileChange}
                             required />
                         <label htmlFor="inputFile">
-                            <img src={currentInfo.attachmentUrl} alt="" width="50px"/>
+                            <img src={currentInfo.attachmentUrl} alt="" className='EditImg'/>
                         </label>
                     </> : <> 
                         <input type="file"
@@ -124,12 +132,13 @@ const ProfileEdit = () => {
 
                 {!currentInfo.displayName ? <>
                     <input type="text"
-                        name="displayName"
-                        placeholder="당신은 누구인가요?"
-                        required 
-                        maxLength="6"
-                        value={displayName}
-                        onChange={onChange}/> 
+                            name="displayName"
+                            placeholder="당신은 누구인가요?"
+                            required 
+                            maxLength="6"
+                            value={displayName}
+                            className="EditInput"
+                            onChange={onChange}/> 
                 </> : <>
                     {displayName ? <>
                         <input type="text"
@@ -138,6 +147,7 @@ const ProfileEdit = () => {
                             required 
                             maxLength="6"
                             value={displayName}
+                            className="EditInput"
                             onChange={onChange} /> 
                     </> : <>                             
                         <input type="text"
@@ -146,10 +156,10 @@ const ProfileEdit = () => {
                             required 
                             maxLength="6"
                             value={displayName}
+                            className="EditInput"
                             onChange={onChange} /> 
                     </>}
                 </> }
-                <button onClick={onClick}> ok </button>
             </form>
         </div>
     )

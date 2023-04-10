@@ -40,10 +40,10 @@
         margin: 0px 50px 0px 50px;
     }
     .MainHome {
-        width: 15%;
+        width: 20%;
     }
     .MainPost {
-        width: 85%;
+        width: 80%;
     }
 }
 
@@ -52,9 +52,9 @@
         margin: 0px;
     }
     .MainHome {
-        width: 10%;
+        width: 18%;
     }
     .MainPost {
-        width: 90%;
+        width: 82%;
     }
 }

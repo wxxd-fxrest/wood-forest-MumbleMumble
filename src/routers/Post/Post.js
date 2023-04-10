@@ -54,13 +54,18 @@ const Post = ({postData}) => {
             {postData.Data.cardImgUrl ? 
             <div className='PostBackGroundImg'>
                 <img src={postData.Data.cardImgUrl} />
-                <div className='PostProfile' 
-                    onClick={onProfilePage}>
-                    {postData.Data.anonymous == true && <> 
-                        {postData.Data.UID == currentData.uid ? <div className='PostProfileTrue'>
+                <div className='PostProfile'>
+                    {postData.Data.anonymous == true ? <> 
+                        {postData.Data.UID == currentData.uid ? 
+                        <div className='PostProfileTrue' onClick={onProfilePage}>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
-                        </div> : <img src={None} width="180px"/>} </> }
+                        </div> : <img src={None} width="180px"/>} 
+                    </> : <div className='PostProfileTrue'>
+                        <img src={None} width="180px"/>
+                        <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
+                    </div>}
+
                     <div className='PostEmotion'>
                         <PostEmoticon postData={postData}/>
                     </div>
@@ -94,12 +99,17 @@ const Post = ({postData}) => {
                 </> }
 
             </div> : <div className="PostBackGroundImg" style={{backgroundColor:"skyblue"}}>
-                <div onClick={onProfilePage}>
-                    {postData.Data.anonymous == true && <> 
-                        {postData.Data.UID == currentData.uid ? <div className='PostProfileTrue'>
+                <div>
+                    {postData.Data.anonymous == true ? <> 
+                        {postData.Data.UID == currentData.uid ? 
+                        <div className='PostProfileTrue'  onClick={onProfilePage}>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
-                        </div> : <img src={None} width="180px"/>} </> }
+                        </div> : <img src={None} width="180px"/>}
+                    </> : <div className='PostProfileTrue'>
+                        <img src={None} width="180px"/>
+                        <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
+                    </div>}
                     <div className='PostEmotion'>
                         <PostEmoticon postData={postData}/>
                     </div>

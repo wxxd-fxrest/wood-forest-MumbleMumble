@@ -69,13 +69,18 @@ const Card = ({card}) => {
         {card.Data.cardImgUrl ? 
             <div className='CardBackGroundImg'>
                 <img src={card.Data.cardImgUrl} />
-                <div className='CardProfile'  
-                    onClick={onProfilePage}>
-                    {card.Data.anonymous == true && <> 
-                        {card.Data.UID == currentData.uid ? <div className='CardProfileTrue'>
+                <div className='CardProfile'>
+                    {card.Data.anonymous == true ? <> 
+                        {card.Data.UID == currentData.uid ? 
+                        <div className='CardProfileTrue' onClick={onProfilePage}>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
-                        </div> : <img src={None} width="180px"/>} </> }
+                        </div> : <img src={None} width="180px"/>} 
+                    </> : <div className='CardProfileTrue'>
+                        <img src={None} width="180px"/>
+                        <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
+                    </div>}
+                    
                     <div className='CardEmotion'>
                         <CardEmoticon card={card}/>
                     </div>
@@ -111,13 +116,18 @@ const Card = ({card}) => {
                             className='CardDeleteButton'
                             onClick={onDelete}> 삭제 </button>}
             </div> : <div className='CardBackGroundImg'>
-                <div className='CardProfile'   
-                    onClick={onProfilePage}>
-                    {card.Data.anonymous == true && <> 
-                        {card.Data.UID == currentData.uid ? <div className='CardProfileTrue'>
+                <div className='CardProfile'>
+                    {card.Data.anonymous == true ? <> 
+                        {card.Data.UID == currentData.uid ? 
+                        <div className='CardProfileTrue' onClick={onProfilePage}>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
-                        </div> : <img src={None} width="180px"/>} </> }
+                        </div> : <img src={None} width="180px"/>} 
+                    </> : <div className='CardProfileTrue'>
+                        <img src={None} width="180px"/>
+                        <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
+                    </div>}
+
                     <div className='CardEmotion'>
                         <CardEmoticon card={card}/>
                     </div>
