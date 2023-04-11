@@ -16,6 +16,7 @@ const Card = ({card}) => {
     const [comment, setComment] = useState("") ; 
     const [currentData, setCurrentData] = useState([]) ;
     const [next, setNext] = useState(false) ; 
+    const [more, setMore] = useState(false) ; 
 
     const CurrentUserInfo = async () => {
         const getUserData = query(
@@ -163,23 +164,24 @@ const Card = ({card}) => {
                             className='CardDeleteButton'
                             onClick={onDelete}> 삭제 </button>}
             </div>}
-
+            
+            {more == false ? 
             <div className='CardCommentInput'>
                 <div className='CardInputBox'>
                     <textarea type="textarea"
-                        name="comment"
-                        placeholder="댓글" 
-                        value={comment}
-                        onChange={(e) => {
-                            const {target : {value}} = e ; 
-                            setComment(value) ; 
-                        }}/>
+                            name="comment"
+                            placeholder="댓글" 
+                            value={comment}
+                            onChange={(e) => {
+                                const {target : {value}} = e ; 
+                                setComment(value) ; 
+                            }}/>
                 </div>
                 <button type='submit' onClick={onSaveComment}> OK </button>
-            </div>
+            </div> : null}
             
-            <div className='Cardcomment'>
-                <CardComment card={card} />
+            <div className={more == false ? 'Cardcomment' :  'CardcommentTrue'} >
+                <CardComment card={card} setMore={setMore}/>
             </div>
         </div>
     )

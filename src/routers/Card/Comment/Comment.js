@@ -8,7 +8,7 @@ import CommentList from "./CommentList";
 import CommentMore from "./CommentMore";
 import '../../../routers/Card/Comment/Comment.css';
 
-const Comment = ({commentData}) => {
+const Comment = ({commentData, setMore}) => {
     const {currentUser} = useContext(AuthContext) ; 
     const navigate = useNavigate();
     const [sendUserInfo, setSendUserInfo] = useState([]) ; 
@@ -30,7 +30,7 @@ const Comment = ({commentData}) => {
             Comment : comment, 
         })
         setComment("") ; 
-        // setOpen(false) ;
+        // setMore(false)
     }
 
 
@@ -98,7 +98,9 @@ const Comment = ({commentData}) => {
                                 onClick={onPlusComment}> OK </button>
                         <button type='button' 
                                 className="CommentBackbtn"
-                                onClick={() => setOpen(!open)}> 이전 </button>
+                                onClick={() => 
+                                    {setOpen(!open)
+                                    setMore(false)}}> 이전 </button>
                     </div>
                 </div>
             </div> : <div className="CommentListProps">
@@ -106,7 +108,10 @@ const Comment = ({commentData}) => {
                 {open == false && <div className="CommentRE">
                     {commentData.Data.Card_OwnerUID == currentUser.uid || 
                     commentData.Data.Card_SendUID == currentUser.uid ? 
-                        <button type="button" onClick={() => setOpen(!open)}> 더보기 </button> : null}
+                        <button type="button" 
+                                onClick={() => {
+                                    setOpen(!open)
+                                    setMore(true)}}> 더보기 </button> : null}
                 </div>}
             </div>}
         </div>

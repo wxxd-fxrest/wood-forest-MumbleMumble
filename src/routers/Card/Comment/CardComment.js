@@ -4,7 +4,7 @@ import { db } from "../../../firebase";
 import Comment from "./Comment";
 import '../../../routers/Card/Comment/Comment.css';
 
-const CardComment = ({card}) => {
+const CardComment = ({card, setMore}) => {
     const [commentData, setCommentData] = useState([]) ; 
 
     const getCommentData = () => {
@@ -31,7 +31,7 @@ const CardComment = ({card}) => {
     return(
         <div className="commentData">
             {commentData.map((c, i) => (
-                <Comment key={i} commentData={c}/>
+                <Comment key={i} commentData={c} setMore={setMore} />
             ))}
         </div>
     )
