@@ -6,7 +6,6 @@ import List from "./List";
 import '../../../routers/Card/Comment/CommentMore.css' ;
 
 const CommentList = ({commentData}) => {
-    const {currentUser} = useContext(AuthContext) ; 
     const [plusComment, setPlusComment] = useState([]) ; 
 
     const getCommentList = () => {

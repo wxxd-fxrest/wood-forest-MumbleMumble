@@ -1,9 +1,7 @@
 import More from "./More";
-import { collection, limit, onSnapshot, orderBy, query } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../../Context/AuthContext";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
-import List from "./List";
 import '../../../routers/Card/Comment/CommentMore.css' ;
 
 const CommentMore = ({commentData}) => {

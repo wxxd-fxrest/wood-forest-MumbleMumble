@@ -1,16 +1,13 @@
-import { addDoc, collection, getDocs, onSnapshot, orderBy, query, where } from "firebase/firestore";
+import { collection, getDocs, onSnapshot, orderBy, query, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
 import Home from "../../Main/Home";
 import SharedProfile from "./SharedProfile";
-import { v4 as uuidv4 } from 'uuid';
 import '../../../routers/Profile/SharedProfile/SharedProfile.css';
 
 const SharedProfileData = () => {
-    const {currentUser} = useContext(AuthContext) ; 
-    const navigate = useNavigate();
     const [pofilePost, setProfilePost] = useState([]) ; 
     const [profileInfo, setProfileInfo] = useState([]) ; 
 
@@ -44,7 +41,6 @@ const SharedProfileData = () => {
         querySnapshot.forEach((doc) => {
             setProfileInfo(doc.data()) ;
         }); 
-        // console.log(profileInfo) 
     } ; 
 
     useEffect(() => {

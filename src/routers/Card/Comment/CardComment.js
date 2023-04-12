@@ -22,7 +22,6 @@ const CardComment = ({card, setMore}) => {
             setCommentData(feedArray) ;
         });
     } ; 
-    // console.log(commentData)
 
     useEffect(() => {
         getCommentData() ;

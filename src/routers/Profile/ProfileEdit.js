@@ -29,7 +29,6 @@ const ProfileEdit = ({setEditOpen, editOpen}) => {
         const querySnapshot = await getDocs(getUserData);
         querySnapshot.forEach((doc) => {
             setCurrentInfo(doc.data())
-            // console.log(currentInfo)
         }); 
     } ;
 

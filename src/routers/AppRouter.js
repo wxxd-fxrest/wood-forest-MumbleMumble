@@ -3,9 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 import Auth from "./Auth/Auth";
 import CardPage from "./Card/CardPage";
-import Home from "./Main/Home";
 import Main from "./Main/Main";
-import ProfileEdit from "./Profile/ProfileEdit";
 import SharedProfileData from "./Profile/SharedProfile/SharedProfileData";
 
 const AppRouter = () => {

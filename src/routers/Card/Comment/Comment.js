@@ -14,8 +14,6 @@ const Comment = ({commentData, setMore}) => {
     const [sendUserInfo, setSendUserInfo] = useState([]) ; 
     const [comment, setComment] = useState("") ; 
     const [open, setOpen] = useState(false) ; 
-    // const [inputOpen, setInputOpen] = useState(false) ; 
-    // console.log(commentData); 
 
     const onPlusComment = async () => {
         let CardDocID = commentData.Data.CardDocID ;
@@ -30,7 +28,6 @@ const Comment = ({commentData, setMore}) => {
             Comment : comment, 
         })
         setComment("") ; 
-        // setMore(false)
     }
 
 
@@ -40,7 +37,6 @@ const Comment = ({commentData, setMore}) => {
             await deleteDoc(doc(db, 
                     "Post", `${commentData.Data.CardDocID}`, 
                     "Comment", `${commentData.DocID}`)); 
-            // navigate("/") ;
         }
     } ;
 
@@ -57,7 +53,6 @@ const Comment = ({commentData, setMore}) => {
         querySnapshot.forEach((doc) => {
             setSendUserInfo(doc.data()) ;
         }); 
-        // console.log(sendUserInfo) ; 
     } ; 
 
     useEffect(() => {

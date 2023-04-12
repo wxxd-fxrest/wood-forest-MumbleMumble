@@ -1,5 +1,5 @@
-import { addDoc, collection, getDocs, query, Timestamp, where } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
+import { addDoc, collection, Timestamp } from "firebase/firestore";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import { auth, db, storage } from "../../firebase";
 import { v4 as uuidv4 } from 'uuid';
@@ -162,20 +162,15 @@ const Home = () => {
                 <div key={i}>
                     {music[i] && 
                         <ul onClick={onSelectMusic}>
-                            <li className="musicListLI"> 🎶 {music[i].name} - {music[i].artist}</li>
-                            {/* <img src={music[0].image[2]} width="30px"/> */}
+                            <li className="musicListLI"> 
+                                🎶 {music[i].name} - {music[i].artist}
+                            </li>
                         </ul>}
                 </div>
             )
         }
         return serchList; 
     } ; 
-
-
-
-    // useEffect(() => {
-    //     CurrentUserInfo() ; 
-    // }, []) ;
 
     return (
         <div className="Home">

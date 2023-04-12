@@ -1,12 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../Context/AuthContext';
 import None  from '../../Image/Mumble_Profile_None.PNG' ; 
-// import ANGER from '../../Image/Mumble_anger.png' ; 
-// import CONFUSION from '../../Image/Mumble_confusion.png' ; 
-// import DAZED from '../../Image/Mumble_dazed.png' ; 
-// import HAPPY from '../../Image/Mumble_happy.png' ; 
-// import SADNESS from '../../Image/Mumble_sadness.png' ; 
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase';
 import PostEmoticon from './PostEmoticon';
@@ -14,15 +8,9 @@ import '../../routers/Post/Post.css' ;
 import Music from '../../Image/Mumble_Music.png' ;
 
 const Post = ({postData}) => {
-    const {currentUser} = useContext(AuthContext) ; 
     const navigate = useNavigate();
     const [currentData, setCurrentData] = useState([]) ; 
-    const [my, setMy] = useState(false) ; 
     const [next, setNext] = useState(false) ; 
-
-    // /profile/:uid
-
-    // console.log(postData)
 
     const onCardPage = (e) => {
         e.preventDefault();
@@ -42,7 +30,6 @@ const Post = ({postData}) => {
         querySnapshot.forEach((doc) => {
             setCurrentData(doc.data()) ;
         }); 
-        // console.log(currentData) ;
     } ; 
 
     useEffect(() => {

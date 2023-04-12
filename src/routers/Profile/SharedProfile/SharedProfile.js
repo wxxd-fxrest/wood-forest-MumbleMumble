@@ -1,12 +1,5 @@
-import { collection, deleteDoc, doc, getDocs, query, where } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
-import { db } from "../../../firebase";
+import { useContext, useState } from "react";
 import None  from '../../../Image/Mumble_Profile_None.PNG' ; 
-import ANGER from '../../../Image/Mumble_anger.png' ; 
-import CONFUSION from '../../../Image/Mumble_confusion.png' ; 
-import DAZED from '../../../Image/Mumble_dazed.png' ; 
-import HAPPY from '../../../Image/Mumble_happy.png' ; 
-import SADNESS from '../../../Image/Mumble_sadness.png' ; 
 import { AuthContext } from "../../../Context/AuthContext";
 import SharedEmoticon from "./SharedEmoticon";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +21,6 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
         navigate(`/profile/${pofilePost.Data.UID}`) ; 
     } ; 
     
-    // console.log(pofilePost)
     return(
         <div className="Post">
             {currentUser.uid == profileInfo.uid ?

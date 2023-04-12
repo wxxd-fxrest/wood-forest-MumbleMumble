@@ -1,7 +1,6 @@
-import { collection, doc, getDocs, onSnapshot, query, where } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthContext";
 import { db } from "../../firebase";
 import Home from "../Main/Home";
 import Card from "./Card";

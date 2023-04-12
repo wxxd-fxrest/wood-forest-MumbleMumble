@@ -26,19 +26,15 @@ const Card = ({card}) => {
         querySnapshot.forEach((doc) => {
             setCurrentData(doc.data()) ;
         }); 
-        // console.log(currentData) 
     } ; 
 
     useEffect(() => {
         CurrentUserInfo() ;
     }, []) ; 
-
-    // console.log(card)
     
     const onSaveComment = async () => {
         let CardDocID = card.DocID ;
         await addDoc(collection(db, "Post", `${CardDocID}`, "Comment"), {
-            // ReceiveName : feed.displayName,
             Card_OwnerUID : card.Data.UID,
 
             CardDocID : CardDocID,

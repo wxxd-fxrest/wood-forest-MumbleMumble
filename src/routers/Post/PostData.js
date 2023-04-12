@@ -21,7 +21,6 @@ const PostData = () => {
             });
             setPostData(feedArray) ;
         });
-        // console.log(postData)
     } ; 
 
     useEffect(() => {
