@@ -4,14 +4,14 @@
     justify-content: center;
 	flex-flow: row wrap;
     height: 500px; 
-    border: solid 1px black;
+    border: solid 1px #ffd966;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .Auth_Img {
     flex: 1;
-    background-color: aqua;
+    background-color: #ffd966;
     width: 500px;
     margin: 0px;
     padding: 0px;
@@ -23,7 +23,7 @@
 }
 
 .Auth_Component {
-    background-color: cadetblue;
+    background-color: #ffd966;
     position: relative;
     flex: 1;
     width: 500px;
@@ -33,15 +33,16 @@
 }
 
 .Auth_Component > button {
-    background-color: tomato;
+    background-color: rgb(255, 99, 71, 0.9);
     border-radius: 50px;
-    border: solid 1px tomato;
+    border: none;
     position: absolute;
     bottom: 30px;
     left: 60px;
     width: 380px;
     height: 50px;
     cursor: pointer;
+    color: rgba(104, 37, 25, 0.9);
 }
 
 @media screen and (max-width: 1000px) {

@@ -22,7 +22,7 @@ body {
 }
 
 .App {
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
   display: flex;
   text-align: center;
   padding: 0px;

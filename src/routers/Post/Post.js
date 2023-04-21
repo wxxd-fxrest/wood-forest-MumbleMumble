@@ -85,7 +85,7 @@ const Post = ({postData}) => {
                         onClick={() => {setNext(!next)}}> 이전 </button> }
                 </> }
 
-            </div> : <div className="PostBackGroundImg" style={{backgroundColor:"skyblue"}}>
+            </div> : <div className="PostBackGroundImg">
                 <div>
                     {postData.Data.anonymous == true ? <> 
                         {postData.Data.UID == currentData.uid ? 

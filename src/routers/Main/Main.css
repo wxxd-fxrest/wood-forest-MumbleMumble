@@ -1,6 +1,5 @@
 .Main {
     position: relative;
-    /* background-color: antiquewhite; */
     display: flex;
     flex-direction: row;
     width: 100vw;

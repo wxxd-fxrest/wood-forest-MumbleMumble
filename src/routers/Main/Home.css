@@ -1,14 +1,22 @@
 .Home {
     display: block;
-    background-color: cadetblue;
+    background-color: #ffd966;
     width: 100%;
+    /* margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 30px 0px 0px 30px;
+    border: solid 1px black; */
+    position: relative;
+    /* overflow: hidden; */
+    border-right: solid 1px #ffe8a3;
 }
 
 .HomeForm {
     display: block;
-    background-color: rgb(67, 86, 102);
+    background-color: #ffd966;
     position: relative;
     height: 100%;
+    /* overflow: hidden; */
 }
 
 .HomeButtonForm {
@@ -39,31 +47,65 @@
     margin: 10px;
 }
 
-.Btn > button {
-    background-color: bisque;
-    width: 70px;
+.imgBtn {
+    background-color: rgb(255, 166, 41, 0.3);
+    width: 50px;
     height: 40px;
     margin-right: 10px;
+    border-radius: 10px;
+    border: solid 1.5px #ffa629;
+    /* width: 100px; */
+}
+
+.imgBtn:hover {
+    background-color: rgb(255, 166, 41);
+    border: solid 1.5px #ffa629;
+    /* width: 100px; */
+    cursor: pointer;
+}
+
+.imgBtn_on {
+    background-color: rgb(255, 166, 41);
+    width: 50px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: solid 1.5px #ffa629;
+    /* width: 100px; */
+}
+
+.imgBtn > img, .imgBtn_on > img {
+    width: 25px;
+    height: auto;
+    display: inline-flex;
+    margin: 7px;
+}
+
+.Btn > h4 {
+    color: #393939;
+    font-size: 13px;
+    margin-top: 30px;
+    font-weight: 600;
 }
 
 .WriteContainer {
-    background-color: rgb(64, 150, 226);
+    /* background-color: rgb(64, 150, 226); */
     display: inline-flex;
-    z-index: 1000;
+    z-index: 10000;
     width: 790px;
-    /* height: 400px; */
+    height: 360px;
     top: 10%;
     left:  130%;
     position: absolute;
     border-radius: 10px;
     overflow: hidden;
-    border: solid 1px rgba(0, 0, 0, 0.6);
+    border: solid 1px #ffa629;
 
     flex: 1;
 }
 
 .Write {
-    background-color: aliceblue;
+    background-color: #ffd966;
     display: inline-block;
     width: 100%;
     position: relative;
@@ -71,10 +113,12 @@
 }
 
 .WriteHeader {
-    background-color: thistle;
+    background-color: rgb(255, 166, 41, 0.7);
     display: flex;
     padding: 20px;
     position: relative;
+    z-index: 10000000;
+    border-bottom: solid 1px rgb(255, 166, 41, 0.7);
 }
 
 .WriteHeader > p {
@@ -88,7 +132,7 @@
 }
 
 .WriteSelectForm {
-    background-color: rgb(53, 114, 138);
+    /* background-color: #ffd966; */
     display: flex;
     padding: 10px;
     flex-direction: column;
@@ -104,17 +148,17 @@
     height: 100px;
     border-radius: 5px;
     overflow: hidden;
-    border: solid 1px rgba(0, 0, 0, 0.6);
+    border: solid 1px #ffa629;
     margin-bottom: 10px;
 }
 
 .Select > select {
-    /* background-color: aqua; */
+    background-color: #ffa629;
     width: 100%;
     outline: none;
     border: none;
     height: 18px;
-    border-bottom: solid 1px rgba(0, 0, 0, 0.6);
+    border-bottom: solid 1px #ffa629;
 }
 
 .Select > div > img {
@@ -122,10 +166,10 @@
 }
 
 .MusicImgAnonymous {
-    background-color: rgb(77, 140, 195);
+    background-color: rgb(255, 166, 41, 0.5);
     display: flex;
     flex-direction: column;
-    border:  solid 1px rgba(0, 0, 0, 0.6);
+    border:  solid 1px rgb(255, 166, 41);
     border-radius: 5px;
     overflow: hidden;
 }
@@ -144,6 +188,7 @@
     justify-content: center;
     align-items: center;
     flex: 0.4;
+    border-right: solid 1px rgb(255, 166, 41);
 }
 
 .anonymousForm > h4 {
@@ -161,13 +206,14 @@
 }
 
 .imgForm {
-    background-color: rgb(104, 230, 230);
+    background-color: rgb(255, 166, 41, 0.5);
     flex-direction: row;
     display: flex;
     padding: 10px;
     justify-content: center;
     align-items: center;
     flex: 0.3;
+    border-right: solid 1px rgb(255, 166, 41);
 }
 
 .imgForm > h4 {
@@ -182,7 +228,7 @@
 }
 
 .musicOnOff {
-    background-color: rgb(33, 79, 79);
+    /* background-color: rgb(255, 166, 41, 0.5); */
     flex-direction: row;
     display: flex;
     padding: 10px;
@@ -206,7 +252,7 @@
 }
 
 .musicSelect {
-    background-color: rgb(94, 54, 47);
+    background-color: rgb(255, 166, 41);
     display: inline-flex;
     flex-direction: row;
     height: 30px;
@@ -250,6 +296,13 @@
     flex: 0.3;
 }
 
+.musicList > p {
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 3px;
+    color: #393939;
+}
+
 .musicListLI {
     font-size: 15px;
     font-weight: 500;
@@ -281,14 +334,14 @@
 }
 
 .WriteFrom {
-    background-color: turquoise;
+    background-color: #ffa629;
     width: 100%;
     display: flex;
     flex: 0.7;
 }
 
 .WriteFrom > textarea {
-    /* background-color: tomato; */
+    background-color: #ffa629;
     display: inline-flex;
     width: 100%;
     height: 75%;
@@ -297,6 +350,10 @@
     outline: none;
     position: relative;
     padding: 10px;
+}
+
+.WriteFrom > textarea::placeholder {
+    color: #393939;
 }
 
 .WriteDeleteBtn {
@@ -376,6 +433,7 @@
         /* height: 400px; */
         left:  130%;
         /* height: 500px; */
+        height: 535px;
     }
     .HomeWrite {
         flex-direction: column;

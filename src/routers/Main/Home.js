@@ -1,5 +1,5 @@
 import { addDoc, collection, Timestamp } from "firebase/firestore";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import { auth, db, storage } from "../../firebase";
 import { v4 as uuidv4 } from 'uuid';
@@ -9,12 +9,17 @@ import CONFUSION from '../../Image/Mumble_confusion.png' ;
 import DAZED from '../../Image/Mumble_dazed.png' ; 
 import HAPPY from '../../Image/Mumble_happy.png' ; 
 import SADNESS from '../../Image/Mumble_sadness.png' ; 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import '../../routers/Main/Home.css';
 import None  from '../../Image/Mumble_Profile_None.PNG' ; 
 import IMG from '../../Image/Mumble_imgIcon.png' ;
 import ProfileEdit from "../Profile/ProfileEdit";
+import HomeIcon from '../../Image/Icons/Mumble_Icon_home.png';
+import WriteIcon from '../../Image/Icons/Mumble_Icon_edit.png';
+import ProfileIcon from '../../Image/Icons/Mumble_Icon_user.png';
+import EditIcon from '../../Image/Icons/Mumble_Icon_api.png';
+import LogOutIcon from '../../Image/Icons/Mumble_Icon_address-card.png';
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
@@ -36,7 +41,11 @@ const Home = () => {
 
     const selectList = ["감정을 선택", "좋아", "화나", "슬퍼", "멍...", "혼란"] ;
     const [selected, setSelected] = useState("") ; 
-    
+    const location = useLocation() ;
+
+    const pathname = location.pathname ; 
+    const pathUID = (pathname.split('/')[2]);
+
     const onChange = (event) => {
         const {target : {name, value}} = event ; 
         if(name == "text") {
@@ -180,36 +189,46 @@ const Home = () => {
                 <div className="HomeButtonForm">
                     <img src={None} />
                     <div className="HomeButton">
-                        <div className="Btn">
-                            <button type="button"
-                                onClick={() => {navigate("/")}}> Home </button>
+                    <div className="Btn">
+                            <div className={pathname == "/" ? 'imgBtn_on' : 'imgBtn'}>
+                                <img src={HomeIcon} 
+                                    onClick={() => {navigate("/")}} /> 
+                            </div>
                             <h4> Home </h4>
                         </div>
 
                         <div className="Btn">
-                            <button type="button" 
-                                onClick={() => {setWrite(!write)}}> write </button>
+                            <div className={write == true ? 'imgBtn_on' : 'imgBtn'}>
+                                <img src={WriteIcon}
+                                    onClick={() => {setWrite(!write)}} /> 
+                            </div>
                             <h4> Wirte </h4>
                         </div>
-
+                        
                         <div className="Btn">
-                            <button type="button" 
-                                onClick={() => {navigate(`/profile/${currentUser.uid}`)}}> Profile </button>
+                            <div className={pathUID == currentUser.uid ? 'imgBtn_on' : 'imgBtn'}>
+                                <img src={ProfileIcon}
+                                    onClick={() => {navigate(`/profile/${currentUser.uid}`)}} /> 
+                            </div>
                             <h4> Profile </h4>
                         </div>
 
                         <div className="Btn">
-                            <button onClick={() => setEditOpen(!editOpen)}> Edit </button>
+                            <div className={editOpen == true ? 'imgBtn_on' : 'imgBtn'}>
+                                <img src={EditIcon} onClick={() => setEditOpen(!editOpen)} />
+                            </div>
                             <h4> Edit </h4>
                             {editOpen == true && <ProfileEdit setEditOpen={setEditOpen} editOpen={editOpen}/>}
                         </div>
 
                         <div className="Btn">
-                            <button type="button"
-                                onClick={() => {
+                            <div className="imgBtn">
+                                <img src={LogOutIcon}
+                                    onClick={() => {
                                     signOut(auth) 
                                     navigate("/")
-                                    console.log("로그아웃 완료")}}> Log Out </button>
+                                    console.log("로그아웃 완료")}} />
+                            </div>
                             <h4> Log Out </h4>
                         </div>
                     </div>
@@ -276,10 +295,11 @@ const Home = () => {
                                         {open ? <> {select[0] ? 
                                             <div className="musicCancleForm">
                                                 <p> {select[0].name} </p> 
-                                                <button type="button" onClick={() => {
-                                                    setSelect([])                     
-                                                }}> Cancle </button>
-                                            </div> : <div style={{backgroundColor:"skyblue"}}>
+                                                <button type="button" 
+                                                    onClick={() => {
+                                                        setSelect([])                     
+                                                    }}> Cancle </button>
+                                            </div> : <div>
                                                     <div className="musicSelect">
                                                         <input type="text"
                                                             required
@@ -298,7 +318,7 @@ const Home = () => {
                                                         <button type="submit" onClick={getMusic}> ok </button> 
                                                     </div>
                                                 <div className="musicList">
-                                                    {musicList()}
+                                                    {select ? <p> 🎶 노래를 선택하세요 🎶 </p> : musicList()}
                                                 </div>
                                             </div>}
                                         </> : null} 

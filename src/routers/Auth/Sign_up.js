@@ -52,7 +52,7 @@ const SignUp = () => {
                         required 
                         value={password}
                         onChange={onChange} />
-                <button> 회원가입 </button>
+                <button> 가입하기 </button>
             </form>
         </div>
     )
