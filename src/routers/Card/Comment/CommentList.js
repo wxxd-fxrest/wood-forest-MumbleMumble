@@ -34,7 +34,7 @@ const CommentList = ({commentData}) => {
     }, []) ; 
 
     return(
-        <div style={{backgroundColor:"skyblue"}}>
+        <div className="CommentList">
             {plusComment.map((p, i) => (
                 <List key={i} plusComment={p} commentData={commentData}/>
             ))}

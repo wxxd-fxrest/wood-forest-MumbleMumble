@@ -5,6 +5,7 @@ import { db } from "../../firebase";
 import Home from "../Main/Home";
 import Card from "./Card";
 import '../../routers/Card/Card.css';
+import Empty from "../Empty/Empty";
 
 const CardPage = () => {
     const location = useLocation() ;
@@ -43,6 +44,9 @@ const CardPage = () => {
                     {card.map((c, i) => (
                         <Card key={i} card={c}/>
                     ))}
+                </div>
+                <div className="CardEmpty">
+                    <Empty />
                 </div>
             </div>
         </div>

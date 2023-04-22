@@ -318,7 +318,8 @@ const Home = () => {
                                                         <button type="submit" onClick={getMusic}> ok </button> 
                                                     </div>
                                                 <div className="musicList">
-                                                    {select ? <p> 🎶 노래를 선택하세요 🎶 </p> : musicList()}
+                                                    {/* {select ? <p> 🎶 노래를 선택하세요 🎶 </p> : musicList()} */}
+                                                    {musicList()}
                                                 </div>
                                             </div>}
                                         </> : null} 

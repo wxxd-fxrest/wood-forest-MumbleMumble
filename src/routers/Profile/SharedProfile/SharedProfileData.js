@@ -6,6 +6,7 @@ import { db } from "../../../firebase";
 import Home from "../../Main/Home";
 import SharedProfile from "./SharedProfile";
 import '../../../routers/Profile/SharedProfile/SharedProfile.css';
+import Empty from "../../Empty/Empty";
 
 const SharedProfileData = () => {
     const [pofilePost, setProfilePost] = useState([]) ; 
@@ -58,8 +59,10 @@ const SharedProfileData = () => {
                        
                 <div className="SharedProfile">
                     <div className="SharedProfileBox">
-                        <img src={profileInfo.attachmentUrl} width="100px" />
-                        <p> {profileInfo.displayName} </p>
+                        <img src={profileInfo.attachmentUrl} />
+                        <div>
+                            <p> {profileInfo.displayName} </p>
+                        </div>
                     </div>
                     <div className="SharedProfileMap">
                         {pofilePost.map((p, i) => (
@@ -67,7 +70,9 @@ const SharedProfileData = () => {
                         ))}
                     </div>
                 </div>
-
+                <div className="SharedProfileEmpty">
+                    <Empty />
+                </div>
             </div>
         </div>
     )

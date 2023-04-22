@@ -95,7 +95,7 @@
     width: 790px;
     height: 360px;
     top: 10%;
-    left:  130%;
+    left:  90%;
     position: absolute;
     border-radius: 10px;
     overflow: hidden;
@@ -380,13 +380,16 @@
     .musicOnOff > h4 {
         display: none;
     }
+    .WriteContainer {
+        width: 770px;
+        left:  80%;
+    }
 }
 
 @media screen and (max-width: 1250px) {
     .WriteContainer {
-        width: 770px;
         /* height: 400px; */
-        left:  100%;
+        left:  65%;
     }
 }
 
@@ -408,7 +411,7 @@
 @media screen and (max-width: 1000px) {
     .WriteContainer {
         /* height: 400px; */
-        left:  80%;
+        left:  70%;
     }
 }
 
@@ -417,7 +420,7 @@
     .WriteContainer {
         width: 720px;
         /* height: 400px; */
-        left:  50%;
+        left:  60%;
     }
     /* .HomeButtonForm > img {
         display: none;

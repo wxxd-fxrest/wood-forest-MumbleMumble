@@ -21,9 +21,9 @@
 }
 
 .SharedProfile {
-    background-color: rgb(28, 120, 201);
+    background-color: #ffd966;
     display: inline-flex;
-    width: 80%;
+    width: 60%;
     height: 100%;
     flex-direction: column;
 }
@@ -34,17 +34,47 @@
 }
 
 .SharedProfileBox {
-    background-color: turquoise;
+    background-color: #ffa629;;
     padding: 10px;
     text-align: start;
     flex-direction: row;
     display: inline-flex;
-    align-items: flex-end;
+    align-items: flex-start;
     position: relative;
+    /* height: 200px; */
+}
+
+.SharedProfileBox > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px;
+    display: flex;
+}
+
+.SharedProfileBox > div {
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    align-items: flex-end;
+    display: flex;
+}
+
+.SharedProfileBox > div > p {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .SharedProfileMap {
     overflow: scroll;
+    padding-top: 5px;
+}
+
+.SharedProfileEmpty {
+    background-color: tomato;
+    display: inline-flex;
+    width: 20%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -55,7 +85,10 @@
         width: 20%;
     }
     .SharedProfile {
-        width: 80%;
+        width: 60%;
+    }
+    .SharedProfileEmpty {
+        width: 20%;   
     }
 }
 
@@ -64,9 +97,27 @@
         margin: 0px;
     }
     .SharedProfileHome {
-        width: 18%;
+        width: 15%;
     }
     .SharedProfile {
-        width: 82%;
+        width: 70%;
+    }
+    .SharedProfileEmpty {
+        width: 15%;   
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .SharedProfileContainer {
+        margin: 0px;
+    }
+    .SharedProfileHome {
+        width: 15%;
+    }
+    .SharedProfile {
+        width: 85%;
+    }
+    .SharedProfileEmpty {
+        display: none;
     }
 }

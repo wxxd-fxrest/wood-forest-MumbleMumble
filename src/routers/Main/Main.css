@@ -28,10 +28,16 @@
 .MainPost {
     /* background-color: rgb(28, 120, 201); */
     display: inline-flex;
-    width: 80%;
+    width: 60%;
     /* max-width: 1054px;  */
     /* min-width: 1054px;  */
     height: 100%;
+}
+
+.MainEmpty {
+    display: flex;
+    background-color: tomato;
+    width: 20%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -42,7 +48,10 @@
         width: 20%;
     }
     .MainPost {
-        width: 80%;
+        width: 60%;
+    }
+    .MainEmpty {
+        width: 20%;
     }
 }
 
@@ -51,9 +60,28 @@
         margin: 0px;
     }
     .MainHome {
-        width: 18%;
+        width: 15%;
     }
     .MainPost {
-        width: 82%;
+        width: 70%;
+    }
+    .MainEmpty {
+        width: 15%;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .MainContainer {
+        margin: 0px;
+    }
+    .MainHome {
+        width: 15%;
+    }
+    .MainPost {
+        width: 85%;
+    }
+    .MainEmpty {
+        display: none;
     }
 }

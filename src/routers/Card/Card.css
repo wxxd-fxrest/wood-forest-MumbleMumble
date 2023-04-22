@@ -22,8 +22,14 @@
 
 .CardPageList {
     display: block;
-    width: 80%;
+    width: 60%;
     height: 100%;
+}
+
+.CardEmpty {
+    background-color: tomato;
+    display: flex;
+    width: 20%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -34,7 +40,10 @@
         width: 20%;
     }
     .CardPageList {
-        width: 80%;
+        width: 60%;
+    }
+    .CardEmpty {
+        width: 20%;
     }
 }
 
@@ -43,18 +52,36 @@
         margin: 0px;
     }
     .CardPageHome {
-        width: 18%;
+        width: 15%;
     }
     .CardPageList {
-        width: 82%;
+        width: 70%;
+    }
+    .CardEmpty {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .CardPageContainer {
+        margin: 0px;
+    }
+    .CardPageHome {
+        width: 15%;
+    }
+    .CardPageList {
+        width: 85%;
+    }
+    .CardEmpty {
+        display: none;
     }
 }
 
 .Card {
-    background-color: yellowgreen;
+    background-color: #ffd966;
     /* width: 100%; */
     /* display: inline-block; */
-    padding: 0px 15px 0px 10px;
+    /* padding: 0px 15px 0px 10px; */
     /* min-width: 625px; */
     display: block;
     height: 100%;
@@ -93,7 +120,7 @@
 }
 
 .CardProfileTrue {
-    background-color: rgb(162, 255, 255);
+    background-color:#ffa629;
     display: flex;
     align-items: center;
 }
@@ -218,6 +245,7 @@
     padding: 10px;
     border: none;
     outline: none;
+    background-color: #ffd966;
 }
 
 .CardCommentInput > button {
@@ -232,7 +260,7 @@
 }
 
 .Cardcomment {
-    background-color: tomato;
+    /* background-color: tomato; */
     display: block;
     overflow: scroll;
     /* height: 360px; */
@@ -241,7 +269,7 @@
 }
 
 .CardcommentTrue {
-    background-color: tomato;
+    /* background-color: tomato; */
     display: block;
     overflow: scroll;
     /* height: 360px; */
