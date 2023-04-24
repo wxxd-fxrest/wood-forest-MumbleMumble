@@ -15,11 +15,16 @@
     width: 500px;
     margin: 0px;
     padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Auth_Img > img {
+    width: 450px;
     margin: 0px;
     padding: 0px;
+    filter: drop-shadow(4px 4px 3px rgb(133, 122, 87));
 }
 
 .Auth_Component {

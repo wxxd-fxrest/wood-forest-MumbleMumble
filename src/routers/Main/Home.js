@@ -7,7 +7,7 @@ import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage
 import { useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import '../../routers/Main/Home.css';
-import None  from '../../Image/Mumble_Profile_None.PNG' ; 
+import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
 import IMG from '../../Image/Mumble_imgIcon.png' ;
 import ProfileEdit from "../Profile/ProfileEdit";
 import HomeIcon from '../../Image/Icons/Mumble_Icon_home.png';
@@ -23,6 +23,8 @@ import Difficulty from '../../Image/expression_Icon/Mumble_expression_Difficulty
 import CantChoose from '../../Image/expression_Icon/Mumble_expression_cant_choose.png' ;  
 import Zombie from '../../Image/expression_Icon/Mumble_expression_zombie.png' ;  
 
+import DELETE from '../../Image/Mumble_Delete_gif.gif';
+
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
     const uuidv4ID = uuidv4() ;
@@ -32,6 +34,7 @@ const Home = () => {
     const [open, setOpen] = useState(true) ; 
     const [anonymous, setAnonymous] = useState(true) ; 
     const [editOpen, setEditOpen] = useState(false) ; 
+    const [loading, setLoading] = useState(false) ; 
 
     const [text, setText] = useState("") ;
     const [searchMusic, setSearchMusic] = useState("") ; 
@@ -74,6 +77,7 @@ const Home = () => {
     } ; 
 
     const onSaveBtn = async () => {
+        setLoading(true) ; 
         try {
             let cardImgUrl = "" ; 
             let uploadTask ; 
@@ -145,9 +149,16 @@ const Home = () => {
         }         
         setText("") ; 
         setSelect([]) ; 
-        setWrite(!write) ; 
         setSelected("") ;
+        Timer()
     } ; 
+
+    const Timer = () => {
+        setTimeout(() => {
+            setWrite(!write) ; 
+            setLoading(false) ; 
+        }, 1500) ; 
+    }
 
     const getMusic = async(event) => {
         event.preventDefault() ; 
@@ -189,7 +200,7 @@ const Home = () => {
                 onSubmit={(event) => {event.preventDefault()}}>
 
                 <div className="HomeButtonForm">
-                    <img src={None} />
+                    <img src={Logo} />
                     <div className="HomeButton">
                     <div className="Btn">
                             <div className={pathname == "/" ? 'imgBtn_on' : 'imgBtn'}>
@@ -202,7 +213,10 @@ const Home = () => {
                         <div className="Btn">
                             <div className={write == true ? 'imgBtn_on' : 'imgBtn'}>
                                 <img src={WriteIcon}
-                                    onClick={() => {setWrite(!write)}} /> 
+                                    onClick={() => {
+                                        setWrite(!write)
+                                        clearTimeout(Timer)
+                                    }} /> 
                             </div>
                             <h4> Wirte </h4>
                         </div>
@@ -235,8 +249,12 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
-                {write ? 
+                {loading ? 
+                <div className="WriteContainer">
+                    <div className="Write WriteLoading">
+                        <img src={DELETE} /> 
+                    </div>
+                </div> : <> {write ? 
                 <div className="WriteContainer">
                     <div className="Write">
                         <div className="WriteHeader">
@@ -343,8 +361,8 @@ const Home = () => {
                                         onClick={onSaveBtn}> 버리기 </button>
                             </div>
                         </div>
-                    </div>
-                </div> : null} 
+                    </div> 
+                </div> : null} </>}
             </form>
         </div>
     )

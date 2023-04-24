@@ -27,9 +27,11 @@
 }
 
 .HomeButtonForm > img {
-    width: 80px;
+    /* background-color: #d3d3d3; */
+    width: 100px;
     margin-top: 20px;
     margin-bottom: 20px;
+    filter: drop-shadow(4px 4px 3px rgb(133, 122, 87));
 }
 
 .HomeButton {
@@ -112,6 +114,17 @@
     flex-direction: row;
 }
 
+.WriteLoading {
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.WriteLoading > img { 
+    width: 350px;
+}
+
 .WriteHeader {
     background-color: rgb(255, 166, 41, 0.7);
     display: flex;
@@ -161,8 +174,15 @@
     border-bottom: solid 1px #ffa629;
 }
 
+.Select > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
 .Select > div > img {
-    width: 78px;
+    width: 58px;
 }
 
 .MusicImgAnonymous {

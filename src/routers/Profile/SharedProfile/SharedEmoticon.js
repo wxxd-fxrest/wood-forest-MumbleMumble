@@ -4,18 +4,18 @@ import CantChoose from '../../../Image/expression_Icon/Mumble_expression_cant_ch
 import Crying from '../../../Image/expression_Icon/Mumble_expression_crying.png' ;  
 import Difficulty from '../../../Image/expression_Icon/Mumble_expression_Difficulty.png' ;  
 import Zombie from '../../../Image/expression_Icon/Mumble_expression_zombie.png' ;  
-
+import '../../../routers/Emoticon.css'; 
 
                     
 const SharedEmoticon = ({pofilePost}) => {
     return(
-        <div>
-            {pofilePost.Data.selected == "좋아" && <img src={Happy} width="50px"/>}
-            {pofilePost.Data.selected == "화나" && <img src={Angry} width="50px"/>}
-            {pofilePost.Data.selected == "슬퍼" && <img src={Crying} width="50px"/>}
-            {pofilePost.Data.selected == "난감" && <img src={Difficulty} width="50px"/>}
-            {pofilePost.Data.selected == "힘듦" && <img src={Zombie} width="50px"/>}
-            {pofilePost.Data.selected == "혼란" && <img src={CantChoose} width="50px"/>}
+        <div className='emoticonForm'>
+            {pofilePost.Data.selected == "좋아" && <img className='emoticonBox' src={Happy}/>}
+            {pofilePost.Data.selected == "화나" && <img className='emoticonBox' src={Angry}/>}
+            {pofilePost.Data.selected == "슬퍼" && <img className='emoticonBox' src={Crying}/>}
+            {pofilePost.Data.selected == "난감" && <img className='emoticonBox' src={Difficulty}/>}
+            {pofilePost.Data.selected == "힘듦" && <img className='emoticonBox' src={Zombie}/>}
+            {pofilePost.Data.selected == "혼란" && <img className='emoticonBox' src={CantChoose}/>}
         </div>
     )
 }

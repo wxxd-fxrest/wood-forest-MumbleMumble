@@ -2,7 +2,7 @@ import { useState } from "react";
 import LogIn from "./Log_in";
 import SignUp from "./Sign_up";
 import '../../routers/Auth/Auth.css' ; 
-import None from '../../Image/Mumble_Profile_None.PNG' ;
+import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
 
 const Auth = () => {
     const [open, setOpen] = useState(false) ; 
@@ -10,7 +10,7 @@ const Auth = () => {
     return(
         <div className="Auth">
             <div className="Auth_Img">
-                <img src={None} />
+                <img src={Logo} />
             </div>
             <div>
                 {open ? <div className="Auth_Component">
