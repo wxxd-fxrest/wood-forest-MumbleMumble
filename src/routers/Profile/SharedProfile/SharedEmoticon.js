@@ -1,18 +1,21 @@
-import ANGER from '../../../Image/Mumble_anger.png' ; 
-import CONFUSION from '../../../Image/Mumble_confusion.png' ; 
-import DAZED from '../../../Image/Mumble_dazed.png' ; 
-import HAPPY from '../../../Image/Mumble_happy.png' ; 
-import SADNESS from '../../../Image/Mumble_sadness.png' ; 
+import Happy from '../../../Image/expression_Icon/Mumble_expression_relax.png' ;
+import Angry from '../../../Image/expression_Icon/Mumble_expression_angry.png' ; 
+import CantChoose from '../../../Image/expression_Icon/Mumble_expression_cant_choose.png' ;  
+import Crying from '../../../Image/expression_Icon/Mumble_expression_crying.png' ;  
+import Difficulty from '../../../Image/expression_Icon/Mumble_expression_Difficulty.png' ;  
+import Zombie from '../../../Image/expression_Icon/Mumble_expression_zombie.png' ;  
+
 
                     
 const SharedEmoticon = ({pofilePost}) => {
     return(
         <div>
-            {pofilePost.Data.selected == "좋아" && <img src={HAPPY} width="50px"/>}
-            {pofilePost.Data.selected == "화나" && <img src={ANGER} width="50px"/>}
-            {pofilePost.Data.selected == "슬퍼" && <img src={SADNESS} width="50px"/>}
-            {pofilePost.Data.selected == "멍..." && <img src={DAZED} width="50px"/>}
-            {pofilePost.Data.selected == "혼란" && <img src={CONFUSION} width="50px"/>}
+            {pofilePost.Data.selected == "좋아" && <img src={Happy} width="50px"/>}
+            {pofilePost.Data.selected == "화나" && <img src={Angry} width="50px"/>}
+            {pofilePost.Data.selected == "슬퍼" && <img src={Crying} width="50px"/>}
+            {pofilePost.Data.selected == "난감" && <img src={Difficulty} width="50px"/>}
+            {pofilePost.Data.selected == "힘듦" && <img src={Zombie} width="50px"/>}
+            {pofilePost.Data.selected == "혼란" && <img src={CantChoose} width="50px"/>}
         </div>
     )
 }

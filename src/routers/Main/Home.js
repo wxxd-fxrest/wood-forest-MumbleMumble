@@ -4,11 +4,6 @@ import { AuthContext } from "../../Context/AuthContext";
 import { auth, db, storage } from "../../firebase";
 import { v4 as uuidv4 } from 'uuid';
 import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage";
-import ANGER from '../../Image/Mumble_anger.png' ; 
-import CONFUSION from '../../Image/Mumble_confusion.png' ; 
-import DAZED from '../../Image/Mumble_dazed.png' ; 
-import HAPPY from '../../Image/Mumble_happy.png' ; 
-import SADNESS from '../../Image/Mumble_sadness.png' ; 
 import { useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import '../../routers/Main/Home.css';
@@ -20,6 +15,13 @@ import WriteIcon from '../../Image/Icons/Mumble_Icon_edit.png';
 import ProfileIcon from '../../Image/Icons/Mumble_Icon_user.png';
 import EditIcon from '../../Image/Icons/Mumble_Icon_api.png';
 import LogOutIcon from '../../Image/Icons/Mumble_Icon_address-card.png';
+
+import Happy from '../../Image/expression_Icon/Mumble_expression_relax.png' ;
+import Angry from '../../Image/expression_Icon/Mumble_expression_angry.png' ; 
+import Crying from '../../Image/expression_Icon/Mumble_expression_crying.png' ;  
+import Difficulty from '../../Image/expression_Icon/Mumble_expression_Difficulty.png' ;  
+import CantChoose from '../../Image/expression_Icon/Mumble_expression_cant_choose.png' ;  
+import Zombie from '../../Image/expression_Icon/Mumble_expression_zombie.png' ;  
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
@@ -39,7 +41,7 @@ const Home = () => {
     const [music, setMusic] = useState([]) ; 
     const [select, setSelect] = useState([]) ; 
 
-    const selectList = ["감정을 선택", "좋아", "화나", "슬퍼", "멍...", "혼란"] ;
+    const selectList = ["감정을 선택", "행복", "분노", "슬퍼", "난감", "힘듦", "혼란"] ;
     const [selected, setSelected] = useState("") ; 
     const location = useLocation() ;
 
@@ -253,11 +255,12 @@ const Home = () => {
                                         ))}
                                     </select>
                                     <div>  
-                                        {selected == selectList[1] && <img src={HAPPY} />}
-                                        {selected == selectList[2] && <img src={ANGER} />}
-                                        {selected == selectList[3] && <img src={SADNESS} />}
-                                        {selected == selectList[4] && <img src={DAZED} />}
-                                        {selected == selectList[5] && <img src={CONFUSION} />}
+                                        {selected == selectList[1] && <img src={Happy} />}
+                                        {selected == selectList[2] && <img src={Angry} />}
+                                        {selected == selectList[3] && <img src={Crying} />}
+                                        {selected == selectList[4] && <img src={Difficulty} />}
+                                        {selected == selectList[5] && <img src={Zombie} />}
+                                        {selected == selectList[6] && <img src={CantChoose} />}
                                     </div>
                                 </div>
 
