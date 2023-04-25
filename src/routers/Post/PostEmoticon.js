@@ -9,7 +9,7 @@ import '../../routers/Emoticon.css';
 const PostEmoticon = ({postData}) => {
     return(
         <div className='emoticonForm'>
-            {postData.Data.selected == "좋아" && <img className='emoticonBox' src={Happy}/>}
+            {postData.Data.selected == "행복" && <img className='emoticonBox' src={Happy}/>}
             {postData.Data.selected == "화나" && <img className='emoticonBox' src={Angry}/>}
             {postData.Data.selected == "슬퍼" && <img className='emoticonBox' src={Crying}/>}
             {postData.Data.selected == "난감" && <img className='emoticonBox' src={Difficulty}/>}

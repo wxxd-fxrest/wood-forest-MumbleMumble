@@ -10,7 +10,7 @@ import '../../../routers/Emoticon.css';
 const SharedEmoticon = ({pofilePost}) => {
     return(
         <div className='emoticonForm'>
-            {pofilePost.Data.selected == "좋아" && <img className='emoticonBox' src={Happy}/>}
+            {pofilePost.Data.selected == "행복" && <img className='emoticonBox' src={Happy}/>}
             {pofilePost.Data.selected == "화나" && <img className='emoticonBox' src={Angry}/>}
             {pofilePost.Data.selected == "슬퍼" && <img className='emoticonBox' src={Crying}/>}
             {pofilePost.Data.selected == "난감" && <img className='emoticonBox' src={Difficulty}/>}

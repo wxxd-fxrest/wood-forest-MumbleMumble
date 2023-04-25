@@ -116,7 +116,7 @@
     display: inline-flex;
     position: absolute;
     top: 5px;
-    right: 15px;
+    right: 45px;
 }
 
 .CardProfileTrue {
@@ -167,20 +167,46 @@
 
 .CardNextButton1 {
     position: absolute;
-    bottom: 80px;
+    bottom: 65px;
     right: 15px;
+    width: 25px;
+    cursor: pointer;
+    filter: invert(75%) sepia(84%) saturate(1826%) hue-rotate(336deg) brightness(101%) contrast(102%);
+}
+
+.CardNextButton1:hover {
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
+    filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
 }
 
 .CardNextButton2 {
     position: absolute;
-    bottom: 80px;
+    bottom: 65px;
     left: 15px;   
+    width: 25px;
+    cursor: pointer;
+    filter: invert(75%) sepia(84%) saturate(1826%) hue-rotate(336deg) brightness(101%) contrast(102%);
+}
+
+.CardNextButton2:hover {
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
+    filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
+}
+
+.DeleteBox {
+    position: absolute;
+    /* background-color: #261e12; */
+    width: 100%;
+    height: 25%;
+    top: 0px;
 }
 
 .CardDeleteButton {
+    /* background-color: #51422e; */
+    width: 15px;
     z-index: 100;
     position: absolute;
-    bottom: 10px;
+    bottom: 18px;
     right: 15px;   
 }
 
@@ -200,13 +226,30 @@
 }
 
 .CardMusic {
+    width: 200px;
+}
+
+.imgCardMusicBox {
     position: relative;
 }
 
-.CardMusic > img {
-    width: 130px;
+.img_Music {
+    /* background-color: #393939; */
+    width: 110px;
+    height: 100%;
     animation: rotate_image 4s ease-in-out infinite;
     transform-origin: 50% 50%;
+    position: relative;
+    left: -28px;
+}
+
+.img_MusicBox {
+    position: absolute;
+    /* background-color: #db8e23; */
+    left: 15px;
+    top: -46px;
+    width: 200px;
+    opacity: 0.98;
 }
 
 .CardMusicBox {
@@ -296,6 +339,9 @@
     .CardcommentTrue {
         height: 570px;
     }
+    .CardDeleteButton {
+        bottom: 20px;
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -346,6 +392,9 @@
     .CardcommentTrue {
         height: 515px;
     }
+    .CardDeleteButton {
+        bottom: 33px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -370,6 +419,9 @@
     }
     .CardcommentTrue {
         height: 520px;
+    }
+    .CardDeleteButton {
+        bottom: 35px;
     }
 }
 
@@ -419,6 +471,9 @@
     }
     .CardcommentTrue {
         height: 460px;
+    }
+    .CardDeleteButton {
+        bottom: 45px;
     }
 }
 

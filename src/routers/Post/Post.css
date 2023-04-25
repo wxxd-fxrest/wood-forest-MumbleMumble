@@ -123,15 +123,32 @@
 
 .PostNextButton1 {
     position: absolute;
-    bottom: 80px;
+    bottom: 65px;
     right: 15px;
+    width: 25px;
+    cursor: pointer;
+    filter: invert(75%) sepia(84%) saturate(1826%) hue-rotate(336deg) brightness(101%) contrast(102%);
+}
+
+.PostNextButton1:hover {
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
+    filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
 }
 
 .PostNextButton2 {
     position: absolute;
-    bottom: 80px;
+    bottom: 65px;
     left: 15px;   
+    width: 25px;
+    cursor: pointer;
+    filter: invert(75%) sepia(84%) saturate(1826%) hue-rotate(336deg) brightness(101%) contrast(102%);
 }
+
+.PostNextButton2:hover {
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
+    filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
+}
+
 
 .PostMusicForm {
     display: flex;
@@ -149,13 +166,32 @@
 }
 
 .PostMusic {
+    /* background-color: violet; */
+    width: 200px;
+}
+
+.imgPostMusicBox {
+    /* background-color: #db8e23; */
     position: relative;
 }
 
-.PostMusic > img {
-    width: 130px;
+.img_Music {
+    /* background-color: #393939; */
+    width: 110px;
+    height: 100%;
     animation: rotate_image 4s ease-in-out infinite;
     transform-origin: 50% 50%;
+    position: relative;
+    left: -28px;
+}
+
+.img_MusicBox {
+    position: absolute;
+    /* background-color: #db8e23; */
+    left: 15px;
+    top: -46px;
+    width: 200px;
+    opacity: 0.98;
 }
 
 .PostMusicBox {

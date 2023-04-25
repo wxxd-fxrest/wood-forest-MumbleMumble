@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
 import '../../routers/Auth/AuthComponent.css';
+import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ const SignUp = () => {
                 uid: authData.user.uid,
                 email: email, 
                 displayName: "Unkown",
-                attachmentUrl: "",
+                attachmentUrl: Logo,
             })
             navigate("/");
             console.log("회원가입 완료") ;

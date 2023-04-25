@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import None  from '../../Image/Mumble_Profile_None.PNG' ; 
+import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase';
 import PostEmoticon from './PostEmoticon';
 import '../../routers/Post/Post.css' ;
-import Music from '../../Image/Mumble_Music.png' ;
+import Music from '../../Image/Mumble_Music1.png' ;
+import MusicBox from '../../Image/Mumble_Music2.png' ;
+import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
+import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
 
 const Post = ({postData}) => {
     const navigate = useNavigate();
@@ -47,9 +50,9 @@ const Post = ({postData}) => {
                         <div className='PostProfileTrue' onClick={onProfilePage}>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
-                        </div> : <img src={None} width="180px"/>} 
+                        </div> : <img src={Logo} width="180px"/>} 
                     </> : <div className='PostProfileTrue'>
-                        <img src={None} width="180px"/>
+                        <img src={Logo} width="180px"/>
                         <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
 
@@ -68,22 +71,26 @@ const Post = ({postData}) => {
                                     <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
                                 </div>
                                 <div className='PostMusic'>
-                                    <img src={Music} />
-                                    <div className='PostMusicBox'></div>
+                                    <div className='imgPostMusicBox'>
+                                        <img src={Music} className="img_Music"/>
+                                        <img src={MusicBox} className="img_MusicBox" />
+                                    </div>
                                 </div>
                             </div>}
                     </>}
                 </div>
                 
-                {postData.Data.music == false ? null : <>
+                {postData.Data.music == false ? null : <div>
                     {next == false ? 
-                    <button className='PostNextButton1'
+                    <img className='PostNextButton1'
                         type='button'
-                        onClick={() => {setNext(!next)}}> 다음 </button> :
-                    <button className='PostNextButton2'
+                        src={Right}
+                        onClick={() => {setNext(!next)}} /> :
+                    <img className='PostNextButton2'
                         type='button'
-                        onClick={() => {setNext(!next)}}> 이전 </button> }
-                </> }
+                        src={Left}
+                        onClick={() => {setNext(!next)}} /> }
+                </div> }
 
             </div> : <div className="PostBackGroundImg">
                 <div>
@@ -92,9 +99,9 @@ const Post = ({postData}) => {
                         <div className='PostProfileTrue'  onClick={onProfilePage}>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
-                        </div> : <img src={None} width="180px"/>}
+                        </div> : <img src={Logo} width="180px"/>}
                     </> : <div className='PostProfileTrue'>
-                        <img src={None} width="180px"/>
+                        <img src={Logo} width="180px"/>
                         <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
                     <div className='PostEmotion'>
@@ -112,21 +119,25 @@ const Post = ({postData}) => {
                                 <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
                             </div>
                             <div className='PostMusic'>
-                                <img src={Music} />
-                                <div className='PostMusicBox'></div>
+                                <div className='imgPostMusicBox'>
+                                    <img src={Music} className="img_Music"/>
+                                    <img src={MusicBox} className="img_MusicBox" />
+                                </div>
                             </div>
                         </div>}
                     </>}
                 </div>
-                {postData.Data.music == false ? null : <>
+                {postData.Data.music == false ? null : <div>
                     {next == false ? 
-                    <button className='PostNextButton1'
+                    <img className='PostNextButton1'
                         type='button'
-                        onClick={() => {setNext(!next)}}> 다음 </button> :
-                    <button className='PostNextButton2'
+                        src={Right}
+                        onClick={() => {setNext(!next)}} /> :
+                    <img className='PostNextButton2'
                         type='button'
-                        onClick={() => {setNext(!next)}}> 이전 </button> }
-                </>}
+                        src={Left}
+                        onClick={() => {setNext(!next)}} /> }
+                </div>}
             </div>}
         </div>
     )
