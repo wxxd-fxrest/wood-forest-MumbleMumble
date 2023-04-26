@@ -50,7 +50,7 @@
 }
 
 .imgBtn {
-    background-color: rgb(255, 166, 41, 0.3);
+    /* background-color: rgb(255, 166, 41, 0.3); */
     width: 50px;
     height: 40px;
     margin-right: 10px;
@@ -80,7 +80,16 @@
     width: 25px;
     height: auto;
     display: inline-flex;
-    margin: 7px;
+    margin: 8px;
+    filter: invert(51%) sepia(85%) saturate(456%) hue-rotate(355deg) brightness(105%) contrast(84%);
+}
+
+.imgBtn > img:hover, .imgBtn_on > img:hover {
+    width: 25px;
+    height: auto;
+    display: inline-flex;
+    margin: 8px;
+    filter: invert(74%) sepia(70%) saturate(330%) hue-rotate(356deg) brightness(103%) contrast(101%);
 }
 
 .Btn > h4 {
@@ -480,15 +489,34 @@
     }
 }
 
+
+@media screen and (max-width: 750px) {
+    .HomeButtonForm > img {
+       width: 90px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .HomeButtonForm > img {
+       width: 80px;
+    }
+}
+
 @media screen and (max-width: 650px) {
     .WriteContainer {
         left:  100%;
+    }
+    .HomeButtonForm > img {
+        width: 70px;
     }
 }
 
 @media screen and (max-width: 620px) {
     .WriteContainer {
         left:  80%;
+    }
+    .HomeButtonForm > img {
+        opacity: 0;
     }
 }
 

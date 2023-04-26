@@ -14,6 +14,7 @@ const Post = ({postData}) => {
     const navigate = useNavigate();
     const [currentData, setCurrentData] = useState([]) ; 
     const [next, setNext] = useState(false) ; 
+    const [imgOpen, setImgOpen] = useState(false) ; 
 
     const onCardPage = (e) => {
         e.preventDefault();
@@ -43,7 +44,15 @@ const Post = ({postData}) => {
         <div className='Post'>
             {postData.Data.cardImgUrl ? 
             <div className='PostBackGroundImg'>
-                <img src={postData.Data.cardImgUrl} />
+                <button className={postData.Data.selected ? 'ImgOpenBtn' : 'ImgOpenBtn2'}
+                    onClick={() => setImgOpen(!imgOpen)}> img </button>
+                <div className='PostCardImgUrlForm'>
+                    {imgOpen && <div className='PostCardImgUrl'>
+                        <img src={postData.Data.cardImgUrl} />
+                        <button className='ImgOpenBtn_x'
+                            onClick={() => setImgOpen(!imgOpen)}> x </button>
+                    </div>}
+                </div>
                 <div className='PostProfile'>
                     {postData.Data.anonymous == true ? <> 
                         {postData.Data.UID == currentData.uid ? 

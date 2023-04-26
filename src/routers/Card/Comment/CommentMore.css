@@ -8,7 +8,7 @@
 }
 
 .More {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.6);
+    border-bottom: solid 1px #ffa629;
     min-height: 150px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .MoreProfile > div > img {
-    border: solid 1px rgba(0, 0, 0, 0.6);
+    border: solid 1px #ffd966;
     border-radius: 100%;
     width: 25px;
     height: 25px;

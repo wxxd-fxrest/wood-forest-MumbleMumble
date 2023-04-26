@@ -21,6 +21,7 @@ const Card = ({card}) => {
     const [currentData, setCurrentData] = useState([]) ;
     const [next, setNext] = useState(false) ; 
     const [more, setMore] = useState(false) ; 
+    const [imgOpen, setImgOpen] = useState(false) ; 
 
     const CurrentUserInfo = async () => {
         const getUserData = query(
@@ -69,7 +70,16 @@ const Card = ({card}) => {
         <div className='Card'>
         {card.Data.cardImgUrl ? 
             <div className='CardBackGroundImg'>
-                <img src={card.Data.cardImgUrl} />
+                <button className={card.Data.selected ? 'CardImgOpenBtn' : 'CardImgOpenBtn2'} 
+                    onClick={() => setImgOpen(!imgOpen)}> img </button>
+                <div className='PostCardImgUrlForm'>
+                    {imgOpen && <div className='PostCardImgUrl'>
+                        <img src={card.Data.cardImgUrl} />
+                        <button className='ImgOpenBtn_x'
+                            onClick={() => setImgOpen(!imgOpen)}> x </button>
+                    </div>}
+                </div>
+                
                 <div className='CardProfile'>
                     {card.Data.anonymous == true ? <> 
                         {card.Data.UID == currentData.uid ? 

@@ -53,11 +53,56 @@
     position: relative;
 }
 
-.PostBackGroundImg > img {
-    width: 200px;
-    margin: 30px 10px 10px 10px;
-    opacity: 0.3;
+.PostCardImgUrlForm {
+    background-color: tomato;
+    position: absolute;
+    z-index: 10000000;
+    display: inline-flex;
+    margin: 10px;
+    right: -5px;
+    top: -5px;
+    border-radius: 10px;
+    overflow: hidden;
 }
+
+.PostCardImgUrl {
+    display: flex;
+    background-color: aliceblue;
+    padding: 5px;
+}
+
+.PostCardImgUrl > img {
+    min-width: 300px;
+    width: 300px;
+    height: 180px;
+    object-fit: cover;  
+    width: 100%;
+}
+
+.ImgOpenBtn {
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 75px;
+}
+
+.ImgOpenBtn2 {
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 15px;
+}
+
+.ImgOpenBtn_x {
+    position: absolute;
+    z-index: 10000000;
+    top: 5px;
+    right: 5px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
 
 .PostProfile {
     width: 100%;
@@ -83,7 +128,7 @@
 
 .PostProfileTrue > img {
     /* background-color: rgb(255, 255, 255); */
-    border: solid 1px rgba(0, 0, 0, 0.6);
+    border: solid 1px #ffd966;
     border-radius: 100%;
     /* z-index: 10000; */
     width: 30px;
@@ -189,8 +234,8 @@
     position: absolute;
     /* background-color: #db8e23; */
     left: 15px;
-    top: -46px;
-    width: 200px;
+    top: -51px;
+    width: 210px;
     opacity: 0.98;
 }
 
@@ -218,6 +263,9 @@
     .PostForm {
         bottom: 18px;
     }
+    .PostCardImgUrl > img {
+        height: 190px;
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -230,6 +278,9 @@
     .PostMusicForm {
         margin-top: 0px;
         height: 130px;
+    }
+    .PostCardImgUrl > img {
+        height: 200px;
     }
 }
 
@@ -256,6 +307,9 @@
     .PostNextButton2{
         bottom: 90px;
     }
+    .PostCardImgUrl > img {
+        height: 245px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -274,6 +328,9 @@
     }
     .PostNextButton2{
         bottom: 100px;
+    }
+    .PostCardImgUrl > img {
+        height: 240px;
     }
 }
 
@@ -297,6 +354,9 @@
     .PostNextButton2{
         bottom: 120px;
     }
+    .PostCardImgUrl > img {
+        height: 260px;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -312,5 +372,8 @@
     }
     .PostMusicForm {
         height: 200px;
+    }
+    .PostCardImgUrl > img {
+        height: 295px;
     }
 }

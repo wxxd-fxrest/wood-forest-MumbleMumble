@@ -14,6 +14,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
     const {currentUser} = useContext(AuthContext) ; 
     const navigate = useNavigate();
     const [next, setNext] = useState(false) ; 
+    const [imgOpen, setImgOpen] = useState(false) ; 
 
     const onCardPage = (e) => {
         e.preventDefault();
@@ -29,7 +30,17 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
         <div className="Post">
             {currentUser.uid == profileInfo.uid ?
             <div className="PostBackGroundImg">
-                <img src={pofilePost.Data.cardImgUrl} />
+                {pofilePost.Data.cardImgUrl &&
+                <button className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'}
+                    onClick={() => setImgOpen(!imgOpen)}> img </button>}
+                <div className='PostCardImgUrlForm'>
+                    {imgOpen && <div className='PostCardImgUrl'>
+                    <img src={pofilePost.Data.cardImgUrl} />
+                        <button className='ImgOpenBtn_x'
+                            onClick={() => setImgOpen(!imgOpen)}> x </button>
+                    </div>}
+                </div>
+    
                 <div className='PostProfile'>
                     {pofilePost.Data.UID == profileInfo.uid && 
                         <div className='PostProfileTrue' onClick={onProfilePage}>
@@ -74,8 +85,16 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
             </div> : <div>
                 {pofilePost.Data.anonymous == false ? null : <div>
                     {pofilePost.Data.cardImgUrl ? <div>
-                        <div className="PostBackGroundImg">
-                            <img src={pofilePost.Data.cardImgUrl} />
+                        <div className="PostBackGroundImg">      
+                            <button className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'} 
+                                onClick={() => setImgOpen(!imgOpen)}> img </button>
+                            <div className='PostCardImgUrlForm'>
+                                {imgOpen && <div className='PostCardImgUrl'>
+                                <img src={pofilePost.Data.cardImgUrl} />
+                                    <button className='ImgOpenBtn_x'
+                                        onClick={() => setImgOpen(!imgOpen)}> x </button>
+                                </div>}
+                            </div>          
                             <div className='PostProfile'>
                                 {pofilePost.Data.UID == profileInfo.uid &&
                                     <div className='PostProfileTrue' onClick={onProfilePage}>
