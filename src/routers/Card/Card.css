@@ -100,15 +100,21 @@
 .CardImgOpenBtn {
     position: absolute;
     z-index: 10;
-    top: 15px;
-    right: 105px;
+    top: 9px;    
+    right: 95px;
+    width: 33px;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 3px rgb(55, 55, 55));
 }
 
 .CardImgOpenBtn2 {
     position: absolute;
     z-index: 10;
-    top: 17px;
-    right: 40px;
+    top: 9px;    
+    right: 50px;
+    width: 33px;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 3px rgb(55, 55, 55));
 }
 
 .CardProfile {

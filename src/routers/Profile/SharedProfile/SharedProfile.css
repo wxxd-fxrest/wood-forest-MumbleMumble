@@ -81,15 +81,21 @@
 .ProfileImgOpenBtn {
     position: absolute;
     z-index: 10;
-    top: 15px;
-    right: 75px;
+    top: 9px;    
+    right: 65px;
+    width: 33px;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 3px rgb(55, 55, 55));
 }
 
 .ProfileImgOpenBtn2 {
     position: absolute;
     z-index: 10;
-    top: 17px;
-    right:20px;
+    top: 9px;    
+    right: 15px;
+    width: 33px;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 3px rgb(55, 55, 55));
 }
 
 @media screen and (max-width: 1200px) {

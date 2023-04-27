@@ -8,7 +8,7 @@ import '../../../routers/Post/Post.css' ;
 
 import Left from '../../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
-
+import ImageBtn from '../../../Image/expression_Icon/Mumble_image_icon.png' ;
 
 const SharedProfile = ({pofilePost, profileInfo}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -31,8 +31,9 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
             {currentUser.uid == profileInfo.uid ?
             <div className="PostBackGroundImg">
                 {pofilePost.Data.cardImgUrl &&
-                <button className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'}
-                    onClick={() => setImgOpen(!imgOpen)}> img </button>}
+                <img src={ImageBtn} 
+                    className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'}
+                    onClick={() => setImgOpen(!imgOpen)} />}
                 <div className='PostCardImgUrlForm'>
                     {imgOpen && <div className='PostCardImgUrl'>
                     <img src={pofilePost.Data.cardImgUrl} />
@@ -86,8 +87,9 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                 {pofilePost.Data.anonymous == false ? null : <div>
                     {pofilePost.Data.cardImgUrl ? <div>
                         <div className="PostBackGroundImg">      
-                            <button className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'} 
-                                onClick={() => setImgOpen(!imgOpen)}> img </button>
+                            <img src={ImageBtn}
+                                className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'} 
+                                onClick={() => setImgOpen(!imgOpen)} />
                             <div className='PostCardImgUrlForm'>
                                 {imgOpen && <div className='PostCardImgUrl'>
                                 <img src={pofilePost.Data.cardImgUrl} />

@@ -13,6 +13,7 @@ import MusicBox from '../../Image/Mumble_Music2.png' ;
 import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
 import DeleteBtn from '../../Image/Mumble_Delete_Icon.png'; 
+import ImageBtn from '../../Image/expression_Icon/Mumble_image_icon.png' ;
 
 const Card = ({card}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -70,8 +71,9 @@ const Card = ({card}) => {
         <div className='Card'>
         {card.Data.cardImgUrl ? 
             <div className='CardBackGroundImg'>
-                <button className={card.Data.selected ? 'CardImgOpenBtn' : 'CardImgOpenBtn2'} 
-                    onClick={() => setImgOpen(!imgOpen)}> img </button>
+                <img src={ImageBtn} 
+                    className={card.Data.selected ? 'CardImgOpenBtn' : 'CardImgOpenBtn2'} 
+                    onClick={() => setImgOpen(!imgOpen)} />
                 <div className='PostCardImgUrlForm'>
                     {imgOpen && <div className='PostCardImgUrl'>
                         <img src={card.Data.cardImgUrl} />

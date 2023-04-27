@@ -9,6 +9,7 @@ import Music from '../../Image/Mumble_Music1.png' ;
 import MusicBox from '../../Image/Mumble_Music2.png' ;
 import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
+import ImageBtn from '../../Image/expression_Icon/Mumble_image_icon.png' ;
 
 const Post = ({postData}) => {
     const navigate = useNavigate();
@@ -44,8 +45,9 @@ const Post = ({postData}) => {
         <div className='Post'>
             {postData.Data.cardImgUrl ? 
             <div className='PostBackGroundImg'>
-                <button className={postData.Data.selected ? 'ImgOpenBtn' : 'ImgOpenBtn2'}
-                    onClick={() => setImgOpen(!imgOpen)}> img </button>
+                <img src={ImageBtn}
+                    className={postData.Data.selected ? 'ImgOpenBtn' : 'ImgOpenBtn2'}
+                    onClick={() => setImgOpen(!imgOpen)} />
                 <div className='PostCardImgUrlForm'>
                     {imgOpen && <div className='PostCardImgUrl'>
                         <img src={postData.Data.cardImgUrl} />
