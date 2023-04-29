@@ -162,7 +162,7 @@
     /* display: flex; */
     /* width: 80%; */
     height: 55%;
-    /* background-color: rgb(119, 222, 222); */
+    background-color: rgb(119, 222, 222);
     position: absolute;
     /* align-items: center; */
     /* justify-content: center; */
@@ -176,6 +176,22 @@
     margin-left: 60px;
     margin-right: 60px;
     word-break: break-all;
+}
+
+.CardForm > h3 {
+    background-color: #9e9c9c;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.CardHeartForm {
+    background-color: tomato;
+    position: absolute;
+    display: inline-flex;
+    width: 100%;
+    height: 30px;
+    left: 0px;
+    bottom: -15px;
 }
 
 .CardNextButton1 {
@@ -336,6 +352,7 @@
     /* margin-top: 5px; */
 }
 
+
 @keyframes rotate_image{
     100% {
         transform: rotate(360deg);
@@ -443,14 +460,17 @@
 
 @media screen and (max-width: 600px) {
     .CardBackGroundImg {
-        height: 280px;
+        height: 230px;
     }
     .CardBackGroundImg > img {
         margin: 65px 10px 10px 10px;
     }
     .CardForm {
         bottom: -75px;
-        height: 280px;
+        height: 230px;
+    }
+    .CardHeartForm{
+        bottom: 75px;
     }
     .CardMusicForm {
         height: 180px;
@@ -471,13 +491,14 @@
 
 @media screen and (max-width: 550px) {
     .CardBackGroundImg {
-        height: 320px;
+        height: 230px;
     }
     .CardBackGroundImg > img {
         margin: 80px 10px 10px 10px;
     }
     .CardForm {
-        bottom: -35px;
+        height: 230px;
+        bottom: -75px;
     }
     .CardMusicForm {
         height: 200px;
@@ -492,5 +513,18 @@
         bottom: 45px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .CardBackGroundImg {
+        height: 240px;
+    }
+    .CardForm {
+        height: 240px;
+        bottom: -75px;
+    }
+}
+
+
+
 
 

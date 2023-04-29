@@ -115,6 +115,10 @@ const Card = ({card}) => {
                                 </div>
                             </div>}
                     </>}
+
+                    <div className='CardHeartForm'>
+                        <input type="checkbox" />
+                    </div>
                 </div>
                 
                 {card.Data.music == false ? null : <div>
@@ -170,6 +174,10 @@ const Card = ({card}) => {
                                 </div>
                             </div>}
                     </>}
+
+                    <div className='CardHeartForm'>
+                        <input type="checkbox" />
+                    </div>
                 </div>
                 
                 {card.Data.music == false ? null : <div>

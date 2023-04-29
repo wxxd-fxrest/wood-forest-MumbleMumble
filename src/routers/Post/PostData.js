@@ -1,11 +1,14 @@
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { collection, onSnapshot, orderBy, query, where } from "firebase/firestore";
+import { useContext, useEffect, useState } from "react";
 import { db } from "../../firebase";
 import Post from "./Post";
 import '../../routers/Post/Post.css' ;
+import { AuthContext } from "../../Context/AuthContext";
 
 const PostData = () => {
+    const {currentUser} = useContext(AuthContext) ;
     const [postData, setPostData] = useState([]) ; 
+    const [likeList, setLikeList] = useState([]) ; 
 
     const getPostData = () => {
         const FeedCollection = query(
@@ -23,8 +26,26 @@ const PostData = () => {
         });
     } ; 
 
+    const getLike = async () => {
+        const FeedCollection = query(
+            collection(db, "Post"), 
+            where("like", "array-contains", `${currentUser.uid}`));
+        onSnapshot(FeedCollection, (querySnapshot) => {
+            let feedArray = []
+            querySnapshot.forEach((doc) => {
+                feedArray.push({
+                    DocID: doc.id, 
+                    Data: doc.data(),
+                })
+            });
+            setLikeList(feedArray) ;
+            console.log(likeList)
+        });
+    } ; 
+
     useEffect(() => {
         getPostData() ;
+        getLike() ;
     }, []) ; 
 
     return (
@@ -34,7 +55,7 @@ const PostData = () => {
             </div>
             <div className="PostList">
                 {postData.map((p, i) => (
-                    <Post key={i} postData={p}/>
+                    <Post key={i} postData={p} likeList={likeList}/>
                 ))}
             </div>
         </div>
@@ -42,3 +63,6 @@ const PostData = () => {
 }
 
 export default PostData ; 
+
+//like data 가져오는 것까지, 출력 해야 함. 
+// 중첩 map 알아봐야 함. 

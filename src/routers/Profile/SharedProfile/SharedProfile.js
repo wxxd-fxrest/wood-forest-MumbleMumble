@@ -72,6 +72,11 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                         </div>}
                     </>}
                 </div>
+
+                <div className='ProfileHeartForm'>
+                    <input type="checkbox" />
+                </div>
+
                 {pofilePost.Data.music == false ? null : <div>
                     {next == false ? 
                     <img className='PostNextButton1'
@@ -128,6 +133,11 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                                     </div>}
                                 </>}
                             </div>
+
+                            <div className='ProfileHeartForm'>
+                                <input type="checkbox" />
+                            </div>
+
                             {pofilePost.Data.music == false ? null : <div>
                                 {next == false ? 
                                 <img className='PostNextButton1'
@@ -172,6 +182,11 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                                 </div>}
                             </>}
                         </div>
+
+                        <div className='ProfileHeartForm'>
+                            <input type="checkbox" />
+                        </div>
+
                         {pofilePost.Data.music == false ? null : <div>
                             {next == false ? 
                             <img className='PostNextButton1'

@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { arrayRemove, arrayUnion, collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { db } from '../../firebase';
 import PostEmoticon from './PostEmoticon';
 import '../../routers/Post/Post.css' ;
@@ -10,12 +10,15 @@ import MusicBox from '../../Image/Mumble_Music2.png' ;
 import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
 import ImageBtn from '../../Image/expression_Icon/Mumble_image_icon.png' ;
+import { AuthContext } from '../../Context/AuthContext';
 
 const Post = ({postData}) => {
+    const {currentUser} = useContext(AuthContext) ;
     const navigate = useNavigate();
     const [currentData, setCurrentData] = useState([]) ; 
     const [next, setNext] = useState(false) ; 
     const [imgOpen, setImgOpen] = useState(false) ; 
+    const [like, setLike] = useState(true) ; 
 
     const onCardPage = (e) => {
         e.preventDefault();
@@ -36,6 +39,23 @@ const Post = ({postData}) => {
             setCurrentData(doc.data()) ;
         }); 
     } ; 
+
+    const likeUserUID = doc(db, "Post", `${postData.DocID}`);
+
+    const onClickLikeUpdate = async () => {
+        setLike(!like)
+        console.log(like)
+        if(like == true) {
+            await updateDoc(likeUserUID, {
+                like: arrayUnion(currentUser.uid)
+            });
+        }
+        if(like == false) {
+            await updateDoc(likeUserUID, {
+                like: arrayRemove(currentUser.uid)
+            });
+        }
+    }
 
     useEffect(() => {
         CurrentUserInfo() ;
@@ -77,18 +97,24 @@ const Post = ({postData}) => {
                     {next == false ? 
                         <h3> {postData.Data.PostText} </h3> : <>
                         {postData.Data.music == false ? null :
-                            <div className='PostMusicForm'>
-                                <div className='PostMusicName'>
-                                    <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
+                        <div className='PostMusicForm'>
+                            <div className='PostMusicName'>
+                                <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
+                            </div>
+                            <div className='PostMusic'>
+                                <div className='imgPostMusicBox'>
+                                    <img src={Music} className="img_Music"/>
+                                    <img src={MusicBox} className="img_MusicBox" />
                                 </div>
-                                <div className='PostMusic'>
-                                    <div className='imgPostMusicBox'>
-                                        <img src={Music} className="img_Music"/>
-                                        <img src={MusicBox} className="img_MusicBox" />
-                                    </div>
-                                </div>
-                            </div>}
+                            </div>
+                        </div>}
                     </>}
+                </div>
+
+                <div className='PostHeartForm'>
+                    {/* {likeList.DocID ? <h3 onClick={onClickLikeUpdate}> like </h3> : null}
+                    {!likeList.DocID ? <h3 onClick={onClickLikeUpdate}> dontlike </h3> : null}
+                    {likeList.DocID == postData.DocID && <h3> like </h3> }     */}
                 </div>
                 
                 {postData.Data.music == false ? null : <div>
@@ -122,8 +148,7 @@ const Post = ({postData}) => {
 
                 <div className='PostForm' 
                     onClick={onCardPage}>
-                    {next == false ? 
-                        <h3> {postData.Data.PostText} </h3> : <>
+                    {next == false ? <h3> {postData.Data.PostText} </h3> : <>
                         {postData.Data.music == false ? null :
                         <div className='PostMusicForm'>
                             <div className='PostMusicName'>
@@ -138,6 +163,15 @@ const Post = ({postData}) => {
                         </div>}
                     </>}
                 </div>
+                <div className='PostHeartForm'>
+                    {/* {likeList.DocID ? <h3 onClick={onClickLikeUpdate}> like </h3> : null}
+                    {!likeList.DocID ? <h3 onClick={onClickLikeUpdate}> dontlike </h3> : null}
+                    {likeList.DocID == postData.DocID && <h3> like </h3> }                     
+                    <h3> {likeList[0].DocID} </h3> 
+                    <h3> {postData.DocID} </h3>  */}
+                    <input type="checkbox" onClick={onClickLikeUpdate} />
+                </div>
+
                 {postData.Data.music == false ? null : <div>
                     {next == false ? 
                     <img className='PostNextButton1'

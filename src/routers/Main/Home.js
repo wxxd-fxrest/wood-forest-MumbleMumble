@@ -99,6 +99,7 @@ const Home = () => {
                             anonymous, 
                             selected,
                             cardImgUrl,
+                            like: [], 
                         })
                     } else {
                         await addDoc(collection(db, "Post"), {
@@ -113,6 +114,7 @@ const Home = () => {
                             anonymous, 
                             selected,
                             cardImgUrl,
+                            like: [], 
                         })
                     }
                 })
@@ -128,6 +130,7 @@ const Home = () => {
                         music: false, 
                         anonymous, 
                         selected,
+                        like: [], 
                     })
                 } else {
                     await addDoc(collection(db, "Post"), {
@@ -141,6 +144,7 @@ const Home = () => {
                         musicURL: select[0].url,
                         anonymous, 
                         selected,
+                        like: [], 
                     })
                 }
             }
