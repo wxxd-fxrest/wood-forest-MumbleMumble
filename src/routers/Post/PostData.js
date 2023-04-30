@@ -26,26 +26,26 @@ const PostData = () => {
         });
     } ; 
 
-    const getLike = async () => {
-        const FeedCollection = query(
-            collection(db, "Post"), 
-            where("like", "array-contains", `${currentUser.uid}`));
-        onSnapshot(FeedCollection, (querySnapshot) => {
-            let feedArray = []
-            querySnapshot.forEach((doc) => {
-                feedArray.push({
-                    DocID: doc.id, 
-                    Data: doc.data(),
-                })
-            });
-            setLikeList(feedArray) ;
-            console.log(likeList)
-        });
-    } ; 
+    // const getLike = async () => {
+    //     const FeedCollection = query(
+    //         collection(db, "Post"), 
+    //         where("like", "array-contains", `${currentUser.uid}`));
+    //     onSnapshot(FeedCollection, (querySnapshot) => {
+    //         let feedArray = []
+    //         querySnapshot.forEach((doc) => {
+    //             feedArray.push({
+    //                 DocID: doc.id, 
+    //                 Data: doc.data(),
+    //             })
+    //         });
+    //         setLikeList(feedArray) ;
+    //         console.log(likeList)
+    //     });
+    // } ; 
 
     useEffect(() => {
         getPostData() ;
-        getLike() ;
+        // getLike() ;
     }, []) ; 
 
     return (
@@ -55,7 +55,7 @@ const PostData = () => {
             </div>
             <div className="PostList">
                 {postData.map((p, i) => (
-                    <Post key={i} postData={p} likeList={likeList}/>
+                    <Post key={i} postData={p} />
                 ))}
             </div>
         </div>

@@ -247,6 +247,7 @@
     justify-content: center;
     flex-direction: column;
     /* height: 100%; */
+    height: 105px;
 }
 
 .CardMusicName {
@@ -386,7 +387,7 @@
     }
     .CardMusicForm {
         margin-top: 0px;
-        height: 130px;
+        height: 120px;
     }
     .Cardcomment {
         height: 430px;
@@ -410,7 +411,7 @@
         margin-right: 60px;
     }
     .CardMusicForm {
-        margin-top: 5px;
+        margin-top: -10px;
         height: 160px;
     }
     .CardNextButton1{
@@ -428,6 +429,9 @@
     .CardDeleteButton {
         bottom: 33px;
     }
+    .CardImgOpenBtn {
+        top: -50px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -438,7 +442,7 @@
         bottom: 40px;
     }
     .CardMusicForm {
-        margin-top: 10px;
+        margin-top: -10px;
         height: 160px;
     }
     .CardNextButton1{
@@ -473,6 +477,7 @@
         bottom: 75px;
     }
     .CardMusicForm {
+        margin-top: -20px;
         height: 180px;
     }
     .CardNextButton1{
@@ -486,6 +491,9 @@
     }
     .CardcommentTrue {
         height: 500px;
+    }
+    .CardImgOpenBtn {
+        top: -55px;
     }
 }
 
@@ -501,6 +509,7 @@
         bottom: -75px;
     }
     .CardMusicForm {
+        margin-top: -20px;
         height: 200px;
     }
     .Cardcomment {
@@ -511,6 +520,9 @@
     }
     .CardDeleteButton {
         bottom: 45px;
+    }
+    .CardImgOpenBtn {
+        top: -70px;
     }
 }
 

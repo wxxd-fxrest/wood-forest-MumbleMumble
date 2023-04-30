@@ -11,6 +11,8 @@ import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png';
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
 import ImageBtn from '../../Image/expression_Icon/Mumble_image_icon.png' ;
 import { AuthContext } from '../../Context/AuthContext';
+import Like from '../../Image/Like/heart.png' ; 
+import unLike from '../../Image/Like/like.png' ; 
 
 const Post = ({postData}) => {
     const {currentUser} = useContext(AuthContext) ;
@@ -18,7 +20,6 @@ const Post = ({postData}) => {
     const [currentData, setCurrentData] = useState([]) ; 
     const [next, setNext] = useState(false) ; 
     const [imgOpen, setImgOpen] = useState(false) ; 
-    const [like, setLike] = useState(true) ; 
 
     const onCardPage = (e) => {
         e.preventDefault();
@@ -43,22 +44,25 @@ const Post = ({postData}) => {
     const likeUserUID = doc(db, "Post", `${postData.DocID}`);
 
     const onClickLikeUpdate = async () => {
-        setLike(!like)
-        console.log(like)
-        if(like == true) {
+        if(postData.Data.like != currentUser.uid) {
             await updateDoc(likeUserUID, {
                 like: arrayUnion(currentUser.uid)
             });
         }
-        if(like == false) {
+    }
+
+    const onClickLikeDelete = async () => {
+        if(postData.Data.like = currentUser.uid) {
             await updateDoc(likeUserUID, {
                 like: arrayRemove(currentUser.uid)
             });
         }
     }
 
+
     useEffect(() => {
         CurrentUserInfo() ;
+        console.log(postData.Data.like.length)
     }, []) ; 
 
     return (
@@ -112,9 +116,13 @@ const Post = ({postData}) => {
                 </div>
 
                 <div className='PostHeartForm'>
-                    {/* {likeList.DocID ? <h3 onClick={onClickLikeUpdate}> like </h3> : null}
-                    {!likeList.DocID ? <h3 onClick={onClickLikeUpdate}> dontlike </h3> : null}
-                    {likeList.DocID == postData.DocID && <h3> like </h3> }     */}
+                    {postData.Data.like.includes(currentUser.uid) ? <>
+                        <img src={unLike} onClick={onClickLikeDelete} />
+                        <h4> {postData.Data.like.length} </h4>
+                    </> : <>
+                        <img src={Like} onClick={onClickLikeUpdate} />
+                        <h4> {postData.Data.like.length} </h4>
+                    </>}
                 </div>
                 
                 {postData.Data.music == false ? null : <div>
@@ -163,13 +171,15 @@ const Post = ({postData}) => {
                         </div>}
                     </>}
                 </div>
+
                 <div className='PostHeartForm'>
-                    {/* {likeList.DocID ? <h3 onClick={onClickLikeUpdate}> like </h3> : null}
-                    {!likeList.DocID ? <h3 onClick={onClickLikeUpdate}> dontlike </h3> : null}
-                    {likeList.DocID == postData.DocID && <h3> like </h3> }                     
-                    <h3> {likeList[0].DocID} </h3> 
-                    <h3> {postData.DocID} </h3>  */}
-                    <input type="checkbox" onClick={onClickLikeUpdate} />
+                    {postData.Data.like.includes(currentUser.uid) ? <>
+                        <img src={unLike} onClick={onClickLikeDelete} />
+                        <h4> {postData.Data.like.length} </h4>
+                    </> : <>
+                        <img src={Like} onClick={onClickLikeUpdate} />
+                        <h4> {postData.Data.like.length} </h4>
+                    </>}
                 </div>
 
                 {postData.Data.music == false ? null : <div>

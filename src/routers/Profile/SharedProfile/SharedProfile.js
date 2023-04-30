@@ -10,6 +10,12 @@ import Left from '../../../Image/Icons/Mumble_Icon_angle-circle-left.png';
 import Right from '../../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
 import ImageBtn from '../../../Image/expression_Icon/Mumble_image_icon.png' ;
 
+import Like from '../../../Image/Like/heart.png' ; 
+import unLike from '../../../Image/Like/like.png' ; 
+import { db } from "../../../firebase";
+import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
+    
+
 const SharedProfile = ({pofilePost, profileInfo}) => {
     const {currentUser} = useContext(AuthContext) ; 
     const navigate = useNavigate();
@@ -25,6 +31,24 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
         e.preventDefault();
         navigate(`/profile/${pofilePost.Data.UID}`) ; 
     } ; 
+
+    const likeUserUID = doc(db, "Post", `${pofilePost.DocID}`);
+    
+    const onClickLikeUpdate = async () => {
+        if(pofilePost.Data.like != currentUser.uid) {
+            await updateDoc(likeUserUID, {
+                like: arrayUnion(currentUser.uid)
+            });
+        }
+    }
+
+    const onClickLikeDelete = async () => {
+        if(pofilePost.Data.like = currentUser.uid) {
+            await updateDoc(likeUserUID, {
+                like: arrayRemove(currentUser.uid)
+            });
+        }
+    }
     
     return(
         <div className="Post">
@@ -74,7 +98,13 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                 </div>
 
                 <div className='ProfileHeartForm'>
-                    <input type="checkbox" />
+                    {pofilePost.Data.like.includes(currentUser.uid) ? <>
+                        <img src={unLike} onClick={onClickLikeDelete} />
+                        <h4> {pofilePost.Data.like.length} </h4>
+                    </> : <>
+                        <img src={Like} onClick={onClickLikeUpdate} />
+                        <h4> {pofilePost.Data.like.length} </h4>
+                    </>}
                 </div>
 
                 {pofilePost.Data.music == false ? null : <div>
@@ -135,7 +165,13 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                             </div>
 
                             <div className='ProfileHeartForm'>
-                                <input type="checkbox" />
+                                {pofilePost.Data.like.includes(currentUser.uid) ? <>
+                                    <img src={unLike} onClick={onClickLikeDelete} />
+                                    <h4> {pofilePost.Data.like.length} </h4>
+                                </> : <>
+                                    <img src={Like} onClick={onClickLikeUpdate} />
+                                    <h4> {pofilePost.Data.like.length} </h4>
+                                </>}
                             </div>
 
                             {pofilePost.Data.music == false ? null : <div>
@@ -184,7 +220,13 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                         </div>
 
                         <div className='ProfileHeartForm'>
-                            <input type="checkbox" />
+                            {pofilePost.Data.like.includes(currentUser.uid) ? <>
+                                <img src={unLike} onClick={onClickLikeDelete} />
+                                <h4> {pofilePost.Data.like.length} </h4>
+                            </> : <>
+                                <img src={Like} onClick={onClickLikeUpdate} />
+                                <h4> {pofilePost.Data.like.length} </h4>
+                            </>}
                         </div>
 
                         {pofilePost.Data.music == false ? null : <div>

@@ -52,6 +52,7 @@ const SharedProfileData = () => {
                 })
             });
             setProfileMusic(feedArray) ;
+            console.log(pofileMusic) ;
         });
     } ; 
 

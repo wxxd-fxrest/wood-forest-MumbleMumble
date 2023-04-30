@@ -180,3 +180,24 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .ProfileImgOpenBtn {
+        top: -50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ProfileImgOpenBtn {
+        top: -55px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .ProfileImgOpenBtn {
+        top: -70px;
+    }
+}
+
+
+

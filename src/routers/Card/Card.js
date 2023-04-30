@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, query, Timestamp, where } from 'firebase/firestore';
+import { addDoc, arrayRemove, arrayUnion, collection, deleteDoc, doc, getDocs, query, Timestamp, updateDoc, where } from 'firebase/firestore';
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
@@ -14,6 +14,9 @@ import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png';
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
 import DeleteBtn from '../../Image/Mumble_Delete_Icon.png'; 
 import ImageBtn from '../../Image/expression_Icon/Mumble_image_icon.png' ;
+
+import Like from '../../Image/Like/heart.png' ; 
+import unLike from '../../Image/Like/like.png' ; 
 
 const Card = ({card}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -66,7 +69,25 @@ const Card = ({card}) => {
         e.preventDefault();
         navigate(`/profile/${currentData.uid}`) ; 
     } ; 
+
+    const likeUserUID = doc(db, "Post", `${card.DocID}`);
     
+    const onClickLikeUpdate = async () => {
+        if(card.Data.like != currentUser.uid) {
+            await updateDoc(likeUserUID, {
+                like: arrayUnion(currentUser.uid)
+            });
+        }
+    }
+
+    const onClickLikeDelete = async () => {
+        if(card.Data.like = currentUser.uid) {
+            await updateDoc(likeUserUID, {
+                like: arrayRemove(currentUser.uid)
+            });
+        }
+    }
+
     return(
         <div className='Card'>
         {card.Data.cardImgUrl ? 
@@ -117,7 +138,13 @@ const Card = ({card}) => {
                     </>}
 
                     <div className='CardHeartForm'>
-                        <input type="checkbox" />
+                        {card.Data.like.includes(currentUser.uid) ? <>
+                            <img src={unLike} onClick={onClickLikeDelete} />
+                            <h4> {card.Data.like.length} </h4>
+                        </> : <>
+                            <img src={Like} onClick={onClickLikeUpdate} />
+                            <h4> {card.Data.like.length} </h4>
+                        </>}
                     </div>
                 </div>
                 
@@ -176,7 +203,13 @@ const Card = ({card}) => {
                     </>}
 
                     <div className='CardHeartForm'>
-                        <input type="checkbox" />
+                        {card.Data.like.includes(currentUser.uid) ? <>
+                            <img src={unLike} onClick={onClickLikeDelete} />
+                            <h4> {card.Data.like.length} </h4>
+                        </> : <>
+                            <img src={Like} onClick={onClickLikeUpdate} />
+                            <h4> {card.Data.like.length} </h4>
+                        </>}
                     </div>
                 </div>
                 

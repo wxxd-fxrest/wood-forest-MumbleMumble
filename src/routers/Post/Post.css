@@ -328,6 +328,9 @@
     .PostCardImgUrl > img {
         height: 245px;
     }
+    .ImgOpenBtn{
+        top: -50px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -376,6 +379,9 @@
     .PostCardImgUrl > img {
         height: 260px;
     }
+    .ImgOpenBtn{
+        top: -55px;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -395,6 +401,9 @@
     }
     .PostCardImgUrl > img {
         height: 295px;
+    }
+    .ImgOpenBtn{
+        top: -70px;
     }
 }
 
