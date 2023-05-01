@@ -116,13 +116,13 @@ const Post = ({postData}) => {
                 </div>
 
                 <div className='PostHeartForm'>
-                    {postData.Data.like.includes(currentUser.uid) ? <>
-                        <img src={unLike} onClick={onClickLikeDelete} />
-                        <h4> {postData.Data.like.length} </h4>
-                    </> : <>
+                    {postData.Data.like.includes(currentUser.uid) ? <div>
+                        <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
+                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                    </div> : <div>
                         <img src={Like} onClick={onClickLikeUpdate} />
-                        <h4> {postData.Data.like.length} </h4>
-                    </>}
+                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                    </div>}
                 </div>
                 
                 {postData.Data.music == false ? null : <div>
@@ -173,13 +173,13 @@ const Post = ({postData}) => {
                 </div>
 
                 <div className='PostHeartForm'>
-                    {postData.Data.like.includes(currentUser.uid) ? <>
-                        <img src={unLike} onClick={onClickLikeDelete} />
-                        <h4> {postData.Data.like.length} </h4>
-                    </> : <>
+                    {postData.Data.like.includes(currentUser.uid) ? <div>
+                        <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
+                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                    </div> : <div>
                         <img src={Like} onClick={onClickLikeUpdate} />
-                        <h4> {postData.Data.like.length} </h4>
-                    </>}
+                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                    </div>}
                 </div>
 
                 {postData.Data.music == false ? null : <div>

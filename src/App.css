@@ -1,7 +1,5 @@
 html {
   width: 100vw;
-  /* min-width: 720px; */
-  /* max-width: 1400px; */
   display: flex;
   height: 100vh;
   min-height: 100vh;
@@ -11,14 +9,12 @@ html {
 }
 
 body {  
-  /* background-color: yellow; */
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100%;
-  /* min-width: 720px; */
   -ms-overflow-style: none;
 }
     
@@ -27,12 +23,10 @@ body {
 }
 
 .App {
-  /* background-color: antiquewhite; */
   display: flex;
   text-align: center;
   padding: 0px;
   margin: 0px;
   overflow: hidden;
   width: 100%;
-  /* min-width: 720px; */
 }

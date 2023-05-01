@@ -1,22 +1,17 @@
 .Home {
     display: block;
-    background-color: #ffd966;
+    /* background-color: #ffd966; */
     width: 100%;
-    /* margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 30px 0px 0px 30px;
-    border: solid 1px black; */
     position: relative;
-    /* overflow: hidden; */
-    border-right: solid 1px #ffe8a3;
+    border-right: solid 1px rgb(255, 105, 41, 0.8);
+    filter: drop-shadow(1px 1px 2px rgb(101, 100, 99));
 }
 
 .HomeForm {
     display: block;
-    background-color: #ffd966;
+    background-color: rgb(255, 105, 41);
     position: relative;
     height: 100%;
-    /* overflow: hidden; */
 }
 
 .HomeButtonForm {
@@ -31,7 +26,7 @@
     width: 100px;
     margin-top: 20px;
     margin-bottom: 20px;
-    filter: drop-shadow(4px 4px 3px rgb(133, 122, 87));
+    filter: drop-shadow(2px 2px 0px rgb(101, 100, 99));
 }
 
 .HomeButton {
@@ -50,29 +45,29 @@
 }
 
 .imgBtn {
-    /* background-color: rgb(255, 166, 41, 0.3); */
+    background-color: rgb(56, 97, 246, 0.7);
     width: 50px;
     height: 40px;
     margin-right: 10px;
     border-radius: 10px;
-    border: solid 1.5px #ffa629;
+    border: solid 1.5px rgb(56, 97, 246);
     /* width: 100px; */
 }
 
 .imgBtn:hover {
-    background-color: rgb(255, 166, 41);
-    border: solid 1.5px #ffa629;
+    background-color: rgb(56, 97, 246);
+    border: solid 1.5px rgb(56, 97, 246);
     /* width: 100px; */
     cursor: pointer;
 }
 
 .imgBtn_on {
-    background-color: rgb(255, 166, 41);
+    background-color: rgb(56, 97, 246);
     width: 50px;
     height: 40px;
     margin-right: 10px;
     border-radius: 10px;
-    border: solid 1.5px #ffa629;
+    border: solid 1.5px rgb(56, 97, 246);
     /* width: 100px; */
 }
 
@@ -81,7 +76,7 @@
     height: auto;
     display: inline-flex;
     margin: 8px;
-    filter: invert(51%) sepia(85%) saturate(456%) hue-rotate(355deg) brightness(105%) contrast(84%);
+    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(2deg) brightness(103%) contrast(101%);
 }
 
 .imgBtn > img:hover, .imgBtn_on > img:hover {
@@ -89,7 +84,7 @@
     height: auto;
     display: inline-flex;
     margin: 8px;
-    filter: invert(74%) sepia(70%) saturate(330%) hue-rotate(356deg) brightness(103%) contrast(101%);
+    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(2deg) brightness(103%) contrast(101%);
 }
 
 .Btn > h4 {
@@ -110,13 +105,14 @@
     position: absolute;
     border-radius: 10px;
     overflow: hidden;
-    border: solid 1px #ffa629;
+    /* border: solid 1px rgb(101, 100, 99, 0.8); */
+    filter: drop-shadow(6px 6px 1px rgb(101, 100, 99, 0.8));
 
     flex: 1;
 }
 
 .Write {
-    background-color: #ffd966;
+    background-color: rgb(255, 123, 66);
     display: inline-block;
     width: 100%;
     position: relative;
@@ -135,17 +131,24 @@
 }
 
 .WriteHeader {
-    background-color: rgb(255, 166, 41, 0.7);
+    background-color: #fe6929;
     display: flex;
     padding: 20px;
     position: relative;
     z-index: 10000000;
-    border-bottom: solid 1px rgb(255, 166, 41, 0.7);
+    /* border-bottom: solid 1px rgb(255, 166, 41, 0.7); */
+    filter: drop-shadow(1px 1px 1px rgb(101, 100, 99, 0.8));
+}
+
+.WriteHeader > h4 {
+    color: white;
 }
 
 .WriteHeader > p {
     position: absolute;
     right: 20px;
+    color: white;
+    cursor: pointer;
 }
 
 .HomeWrite {
@@ -170,37 +173,40 @@
     height: 100px;
     border-radius: 5px;
     overflow: hidden;
-    border: solid 1px #ffa629;
+    border: solid 1px #3861f6;
     margin-bottom: 10px;
 }
 
 .Select > select {
-    background-color: #ffa629;
+    background-color: #3861f6;
     width: 100%;
     outline: none;
     border: none;
     height: 18px;
-    border-bottom: solid 1px #ffa629;
+    border-bottom: solid 1px #3861f6;
+    cursor: pointer;
 }
 
 .Select > div {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%;
+    height: 82%;
 }
 
 .Select > div > img {
     width: 58px;
+    filter: drop-shadow(3px 3px 1px rgb(101, 100, 99));
 }
 
 .MusicImgAnonymous {
-    background-color: rgb(255, 166, 41, 0.5);
+    background-color: #3861f6;
     display: flex;
     flex-direction: column;
-    border:  solid 1px rgb(255, 166, 41);
+    border:  solid 1px #3861f6;
     border-radius: 5px;
     overflow: hidden;
+    height: 140px;
 }
 
 .ImgAnonymous {
@@ -216,8 +222,8 @@
     padding: 10px;
     justify-content: center;
     align-items: center;
-    flex: 0.4;
-    border-right: solid 1px rgb(255, 166, 41);
+    flex: 0.35;
+    /* border-right: solid 1px rgb(255, 166, 41); */
 }
 
 .anonymousForm > h4 {
@@ -225,24 +231,26 @@
 }
 
 .anonymousForm > span {
+    width: 20px;
     border-radius: 5px;
-    background-color: wheat;
+    background-color: rgb(255, 105, 41);
     font-size: 11px;
     font-weight: 600;
     padding: 7px;
     margin-left: 5px;
     cursor: pointer;
+    color: white;
 }
 
 .imgForm {
-    background-color: rgb(255, 166, 41, 0.5);
+    /* background-color: #3861f6; */
     flex-direction: row;
     display: flex;
     padding: 10px;
     justify-content: center;
     align-items: center;
     flex: 0.3;
-    border-right: solid 1px rgb(255, 166, 41);
+    /* border-right: solid 1px rgb(255, 166, 41); */
 }
 
 .imgForm > h4 {
@@ -254,6 +262,7 @@
     margin-left: 5px;
     cursor: pointer;
     padding: 6px 0px 0px 0px;
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(169deg) brightness(104%) contrast(100%);
 }
 
 .musicOnOff {
@@ -263,17 +272,19 @@
     padding: 10px;
     justify-content: center;
     align-items: center;
-    flex: 0.3;
+    flex: 0.35;
 }
 
 .musicOnOff > span {
+    width: 20px;
     border-radius: 5px;
-    background-color: wheat;
+    background-color: #ff6929;
     font-size: 11px;
     font-weight: 600;
     padding: 7px;
     margin-left: 5px;
     cursor: pointer;
+    color: white;
 }
 
 .musicOnOff > h4 {
@@ -281,13 +292,21 @@
 }
 
 .musicSelect {
-    background-color: rgb(255, 166, 41);
+    background-color: #4177f6;
     display: inline-flex;
     flex-direction: row;
     height: 30px;
     justify-content: center;
     align-items: center;
     padding: 5px 10px 5px 10px;
+}
+
+.musicSelect > input {
+    background-color: #e4eaff;
+}
+
+.musicSelect > input::placeholder {
+    color: #3861f6;
 }
 
 .musicSelect > span {
@@ -312,9 +331,11 @@
     width: 30px;
     height: 22px;
     border-radius: 3px;
-    background-color: tomato;
+    background-color: rgb(255, 105, 41);
     border: none;
     margin-left: 10px;
+    color: white;
+    cursor: pointer;
 }
 
 .musicList {
@@ -360,25 +381,32 @@
     border: none;
     margin-left: 10px;
     font-size: 12px;
+    color: white;
 }
 
 .WriteFrom {
-    background-color: #ffa629;
+    /* background-color: #e4eaff; */
+    background-color: #4177f6;
     width: 100%;
     display: flex;
     flex: 0.7;
+    height: 255px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 .WriteFrom > textarea {
-    background-color: #ffa629;
+    background-color: #4177f6;
     display: inline-flex;
     width: 100%;
-    height: 75%;
+    height: 85%;
     resize: none;
     border: none;
     outline: none;
     position: relative;
     padding: 10px;
+    margin: 10px;
 }
 
 .WriteFrom > textarea::placeholder {
@@ -388,19 +416,21 @@
 .WriteDeleteBtn {
     position: absolute;
     right: 10px;
-    bottom: 6px;
+    bottom: 10px;
     width: 50px;
     height: 22px;
     border-radius: 3px;
-    background-color: tomato;
+    background-color: #3861f6;
     border: none;
     margin-left: 10px;
     font-size: 12px;
+    color: white;
+    cursor: pointer;
 }
 
 
 @media screen and (max-width: 1300px) {
-    .anonymousForm > h4 {
+    /* .anonymousForm > h4 {
         display: none;
     }
     .imgForm > h4 {
@@ -408,7 +438,7 @@
     }
     .musicOnOff > h4 {
         display: none;
-    }
+    } */
     .WriteContainer {
         width: 770px;
         left:  80%;
@@ -465,7 +495,7 @@
         /* height: 400px; */
         left:  130%;
         /* height: 500px; */
-        height: 535px;
+        height: 560px;
     }
     .HomeWrite {
         flex-direction: column;
@@ -477,7 +507,11 @@
         top: 5px;
     }
     .WriteFrom {
+        margin-top: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
         position: relative;
+        width: 480px;
     }
     .WriteFrom > textarea {
         width: 100%;

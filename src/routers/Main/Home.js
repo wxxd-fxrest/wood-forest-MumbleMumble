@@ -291,14 +291,14 @@ const Home = () => {
                                 <div className="MusicImgAnonymous">
                                     <div className="ImgAnonymous">
                                         <div className="anonymousForm">
-                                            <h4> 프로필 숨기기 </h4>
+                                            <h4> 프로필 공개 </h4>
                                             {anonymous == true ? 
-                                                <span onClick={() => setAnonymous(!anonymous)}> 공개 </span> : 
-                                                <span onClick={() => setAnonymous(!anonymous)}> 숨기기 </span>}
+                                                <span onClick={() => setAnonymous(!anonymous)}> off </span> : 
+                                                <span onClick={() => setAnonymous(!anonymous)}> on </span>}
                                         </div>
 
                                         <div className="imgForm">
-                                            <h4> 사진 선택 </h4>
+                                            <h4> 사진 </h4>
                                             <input type="file"
                                                     style={{display:"none"}}
                                                     id="inputFile"
@@ -311,7 +311,7 @@ const Home = () => {
                                             </label>
                                         </div>
                                         <div className="musicOnOff">
-                                            <h4> 노래 선택 </h4>
+                                            <h4> 노래 </h4>
                                             {open == true ? 
                                                 <span onClick={() => setOpen(!open)}> off </span> : 
                                                 <span onClick={() => setOpen(!open)}> on </span>}

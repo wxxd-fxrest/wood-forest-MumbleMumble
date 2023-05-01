@@ -1,6 +1,6 @@
 .PostData {
     display: block;
-    background-color: #ffd966;
+    /* background-color: rgb(255, 105, 41); */
     width: 100%;
     overflow-y: scroll;
     /* margin-bottom: 10px;
@@ -10,7 +10,7 @@
 .PostDataHeader {
     display: flex;
     position: sticky;
-    background-color: #ffd966;
+    background-color: rgb(255, 105, 41);
     height: 40px;
     align-items: center;
     padding: 10px;
@@ -19,7 +19,8 @@
     z-index: 10000;
     /* width: 100%; */
     /* margin-top: 10px; */
-    border-bottom: solid 1px rgb(255, 166, 41, 0.5);
+    border-bottom: solid 1px rgb(255, 105, 41);
+    filter: drop-shadow(1px 1px 2px rgb(101, 100, 99));
 }
 
 .PostDataHeader > h4 {
@@ -29,7 +30,7 @@
 }
 
 .PostList {
-    background-color: #ffd966;
+    /* background-color: rgb(255, 105, 41); */
     margin-top: 5px;
 }
 
@@ -44,9 +45,9 @@
 }
 
 .PostBackGroundImg {
-    border: solid 1px #ffa629;
+    /* border: solid 1px #4177f6; */
     /* display: block; */
-    /* background-color: violet; */
+    background-color: #4177f6;
     height: 220px;
     border-radius: 10px;
     overflow: hidden;
@@ -54,7 +55,7 @@
 }
 
 .PostCardImgUrlForm {
-    background-color: tomato;
+    /* background-color: tomato; */
     position: absolute;
     z-index: 10000000;
     display: inline-flex;
@@ -74,9 +75,10 @@
 .PostCardImgUrl > img {
     min-width: 300px;
     width: 300px;
-    height: 180px;
+    height: 200px;
     object-fit: cover;  
     width: 100%;
+    border-radius: 5px;
 }
 
 .ImgOpenBtn {
@@ -86,7 +88,7 @@
     right: 65px;
     width: 33px;
     cursor: pointer;
-    filter: drop-shadow(3px 3px 3px rgb(55, 55, 55));
+    filter: drop-shadow(2px 2px 1px rgb(55, 55, 55));
 }
 
 .ImgOpenBtn2 {
@@ -107,6 +109,7 @@
     border: none;
     font-size: 15px;
     cursor: pointer;
+    background-color: none;
 }
 
 
@@ -126,15 +129,16 @@
 }
 
 .PostProfileTrue {
-    background-color: #ffa629;
+    background-color: #3861f6;
     display: flex;
     align-items: center;
-    border-bottom: solid 1px rgb(255, 166, 41, 0.5);
+    box-shadow: 0 -1px 4px 1px ;
+    /* filter: drop-shadow(1px 1px 1.5px rgb(101, 100, 99)); */
 }
 
 .PostProfileTrue > img {
     /* background-color: rgb(255, 255, 255); */
-    border: solid 1px #ffd966;
+    border: solid 1px #4177f6;
     border-radius: 100%;
     /* z-index: 10000; */
     width: 30px;
@@ -168,47 +172,78 @@
 }
 
 .PostForm > h3 {
-    background-color: #9e9c9c;
+    /* background-color: #9e9c9c; */
     font-size: 14px;
     font-weight: 400;
 }
 
 .PostHeartForm {
-    background-color: tomato;
+    background-color: #4177f6;
+    /* position: absolute;
+    display: inline-flex;
+    width: 100%;
+    height: 25px;
+    bottom: 0px;
+    left: 0px; */
+    /* filter: drop-shadow(0 1px 4px 1px rgb(101, 100, 99)); */
+    /* box-shadow: 0 1px 4px 1px ; */
+}
+
+.PostHeartForm > div  {
+    /* background-color: tomato; */
     position: absolute;
     display: inline-flex;
     width: 100%;
-    height: 30px;
-    bottom: 0px;
+    height: 25px;
+    bottom: 8px;
     left: 0px;
+}
+
+.PostHeartForm > div > img {
+    position: absolute;
+    display: flex;
+    top: 0px;
+    right: 160px;
+    width: 25px;
+}
+
+.Heart {
+    filter: invert(51%) sepia(27%) saturate(4484%) hue-rotate(343deg) brightness(101%) contrast(99%);
+}
+
+.PostHeartForm > div > h4 {
+    position: absolute;
+    display: flex;
+    top: 5px;
+    right: 35px;
 }
 
 .PostNextButton1 {
     position: absolute;
-    bottom: 65px;
+    bottom: 85px;
     right: 15px;
     width: 25px;
     cursor: pointer;
-    filter: invert(75%) sepia(84%) saturate(1826%) hue-rotate(336deg) brightness(101%) contrast(102%);
+    filter: invert(90%) sepia(5%) saturate(1094%) hue-rotate(190deg) brightness(90%) contrast(124%);
 }
 
 .PostNextButton1:hover {
-    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
-    filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #d8e3fd);
+    filter: opacity(.5) drop-shadow(0 0 0 #d8e3fd);
 }
 
 .PostNextButton2 {
     position: absolute;
-    bottom: 65px;
+    bottom: 85px;
     left: 15px;   
     width: 25px;
     cursor: pointer;
-    filter: invert(75%) sepia(84%) saturate(1826%) hue-rotate(336deg) brightness(101%) contrast(102%);
+    filter: invert(90%) sepia(5%) saturate(1094%) hue-rotate(190deg) brightness(90%) contrast(124%);
 }
 
 .PostNextButton2:hover {
-    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
-    filter: opacity(.5) drop-shadow(0 0 0 #db8e23);
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #d8e3fd);
+    filter: opacity(.5) drop-shadow(0 0 0 #d8e3fd);
 }
 
 
@@ -223,7 +258,7 @@
 }
 
 .PostMusicName {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     display: flex;
 }
 
@@ -260,7 +295,7 @@
     position: absolute;
     width: 50px;
     height: 81px;
-    background-color: rgb(135, 205, 49);
+    /* background-color: rgb(135, 205, 49); */
     bottom: 5px;
     right: 22px;
     /* opacity: 0.9; */
@@ -298,7 +333,7 @@
         height: 130px;
     }
     .PostCardImgUrl > img {
-        height: 200px;
+        height: 190px;
     }
 }
 
@@ -326,7 +361,7 @@
         bottom: 90px;
     }
     .PostCardImgUrl > img {
-        height: 245px;
+        height: 190px;
     }
     .ImgOpenBtn{
         top: -50px;
@@ -351,7 +386,7 @@
         bottom: 100px;
     }
     .PostCardImgUrl > img {
-        height: 240px;
+        height: 200px;
     }
 }
 
@@ -371,13 +406,13 @@
         margin-top: 25px;
     }
     .PostNextButton1{
-        bottom: 120px;
+        bottom: 100px;
     }
     .PostNextButton2{
-        bottom: 120px;
+        bottom: 100px;
     }
     .PostCardImgUrl > img {
-        height: 260px;
+        height: 210px;
     }
     .ImgOpenBtn{
         top: -55px;
@@ -400,7 +435,7 @@
         margin-top: 30px;
     }
     .PostCardImgUrl > img {
-        height: 295px;
+        height: 225px;
     }
     .ImgOpenBtn{
         top: -70px;
