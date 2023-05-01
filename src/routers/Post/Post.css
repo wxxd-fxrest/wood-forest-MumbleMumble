@@ -161,7 +161,7 @@
     /* justify-content: center; */
     right: 0px;
     left: 0px;
-    bottom: 25px;
+    bottom: 15px;
     font-size: 15px;
     font-weight: 400;
     text-align: start;
@@ -179,14 +179,6 @@
 
 .PostHeartForm {
     background-color: #4177f6;
-    /* position: absolute;
-    display: inline-flex;
-    width: 100%;
-    height: 25px;
-    bottom: 0px;
-    left: 0px; */
-    /* filter: drop-shadow(0 1px 4px 1px rgb(101, 100, 99)); */
-    /* box-shadow: 0 1px 4px 1px ; */
 }
 
 .PostHeartForm > div  {
@@ -255,16 +247,20 @@
     justify-content: center;
     flex-direction: column;
     /* height: 100%; */
+    margin-top: -10px;
 }
 
 .PostMusicName {
     /* background-color: aliceblue; */
     display: flex;
+    /* background-color: #393939; */
+    margin-bottom: -5px;
 }
 
 .PostMusic {
     /* background-color: violet; */
     width: 200px;
+    height: 110px;
 }
 
 .imgPostMusicBox {
@@ -310,11 +306,11 @@
 
 @media screen and (max-width: 800px) {
     .PostMusicForm {
-        margin-top: 15px;
-        height: 100px;
+        margin-top: -10px;
+        /* height: 100px; */
     }
     .PostForm {
-        bottom: 28px;
+        bottom: 18px;
     }
     .PostCardImgUrl > img {
         height: 190px;
@@ -326,11 +322,11 @@
         height: 210px;
     }
     .PostForm {
-        bottom: 25px;
+        bottom: 15px;
     }
     .PostMusicForm {
-        margin-top: 0px;
-        height: 130px;
+        margin-top: -10px;
+        /* height: 130px; */
     }
     .PostCardImgUrl > img {
         height: 190px;
@@ -346,13 +342,13 @@
     }
     .PostForm {
         /* overflow: scroll; */
-        bottom: 25px;
+        bottom: 20px;
         margin-left: 60px;
         margin-right: 60px;
     }
     .PostMusicForm {
-        margin-top: -15px;
-        height: 160px;
+        margin-top: -5px;
+        /* height: 160px; */
     }
     .PostNextButton1{
         bottom: 90px;
@@ -373,11 +369,11 @@
         height: 225px;
     }
     .PostForm {
-        bottom: 30px;
+        bottom: 25px;
     }
     .PostMusicForm {
-        margin-top: -15px;
-        height: 160px;
+        margin-top: -0px;
+        /* height: 160px; */
     }
     .PostNextButton1{
         bottom: 100px;
@@ -392,7 +388,7 @@
 
 @media screen and (max-width: 600px) {
     .PostBackGroundImg {
-        height: 230px;
+        height: 250px;
     }
     .PostBackGroundImg > img {
         margin: 65px 10px 10px 10px;
@@ -402,8 +398,8 @@
         height: 280px;
     }
     .PostMusicForm {
-        height: 80px;
-        margin-top: 25px;
+        /* height: 80px; */
+        margin-top: 20px;
     }
     .PostNextButton1{
         bottom: 100px;
@@ -421,7 +417,7 @@
 
 @media screen and (max-width: 550px) {
     .PostBackGroundImg {
-        height: 245px;
+        height: 270px;
     }
     .PostBackGroundImg > img {
         margin: 80px 10px 10px 10px;
@@ -431,7 +427,7 @@
         /* height: 280px; */
     }
     .PostMusicForm {
-        height: 80px;
+        /* height: 80px; */
         margin-top: 30px;
     }
     .PostCardImgUrl > img {
@@ -444,14 +440,14 @@
 
 @media screen and (max-width: 500px) {
     .PostBackGroundImg {
-        height: 260px;
+        height: 270px;
     }
     .PostForm {
         bottom: 0px;
         /* height: 280px; */
     }
     .PostMusicForm {
-        height: 80px;
-        margin-top: 35px;
+        /* height: 80px; */
+        margin-top: 30px;
     }
 }

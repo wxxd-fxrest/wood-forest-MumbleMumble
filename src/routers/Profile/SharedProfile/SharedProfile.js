@@ -98,13 +98,13 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                 </div>
 
                 <div className='ProfileHeartForm'>
-                    {pofilePost.Data.like.includes(currentUser.uid) ? <>
-                        <img src={unLike} onClick={onClickLikeDelete} />
-                        <h4> {pofilePost.Data.like.length} </h4>
-                    </> : <>
+                    {pofilePost.Data.like.includes(currentUser.uid) ? <div>
+                        <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
+                        <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                    </div> : <div>
                         <img src={Like} onClick={onClickLikeUpdate} />
-                        <h4> {pofilePost.Data.like.length} </h4>
-                    </>}
+                        <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                    </div>}
                 </div>
 
                 {pofilePost.Data.music == false ? null : <div>
@@ -165,13 +165,13 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                             </div>
 
                             <div className='ProfileHeartForm'>
-                                {pofilePost.Data.like.includes(currentUser.uid) ? <>
-                                    <img src={unLike} onClick={onClickLikeDelete} />
-                                    <h4> {pofilePost.Data.like.length} </h4>
-                                </> : <>
+                                {pofilePost.Data.like.includes(currentUser.uid) ? <div>
+                                    <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
+                                    <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                                </div> : <div>
                                     <img src={Like} onClick={onClickLikeUpdate} />
-                                    <h4> {pofilePost.Data.like.length} </h4>
-                                </>}
+                                    <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                                </div>}
                             </div>
 
                             {pofilePost.Data.music == false ? null : <div>
@@ -220,13 +220,13 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                         </div>
 
                         <div className='ProfileHeartForm'>
-                            {pofilePost.Data.like.includes(currentUser.uid) ? <>
-                                <img src={unLike} onClick={onClickLikeDelete} />
-                                <h4> {pofilePost.Data.like.length} </h4>
-                            </> : <>
+                            {pofilePost.Data.like.includes(currentUser.uid) ? <div>
+                                <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
+                                <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                            </div> : <div>
                                 <img src={Like} onClick={onClickLikeUpdate} />
-                                <h4> {pofilePost.Data.like.length} </h4>
-                            </>}
+                                <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                            </div>}
                         </div>
 
                         {pofilePost.Data.music == false ? null : <div>

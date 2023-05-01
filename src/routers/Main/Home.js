@@ -220,6 +220,7 @@ const Home = () => {
                             <div className={write == true ? 'imgBtn_on' : 'imgBtn'}>
                                 <img src={WriteIcon}
                                     onClick={() => {
+                                        setEditOpen(false)
                                         setWrite(!write)
                                         clearTimeout(Timer)
                                     }} /> 
@@ -237,7 +238,11 @@ const Home = () => {
 
                         <div className="Btn">
                             <div className={editOpen == true ? 'imgBtn_on' : 'imgBtn'}>
-                                <img src={EditIcon} onClick={() => setEditOpen(!editOpen)} />
+                                <img src={EditIcon} 
+                                    onClick={() => 
+                                        {setWrite(false)
+                                        setEditOpen(!editOpen)
+                                    }} />
                             </div>
                             <h4> Edit </h4>
                             {editOpen == true && <ProfileEdit setEditOpen={setEditOpen} editOpen={editOpen}/>}

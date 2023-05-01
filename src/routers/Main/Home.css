@@ -1,5 +1,6 @@
 .Home {
     display: block;
+    z-index: 1;
     /* background-color: #ffd966; */
     width: 100%;
     position: relative;
@@ -95,9 +96,8 @@
 }
 
 .WriteContainer {
-    /* background-color: rgb(64, 150, 226); */
+    background-color: rgb(64, 150, 226);
     display: inline-flex;
-    z-index: 10000;
     width: 790px;
     height: 360px;
     top: 10%;
