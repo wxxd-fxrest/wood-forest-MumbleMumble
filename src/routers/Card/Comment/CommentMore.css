@@ -1,14 +1,14 @@
 .CommentList {
-    background-color:  #ffd966;
+    background-color:  #ffffff;
 }
 
 .CommentMore {
-    background-color: #ffd966;
+    background-color: #ffffff;
     /* display: inline-block; */
 }
 
 .More {
-    border-bottom: solid 1px #ffa629;
+    /* border-bottom: solid 1px #ffa629; */
     min-height: 150px;
 }
 
@@ -17,12 +17,12 @@
 }
 
 .MoreProfile > div {
-    background-color:  #ffa629;
+    background-color: #3861f6;
     /* width: 100%; */
     display: flex;
     align-items: center;
     position: relative;
-    padding: 5px;
+    height: 40px;
 }
 
 .MoreProfile > div > h4 {
@@ -31,14 +31,15 @@
     font-size: 15px;
     position: absolute;
     top: 13px;
+    padding-left: 10px;
 }
 
 .MoreProfile > div > img {
-    border: solid 1px #ffd966;
+    border: solid 1px #4177f6;
     border-radius: 100%;
     width: 25px;
     height: 25px;
-    margin: 5px 5px 5px 20px;
+    margin: 5px 5px 5px 32px;
 }
 
 .MoreProfile > div > p {
@@ -56,4 +57,6 @@
     margin: 10px;
     text-align: start;
     /* background-color: tomato; */
+    font-size: 13px;
+    padding: 5px 10px 5px 10px;
 }

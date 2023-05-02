@@ -1,6 +1,6 @@
 .emoticonForm > img {
     width: 40px;
-    filter: drop-shadow(4px 4px 3px rgb(55, 55, 55));
+    filter: drop-shadow(2px 2px 1px rgb(55, 55, 55));
     /* margin-top: 5px;
     margin-right: 5px; */
 }

@@ -62,42 +62,45 @@ const Comment = ({commentData, setMore}) => {
     return(
         <div className="Comment">
             <div className="CommentFrom">
-                <div className="CommentProfile"
-                    onClick={onProfilePage}>
-                    {sendUserInfo.attachmentUrl ? 
-                        <img src={sendUserInfo.attachmentUrl} width="100px"/> : 
-                        <img src={None} width="100px"/>}
-                    <h4> {sendUserInfo.displayName} </h4>
-                    {commentData.Data.Card_SendUID == currentUser.uid && 
-                    <button type='button' onClick={onDelete}> 삭제 </button>} 
-                </div>
-                <div className="CommentText">
-                    <span> {commentData.Data.Comment} </span>
+                <div className = {open == true && "margin"}>
+                    <div className="CommentProfile"
+                        onClick={onProfilePage}>
+                        {sendUserInfo.attachmentUrl ? 
+                            <img src={sendUserInfo.attachmentUrl} width="100px"/> : 
+                            <img src={None} width="100px"/>}
+                        <h4> {sendUserInfo.displayName} </h4>
+                        {commentData.Data.Card_SendUID == currentUser.uid && 
+                        <button type='button' onClick={onDelete}> 삭제 </button>} 
+                    </div>
+                    <div className="CommentText">
+                        <span> {commentData.Data.Comment} </span>
+                    </div>
                 </div>
             </div>
 
             {open == true ? <div className="CommentMoreProps">
-                <div className="CommentMoreModal">
-                    <CommentMore commentData={commentData}/>    
-                    <div>
-                        <textarea type="textarea"
-                            name="comment"
-                            placeholder="댓글" 
-                            value={comment}
-                            onChange={(e) => {
-                                const {target : {value}} = e ; 
-                                setComment(value) ; 
-                        }}/>
-                        <button type='submit' 
-                                className="CommentOKbtn"
-                                onClick={onPlusComment}> OK </button>
-                        <button type='button' 
-                                className="CommentBackbtn"
-                                onClick={() => 
-                                    {setOpen(!open)
-                                    setMore(false)}}> 이전 </button>
-                    </div>
+                    <div className="CommentMoreModal">
+                        <CommentMore commentData={commentData}/>    
+                        <div>
+                            <textarea type="textarea"
+                                name="comment"
+                                placeholder="댓글" 
+                                value={comment}
+                                onChange={(e) => {
+                                    const {target : {value}} = e ; 
+                                    setComment(value) ; 
+                            }}/>
+                            <button type='submit' 
+                                    className="CommentOKbtn"
+                                    onClick={onPlusComment}> OK </button>
+                            <button type='button' 
+                                    className="CommentBackbtn"
+                                    onClick={() => 
+                                        {setOpen(!open)
+                                        setMore(false)}}> 이전 </button>
+                        </div>
                 </div>
+                
             </div> : <div className="CommentListProps">
                 <CommentList commentData={commentData}/>    
                 {open == false && <div className="CommentRE">
