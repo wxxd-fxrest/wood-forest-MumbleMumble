@@ -119,6 +119,7 @@
     width: 33px;
     cursor: pointer;
     filter: drop-shadow(3px 3px 3px rgb(55, 55, 55));
+    display: inline-flex;
 }
 
 .ProfileImgOpenBtn2 {

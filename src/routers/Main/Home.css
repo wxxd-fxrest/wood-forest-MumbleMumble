@@ -1,6 +1,6 @@
 .Home {
     display: block;
-    z-index: 1;
+    z-index: 10000;
     /* background-color: #ffd966; */
     width: 100%;
     position: relative;
@@ -96,7 +96,7 @@
 }
 
 .WriteContainer {
-    background-color: rgb(64, 150, 226);
+    /* background-color: rgb(64, 150, 226); */
     display: inline-flex;
     width: 790px;
     height: 360px;
@@ -106,13 +106,12 @@
     border-radius: 10px;
     overflow: hidden;
     /* border: solid 1px rgb(101, 100, 99, 0.8); */
-    filter: drop-shadow(6px 6px 1px rgb(101, 100, 99, 0.8));
-
+    /* filter: drop-shadow(3px 3px 0.5px rgb(101, 100, 99, 0.8)); */
     flex: 1;
 }
 
 .Write {
-    background-color: rgb(255, 123, 66);
+    background-color: rgb(226, 107, 56);
     display: inline-block;
     width: 100%;
     position: relative;
@@ -131,7 +130,7 @@
 }
 
 .WriteHeader {
-    background-color: #fe6929;
+    background-color: rgb(254, 116, 56);
     display: flex;
     padding: 20px;
     position: relative;

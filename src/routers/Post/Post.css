@@ -57,7 +57,7 @@
 .PostCardImgUrlForm {
     /* background-color: tomato; */
     position: absolute;
-    z-index: 10000000;
+    z-index: 100;
     display: inline-flex;
     margin: 10px;
     right: -5px;
@@ -79,11 +79,12 @@
     object-fit: cover;  
     width: 100%;
     border-radius: 5px;
+    /* z-index: -10000000; */
 }
 
 .ImgOpenBtn {
     position: absolute;
-    z-index: 10;
+    z-index: 1;
     top: 9px;
     right: 65px;
     width: 33px;
@@ -120,7 +121,7 @@
 }
 
 .PostEmotion {
-    z-index: 100;
+    z-index: 0;
     /* background-color: aliceblue; */
     display: inline-flex;
     position: absolute;
