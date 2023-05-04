@@ -10,7 +10,7 @@
 .PostDataHeader {
     display: flex;
     position: sticky;
-    background-color: rgb(255, 105, 41);
+    background-color: #358af9;
     height: 40px;
     align-items: center;
     padding: 10px;
@@ -19,7 +19,7 @@
     z-index: 10000;
     /* width: 100%; */
     /* margin-top: 10px; */
-    border-bottom: solid 1px rgb(255, 105, 41);
+    border-bottom: solid 1px #358af9;
     filter: drop-shadow(1px 1px 2px rgb(101, 100, 99));
 }
 
@@ -145,11 +145,13 @@
     width: 30px;
     height: 30px;
     margin: 10px;
+    cursor: pointer;
 }
 
 .PostProfileTrue > h5 {
     font-weight: 500;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .PostForm { 

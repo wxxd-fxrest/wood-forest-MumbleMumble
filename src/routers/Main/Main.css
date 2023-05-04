@@ -27,8 +27,8 @@
 }
 
 .MainEmpty {
-    display: flex;
-    background-color: tomato;
+    display: inline-flex;
+    background-color: #358af9;
     width: 20%;
 }
 

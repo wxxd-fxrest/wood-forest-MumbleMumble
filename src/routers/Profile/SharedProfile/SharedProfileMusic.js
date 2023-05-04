@@ -117,7 +117,8 @@ const SharedProfileMusic = ({pofileMusic, profileInfo}) => {
                         src={Left}
                         onClick={() => {setNext(!next)}} /> }
                 </div> }
-            </div> : <div>
+            </div> : 
+            <div>
                 {pofileMusic.Data.anonymous == false ? null : <div>
                     {pofileMusic.Data.cardImgUrl ? <div>
                         <div className="PostBackGroundImg">      

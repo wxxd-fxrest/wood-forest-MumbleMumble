@@ -1,4 +1,4 @@
-import { collection, getDocs, onSnapshot, orderBy, query, where } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, onSnapshot, orderBy, query, where } from "firebase/firestore";
 import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthContext";
@@ -6,8 +6,9 @@ import { db } from "../../../firebase";
 import Home from "../../Main/Home";
 import SharedProfile from "./SharedProfile";
 import '../../../routers/Profile/SharedProfile/SharedProfile.css';
-import Empty from "../../Empty/Empty";
+import Random from "../../Empty/Random";
 import SharedProfileMusic from "./SharedProfileMusic";
+import RandomData from "../../Empty/RandomData";
 
 const SharedProfileData = () => {
     const [pofilePost, setProfilePost] = useState([]) ; 
@@ -42,7 +43,7 @@ const SharedProfileData = () => {
             collection(db, "Post"), 
             where("UID", "==", `${pathUID}`),
             where("music", "==", true),
-            );
+        );
         onSnapshot(FeedCollection, (querySnapshot) => {
             let feedArray = []
             querySnapshot.forEach((doc) => {
@@ -89,9 +90,10 @@ const SharedProfileData = () => {
                     </div>
 
                     <ul className="SharedProfileTabForm">
-                        <li onClick={() => setTab(1)}> all </li>
-                        <li onClick={() => setTab(2)}> music </li>
-                        <li onClick={() => setTab(3)}> heart </li>
+                        <li onClick={() => setTab(1)}
+                            className={tab === 1 ? "tab_on" : "tab"}> all </li>
+                        <li onClick={() => setTab(2)}
+                            className={tab === 2 ? "tab_on" : "tab"}> music </li>
                     </ul>
 
                     <div className={tab === 1 ? "SharedProfileMap" : "SharedProfileMapHidden"}>
@@ -108,7 +110,7 @@ const SharedProfileData = () => {
 
                 </div>
                 <div className="SharedProfileEmpty">
-                    <Empty />
+                    <RandomData />
                 </div>
             </div>
         </div>

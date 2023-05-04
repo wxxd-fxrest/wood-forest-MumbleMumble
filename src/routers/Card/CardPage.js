@@ -5,7 +5,8 @@ import { db } from "../../firebase";
 import Home from "../Main/Home";
 import Card from "./Card";
 import '../../routers/Card/Card.css';
-import Empty from "../Empty/Empty";
+import Random from "../Empty/Random";
+import RandomData from "../Empty/RandomData";
 
 const CardPage = () => {
     const location = useLocation() ;
@@ -46,7 +47,7 @@ const CardPage = () => {
                     ))}
                 </div>
                 <div className="CardEmpty">
-                    <Empty />
+                    <RandomData />
                 </div>
             </div>
         </div>

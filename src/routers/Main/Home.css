@@ -4,13 +4,14 @@
     /* background-color: #ffd966; */
     width: 100%;
     position: relative;
-    border-right: solid 1px rgb(255, 105, 41, 0.8);
+    border-right: solid 1px rgb(53, 138, 249, 0.9);
     filter: drop-shadow(1px 1px 2px rgb(101, 100, 99));
 }
 
 .HomeForm {
     display: block;
-    background-color: rgb(255, 105, 41);
+    /* background-color: rgb(255, 105, 41); */
+    background-color: #358af9;
     position: relative;
     height: 100%;
 }
@@ -46,7 +47,7 @@
 }
 
 .imgBtn {
-    background-color: rgb(56, 97, 246, 0.7);
+    background-color: rgba(38, 82, 244, 0.2);
     width: 50px;
     height: 40px;
     margin-right: 10px;
@@ -111,7 +112,7 @@
 }
 
 .Write {
-    background-color: rgb(226, 107, 56);
+    background-color: #4093ff;
     display: inline-block;
     width: 100%;
     position: relative;
@@ -130,13 +131,13 @@
 }
 
 .WriteHeader {
-    background-color: rgb(254, 116, 56);
+    background-color: rgb(56, 97, 246);
     display: flex;
     padding: 20px;
     position: relative;
     z-index: 10000000;
     /* border-bottom: solid 1px rgb(255, 166, 41, 0.7); */
-    filter: drop-shadow(1px 1px 1px rgb(101, 100, 99, 0.8));
+    filter: drop-shadow(1px 1px 0.5px rgb(101, 100, 99, 0.8));
 }
 
 .WriteHeader > h4 {
@@ -242,10 +243,10 @@
 }
 
 .imgForm {
-    /* background-color: #3861f6; */
+    /* background-color: #142358; */
     flex-direction: row;
     display: flex;
-    padding: 10px;
+    padding: 5px;
     justify-content: center;
     align-items: center;
     flex: 0.3;
@@ -254,6 +255,18 @@
 
 .imgForm > h4 {
     font-size: 12px;
+}
+
+.labelImg {
+    /* opacity: 0.5; */
+    min-width: 100px;
+    max-width: 100px;
+    width: 100px;
+    height: 50px;
+    object-fit: cover;  
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .inputImgSelect {
@@ -385,7 +398,7 @@
 
 .WriteFrom {
     /* background-color: #e4eaff; */
-    background-color: #4177f6;
+    background-color: #2867fa;
     width: 100%;
     display: flex;
     flex: 0.7;
@@ -396,7 +409,7 @@
 }
 
 .WriteFrom > textarea {
-    background-color: #4177f6;
+    background-color: #2867fa;
     display: inline-flex;
     width: 100%;
     height: 85%;
@@ -419,7 +432,7 @@
     width: 50px;
     height: 22px;
     border-radius: 3px;
-    background-color: #3861f6;
+    background-color: #2867fa;
     border: none;
     margin-left: 10px;
     font-size: 12px;

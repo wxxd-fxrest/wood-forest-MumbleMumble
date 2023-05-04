@@ -7,6 +7,7 @@ import None  from '../../../Image/Mumble_Profile_None.PNG' ;
 import CommentList from "./CommentList";
 import CommentMore from "./CommentMore";
 import '../../../routers/Card/Comment/Comment.css';
+import DeleteBtn from '../../../Image/Mumble_Delete_Icon.png'; 
 
 const Comment = ({commentData, setMore}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -63,14 +64,19 @@ const Comment = ({commentData, setMore}) => {
         <div className="Comment">
             <div className="CommentFrom">
                 <div className = {open == true && "margin"}>
-                    <div className="CommentProfile"
-                        onClick={onProfilePage}>
+                    <div className="CommentProfile">
                         {sendUserInfo.attachmentUrl ? 
-                            <img src={sendUserInfo.attachmentUrl} width="100px"/> : 
-                            <img src={None} width="100px"/>}
-                        <h4> {sendUserInfo.displayName} </h4>
+                            <img src={sendUserInfo.attachmentUrl} className="commentPfofileImg"
+                                onClick={onProfilePage}/> : 
+                            <img src={None} width="100px"
+                                onClick={onProfilePage}/>}
+                        <h4 onClick={onProfilePage}> {sendUserInfo.displayName} </h4>
                         {commentData.Data.Card_SendUID == currentUser.uid && 
-                        <button type='button' onClick={onDelete}> 삭제 </button>} 
+                            // <div className='commentDeleteBox'>
+                                <img type='button'
+                                    src={DeleteBtn} 
+                                    className='commentDeleteButton'
+                                    onClick={onDelete} /> } 
                     </div>
                     <div className="CommentText">
                         <span> {commentData.Data.Comment} </span>

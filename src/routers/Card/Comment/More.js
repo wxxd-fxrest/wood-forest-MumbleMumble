@@ -5,6 +5,7 @@ import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
 import None  from '../../../Image/Mumble_Profile_None.PNG' ;
 import '../../../routers/Card/Comment/CommentMore.css' ;
+import DeleteBtn from '../../../Image/Mumble_Delete_Icon.png'; 
 
 const More = ({plusComment, commentData}) => {
     const [sendUserInfo, setSendUserInfo] = useState([]) ; 
@@ -60,7 +61,10 @@ const More = ({plusComment, commentData}) => {
                         <p>{sendUserInfo.displayName}</p>
                     </div>
                     {plusComment.Data.Comment_SendUID == currentUser.uid ? 
-                        <button type='button' onClick={onDelete}> 삭제 </button> : null} 
+                        <img type='button'
+                        src={DeleteBtn} 
+                        className='commentDeleteButton'
+                        onClick={onDelete} />  : null} 
                 </div>
                 <div className="MoreComment">
                     <h3> {plusComment.Data.Comment} </h3> 

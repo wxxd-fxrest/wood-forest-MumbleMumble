@@ -46,10 +46,13 @@ const Home = () => {
 
     const selectList = ["감정을 선택", "행복", "분노", "슬퍼", "난감", "힘듦", "혼란"] ;
     const [selected, setSelected] = useState("") ; 
+
     const location = useLocation() ;
 
     const pathname = location.pathname ; 
     const pathUID = (pathname.split('/')[2]);
+
+    console.log(pathUID)
 
     const onChange = (event) => {
         const {target : {name, value}} = event ; 
@@ -231,7 +234,9 @@ const Home = () => {
                         <div className="Btn">
                             <div className={pathUID == currentUser.uid ? 'imgBtn_on' : 'imgBtn'}>
                                 <img src={ProfileIcon}
-                                    onClick={() => {navigate(`/profile/${currentUser.uid}`)}} /> 
+                                    onClick={() => {
+                                        window.location.replace(`/profile/${currentUser.uid}`)
+                                    }} /> 
                             </div>
                             <h4> Profile </h4>
                         </div>
@@ -296,23 +301,24 @@ const Home = () => {
                                 <div className="MusicImgAnonymous">
                                     <div className="ImgAnonymous">
                                         <div className="anonymousForm">
-                                            <h4> 프로필 공개 </h4>
+                                            <h4> 프로필공개 </h4>
                                             {anonymous == true ? 
                                                 <span onClick={() => setAnonymous(!anonymous)}> off </span> : 
                                                 <span onClick={() => setAnonymous(!anonymous)}> on </span>}
                                         </div>
 
                                         <div className="imgForm">
-                                            <h4> 사진 </h4>
+                                            {cardImg ? "" : 
+                                            <h4> 사진 </h4>}
                                             <input type="file"
                                                     style={{display:"none"}}
                                                     id="inputFile"
                                                     onChange={onFileChange}
                                                     required />
                                             <label htmlFor="inputFile">
-                                                {cardImg ? 
-                                                    <img src={cardImg} alt="" width="50px"/> : 
-                                                    <img src={IMG} className="inputImgSelect"/>}
+                                                {cardImg ? <>
+                                                    <img src={cardImg} alt="" className="labelImg" /> 
+                                                </> :  <img src={IMG} className="inputImgSelect"/>}
                                             </label>
                                         </div>
                                         <div className="musicOnOff">

@@ -1,5 +1,6 @@
 .CommentList {
     background-color:  #ffffff;
+    border-bottom: solid 1px rgb(65, 119, 246, 0.3);
 }
 
 .CommentMore {

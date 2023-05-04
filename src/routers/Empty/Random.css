@@ -1,0 +1,78 @@
+
+.RandomData {
+    display: block;
+    flex-direction: row;
+    width: 100%;
+    overflow-y: scroll;
+    height: 785px;
+    margin-top: 5px;
+}
+
+.RandomDataHeader {
+    display: flex;
+    position: sticky;
+    background-color: #358af9;
+    height: 35px;
+    align-items: center;
+    padding: 10px;
+    top: 0;
+    margin-bottom: 5px;
+    z-index: 10000;
+    /* width: 100%; */
+    /* margin-top: 10px; */
+    border-bottom: solid 1px #358af9;
+    filter: drop-shadow(1px 1px 2px rgb(101, 100, 99));
+}
+
+.Random {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 130px;
+    background-color: rgb(61, 100, 240, 0.6);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.RandomProfile {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    background-color: #3861f6;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #3861f6;
+    filter: drop-shadow(1px 1px 1px rgb(101, 100, 99));
+}
+
+.RandomProfile > img {
+    border-radius: 50px;
+    border: solid 1px #4177f6;
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.RandomProfile > h5 {
+    margin-left: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.RandomText {
+    display: block;
+    padding: 10px 8px 10px 8px; 
+    text-align: start;
+    word-break: break-all;
+    cursor: pointer;
+}
+
+.RandomText > h3 {
+    font-size: 12px;
+    font-weight: 500;
+}

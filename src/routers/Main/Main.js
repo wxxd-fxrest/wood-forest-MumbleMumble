@@ -1,7 +1,11 @@
 import PostData from "../Post/PostData";
 import Home from "./Home";
 import '../../routers/Main/Main.css';
-import Empty from "../Empty/Empty";
+import Random from "../Empty/Random";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { db } from "../../firebase";
+import RandomData from "../Empty/RandomData";
 
 const Main = () => {
     return (
@@ -14,7 +18,7 @@ const Main = () => {
                     <PostData />
                 </div>
                 <div className="MainEmpty">
-                    <Empty />
+                    <RandomData />
                 </div>
             </div>
         </div>

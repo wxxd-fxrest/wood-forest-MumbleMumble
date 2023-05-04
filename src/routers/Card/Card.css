@@ -27,8 +27,8 @@
 }
 
 .CardEmpty {
-    background-color: tomato;
-    display: flex;
+    display: inline-flex;
+    background-color: #358af9;
     width: 20%;
 }
 
@@ -89,13 +89,14 @@
 
 .CardBackGroundImg {
     /* background-color: #4177f6; */
-    border-bottom: solid 1px #4177f6;
+    border-bottom: solid 1px rgb(65, 119, 246, 0.3);
     /* display: block; */
     /* background-color: violet; */
     height: 200px;
     /* border-radius: 10px; */
     overflow: hidden;
     position: relative;
+    /* background-color: rgb(65, 119, 246, 0.8); */
 }
 
 .CardImgOpenBtn {
@@ -325,11 +326,11 @@
 }
 
 .CardInputBox {
-    background-color: #b0c6fa;
+    /* background-color: rgb(65, 119, 246, 0.8); */
     display: flex;
     width: 100%;
     height: 95%;
-    border-bottom: solid 1px #3861f6;
+    border-bottom: solid 1px rgb(65, 119, 246);
     align-items: flex-start;
     justify-content: center;
     padding-top: 6px;
@@ -344,10 +345,11 @@
     border: none;
     outline: none;
     border-radius: 5px;
+    background-color:rgb(65, 119, 246, 0.3);
 }
 
 .CardInputBox > textarea::placeholder {
-    color: #c58327;
+    color: rgb(65, 119, 246);
 }
 
 .CardCommentInput > button {
@@ -357,8 +359,9 @@
     width: 80px;
     height: 25px;
     border-radius: 10px;
-    background-color: #fb7a43;
+    background-color: rgb(65, 119, 246);
     border: none;
+    color: white;
 }
 
 .Cardcomment {

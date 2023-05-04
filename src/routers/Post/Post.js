@@ -62,7 +62,7 @@ const Post = ({postData}) => {
 
     useEffect(() => {
         CurrentUserInfo() ;
-        console.log(postData.Data.like.length)
+        // console.log(postData)
     }, []) ; 
 
     return (
