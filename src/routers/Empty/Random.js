@@ -39,8 +39,8 @@ const Random = ({random}) => {
     return (
         <div className='Random'>
             <div className='RandomProfile'> 
-                <img src={currentData.attachmentUrl} 
-                    onClick={onProfilePage}/>
+                {/* <img src={currentData.attachmentUrl} 
+                    onClick={onProfilePage}/> */}
                 <h5 onClick={onProfilePage}> {currentData.displayName} </h5>
             </div>
             <div className='RandomText' onClick={onCardPage}>

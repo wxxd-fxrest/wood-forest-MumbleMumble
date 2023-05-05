@@ -4,14 +4,14 @@
     /* background-color: #ffd966; */
     width: 100%;
     position: relative;
-    border-right: solid 1px rgb(53, 138, 249, 0.9);
-    filter: drop-shadow(1px 1px 2px rgb(101, 100, 99));
+    /* border-right: solid 1px rgb(53, 138, 249, 0.9); */
+    /* filter: drop-shadow(1px 1px 2px rgb(101, 100, 99)); */
 }
 
 .HomeForm {
     display: block;
-    /* background-color: rgb(255, 105, 41); */
-    background-color: #358af9;
+    /* background-color: #ff6929; */
+    /* background-color: #358af9; */
     position: relative;
     height: 100%;
 }
@@ -25,7 +25,7 @@
 
 .HomeButtonForm > img {
     /* background-color: #d3d3d3; */
-    width: 100px;
+    width: 110px;
     margin-top: 20px;
     margin-bottom: 20px;
     filter: drop-shadow(2px 2px 0px rgb(101, 100, 99));
@@ -47,29 +47,30 @@
 }
 
 .imgBtn {
-    background-color: rgba(38, 82, 244, 0.2);
+    background-color: rgba(38, 82, 244, 0.8);
     width: 50px;
     height: 40px;
     margin-right: 10px;
     border-radius: 10px;
-    border: solid 1.5px rgb(56, 97, 246);
+    border: solid 1.5px rgba(38, 82, 244, 0.8);
     /* width: 100px; */
 }
 
 .imgBtn:hover {
-    background-color: rgb(56, 97, 246);
-    border: solid 1.5px rgb(56, 97, 246);
+    /* background-color: rgb(56, 97, 246); */
+    background-color: rgb(255, 105, 41);
+    border: solid 1.5px rgb(255, 105, 41);
     /* width: 100px; */
     cursor: pointer;
 }
 
 .imgBtn_on {
-    background-color: rgb(56, 97, 246);
+    background-color: rgb(255, 105, 41);
     width: 50px;
     height: 40px;
     margin-right: 10px;
     border-radius: 10px;
-    border: solid 1.5px rgb(56, 97, 246);
+    border: solid 1.5px rgb(255, 105, 41);
     /* width: 100px; */
 }
 
@@ -91,8 +92,8 @@
 
 .Btn > h4 {
     color: #393939;
-    font-size: 13px;
-    margin-top: 30px;
+    font-size: 19px;
+    margin-top: 10px;
     font-weight: 600;
 }
 

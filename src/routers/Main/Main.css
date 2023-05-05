@@ -28,7 +28,7 @@
 
 .MainEmpty {
     display: inline-flex;
-    background-color: #358af9;
+    /* background-color: #358af9; */
     width: 20%;
 }
 

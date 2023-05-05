@@ -30,7 +30,9 @@
 
 .ProfileAnonymous {
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
 }
 
 .SharedProfileBox {

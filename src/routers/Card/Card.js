@@ -244,8 +244,8 @@ const Card = ({card}) => {
                                 const {target : {value}} = e ; 
                                 setComment(value) ; 
                             }}/>
-                </div>
                 <button type='submit' onClick={onSaveComment}> OK </button>
+                </div>
             </div> : null}
             
             <div className={more == false ? 'Cardcomment' :  'CardcommentTrue'} >

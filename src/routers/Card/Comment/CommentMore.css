@@ -18,12 +18,13 @@
 }
 
 .MoreProfile > div {
-    background-color: #3861f6;
+    background-color: #7487cf;
     /* width: 100%; */
     display: flex;
     align-items: center;
     position: relative;
     height: 40px;
+    border-radius: 0px 10px 10px 10px;
 }
 
 .MoreProfile > div > h4 {
@@ -41,11 +42,13 @@
     width: 25px;
     height: 25px;
     margin: 5px 5px 5px 32px;
+    background-color: white;
 }
 
 .MoreProfile > div > p {
     font-weight: 400;
     font-size: 13px;
+    color: white;
 }
 
 .MoreProfile  > button {

@@ -369,7 +369,7 @@ const Home = () => {
                                 <textarea type="text"
                                         name="text"
                                         placeholder="버리고 싶은 일이나 감정을 입력하세요."
-                                        maxLength="400"
+                                        maxLength="250"
                                         required 
                                         value={text}
                                         onChange={onChange}/>

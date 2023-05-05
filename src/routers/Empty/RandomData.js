@@ -36,7 +36,7 @@ const RandomData = () => {
     return (
         <div className='RandomData'>
             <div className="RandomDataHeader">
-                <h4> Random </h4>
+                <h4> RANDOM </h4>
             </div>
             {random.map((r, i) => (
                 <Random key={i} random={r} />

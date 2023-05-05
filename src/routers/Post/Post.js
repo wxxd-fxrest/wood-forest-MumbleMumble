@@ -88,7 +88,7 @@ const Post = ({postData}) => {
                         </div> : <img src={Logo} width="180px"/>} 
                     </> : <div className='PostProfileTrue'>
                         <img src={Logo} width="180px"/>
-                        <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
+                        <p className="PostAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
 
                     <div className='PostEmotion'>
@@ -147,7 +147,7 @@ const Post = ({postData}) => {
                         </div> : <img src={Logo} width="180px"/>}
                     </> : <div className='PostProfileTrue'>
                         <img src={Logo} width="180px"/>
-                        <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
+                        <p className="PostAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
                     <div className='PostEmotion'>
                         <PostEmoticon postData={postData}/>
