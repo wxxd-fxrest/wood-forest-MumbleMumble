@@ -13,6 +13,7 @@ import ImageBtn from '../../Image/expression_Icon/Mumble_image_icon.png' ;
 import { AuthContext } from '../../Context/AuthContext';
 import Like from '../../Image/Like/heart.png' ; 
 import unLike from '../../Image/Like/like.png' ; 
+import BACKIMG from '../../Image/paper texture.jpg'; 
 
 const Post = ({postData}) => {
     const {currentUser} = useContext(AuthContext) ;
@@ -62,23 +63,79 @@ const Post = ({postData}) => {
 
     useEffect(() => {
         CurrentUserInfo() ;
-        // console.log(postData)
+        console.log(postData.Data.tagList)
     }, []) ; 
+
+    // <img src={BACKIMG} className="BackgroundImg"/>
 
     return (
         <div className='Post'>
-            {postData.Data.cardImgUrl ? 
             <div className='PostBackGroundImg'>
-                <img src={ImageBtn}
-                    className={postData.Data.selected ? 'ImgOpenBtn' : 'ImgOpenBtn2'}
-                    onClick={() => setImgOpen(!imgOpen)} />
-                <div className='PostCardImgUrlForm'>
-                    {imgOpen && <div className='PostCardImgUrl'>
-                        <img src={postData.Data.cardImgUrl} />
-                        <button className='ImgOpenBtn_x'
-                            onClick={() => setImgOpen(!imgOpen)}> x </button>
+            <img src={BACKIMG} className="BackgroundImg"/>
+                <div>
+                    {postData.Data.anonymous == true ? <> 
+                        {postData.Data.UID == currentData.uid ? 
+                        <div onClick={onProfilePage} className='ProfileFofor'>
+                            <img src={currentData.attachmentUrl} />
+                            <h5> {currentData.displayName} </h5>
+                        </div> : <img src={Logo} width="180px"/>} 
+                    </> : <div className='PostProfileTrue'>
+                        <img src={Logo} width="180px"/>
+                        <p className="PostAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
                 </div>
+                        
+                <div className='PostForm' 
+                    onClick={onCardPage}>
+                    {next == false ? 
+                        <h3> {postData.Data.PostText} </h3> : <>
+                        {postData.Data.music == false ? null :
+                        <div className='PostMusicForm'>
+                            <div className='PostMusicName'>
+                                <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
+                            </div>
+                            <div className='PostMusic'>
+                                <div className='imgPostMusicBox'>
+                                    <img src={Music} className="img_Music"/>
+                                    <img src={MusicBox} className="img_MusicBox" />
+                                </div>
+                            </div>
+                        </div>}
+                    </>}
+                </div>
+
+                <div className='PostTag'>
+                    {postData.Data.tagEmpty == false && <>
+                        <span> #{postData.Data.tagList} </span>
+                        <span> #{postData.Data.tagList} </span>
+                        <span> #{postData.Data.tagList} </span> 
+                    </>}
+                </div>
+
+                <div className='PostHeartForm'>
+                    {postData.Data.like.includes(currentUser.uid) ? <div>
+                        <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
+                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                    </div> : <div>
+                        <img src={Like} onClick={onClickLikeUpdate} />
+                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                    </div>}
+                </div>
+                
+                {postData.Data.music == false ? null : <div>
+                    {next == false ? 
+                    <img className='PostNextButton1'
+                        type='button'
+                        src={Right}
+                        onClick={() => {setNext(!next)}} /> :
+                    <img className='PostNextButton2'
+                        type='button'
+                        src={Left}
+                        onClick={() => {setNext(!next)}} /> }
+                </div> }
+            </div> 
+            {/* {postData.Data.cardImgUrl ? 
+            <div className='PostBackGroundImg'>
                 <div className='PostProfile'>
                     {postData.Data.anonymous == true ? <> 
                         {postData.Data.UID == currentData.uid ? 
@@ -90,10 +147,6 @@ const Post = ({postData}) => {
                         <img src={Logo} width="180px"/>
                         <p className="PostAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
-
-                    <div className='PostEmotion'>
-                        <PostEmoticon postData={postData}/>
-                    </div>
                 </div>
                         
                 <div className='PostForm' 
@@ -149,9 +202,6 @@ const Post = ({postData}) => {
                         <img src={Logo} width="180px"/>
                         <p className="PostAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
-                    <div className='PostEmotion'>
-                        <PostEmoticon postData={postData}/>
-                    </div>
                 </div>
 
                 <div className='PostForm' 
@@ -193,7 +243,7 @@ const Post = ({postData}) => {
                         src={Left}
                         onClick={() => {setNext(!next)}} /> }
                 </div>}
-            </div>}
+            </div>} */}
         </div>
     )
 }

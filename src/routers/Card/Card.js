@@ -92,7 +92,7 @@ const Card = ({card}) => {
         <div className='Card'>
         {card.Data.cardImgUrl ? 
             <div className='CardBackGroundImg'>
-                <img src={ImageBtn} 
+                {/* <img src={ImageBtn} 
                     className={card.Data.selected ? 'CardImgOpenBtn' : 'CardImgOpenBtn2'} 
                     onClick={() => setImgOpen(!imgOpen)} />
                 <div className='PostCardImgUrlForm'>
@@ -101,8 +101,8 @@ const Card = ({card}) => {
                         <button className='ImgOpenBtn_x'
                             onClick={() => setImgOpen(!imgOpen)}> x </button>
                     </div>}
-                </div>
-                
+                </div>*/}
+
                 <div className='CardProfile'>
                     {card.Data.anonymous == true ? <> 
                         {card.Data.UID == currentData.uid ? 
@@ -115,9 +115,9 @@ const Card = ({card}) => {
                         <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
                     
-                    <div className='CardEmotion'>
+                    {/* <div className='CardEmotion'>
                         <CardEmoticon card={card}/>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className='CardForm'>
@@ -180,9 +180,9 @@ const Card = ({card}) => {
                         <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
 
-                    <div className='CardEmotion'>
+                    {/* <div className='CardEmotion'>
                         <CardEmoticon card={card}/>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className='CardForm'>

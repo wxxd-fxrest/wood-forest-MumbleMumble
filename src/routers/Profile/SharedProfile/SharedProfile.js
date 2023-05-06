@@ -54,7 +54,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
         <div className="Post">
             {currentUser.uid == profileInfo.uid ?
             <div className="PostBackGroundImg">
-                {pofilePost.Data.cardImgUrl &&
+                {/* {pofilePost.Data.cardImgUrl &&
                 <img src={ImageBtn} 
                     className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'}
                     onClick={() => setImgOpen(!imgOpen)} />}
@@ -64,7 +64,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                         <button className='ImgOpenBtn_x'
                             onClick={() => setImgOpen(!imgOpen)}> x </button>
                     </div>}
-                </div>
+                </div> */}
     
                 <div className='PostProfile'>
                     {pofilePost.Data.UID == profileInfo.uid && 
@@ -73,9 +73,9 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                             <h5> {profileInfo.displayName} </h5>
                             {pofilePost.Data.anonymous == false && <p className="ProfileAnonymous"> 익명으로 올라간 카드입니다. </p>}
                         </div> } 
-                    <div className='PostEmotion'>
+                    {/* <div className='PostEmotion'>
                         <SharedEmoticon pofilePost={pofilePost}/>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className='PostForm'  
@@ -122,7 +122,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                 {pofilePost.Data.anonymous == false ? null : <div>
                     {pofilePost.Data.cardImgUrl ? <div>
                         <div className="PostBackGroundImg">      
-                            <img src={ImageBtn}
+                            {/* <img src={ImageBtn}
                                 className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'} 
                                 onClick={() => setImgOpen(!imgOpen)} />
                             <div className='PostCardImgUrlForm'>
@@ -131,7 +131,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                                     <button className='ImgOpenBtn_x'
                                         onClick={() => setImgOpen(!imgOpen)}> x </button>
                                 </div>}
-                            </div>          
+                            </div>           */}
                             <div className='PostProfile'>
                                 {pofilePost.Data.UID == profileInfo.uid &&
                                     <div className='PostProfileTrue' onClick={onProfilePage}>
@@ -140,9 +140,9 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                                         {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
                                     </div> } 
 
-                                <div className='PostEmotion'>
+                                {/* <div className='PostEmotion'>
                                     <SharedEmoticon pofilePost={pofilePost}/>
-                                </div>
+                                </div> */}
                             </div>
 
                             <div className='PostForm'  
@@ -195,9 +195,9 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                                     {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
                                 </div> } 
 
-                            <div className='PostEmotion'>
+                            {/* <div className='PostEmotion'>
                                 <SharedEmoticon pofilePost={pofilePost}/>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className='PostForm'  

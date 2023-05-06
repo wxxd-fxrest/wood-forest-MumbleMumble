@@ -1,5 +1,5 @@
 import { addDoc, collection, Timestamp } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import { auth, db, storage } from "../../firebase";
 import { v4 as uuidv4 } from 'uuid';
@@ -39,20 +39,21 @@ const Home = () => {
     const [text, setText] = useState("") ;
     const [searchMusic, setSearchMusic] = useState("") ; 
     const [serchArtist, setSerchArtist] = useState("") ; 
-    const [cardImg, setCardImg] = useState("") ; 
 
     const [music, setMusic] = useState([]) ; 
     const [select, setSelect] = useState([]) ; 
 
-    const selectList = ["감정을 선택", "행복", "분노", "슬퍼", "난감", "힘듦", "혼란"] ;
     const [selected, setSelected] = useState("") ; 
+
+    const [trashTag, setTrashTag] = useState("") ;
+    const [tag, setTag] = useState([]) ;
 
     const location = useLocation() ;
 
     const pathname = location.pathname ; 
     const pathUID = (pathname.split('/')[2]);
 
-    console.log(pathUID)
+    // console.log(pathUID)
 
     const onChange = (event) => {
         const {target : {name, value}} = event ; 
@@ -62,96 +63,46 @@ const Home = () => {
             setSearchMusic(value) ; 
         } else if(name == "serchArtist") {
             setSerchArtist(value) ; 
-        }
-    } ; 
-
-    const onFileChange = (event) => {
-        setCardImg(null) ;
-        const {target: {files}} = event ; 
-        const theFile = files[0] ; 
-        const reader = new FileReader() ; 
-        reader.onloadend = (finishedEvent) => {
-            const {currentTarget: {result}} = finishedEvent ; 
-            setCardImg(result) ; 
-        } ;
-        if (Boolean(theFile)) {
-            reader.readAsDataURL(theFile) ; 
-        }
+        } 
     } ; 
 
     const onSaveBtn = async () => {
         setLoading(true) ; 
+        let tagEmpty = true
+        if(tag !== "") {
+            tagEmpty = false; 
+        }
         try {
-            let cardImgUrl = "" ; 
-            let uploadTask ; 
-            if(cardImg !== "") {
-                const cardImgRef = ref(storage, `images/${currentUser.uid + uuidv4()}`)
-                uploadTask = uploadBytes(cardImgRef, cardImg)
-                uploadString(cardImgRef, cardImg, 'data_url')
-
-                uploadTask.then(async (snapshot) => {
-                    cardImgUrl = await getDownloadURL(snapshot.ref)
-
-                    if(select[0] == null) {
-                        await addDoc(collection(db, "Post"), {
-                            UID: currentUser.uid,
-                            UUID: uuidv4ID, 
-                            PostText: text, 
-                            date: Timestamp.now(),
-                            music: false, 
-                            anonymous, 
-                            selected,
-                            cardImgUrl,
-                            like: [], 
-                        })
-                    } else {
-                        await addDoc(collection(db, "Post"), {
-                            UID: currentUser.uid,
-                            UUID: uuidv4ID, 
-                            PostText: text, 
-                            date: Timestamp.now(),
-                            music: true, 
-                            artist: select[0].artist, 
-                            Music: select[0].name,
-                            musicImage: select[0].image[2], 
-                            musicURL: select[0].url,
-                            anonymous, 
-                            selected,
-                            cardImgUrl,
-                            like: [], 
-                        })
-                    }
+            if(select[0] == null) {
+                await addDoc(collection(db, "Post"), {
+                    UID: currentUser.uid,
+                    UUID: uuidv4ID, 
+                    PostText: text, 
+                    date: Timestamp.now(),
+                    music: false, 
+                    anonymous, 
+                    selected,
+                    like: [], 
+                    tagList: tag,
+                    tagEmpty, 
                 })
-                setCardImg("") ; 
-            } 
-            else if(cardImg == "") {
-                if(select[0] == null) {
-                    await addDoc(collection(db, "Post"), {
-                        UID: currentUser.uid,
-                        UUID: uuidv4ID, 
-                        PostText: text, 
-                        date: Timestamp.now(),
-                        music: false, 
-                        anonymous, 
-                        selected,
-                        like: [], 
-                    })
-                } else {
-                    await addDoc(collection(db, "Post"), {
-                        UID: currentUser.uid,
-                        UUID: uuidv4ID, 
-                        PostText: text, 
-                        date: Timestamp.now(),
-                        music: true, 
-                        artist: select[0].artist,
-                        Music: select[0].name,
-                        musicImage: select[0].image[2], 
-                        musicURL: select[0].url,
-                        anonymous, 
-                        selected,
-                        like: [], 
-                    })
-                }
+            } else {
+                await addDoc(collection(db, "Post"), {
+                    UID: currentUser.uid,
+                    UUID: uuidv4ID, 
+                    PostText: text, 
+                    date: Timestamp.now(),
+                    music: true, 
+                    artist: select[0].artist,
+                    Music: select[0].name,
+                    musicImage: select[0].image[2], 
+                    musicURL: select[0].url,
+                    anonymous, 
+                    selected,
+                    like: [], 
+                    tagList: tag,
+                    tagEmpty, 
+                })
             }
         } catch(error) {
             console.log(error) ;
@@ -159,6 +110,7 @@ const Home = () => {
         setText("") ; 
         setSelect([]) ; 
         setSelected("") ;
+        setTag([]) ;
         Timer()
     } ; 
 
@@ -186,6 +138,21 @@ const Home = () => {
         setMusic([]) ; 
     } ; 
 
+    const onTrashTag = (event) => {
+        if(tag.length > 3) {
+            alert("3개 이상")
+        } ; 
+        const {target : {name, value}} = event ; 
+        if (name == "trashTag") {
+            setTrashTag(value) ; 
+        } ; 
+    } ;
+
+    const onTag = () => {
+        setTag([...tag, trashTag]) ;
+        setTrashTag("") ;
+    } ; 
+    
     const musicList = () => {
         let serchList = [] ; 
         for(let i = 0; i < music.length; i++) {
@@ -278,9 +245,23 @@ const Home = () => {
                             <p onClick={() => {setWrite(!write)}}> X </p>
                         </div>
 
+
+
                         <div className="HomeWrite">
                             <div className="WriteSelectForm">
-                                <div className="Select">
+                                <div>
+                                    <input type="text" 
+                                            placeholder="trash tag"
+                                            maxLength="5"
+                                            name="trashTag"
+                                            value={trashTag} 
+                                            onChange={onTrashTag} /> 
+                                    <button onClick={onTag}> ok </button>
+                                    <span> #{tag[0]} </span>
+                                    <span> #{tag[1]} </span>
+                                    <span> #{tag[2]} </span>
+                                </div>
+                                {/* <div className="Select">
                                     <select onChange={(e) => {setSelected(e.target.value)}} value={selected}>
                                         {selectList.map((item) => (
                                             <option value={item} key={item}>
@@ -294,9 +275,19 @@ const Home = () => {
                                         {selected == selectList[3] && <img src={Crying} />}
                                         {selected == selectList[4] && <img src={Difficulty} />}
                                         {selected == selectList[5] && <img src={Zombie} />}
-                                        {selected == selectList[6] && <img src={CantChoose} />}
+                                        {selected == selectList[6] && <img src={CantChoose} />} 
+
+
+                                        {selected == selectList[1] && <p> #분노 </p> }
+                                        {selected == selectList[2] && <p> #행복 </p> }
+                                        {selected == selectList[3] && <p> #슬픔 </p> }
+                                        {selected == selectList[4] && <p> #우울 </p> }
+                                        {selected == selectList[5] && <p> #기쁨 </p> }
+                                        {selected == selectList[6] && <p> #짜증 </p> }
+                                        {selected == selectList[7] && <p> #속상 </p> }
+                                    
                                     </div>
-                                </div>
+                                </div>*/}
 
                                 <div className="MusicImgAnonymous">
                                     <div className="ImgAnonymous">
@@ -307,7 +298,7 @@ const Home = () => {
                                                 <span onClick={() => setAnonymous(!anonymous)}> on </span>}
                                         </div>
 
-                                        <div className="imgForm">
+                                        {/* <div className="imgForm">
                                             {cardImg ? "" : 
                                             <h4> 사진 </h4>}
                                             <input type="file"
@@ -320,7 +311,7 @@ const Home = () => {
                                                     <img src={cardImg} alt="" className="labelImg" /> 
                                                 </> :  <img src={IMG} className="inputImgSelect"/>}
                                             </label>
-                                        </div>
+                                        </div> */}
                                         <div className="musicOnOff">
                                             <h4> 노래 </h4>
                                             {open == true ? 

@@ -51,7 +51,7 @@
     /* border: solid 1px #4177f6; */
     /* display: block; */
     /* background-color: #4177f6; */
-    background-color: #d9e4ff;
+    /* background-color: #d9e4ff; */
     height: 220px;
     border-radius: 10px;
     overflow: hidden;
@@ -168,14 +168,48 @@
 }
 
 
-.PostForm { 
-    /* display: flex; */
-    /* width: 80%; */
-    height: 55%;
-    /* background-color: rgb(119, 222, 222); */
+.BackgroundImg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ProfileFofor {
+    display: flex;
     position: absolute;
-    /* align-items: center; */
-    /* justify-content: center; */
+    top: 20px ;   
+    left: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProfileFofor > img {
+    width: 32px;
+    height: 32px;
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 50px;
+    background-color: white;
+}
+
+.ProfileFofor > h5 {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.PostTag {
+    /* background-color: #3861f6; */
+    width: 100%;
+    height: 30px;
+    z-index: 500000;
+    display: flex;
+    position: absolute;
+    top: 0;
+}
+
+.PostForm { 
+    height: 55%;
+    position: absolute;
     right: 0px;
     left: 0px;
     bottom: 15px;
