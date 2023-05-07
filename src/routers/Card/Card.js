@@ -92,17 +92,6 @@ const Card = ({card}) => {
         <div className='Card'>
         {card.Data.cardImgUrl ? 
             <div className='CardBackGroundImg'>
-                {/* <img src={ImageBtn} 
-                    className={card.Data.selected ? 'CardImgOpenBtn' : 'CardImgOpenBtn2'} 
-                    onClick={() => setImgOpen(!imgOpen)} />
-                <div className='PostCardImgUrlForm'>
-                    {imgOpen && <div className='PostCardImgUrl'>
-                        <img src={card.Data.cardImgUrl} />
-                        <button className='ImgOpenBtn_x'
-                            onClick={() => setImgOpen(!imgOpen)}> x </button>
-                    </div>}
-                </div>*/}
-
                 <div className='CardProfile'>
                     {card.Data.anonymous == true ? <> 
                         {card.Data.UID == currentData.uid ? 
@@ -114,28 +103,33 @@ const Card = ({card}) => {
                         <img src={Logo} width="180px"/>
                         <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
-                    
-                    {/* <div className='CardEmotion'>
-                        <CardEmoticon card={card}/>
-                    </div> */}
                 </div>
 
                 <div className='CardForm'>
                     {next == false ? 
                         <h3> {card.Data.PostText} </h3> : <>
-                        {card.Data.music == false ? null :
-                            <div className='CardMusicForm'>
-                                <div className='CardMusicName'>
-                                    <h4> {card.Data.Music} - {card.Data.artist}</h4>
+                        {card.Data.music == false ? null : <div className='CardMusicForm'>
+                            <div className='CardMusicName'>
+                                <h4> {card.Data.Music} - {card.Data.artist}</h4>
+                            </div>
+                            <div className='CardMusic'>
+                                <div className='imgPostMusicBox'>
+                                    <img src={Music} className="img_Music"/>
+                                    <img src={MusicBox} className="img_MusicBox" />
                                 </div>
-                                <div className='CardMusic'>
-                                    <div className='imgPostMusicBox'>
-                                        <img src={Music} className="img_Music"/>
-                                        <img src={MusicBox} className="img_MusicBox" />
-                                    </div>
-                                </div>
-                            </div>}
+                            </div>
+                        </div>}
                     </>}
+                </div>
+
+                <div className='CardTagHeart'>
+                    <div className='CardTag'>
+                        {card.Data.tagList != "" && <div>
+                            <span> #{card.Data.tagList[0]} </span>
+                            <span> #{card.Data.tagList[1]} </span>
+                            <span> #{card.Data.tagList[2]} </span> 
+                        </div>}
+                    </div>
 
                     <div className='CardHeartForm'>
                         {card.Data.like.includes(currentUser.uid) ? <div>
@@ -147,6 +141,7 @@ const Card = ({card}) => {
                         </div>}
                     </div>
                 </div>
+                
                 
                 {card.Data.music == false ? null : <div>
                     {next == false ? 
@@ -179,28 +174,33 @@ const Card = ({card}) => {
                         <img src={Logo} width="180px"/>
                         <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
-
-                    {/* <div className='CardEmotion'>
-                        <CardEmoticon card={card}/>
-                    </div> */}
                 </div>
 
                 <div className='CardForm'>
                     {next == false ? 
                         <h3> {card.Data.PostText} </h3> : <>
-                        {card.Data.music == false ? null :
-                            <div className='CardMusicForm'>
-                                <div className='CardMusicName'>
-                                    <h4> {card.Data.Music} - {card.Data.artist}</h4>
+                        {card.Data.music == false ? null : <div className='CardMusicForm'>
+                            <div className='CardMusicName'>
+                                <h4> {card.Data.Music} - {card.Data.artist}</h4>
+                            </div>
+                            <div className='CardMusic'>
+                                <div className='imgCardMusicBox'>
+                                    <img src={Music} className="img_Music"/>
+                                    <img src={MusicBox} className="img_MusicBox" />
                                 </div>
-                                <div className='CardMusic'>
-                                    <div className='imgCardMusicBox'>
-                                        <img src={Music} className="img_Music"/>
-                                        <img src={MusicBox} className="img_MusicBox" />
-                                    </div>
-                                </div>
-                            </div>}
+                            </div>
+                        </div>}
                     </>}
+                </div>
+
+                <div className='CardTagHeart'>
+                    <div className='CardTag'>
+                        {card.Data.tagList != "" && <div>
+                            <span> #{card.Data.tagList[0]} </span>
+                            <span> #{card.Data.tagList[1]} </span>
+                            <span> #{card.Data.tagList[2]} </span> 
+                        </div>}
+                    </div>
 
                     <div className='CardHeartForm'>
                         {card.Data.like.includes(currentUser.uid) ? <div>
@@ -212,6 +212,7 @@ const Card = ({card}) => {
                         </div>}
                     </div>
                 </div>
+                
                 
                 {card.Data.music == false ? null : <div>
                     {next == false ? 

@@ -63,23 +63,24 @@ const Post = ({postData}) => {
 
     useEffect(() => {
         CurrentUserInfo() ;
-        console.log(postData.Data.tagList)
+        console.log(postData.Data.tagList[0])
     }, []) ; 
 
     // <img src={BACKIMG} className="BackgroundImg"/>
 
     return (
         <div className='Post'>
+            {postData.Data.cardImgUrl ? 
             <div className='PostBackGroundImg'>
-            <img src={BACKIMG} className="BackgroundImg"/>
+                <img src={BACKIMG} className="BackgroundImg"/>
                 <div>
                     {postData.Data.anonymous == true ? <> 
                         {postData.Data.UID == currentData.uid ? 
-                        <div onClick={onProfilePage} className='ProfileFofor'>
+                        <div className='ProfileTrue' onClick={onProfilePage}>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
                         </div> : <img src={Logo} width="180px"/>} 
-                    </> : <div className='PostProfileTrue'>
+                    </> : <div className='ProfileTrue'>
                         <img src={Logo} width="180px"/>
                         <p className="PostAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
@@ -104,78 +105,24 @@ const Post = ({postData}) => {
                     </>}
                 </div>
 
-                <div className='PostTag'>
-                    {postData.Data.tagEmpty == false && <>
-                        <span> #{postData.Data.tagList} </span>
-                        <span> #{postData.Data.tagList} </span>
-                        <span> #{postData.Data.tagList} </span> 
-                    </>}
-                </div>
-
-                <div className='PostHeartForm'>
-                    {postData.Data.like.includes(currentUser.uid) ? <div>
-                        <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
-                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
-                    </div> : <div>
-                        <img src={Like} onClick={onClickLikeUpdate} />
-                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
-                    </div>}
-                </div>
-                
-                {postData.Data.music == false ? null : <div>
-                    {next == false ? 
-                    <img className='PostNextButton1'
-                        type='button'
-                        src={Right}
-                        onClick={() => {setNext(!next)}} /> :
-                    <img className='PostNextButton2'
-                        type='button'
-                        src={Left}
-                        onClick={() => {setNext(!next)}} /> }
-                </div> }
-            </div> 
-            {/* {postData.Data.cardImgUrl ? 
-            <div className='PostBackGroundImg'>
-                <div className='PostProfile'>
-                    {postData.Data.anonymous == true ? <> 
-                        {postData.Data.UID == currentData.uid ? 
-                        <div className='PostProfileTrue' onClick={onProfilePage}>
-                            <img src={currentData.attachmentUrl} />
-                            <h5> {currentData.displayName} </h5>
-                        </div> : <img src={Logo} width="180px"/>} 
-                    </> : <div className='PostProfileTrue'>
-                        <img src={Logo} width="180px"/>
-                        <p className="PostAnonymous"> 익명으로 올라온 카드입니다. </p> 
-                    </div>}
-                </div>
-                        
-                <div className='PostForm' 
-                    onClick={onCardPage}>
-                    {next == false ? 
-                        <h3> {postData.Data.PostText} </h3> : <>
-                        {postData.Data.music == false ? null :
-                        <div className='PostMusicForm'>
-                            <div className='PostMusicName'>
-                                <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
-                            </div>
-                            <div className='PostMusic'>
-                                <div className='imgPostMusicBox'>
-                                    <img src={Music} className="img_Music"/>
-                                    <img src={MusicBox} className="img_MusicBox" />
-                                </div>
-                            </div>
+                <div className='PostTagHeart'>
+                    <div className='PostTag'>
+                        {postData.Data.tagList != "" && <div>
+                            <span> #{postData.Data.tagList[0]} </span>
+                            <span> #{postData.Data.tagList[1]} </span>
+                            <span> #{postData.Data.tagList[2]} </span>
                         </div>}
-                    </>}
-                </div>
+                    </div>
 
-                <div className='PostHeartForm'>
-                    {postData.Data.like.includes(currentUser.uid) ? <div>
-                        <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
-                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
-                    </div> : <div>
-                        <img src={Like} onClick={onClickLikeUpdate} />
-                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
-                    </div>}
+                    <div className='PostHeartForm'>
+                        {postData.Data.like.includes(currentUser.uid) ? <div>
+                            <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
+                            <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                        </div> : <div>
+                            <img src={Like} onClick={onClickLikeUpdate} />
+                            <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                        </div>}
+                    </div>
                 </div>
                 
                 {postData.Data.music == false ? null : <div>
@@ -191,14 +138,15 @@ const Post = ({postData}) => {
                 </div> }
 
             </div> : <div className="PostBackGroundImg">
+                <img src={BACKIMG} className="BackgroundImg"/>
                 <div>
                     {postData.Data.anonymous == true ? <> 
                         {postData.Data.UID == currentData.uid ? 
-                        <div className='PostProfileTrue'  onClick={onProfilePage}>
+                        <div className='ProfileTrue' onClick={onProfilePage}>
                             <img src={currentData.attachmentUrl} />
                             <h5> {currentData.displayName} </h5>
                         </div> : <img src={Logo} width="180px"/>}
-                    </> : <div className='PostProfileTrue'>
+                    </> : <div className='ProfileTrue'>
                         <img src={Logo} width="180px"/>
                         <p className="PostAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
@@ -222,14 +170,24 @@ const Post = ({postData}) => {
                     </>}
                 </div>
 
-                <div className='PostHeartForm'>
-                    {postData.Data.like.includes(currentUser.uid) ? <div>
-                        <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
-                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
-                    </div> : <div>
-                        <img src={Like} onClick={onClickLikeUpdate} />
-                        <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
-                    </div>}
+                <div className='PostTagHeart'>
+                    <div className='PostTag'>
+                        {postData.Data.tagList != "" && <div>
+                            <span> #{postData.Data.tagList[0]} </span>
+                            <span> #{postData.Data.tagList[1]} </span>
+                            <span> #{postData.Data.tagList[2]} </span> 
+                        </div>}
+                    </div>
+
+                    <div className='PostHeartForm'>
+                        {postData.Data.like.includes(currentUser.uid) ? <div>
+                            <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
+                            <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                        </div> : <div>
+                            <img src={Like} onClick={onClickLikeUpdate} />
+                            <h4> {postData.Data.like.length} 명이 공감합니다. </h4>
+                        </div>}
+                    </div>
                 </div>
 
                 {postData.Data.music == false ? null : <div>
@@ -243,7 +201,7 @@ const Post = ({postData}) => {
                         src={Left}
                         onClick={() => {setNext(!next)}} /> }
                 </div>}
-            </div>} */}
+            </div>}
         </div>
     )
 }

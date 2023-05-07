@@ -9,6 +9,7 @@ import '../../../routers/Post/Post.css' ;
 import Left from '../../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
 import ImageBtn from '../../../Image/expression_Icon/Mumble_image_icon.png' ;
+import BACKIMG from '../../../Image/paper texture.jpg'; 
 
 import Like from '../../../Image/Like/heart.png' ; 
 import unLike from '../../../Image/Like/like.png' ; 
@@ -54,28 +55,14 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
         <div className="Post">
             {currentUser.uid == profileInfo.uid ?
             <div className="PostBackGroundImg">
-                {/* {pofilePost.Data.cardImgUrl &&
-                <img src={ImageBtn} 
-                    className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'}
-                    onClick={() => setImgOpen(!imgOpen)} />}
-                <div className='PostCardImgUrlForm'>
-                    {imgOpen && <div className='PostCardImgUrl'>
-                    <img src={pofilePost.Data.cardImgUrl} />
-                        <button className='ImgOpenBtn_x'
-                            onClick={() => setImgOpen(!imgOpen)}> x </button>
-                    </div>}
-                </div> */}
-    
+                <img src={BACKIMG} className="BackgroundImg"/>
                 <div className='PostProfile'>
                     {pofilePost.Data.UID == profileInfo.uid && 
-                        <div className='PostProfileTrue' onClick={onProfilePage}>
+                        <div className='ProfileTrue' onClick={onProfilePage}>
                             <img src={profileInfo.attachmentUrl} />
                             <h5> {profileInfo.displayName} </h5>
                             {pofilePost.Data.anonymous == false && <p className="ProfileAnonymous"> 익명으로 올라간 카드입니다. </p>}
                         </div> } 
-                    {/* <div className='PostEmotion'>
-                        <SharedEmoticon pofilePost={pofilePost}/>
-                    </div> */}
                 </div>
 
                 <div className='PostForm'  
@@ -97,14 +84,24 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                     </>}
                 </div>
 
-                <div className='ProfileHeartForm'>
-                    {pofilePost.Data.like.includes(currentUser.uid) ? <div>
-                        <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
-                        <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
-                    </div> : <div>
-                        <img src={Like} onClick={onClickLikeUpdate} />
-                        <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
-                    </div>}
+                <div className='ProfileTagHeart'>
+                    <div className='ProfileTag'>
+                        {pofilePost.Data.tagList != "" && <div>
+                            <span> #{pofilePost.Data.tagList[0]} </span>
+                            <span> #{pofilePost.Data.tagList[1]} </span>
+                            <span> #{pofilePost.Data.tagList[2]} </span>
+                        </div>}
+                    </div>
+
+                    <div className='ProfileHeartForm'>
+                        {pofilePost.Data.like.includes(currentUser.uid) ? <div>
+                            <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
+                            <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                        </div> : <div>
+                            <img src={Like} onClick={onClickLikeUpdate} />
+                            <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                        </div>}
+                    </div>
                 </div>
 
                 {pofilePost.Data.music == false ? null : <div>
@@ -122,27 +119,13 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                 {pofilePost.Data.anonymous == false ? null : <div>
                     {pofilePost.Data.cardImgUrl ? <div>
                         <div className="PostBackGroundImg">      
-                            {/* <img src={ImageBtn}
-                                className={pofilePost.Data.selected ? 'ProfileImgOpenBtn' : 'ProfileImgOpenBtn2'} 
-                                onClick={() => setImgOpen(!imgOpen)} />
-                            <div className='PostCardImgUrlForm'>
-                                {imgOpen && <div className='PostCardImgUrl'>
-                                <img src={pofilePost.Data.cardImgUrl} />
-                                    <button className='ImgOpenBtn_x'
-                                        onClick={() => setImgOpen(!imgOpen)}> x </button>
-                                </div>}
-                            </div>           */}
                             <div className='PostProfile'>
                                 {pofilePost.Data.UID == profileInfo.uid &&
-                                    <div className='PostProfileTrue' onClick={onProfilePage}>
+                                    <div className='ProfileTrue' onClick={onProfilePage}>
                                         <img src={profileInfo.attachmentUrl} />
                                         <h5> {profileInfo.displayName} </h5>
                                         {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
                                     </div> } 
-
-                                {/* <div className='PostEmotion'>
-                                    <SharedEmoticon pofilePost={pofilePost}/>
-                                </div> */}
                             </div>
 
                             <div className='PostForm'  
@@ -164,14 +147,24 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                                 </>}
                             </div>
 
-                            <div className='ProfileHeartForm'>
-                                {pofilePost.Data.like.includes(currentUser.uid) ? <div>
-                                    <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
-                                    <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
-                                </div> : <div>
-                                    <img src={Like} onClick={onClickLikeUpdate} />
-                                    <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
-                                </div>}
+                            <div className='ProfileTagHeart'>
+                                <div className='ProfileTag'>
+                                    {pofilePost.Data.tagList != "" && <div>
+                                        <span> #{pofilePost.Data.tagList[0]} </span>
+                                        <span> #{pofilePost.Data.tagList[1]} </span>
+                                        <span> #{pofilePost.Data.tagList[2]} </span>
+                                    </div>}
+                                </div>
+
+                                <div className='ProfileHeartForm'>
+                                    {pofilePost.Data.like.includes(currentUser.uid) ? <div>
+                                        <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
+                                        <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                                    </div> : <div>
+                                        <img src={Like} onClick={onClickLikeUpdate} />
+                                        <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                                    </div>}
+                                </div>
                             </div>
 
                             {pofilePost.Data.music == false ? null : <div>
@@ -189,15 +182,11 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                     </div> : <div className="PostBackGroundImg">
                         <div className='PostProfile'>
                             {pofilePost.Data.UID == profileInfo.uid &&
-                                <div className='PostProfileTrue' onClick={onProfilePage}>
+                                <div className='ProfileTrue' onClick={onProfilePage}>
                                     <img src={profileInfo.attachmentUrl} />
                                     <h5> {profileInfo.displayName} </h5>
                                     {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
                                 </div> } 
-
-                            {/* <div className='PostEmotion'>
-                                <SharedEmoticon pofilePost={pofilePost}/>
-                            </div> */}
                         </div>
 
                         <div className='PostForm'  
@@ -219,14 +208,24 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                             </>}
                         </div>
 
-                        <div className='ProfileHeartForm'>
-                            {pofilePost.Data.like.includes(currentUser.uid) ? <div>
-                                <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
-                                <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
-                            </div> : <div>
-                                <img src={Like} onClick={onClickLikeUpdate} />
-                                <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
-                            </div>}
+                        <div className='ProfileTagHeart'>
+                            <div className='ProfileTag'>
+                                {pofilePost.Data.tagList != "" && <div>
+                                    <span> #{pofilePost.Data.tagList[0]} </span>
+                                    <span> #{pofilePost.Data.tagList[1]} </span>
+                                    <span> #{pofilePost.Data.tagList[2]} </span>
+                                </div>}
+                            </div>
+
+                            <div className='ProfileHeartForm'>
+                                {pofilePost.Data.like.includes(currentUser.uid) ? <div>
+                                    <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
+                                    <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                                </div> : <div>
+                                    <img src={Like} onClick={onClickLikeUpdate} />
+                                    <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
+                                </div>}
+                            </div>
                         </div>
 
                         {pofilePost.Data.music == false ? null : <div>
@@ -250,4 +249,4 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
 export default SharedProfile ; 
 
 
-    
+// card, profile css 해야함.
