@@ -1,12 +1,12 @@
 .commentData {
-    display: flex;
+    display: block;
     width: 100%;
     position: relative;
     justify-content: flex-end;
 }
 
 .Comment {
-    /* background-color: thistle; */
+    background-color: white;
     width: 100%;
     position: relative;
     /* display: inline-block; */
@@ -28,7 +28,7 @@
 .CommentText > span {
     /* background-color: violet; */
     display: inline-flex;
-    padding: 10px 20px 10px 20px;
+    padding: 15px;
     text-align: start;
     width: 100%;
     min-height: 100px;
@@ -37,7 +37,8 @@
 }
 
 .CommentProfile {
-    background-color: #3c6cde;
+    /* background-color: #3c6cde; */
+    background-color: #616161;
     width: 100%;
     display: flex;
     align-items: center;
@@ -47,11 +48,12 @@
 }
 
 .commentPfofileImg {
-    border: solid 1px #4177f6;
+    /* border: solid 1px #4177f6; */
+    border: solid 1px #4a4a4a;
     border-radius: 100%;
     width: 25px;
     height: 25px;
-    margin: 10px;
+    margin-left: 10px;
     cursor: pointer;
     background-color: white;
 }
@@ -61,6 +63,7 @@
     font-size: 13px;
     cursor: pointer;
     color: white;
+    margin-left: 10px;
 }
 
 .CommentProfile > button {
@@ -69,12 +72,13 @@
 }
 
 .commentDeleteButton {
-    width: 15px;
+    width: 20px;
     z-index: 100;
     position: absolute;
-    bottom: 12px;
+    bottom: 10px;
     right: 15px;   
     cursor: pointer;
+    filter: invert(100%) sepia(59%) saturate(1057%) hue-rotate(194deg) brightness(131%) contrast(107%);
 }
 
 /* .CommentRE {
@@ -154,7 +158,7 @@
 .CommentListProps {
     /* background-color: #3c6cde; */
     /* display: inline-block; */
-    border-bottom: solid 1px rgb(65, 119, 246, 0.3);
+    /* border-bottom: solid 1px rgb(65, 119, 246, 0.3); */
 }
 
 .CommentRE {
@@ -162,17 +166,26 @@
     margin: 5px;
     /* width: 100%; */
     height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .CommentRE > button {
     display: inline-flex;
     border: none;
     /* width: 100%; */
-    height: 100%;
+    /* height: 100%; */
     cursor: pointer;
     text-align: center;
     justify-content: center;
-    font-size: 15px;
-    font-weight: 600;
-    background-color: white;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: rgb(65, 119, 246);
+    width: 60%;
+    height: 30px;
+    border-radius: 20px;
+    color: white;
+    align-items: center;
+    justify-content: center;
 }

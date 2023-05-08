@@ -12,7 +12,7 @@ import RandomData from "../../Empty/RandomData";
 
 const SharedProfileData = () => {
     const [pofilePost, setProfilePost] = useState([]) ; 
-    const [pofileMusic, setProfileMusic] = useState([]) ;
+    // const [pofileMusic, setProfileMusic] = useState([]) ;
     const [profileInfo, setProfileInfo] = useState([]) ; 
     const [tab, setTab] = useState(1) ; 
 
@@ -38,24 +38,24 @@ const SharedProfileData = () => {
         });
     } ; 
 
-    const getProfileMusic = async () => {
-        const FeedCollection = query(
-            collection(db, "Post"), 
-            where("UID", "==", `${pathUID}`),
-            where("music", "==", true),
-        );
-        onSnapshot(FeedCollection, (querySnapshot) => {
-            let feedArray = []
-            querySnapshot.forEach((doc) => {
-                feedArray.push({
-                    DocID: doc.id, 
-                    Data: doc.data(),
-                })
-            });
-            setProfileMusic(feedArray) ;
-            console.log(pofileMusic) ;
-        });
-    } ; 
+    // const getProfileMusic = async () => {
+    //     const FeedCollection = query(
+    //         collection(db, "Post"), 
+    //         where("UID", "==", `${pathUID}`),
+    //         where("music", "==", true),
+    //     );
+    //     onSnapshot(FeedCollection, (querySnapshot) => {
+    //         let feedArray = []
+    //         querySnapshot.forEach((doc) => {
+    //             feedArray.push({
+    //                 DocID: doc.id, 
+    //                 Data: doc.data(),
+    //             })
+    //         });
+    //         setProfileMusic(feedArray) ;
+    //         console.log(pofileMusic) ;
+    //     });
+    // } ; 
 
     const ProfileUserInfo = async () => {
         const getUserData = query(
@@ -70,7 +70,7 @@ const SharedProfileData = () => {
     useEffect(() => {
         getProfile() ; 
         ProfileUserInfo() ;
-        getProfileMusic() ;
+        // getProfileMusic() ;
     }, []) ; 
 
     return(
@@ -89,12 +89,12 @@ const SharedProfileData = () => {
                         </div>
                     </div>
 
-                    <ul className="SharedProfileTabForm">
+                    {/* <ul className="SharedProfileTabForm">
                         <li onClick={() => setTab(1)}
                             className={tab === 1 ? "tab_on" : "tab"}> all </li>
                         <li onClick={() => setTab(2)}
                             className={tab === 2 ? "tab_on" : "tab"}> music </li>
-                    </ul>
+                    </ul> */}
 
                     <div className={tab === 1 ? "SharedProfileMap" : "SharedProfileMapHidden"}>
                         {pofilePost.map((p, i) => (
@@ -102,11 +102,11 @@ const SharedProfileData = () => {
                         ))}
                     </div>
 
-                    <div className={tab === 2 ? "SharedProfileMap" : "SharedProfileMapHidden"}>
+                    {/* <div className={tab === 2 ? "SharedProfileMap" : "SharedProfileMapHidden"}>
                         {pofileMusic.map((m, i) => (
                             <SharedProfileMusic key={i} pofileMusic={m} profileInfo={profileInfo}/>
                         ))}
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className="SharedProfileEmpty">

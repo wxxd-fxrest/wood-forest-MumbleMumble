@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
 import None  from '../../../Image/Mumble_Profile_None.PNG' ;
 import '../../../routers/Card/Comment/CommentMore.css' ;
-import DeleteBtn from '../../../Image/Mumble_Delete_Icon.png'; 
+import DeleteBtn from '../../../Image/delete (1).png'; 
 
 const More = ({plusComment, commentData}) => {
     const [sendUserInfo, setSendUserInfo] = useState([]) ; 

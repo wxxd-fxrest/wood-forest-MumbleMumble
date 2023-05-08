@@ -7,7 +7,7 @@ import None  from '../../../Image/Mumble_Profile_None.PNG' ;
 import CommentList from "./CommentList";
 import CommentMore from "./CommentMore";
 import '../../../routers/Card/Comment/Comment.css';
-import DeleteBtn from '../../../Image/Mumble_Delete_Icon.png'; 
+import DeleteBtn from '../../../Image/delete (1).png'; 
 
 const Comment = ({commentData, setMore}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -63,7 +63,7 @@ const Comment = ({commentData, setMore}) => {
     return(
         <div className="Comment">
             <div className="CommentFrom">
-                <div className = {open == true && "margin"}>
+                <div>
                     <div className="CommentProfile">
                         {sendUserInfo.attachmentUrl ? 
                             <img src={sendUserInfo.attachmentUrl} className="commentPfofileImg"

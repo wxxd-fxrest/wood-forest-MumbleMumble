@@ -18,7 +18,8 @@
 }
 
 .MoreProfile > div {
-    background-color: #7487cf;
+    /* background-color: #7487cf; */
+    background-color: #818181;
     /* width: 100%; */
     display: flex;
     align-items: center;
@@ -34,10 +35,12 @@
     position: absolute;
     top: 13px;
     padding-left: 10px;
+    color: white;
 }
 
 .MoreProfile > div > img {
-    border: solid 1px #4177f6;
+    /* border: solid 1px #4177f6; */
+    border: solid 1px #4a4a4a;
     border-radius: 100%;
     width: 25px;
     height: 25px;

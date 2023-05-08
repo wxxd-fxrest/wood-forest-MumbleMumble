@@ -24,6 +24,7 @@
     display: block;
     width: 60%;
     height: 100%;
+    margin-top: 5px;
 }
 
 .CardEmpty {
@@ -86,6 +87,7 @@
     display: block;
     height: 100%;
     width: 90%;
+    margin-top: 20px;
 }
 
 .CardBackGroundImg {
@@ -93,7 +95,7 @@
     /* border-bottom: solid 1px rgb(65, 119, 246, 0.3); */
     /* display: block; */
     /* background-color: violet; */
-    height: 200px;
+    height: 240px;
     /* border-radius: 10px; */
     overflow: hidden;
     position: relative;
@@ -101,87 +103,70 @@
     width: 100%;
 }
 
-.CardImgOpenBtn {
-    position: absolute;
-    z-index: 10;
-    top: 9px;    
-    right: 125px;
-    width: 33px;
-    cursor: pointer;
-    filter: drop-shadow(2px 2px 1px rgb(55, 55, 55));
+.BackgroundImg {
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
 }
 
-.CardImgOpenBtn2 {
-    position: absolute;
-    z-index: 10;
-    top: 9px;    
-    right: 50px;
-    width: 33px;
-    cursor: pointer;
-    filter: drop-shadow(2px 2px 1px rgb(55, 55, 55));
-}
-
-.CardProfile {
+/* .CardProfile {
     width: 100%;
     position: absolute;
-    top: 0px;
-}
-
-.CardEmotion {
-    z-index: 100;
-    /* background-color: aliceblue; */
-    display: inline-flex;
-    position: absolute;
-    top: 5px;
-    right: 75px;
-}
+    top: 30px;
+} */
 
 .CardProfileTrue {
-    background-color:#3861f6;
-    display: flex;
+    /* background-color:#3861f6; */
+    /* display: flex;
     align-items: center;
     margin-left: 55px;
-    margin-right: 55px;
+    margin-right: 55px; */
+
+    display: flex;
+    position: absolute;
+    top: 30px ;   
+    left: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .CardProfileTrue > img {
+    width: 32px;
+    height: 32px;
+    border: solid 1px rgb(0, 0, 0, 0.7);
+    border-radius: 50px;
     background-color: white;
-    border: solid 1px #4177f6;
-    border-radius: 100%;
-    /* z-index: 10000; */
-    width: 30px;
-    height: 30px;
-    margin: 10px;
 }
 
 .CardProfileTrue > h5 {
-    font-weight: 500;
-    font-size: 15px;
-    color: white;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.ProfileAnonymous {
-    margin-left: 10px;
-    font-size: 12px;
+.CardAnonymous {
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .CardForm { 
     /* display: flex; */
     /* width: 80%; */
-    height: 58%;
     /* background-color: rgb(119, 222, 222); */
     position: absolute;
-    /* align-items: center; */
-    /* justify-content: center; */
+    height: 40%;
+    top: 29%;
     right: 0px;
     left: 0px;
-    bottom: 15px;
     font-size: 15px;
     font-weight: 400;
     text-align: start;
     padding: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
     word-break: break-all;
 }
 
@@ -191,41 +176,73 @@
     font-weight: 400;
 }
 
-.CardHeartForm > div {
+.CardTagHeart {
+    /* background-color: #393939; */
+    position: relative;
+    top: -60px;
+    height: 20px;
+    /* flex-direction: row; */
+    display: flex;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 5px;
+}
+
+.CardTag {
+    display: flex;
     position: absolute;
-    display: inline-flex;
-    width: 100%;
+    width: 50%;
     height: 20px;
     left: 0px;
-    bottom: -15px;
-    justify-content: start;
-    margin-bottom: 5px;
+}
+
+.CardTag > div {
+    /* display: block; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.CardTag > div > span {
+    display: inline-flex;
+    margin-top: 5px;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.Heart {
+    filter: invert(58%) sepia(32%) saturate(6655%) hue-rotate(342deg) brightness(102%) contrast(102%);
+}
+
+.CardHeartForm {
+    /* background-color:wheat; */
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: 20px;
+    right: 0px;
 }
 
 .CardHeartForm > div > img {
     position: absolute;
     display: flex;
     top: 0px;
-    left: 5px;
-    width: 22px;
-}
-
-.Heart {
-    filter: invert(51%) sepia(27%) saturate(4484%) hue-rotate(343deg) brightness(101%) contrast(99%);
+    right: 105px;
+    width: 20px;
 }
 
 .CardHeartForm > div > h4 {
     position: absolute;
     display: flex;
     top: 5px;
-    left: 35px;
+    right: 0px;
     font-size: 13px;
 }
 
-
 .CardNextButton1 {
     position: absolute;
-    bottom: 65px;
+    bottom: 105px;
     right: 15px;
     width: 25px;
     cursor: pointer;
@@ -239,7 +256,7 @@
 
 .CardNextButton2 {
     position: absolute;
-    bottom: 65px;
+    bottom: 105px;
     left: 15px;   
     width: 25px;
     cursor: pointer;
@@ -253,7 +270,7 @@
 
 .DeleteBox {
     position: absolute;
-    /* background-color: #261e12; */
+    /* background-color: #f4c783; */
     width: 100%;
     height: 25%;
     top: 0px;
@@ -261,11 +278,12 @@
 
 .CardDeleteButton {
     /* background-color: #51422e; */
-    width: 15px;
+    width: 25px;
     z-index: 100;
     position: absolute;
-    bottom: 18px;
-    right: 65px;   
+    bottom: 0px;
+    right: 40px; 
+    cursor: pointer;  
 }
 
 .CardMusicForm {
@@ -280,8 +298,13 @@
 }
 
 .CardMusicName {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     display: flex;
+    margin-bottom: -5px;
+}
+
+.CardMusicName > h4 {
+    font-size: 14px;
 }
 
 .CardMusic {
@@ -325,8 +348,8 @@
 .CardCommentInput {
     display: flex;
     /* background-color: cadetblue; */
-    height: 130px;
-    margin: 0px 0px 0px 0px;
+    height: 125px;
+    margin: 0px ;
     /* align-items: center;
     justify-content: center; */
 }
@@ -346,12 +369,11 @@
 
 .CardInputBox > textarea {
     display: inline-block;
-    /* width: 450px; */
-    width: 70%;
+    width: 100%;
     min-width: 20%;
     height: 70px;
     resize: none;
-    padding: 10px;
+    padding: 20px;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -365,39 +387,42 @@
 
 .CardInputBox > button {
     position: absolute;
-    right: 10%;
-    top: 25px;
-    width: 50px;
-    height: 50px;
+    right: 3%;
+    top: 23px;
+    width: 40px;
+    height: 60px;
     border-radius: 10px;
     background-color: rgb(65, 119, 246);
     border: none;
     color: white;
+    cursor: pointer;
 }
 
 .Cardcomment {
-    /* background-color: tomato; */
-    display: block;
+    background-color: white;
+    display: flex;
     overflow-y: scroll;
     /* height: 360px; */
-    height: 450px;
+    height: 390px;
     /* margin-top: 5px; */
     /* margin-top: 50px; */
-    width: 85%;
-    margin-left: 8%;
-    margin-right: 7%;
+    width: 100%;
+    /* margin-left: 8%; */
+    /* margin-right: 7%; */
 }
 
 .CardcommentTrue {
+    background-color: white;
     /* background-color: tomato; */
     display: block;
     overflow-y: scroll;
-    /* height: 360px; */
-    height: 580px;
-    /* margin-top: 5px; */
-    width: 85%;
-    margin-left: 8%;
-    margin-right: 7%;
+    height: 520px;
+    width: 100%;
+    /* height: 580px; */
+    margin-top: 10px;
+    /* width: 85%; */
+    /* margin-left: 8%; */
+    /* margin-right: 7%; */
 
 }
 
@@ -409,76 +434,31 @@
 }
 
 @media screen and (max-width: 800px) {
-    .CardBackGroundImg {
-        height: 210px;
-    }
     .CardForm {
         bottom: 18px;
-    }
-    .Cardcomment {
-        height: 440px;
-    }
-    .CardcommentTrue {
-        height: 570px;
-    }
-    .CardDeleteButton {
-        bottom: 20px;
     }
 }
 
 @media screen and (max-width: 750px) {
-    .CardBackGroundImg {
-        height: 220px;
-    }
     .CardForm {
         bottom: 20px;
     }
     .CardMusicForm {
         margin-top: 0px;
-        height: 120px;
-    }
-    .Cardcomment {
-        height: 430px;
-    }
-    .CardcommentTrue {
-        height: 560px;
     }
 }
 
 @media screen and (max-width: 700px) {
-    .CardBackGroundImg {
-        height: 265px;
-    }
-    .CardBackGroundImg > img {
-        margin: 60px 10px 10px 10px;
-    }
     .CardForm {
-        /* overflow: scroll; */
         bottom: 35px;
         margin-left: 60px;
         margin-right: 60px;
     }
-    .CardMusicForm {
-        margin-top: -10px;
-        height: 160px;
-    }
     .CardNextButton1{
-        bottom: 90px;
+        bottom: 110px;
     }
     .CardNextButton2{
-        bottom: 90px;
-    }
-    .Cardcomment {
-        height: 385px;
-    }
-    .CardcommentTrue {
-        height: 515px;
-    }
-    .CardDeleteButton {
-        bottom: 33px;
-    }
-    .CardImgOpenBtn {
-        top: -50px;
+        bottom: 110px;
     }
 }
 
@@ -489,97 +469,55 @@
     .CardForm {
         bottom: 40px;
     }
-    .CardMusicForm {
-        margin-top: -10px;
-        height: 160px;
-    }
     .CardNextButton1{
-        bottom: 100px;
+        bottom: 120px;
+        right: 20px;
     }
     .CardNextButton2{
-        bottom: 100px;
-    }
-    .Cardcomment {
-        height: 390px;
-    }
-    .CardcommentTrue {
-        height: 520px;
-    }
-    .CardDeleteButton {
-        bottom: 35px;
+        bottom: 120px;
+        left: 20px;
     }
     .CardInputBox > textarea {
         padding-right: 15%;    
     }
     .CardInputBox > button {
-        right: 9%;
+        right: 2%;
+    }
+    .Cardcomment {
+        height: 370px;
+    }
+    .CardcommentTrue {
+        height: 500px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .CardBackGroundImg {
-        height: 230px;
-    }
-    .CardBackGroundImg > img {
-        margin: 65px 10px 10px 10px;
-    }
-    .CardForm {
-        bottom: -75px;
-        height: 230px;
-    }
-    .CardHeartForm{
-        bottom: 75px;
-    }
-    .CardMusicForm {
-        margin-top: -20px;
-        height: 180px;
+        height: 270px;
     }
     .CardNextButton1{
-        bottom: 80px;
+        bottom: 120px;
     }
     .CardNextButton2{
-        bottom: 80px;
-    }
-    .Cardcomment {
-        height: 420px;
-    }
-    .CardcommentTrue {
-        height: 555px;
-    }
-    .CardImgOpenBtn {
-        top: -55px;
+        bottom: 120px;
     }
     .CardDeleteButton {
-        bottom: 25px;
+        bottom: 15px;
+    }
+    .Cardcomment {
+        height: 350px;
+    }
+    .CardcommentTrue {
+        height: 480px;
     }
 }
 
 @media screen and (max-width: 550px) {
     .CardBackGroundImg {
-        height: 230px;
-    }
-    .CardBackGroundImg > img {
-        margin: 80px 10px 10px 10px;
+        height: 280px;
     }
     .CardForm {
-        height: 230px;
-        bottom: -75px;
-    }
-    .CardMusicForm {
-        margin-top: -20px;
-        height: 200px;
-    }
-    .Cardcomment {
-        height: 430px;
-    }
-    .CardcommentTrue {
-        height: 555px;
-    }
-    .CardDeleteButton {
-        bottom: 25px;
-    }
-    .CardImgOpenBtn {
-        top: -70px;
+        top: 70px;
     }
     .CardInputBox > button {
         width: 40px;
@@ -588,11 +526,10 @@
 
 @media screen and (max-width: 500px) {
     .CardBackGroundImg {
-        height: 240px;
+        height: 280px;
     }
     .CardForm {
-        height: 240px;
-        bottom: -75px;
+        top: 70px;
     }
 }
 

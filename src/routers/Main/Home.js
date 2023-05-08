@@ -7,7 +7,7 @@ import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage
 import { useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import '../../routers/Main/Home.css';
-import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
+import Logo  from '../../Image/delete.png' ; 
 import IMG from '../../Image/Mumble_imgIcon.png' ;
 import ProfileEdit from "../Profile/ProfileEdit";
 import HomeIcon from '../../Image/Icons/Mumble_Icon_home.png';
@@ -24,6 +24,7 @@ import CantChoose from '../../Image/expression_Icon/Mumble_expression_cant_choos
 import Zombie from '../../Image/expression_Icon/Mumble_expression_zombie.png' ;  
 
 import DELETE from '../../Image/Mumble_Delete_gif.gif';
+import BACKIMG from '../../Image/paper texture.jpg'; 
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
@@ -152,7 +153,7 @@ const Home = () => {
         setTag([...tag, trashTag]) ;
         setTrashTag("") ;
     } ; 
-    
+
     const musicList = () => {
         let serchList = [] ; 
         for(let i = 0; i < music.length; i++) {
@@ -240,54 +241,28 @@ const Home = () => {
                 </div> : <> {write ? 
                 <div className="WriteContainer">
                     <div className="Write">
+                        
                         <div className="WriteHeader">
                             <h4> 하고 싶은 말이 있나요? </h4>
                             <p onClick={() => {setWrite(!write)}}> X </p>
                         </div>
 
-
-
                         <div className="HomeWrite">
                             <div className="WriteSelectForm">
-                                <div>
-                                    <input type="text" 
-                                            placeholder="trash tag"
-                                            maxLength="5"
-                                            name="trashTag"
-                                            value={trashTag} 
-                                            onChange={onTrashTag} /> 
-                                    <button onClick={onTag}> ok </button>
+                                <div className="WriteTagForm">
+                                    <div>
+                                        <input type="text" 
+                                                placeholder="trash tag"
+                                                maxLength="5"
+                                                name="trashTag"
+                                                value={trashTag} 
+                                                onChange={onTrashTag} /> 
+                                        <button onClick={onTag}> ok </button>
+                                    </div>
                                     <span> #{tag[0]} </span>
                                     <span> #{tag[1]} </span>
                                     <span> #{tag[2]} </span>
                                 </div>
-                                {/* <div className="Select">
-                                    <select onChange={(e) => {setSelected(e.target.value)}} value={selected}>
-                                        {selectList.map((item) => (
-                                            <option value={item} key={item}>
-                                                {item}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div>  
-                                        {selected == selectList[1] && <img src={Happy} />}
-                                        {selected == selectList[2] && <img src={Angry} />}
-                                        {selected == selectList[3] && <img src={Crying} />}
-                                        {selected == selectList[4] && <img src={Difficulty} />}
-                                        {selected == selectList[5] && <img src={Zombie} />}
-                                        {selected == selectList[6] && <img src={CantChoose} />} 
-
-
-                                        {selected == selectList[1] && <p> #분노 </p> }
-                                        {selected == selectList[2] && <p> #행복 </p> }
-                                        {selected == selectList[3] && <p> #슬픔 </p> }
-                                        {selected == selectList[4] && <p> #우울 </p> }
-                                        {selected == selectList[5] && <p> #기쁨 </p> }
-                                        {selected == selectList[6] && <p> #짜증 </p> }
-                                        {selected == selectList[7] && <p> #속상 </p> }
-                                    
-                                    </div>
-                                </div>*/}
 
                                 <div className="MusicImgAnonymous">
                                     <div className="ImgAnonymous">
@@ -298,20 +273,6 @@ const Home = () => {
                                                 <span onClick={() => setAnonymous(!anonymous)}> on </span>}
                                         </div>
 
-                                        {/* <div className="imgForm">
-                                            {cardImg ? "" : 
-                                            <h4> 사진 </h4>}
-                                            <input type="file"
-                                                    style={{display:"none"}}
-                                                    id="inputFile"
-                                                    onChange={onFileChange}
-                                                    required />
-                                            <label htmlFor="inputFile">
-                                                {cardImg ? <>
-                                                    <img src={cardImg} alt="" className="labelImg" /> 
-                                                </> :  <img src={IMG} className="inputImgSelect"/>}
-                                            </label>
-                                        </div> */}
                                         <div className="musicOnOff">
                                             <h4> 노래 </h4>
                                             {open == true ? 

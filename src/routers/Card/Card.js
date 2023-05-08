@@ -12,8 +12,9 @@ import MusicBox from '../../Image/Mumble_Music2.png' ;
 
 import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
-import DeleteBtn from '../../Image/Mumble_Delete_Icon.png'; 
+import DeleteBtn from '../../Image/delete (1).png'; 
 import ImageBtn from '../../Image/expression_Icon/Mumble_image_icon.png' ;
+import BACKIMG from '../../Image/paper texture.jpg'; 
 
 import Like from '../../Image/Like/heart.png' ; 
 import unLike from '../../Image/Like/like.png' ; 
@@ -92,7 +93,8 @@ const Card = ({card}) => {
         <div className='Card'>
         {card.Data.cardImgUrl ? 
             <div className='CardBackGroundImg'>
-                <div className='CardProfile'>
+                <img src={BACKIMG} className="BackgroundImg"/>
+                <div >
                     {card.Data.anonymous == true ? <> 
                         {card.Data.UID == currentData.uid ? 
                         <div className='CardProfileTrue' onClick={onProfilePage}>
@@ -101,7 +103,7 @@ const Card = ({card}) => {
                         </div> : <img src={Logo} width="180px"/>} 
                     </> : <div className='CardProfileTrue'>
                         <img src={Logo} width="180px"/>
-                        <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
+                        <p className="CardAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
                 </div>
 
@@ -163,7 +165,8 @@ const Card = ({card}) => {
                             onClick={onDelete} />
                     </div>}
             </div> : <div className='CardBackGroundImg'>
-                <div className='CardProfile'>
+                <img src={BACKIMG} className="BackgroundImg"/>
+                <div >
                     {card.Data.anonymous == true ? <> 
                         {card.Data.UID == currentData.uid ? 
                         <div className='CardProfileTrue' onClick={onProfilePage}>
@@ -172,7 +175,7 @@ const Card = ({card}) => {
                         </div> : <img src={Logo} width="180px"/>} 
                     </> : <div className='CardProfileTrue'>
                         <img src={Logo} width="180px"/>
-                        <p className="ProfileAnonymous"> 익명으로 올라온 카드입니다. </p> 
+                        <p className="CardAnonymous"> 익명으로 올라온 카드입니다. </p> 
                     </div>}
                 </div>
 

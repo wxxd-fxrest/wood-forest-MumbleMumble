@@ -66,8 +66,6 @@ const Post = ({postData}) => {
         console.log(postData.Data.tagList[0])
     }, []) ; 
 
-    // <img src={BACKIMG} className="BackgroundImg"/>
-
     return (
         <div className='Post'>
             {postData.Data.cardImgUrl ? 

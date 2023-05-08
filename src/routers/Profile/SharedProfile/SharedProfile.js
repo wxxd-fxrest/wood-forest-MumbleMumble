@@ -56,7 +56,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
             {currentUser.uid == profileInfo.uid ?
             <div className="PostBackGroundImg">
                 <img src={BACKIMG} className="BackgroundImg"/>
-                <div className='PostProfile'>
+                <div>
                     {pofilePost.Data.UID == profileInfo.uid && 
                         <div className='ProfileTrue' onClick={onProfilePage}>
                             <img src={profileInfo.attachmentUrl} />
@@ -119,7 +119,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                 {pofilePost.Data.anonymous == false ? null : <div>
                     {pofilePost.Data.cardImgUrl ? <div>
                         <div className="PostBackGroundImg">      
-                            <div className='PostProfile'>
+                            <div>
                                 {pofilePost.Data.UID == profileInfo.uid &&
                                     <div className='ProfileTrue' onClick={onProfilePage}>
                                         <img src={profileInfo.attachmentUrl} />
@@ -180,7 +180,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                             </div> }
                         </div>
                     </div> : <div className="PostBackGroundImg">
-                        <div className='PostProfile'>
+                        <div>
                             {pofilePost.Data.UID == profileInfo.uid &&
                                 <div className='ProfileTrue' onClick={onProfilePage}>
                                     <img src={profileInfo.attachmentUrl} />

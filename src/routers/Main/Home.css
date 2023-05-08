@@ -28,7 +28,9 @@
     width: 110px;
     margin-top: 20px;
     margin-bottom: 20px;
-    filter: drop-shadow(2px 2px 0px rgb(101, 100, 99));
+    filter: drop-shadow(2px -2px 0px rgb(101, 100, 99));
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
 }
 
 .HomeButton {
@@ -101,7 +103,7 @@
     /* background-color: rgb(64, 150, 226); */
     display: inline-flex;
     width: 790px;
-    height: 360px;
+    height: 370px;
     top: 10%;
     left:  90%;
     position: absolute;
@@ -110,10 +112,14 @@
     /* border: solid 1px rgb(101, 100, 99, 0.8); */
     /* filter: drop-shadow(3px 3px 0.5px rgb(101, 100, 99, 0.8)); */
     flex: 1;
+    background-image: url('../../Image/paper texture.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
 }
 
 .Write {
-    background-color: #4093ff;
+    /* background-color: #4093ff; */
     display: inline-block;
     width: 100%;
     position: relative;
@@ -132,23 +138,26 @@
 }
 
 .WriteHeader {
-    background-color: rgb(56, 97, 246);
+    /* background-color: rgb(56, 97, 246); */
     display: flex;
-    padding: 20px;
+    padding-top: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
     position: relative;
     z-index: 10000000;
     /* border-bottom: solid 1px rgb(255, 166, 41, 0.7); */
-    filter: drop-shadow(1px 1px 0.5px rgb(101, 100, 99, 0.8));
+    /* filter: drop-shadow(1px 1px 0.5px rgb(101, 100, 99, 0.8)); */
 }
 
 .WriteHeader > h4 {
-    color: white;
+    color: black;
 }
 
 .WriteHeader > p {
     position: absolute;
-    right: 20px;
-    color: white;
+    right: 40px;
+    color: black;
     cursor: pointer;
 }
 
@@ -160,48 +169,72 @@
 .WriteSelectForm {
     /* background-color: #ffd966; */
     display: flex;
-    padding: 10px;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-right: 10px;
     flex-direction: column;
     /* width: 400px; */
 
     flex: 0.3;
 }
 
-.Select {
+.WriteTagForm {
     /* background-color: rgb(131, 195, 255); */
-    display: inline-block;
+    display: inline-flex;
     /* width: 200px; */
     height: 100px;
     border-radius: 5px;
     overflow: hidden;
     border: solid 1px #3861f6;
-    margin-bottom: 10px;
+    margin-bottom: 10px;   
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
 }
 
-.Select > select {
-    background-color: #3861f6;
+.WriteTagForm > div {
+    flex-direction: row;
+    display: flex;
     width: 100%;
+    margin-bottom: 10px;
+} 
+
+.WriteTagForm > div > input {
+    /* background-color: #3861f6; */
+    display: flex;
+    width: 80%;
     outline: none;
     border: none;
     height: 18px;
     border-bottom: solid 1px #3861f6;
-    cursor: pointer;
+    padding: 10px;
 }
 
-.Select > div {
+.WriteTagForm > div > input::placeholder {
+    color: white;
+    font-size: 16px;
+}
+
+.WriteTagForm > div > button {
+    display: inline-block;
+    width: 20%;
+    border: none;
+    /* background-color: red; */
+}
+
+.WriteTagForm > span {
+    flex-direction: column;
+    /* background-color: #2867fa; */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 82%;
-}
-
-.Select > div > img {
-    width: 58px;
-    filter: drop-shadow(3px 3px 1px rgb(101, 100, 99));
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 550;
 }
 
 .MusicImgAnonymous {
-    background-color: #3861f6;
+    /* background-color: #3861f6; */
     display: flex;
     flex-direction: column;
     border:  solid 1px #3861f6;
@@ -223,7 +256,7 @@
     padding: 10px;
     justify-content: center;
     align-items: center;
-    flex: 0.35;
+    flex: 0.5;
     /* border-right: solid 1px rgb(255, 166, 41); */
 }
 
@@ -243,49 +276,14 @@
     color: white;
 }
 
-.imgForm {
-    /* background-color: #142358; */
-    flex-direction: row;
-    display: flex;
-    padding: 5px;
-    justify-content: center;
-    align-items: center;
-    flex: 0.3;
-    /* border-right: solid 1px rgb(255, 166, 41); */
-}
-
-.imgForm > h4 {
-    font-size: 12px;
-}
-
-.labelImg {
-    /* opacity: 0.5; */
-    min-width: 100px;
-    max-width: 100px;
-    width: 100px;
-    height: 50px;
-    object-fit: cover;  
-    width: 100%;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.inputImgSelect {
-    width: 27px;
-    margin-left: 5px;
-    cursor: pointer;
-    padding: 6px 0px 0px 0px;
-    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(169deg) brightness(104%) contrast(100%);
-}
-
 .musicOnOff {
-    /* background-color: rgb(255, 166, 41, 0.5); */
+    background-color: rgb(255, 166, 41, 0.5);
     flex-direction: row;
     display: flex;
     padding: 10px;
     justify-content: center;
     align-items: center;
-    flex: 0.35;
+    flex: 0.5;
 }
 
 .musicOnOff > span {
@@ -305,7 +303,9 @@
 }
 
 .musicSelect {
-    background-color: #4177f6;
+    /* background-color: #4177f6; */
+    border-top: solid 1px #4177f6;
+    border-bottom: solid 1px #4177f6;
     display: inline-flex;
     flex-direction: row;
     height: 30px;
@@ -398,12 +398,12 @@
 }
 
 .WriteFrom {
-    /* background-color: #e4eaff; */
+    /* background-color: #203376; */
     background-color: #2867fa;
     width: 100%;
     display: flex;
-    flex: 0.7;
-    height: 255px;
+    flex: 0.68;
+    height: 275px;
     border-radius: 10px;
     margin-top: 10px;
     margin-right: 10px;
@@ -413,7 +413,7 @@
     background-color: #2867fa;
     display: inline-flex;
     width: 100%;
-    height: 85%;
+    height: 75%;
     resize: none;
     border: none;
     outline: none;
@@ -428,12 +428,12 @@
 
 .WriteDeleteBtn {
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+    right: 40px;
+    bottom: 40px;
     width: 50px;
     height: 22px;
     border-radius: 3px;
-    background-color: #2867fa;
+    background-color: #4c7ff7;
     border: none;
     margin-left: 10px;
     font-size: 12px;
@@ -505,26 +505,33 @@
 @media screen and (max-width: 800px) {
     .WriteContainer {
         width: 500px;
-        /* height: 400px; */
         left:  130%;
         /* height: 500px; */
-        height: 560px;
+        height: 600px;
     }
     .HomeWrite {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .WriteSelectForm {
-        width: 480px;
+        padding-left: 0px;
+        width: 430px;
+    }
+    .WriteTagForm > div {
+        width: 430px;
+    }
+    .MusicImgAnonymous {
+        width: 430px;
     }
     .WriteDeleteBtn {
         top: 5px;
+        right: 10px;
     }
     .WriteFrom {
-        margin-top: 0px;
-        margin-left: 10px;
-        margin-right: 10px;
+        /* margin-top: 0px; */
         position: relative;
-        width: 480px;
+        width: 430px;
     }
     .WriteFrom > textarea {
         width: 100%;
@@ -570,47 +577,43 @@
 
 @media screen and (max-width: 600px) {
     .WriteContainer {
-        left:  70%;
+        left:  50%;
     }
 }
 
 @media screen and (max-width: 580px) {
     .WriteContainer {
-        left:  60%;
-        width: 480px;
+        left:  30%;
+        /* width: 480px; */
     }
     .WriteSelectForm {
-        width: 460px;
+        /* width: 460px; */
     }
 }
 
 @media screen and (max-width: 560px) {
     .WriteContainer {
-        left:  90%;
-        width: 460px;
+        left:  30%;
     }
     .WriteSelectForm {
-        width: 440px;
     }
 }
 
 @media screen and (max-width: 540px) {
     .WriteContainer {
-        left:  60%;
-        width: 450px;
+        left:  20%;
+        /* width: 450px; */
     }
     .WriteSelectForm {
-        width: 430px;
+        /* width: 430px; */
     }
 }
 
 @media screen and (max-width: 510px) {
     .WriteContainer {
-        left:  40%;
-        width: 450px;
+        left:  0%;
     }
     .WriteSelectForm {
-        width: 430px;
     }
 }
 
