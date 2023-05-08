@@ -18,7 +18,8 @@ const Random = ({random}) => {
 
     const onProfilePage = (e) => {
         e.preventDefault();
-        navigate(`/profile/${random.Data.UID}`) ; 
+        window.location.replace(`/profile/${random.Data.UID}`)
+        // navigate(`/profile/${random.Data.UID}`) ; 
     } ; 
 
     const CurrentUserInfo = async () => {
@@ -45,6 +46,13 @@ const Random = ({random}) => {
             </div>
             <div className='RandomText' onClick={onCardPage}>
                 <h3> {random.Data.PostText} </h3> 
+                <div className='RandomTag'>
+                    {random.Data.tagList != "" && <div>
+                        <span> #{random.Data.tagList[0]} </span>
+                        <span> #{random.Data.tagList[1]} </span>
+                        <span> #{random.Data.tagList[2]} </span>
+                    </div>}
+                </div>
             </div>
         </div>
     )

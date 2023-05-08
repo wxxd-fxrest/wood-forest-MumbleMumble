@@ -1,6 +1,6 @@
 .ProfileEdit {
     /* background-color: rgb(56, 97, 246, 0.3); */
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     flex-flow: row wrap;
     /* height: 500px;  */
@@ -9,23 +9,26 @@
     overflow: hidden;
     z-index: 100000;
     position: absolute;
-    top: 15%;
-    left: 160%;
-    background-image: url('../../Image/sticky-note.png');
+    top: -200px;
+    left: 235%;
+    background-image: url('../../Image/post-it.png');
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    opacity: 0.9;
 }
 
 .ProfileEditContainer {
+
     display: inline-flex;
     /* background-color: #2867fa; */
+
     flex-direction: column;
-    width: 350px;
+    /* width: 300px; */
     margin: 10px;
     padding: 40px;
-    height: 80%;
-    max-height: 80%;
+    /* height: 300px; */
+    /* max-height: 80%; */
     position: relative;
     border-radius: 10px;
     align-items: center;
@@ -43,17 +46,17 @@
     /* background-color: tomato; */
     display: inline-flex;
     /* width: 100px; */
-    /* margin: 3px 70px 0px 70px; */
+    margin: 3px 20px 0px 20px;
     font-size: 18px;
     font-weight: 600;
-    position: absolute;
-    top: 90px;
+    /* position: absolute; */
+    /* top: 90px; */
 }
 
 .EditBackBtn, .EditOkkBtn {
     background-color: #064df3;
-    position: absolute;
-    top: 30px;
+    /* position: absolute; */
+    /* top: 30px; */
     width: 60px;
     height: 30px;
     border-radius: 50px;
@@ -63,21 +66,21 @@
     font-size: 12px;
     color: #ffffff;
 }
-
+/* 
 .EditOkkBtn {
     right: 45px;
 }
 
 .EditBackBtn {
     left: 45px;
-}
+} */
 
 .EditImg {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     border: solid 1px #8aadfc;
-    margin: 80px 0px 20px 0px;
+    margin: 20px 0px 20px 0px;
     cursor: pointer;
     background-color: white;
 }
@@ -92,7 +95,7 @@
     /* margin: 60px 10px 5px 10px; */
     background-color: #064df3;
     outline: none;
-    width: 230px;
+    width: 200px;
     /* margin-left: 40px; */
     /* margin-top: 0px; */
 }
@@ -102,36 +105,36 @@
 }
 
 @media screen and (max-width: 750px) {
-    .ProfileEdit {
-        top: 15%;
-        left: 150%;
-    }
+    /* .ProfileEdit {
+        top: -200px;
+        left: 235%;
+    } */
 }
 
 @media screen and (max-width: 650px) {
     .ProfileEdit {
-        top: 16%;
-        left: 110%;
+        /* top: 16%;
+        left: 110%; */
     }
 }
 
 @media screen and (max-width: 600px) {
     .ProfileEdit {
-        top: 17%;
-        left: 80%;
+        /* top: 17%;
+        left: 80%; */
     }
 }
 
 @media screen and (max-width: 550px) {
     .ProfileEdit {
-        top: 18%;
-        left: 32%;
+        top: -200px;
+        left: 200%;
     }
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 500px) {
     .ProfileEdit {
-        top: 19%;
-        left:2%;
+        top: -200px;
+        left: 160%;
     }
 }

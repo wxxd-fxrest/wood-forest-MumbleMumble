@@ -179,55 +179,55 @@ const Home = () => {
                 <div className="HomeButtonForm">
                     <img src={Logo} />
                     <div className="HomeButton">
-                    <div className="Btn">
-                            <div className={pathname == "/" ? 'imgBtn_on' : 'imgBtn'}>
-                                <img src={HomeIcon} 
-                                    onClick={() => {navigate("/")}} /> 
+                        <div className="Btn">
+                            <div className={pathname == "/" ? 'imgBtn_on' : 'imgBtn'}
+                                onClick={() => {navigate("/")}}>
+                                <img src={HomeIcon} /> 
                             </div>
                             <h4> Home </h4>
                         </div>
 
                         <div className="Btn">
-                            <div className={write == true ? 'imgBtn_on' : 'imgBtn'}>
-                                <img src={WriteIcon}
-                                    onClick={() => {
-                                        setEditOpen(false)
-                                        setWrite(!write)
-                                        clearTimeout(Timer)
-                                    }} /> 
+                            <div className={write == true ? 'imgBtn_on' : 'imgBtn'}
+                                onClick={() => {
+                                    setEditOpen(false)
+                                    setWrite(!write)
+                                    clearTimeout(Timer)
+                                }}>
+                                <img src={WriteIcon} /> 
                             </div>
                             <h4> Wirte </h4>
                         </div>
                         
                         <div className="Btn">
-                            <div className={pathUID == currentUser.uid ? 'imgBtn_on' : 'imgBtn'}>
-                                <img src={ProfileIcon}
-                                    onClick={() => {
-                                        window.location.replace(`/profile/${currentUser.uid}`)
-                                    }} /> 
+                            <div className={pathUID == currentUser.uid ? 'imgBtn_on' : 'imgBtn'}
+                                onClick={() => {
+                                    window.location.replace(`/profile/${currentUser.uid}`)
+                                }}>
+                                <img src={ProfileIcon} /> 
                             </div>
                             <h4> Profile </h4>
                         </div>
 
                         <div className="Btn">
-                            <div className={editOpen == true ? 'imgBtn_on' : 'imgBtn'}>
-                                <img src={EditIcon} 
+                            <div className={editOpen == true ? 'imgBtn_on' : 'imgBtn'}
                                     onClick={() => 
                                         {setWrite(false)
                                         setEditOpen(!editOpen)
-                                    }} />
+                                    }} >
+                                <img src={EditIcon} />
                             </div>
                             <h4> Edit </h4>
                             {editOpen == true && <ProfileEdit setEditOpen={setEditOpen} editOpen={editOpen}/>}
                         </div>
 
                         <div className="Btn">
-                            <div className="imgBtn">
-                                <img src={LogOutIcon}
+                            <div className="imgBtn" 
                                     onClick={() => {
                                     signOut(auth) 
                                     navigate("/")
-                                    console.log("로그아웃 완료")}} />
+                                    console.log("로그아웃 완료")}}>
+                                <img src={LogOutIcon} />
                             </div>
                             <h4> Log Out </h4>
                         </div>

@@ -116,70 +116,19 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                         onClick={() => {setNext(!next)}} /> }
                 </div> }
             </div> : <div>
-                {pofilePost.Data.anonymous == false ? null : <div>
-                    {pofilePost.Data.cardImgUrl ? <div>
-                        <div className="PostBackGroundImg">      
-                            <div>
-                                {pofilePost.Data.UID == profileInfo.uid &&
-                                    <div className='ProfileTrue' onClick={onProfilePage}>
-                                        <img src={profileInfo.attachmentUrl} />
-                                        <h5> {profileInfo.displayName} </h5>
-                                        {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
-                                    </div> } 
-                            </div>
-
-                            <div className='PostForm'  
-                                onClick={onCardPage}>
-                                {next == false ? 
-                                <h3> {pofilePost.Data.PostText} </h3> : <>
-                                    {pofilePost.Data.music == false ? null :
-                                    <div className='PostMusicForm'>
-                                        <div className='PostMusicName'>
-                                            <h4> {pofilePost.Data.Music} - {pofilePost.Data.artist}</h4>
-                                        </div>
-                                        <div className='PostMusic'>
-                                            <div className='imgPostMusicBox'>
-                                                <img src={Music} className="img_Music"/>
-                                                <img src={MusicBox} className="img_MusicBox" />
-                                            </div>
-                                        </div>
-                                    </div>}
-                                </>}
-                            </div>
-
-                            <div className='ProfileTagHeart'>
-                                <div className='ProfileTag'>
-                                    {pofilePost.Data.tagList != "" && <div>
-                                        <span> #{pofilePost.Data.tagList[0]} </span>
-                                        <span> #{pofilePost.Data.tagList[1]} </span>
-                                        <span> #{pofilePost.Data.tagList[2]} </span>
-                                    </div>}
-                                </div>
-
-                                <div className='ProfileHeartForm'>
-                                    {pofilePost.Data.like.includes(currentUser.uid) ? <div>
-                                        <img src={unLike} onClick={onClickLikeDelete} className="Heart"/>
-                                        <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
-                                    </div> : <div>
-                                        <img src={Like} onClick={onClickLikeUpdate} />
-                                        <h4> {pofilePost.Data.like.length} 명이 공감합니다. </h4>
-                                    </div>}
-                                </div>
-                            </div>
-
-                            {pofilePost.Data.music == false ? null : <div>
-                                {next == false ? 
-                                <img className='PostNextButton1'
-                                    type='button'
-                                    src={Right}
-                                    onClick={() => {setNext(!next)}} /> :
-                                <img className='PostNextButton2'
-                                    type='button'
-                                    src={Left}
-                                    onClick={() => {setNext(!next)}} /> }
-                            </div> }
-                        </div>
-                    </div> : <div className="PostBackGroundImg">
+                {pofilePost.Data.anonymous == false ? 
+                <div className="PostBackGroundImg">     
+                    <img src={BACKIMG} className="BackgroundImg"/>
+                    <div>
+                        {pofilePost.Data.UID == profileInfo.uid &&
+                            <div className='ProfileTrue' onClick={onProfilePage}>
+                                <img src={profileInfo.attachmentUrl} />
+                                <h5> {profileInfo.displayName} </h5>
+                                {pofilePost.Data.anonymous == false && <p> 익명으로 올라간 카드입니다. </p>}
+                            </div> } 
+                    </div>
+                </div> : <div className="PostBackGroundImg">     
+                        <img src={BACKIMG} className="BackgroundImg"/>
                         <div>
                             {pofilePost.Data.UID == profileInfo.uid &&
                                 <div className='ProfileTrue' onClick={onProfilePage}>
@@ -238,8 +187,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                                 type='button'
                                 src={Left}
                                 onClick={() => {setNext(!next)}} /> }
-                        </div> }
-                    </div>}
+                        </div>}
                 </div>}
             </div>}
         </div>

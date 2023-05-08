@@ -22,14 +22,14 @@
 
 .MainPost {
     display: inline-flex;
-    width: 60%;
+    width: 55%;
     height: 100%;
 }
 
 .MainEmpty {
     display: inline-flex;
-    /* background-color: #358af9; */
-    width: 20%;
+    width: 25%;
+    height: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -40,28 +40,24 @@
         width: 20%;
     }
     .MainPost {
-        width: 60%;
+        width: 55%;
     }
     .MainEmpty {
-        width: 20%;
+        width: 25%;
     }
 }
 
-@media screen and (max-width: 980px) {
-    .MainContainer {
-        margin: 0px;
-    }
+@media screen and (max-width: 1000px) {
     .MainHome {
-        width: 15%;
+        width: 25%;
     }
     .MainPost {
-        width: 70%;
+        width: 75%;
     }
     .MainEmpty {
-        width: 15%;
+        display: none;
     }
 }
-
 
 @media screen and (max-width: 800px) {
     .MainContainer {

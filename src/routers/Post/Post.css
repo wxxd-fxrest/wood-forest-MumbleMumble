@@ -1,7 +1,7 @@
 .PostData {
     display: block;
     /* background-color: rgb(255, 105, 41); */
-    width: 95%;
+    width: 100%;
     overflow-y: scroll;
     /* margin-bottom: 10px;
     margin-top: 10px; */
@@ -108,18 +108,21 @@
     border: solid 1px rgb(0, 0, 0, 0.7);
     border-radius: 50px;
     background-color: white;
+    cursor: pointer;
 }
 
 .ProfileTrue > h5 {
     margin-left: 8px;
     font-size: 14px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .PostAnonymous {
     margin-left: 8px;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .PostForm { 
@@ -136,6 +139,7 @@
     margin-left: 50px;
     margin-right: 50px;
     word-break: break-all;
+    cursor: pointer;
 }
 
 .PostForm > h3 {
@@ -199,6 +203,7 @@
     top: 0px;
     right: 105px;
     width: 20px;
+    cursor: pointer;
 }
 
 .PostHeartForm > div > h4 {

@@ -91,10 +91,9 @@ const Card = ({card}) => {
 
     return(
         <div className='Card'>
-        {card.Data.cardImgUrl ? 
             <div className='CardBackGroundImg'>
                 <img src={BACKIMG} className="BackgroundImg"/>
-                <div >
+                <div>
                     {card.Data.anonymous == true ? <> 
                         {card.Data.UID == currentData.uid ? 
                         <div className='CardProfileTrue' onClick={onProfilePage}>
@@ -164,78 +163,7 @@ const Card = ({card}) => {
                             className='CardDeleteButton'
                             onClick={onDelete} />
                     </div>}
-            </div> : <div className='CardBackGroundImg'>
-                <img src={BACKIMG} className="BackgroundImg"/>
-                <div >
-                    {card.Data.anonymous == true ? <> 
-                        {card.Data.UID == currentData.uid ? 
-                        <div className='CardProfileTrue' onClick={onProfilePage}>
-                            <img src={currentData.attachmentUrl} />
-                            <h5> {currentData.displayName} </h5>
-                        </div> : <img src={Logo} width="180px"/>} 
-                    </> : <div className='CardProfileTrue'>
-                        <img src={Logo} width="180px"/>
-                        <p className="CardAnonymous"> 익명으로 올라온 카드입니다. </p> 
-                    </div>}
-                </div>
-
-                <div className='CardForm'>
-                    {next == false ? 
-                        <h3> {card.Data.PostText} </h3> : <>
-                        {card.Data.music == false ? null : <div className='CardMusicForm'>
-                            <div className='CardMusicName'>
-                                <h4> {card.Data.Music} - {card.Data.artist}</h4>
-                            </div>
-                            <div className='CardMusic'>
-                                <div className='imgCardMusicBox'>
-                                    <img src={Music} className="img_Music"/>
-                                    <img src={MusicBox} className="img_MusicBox" />
-                                </div>
-                            </div>
-                        </div>}
-                    </>}
-                </div>
-
-                <div className='CardTagHeart'>
-                    <div className='CardTag'>
-                        {card.Data.tagList != "" && <div>
-                            <span> #{card.Data.tagList[0]} </span>
-                            <span> #{card.Data.tagList[1]} </span>
-                            <span> #{card.Data.tagList[2]} </span> 
-                        </div>}
-                    </div>
-
-                    <div className='CardHeartForm'>
-                        {card.Data.like.includes(currentUser.uid) ? <div>
-                            <img src={unLike} onClick={onClickLikeDelete} className="Heart" />
-                            <h4> {card.Data.like.length} 명이 공감합니다. </h4>
-                        </div> : <div>
-                            <img src={Like} onClick={onClickLikeUpdate} />
-                            <h4> {card.Data.like.length} 명이 공감합니다. </h4>
-                        </div>}
-                    </div>
-                </div>
-                
-                
-                {card.Data.music == false ? null : <div>
-                    {next == false ? 
-                    <img className='CardNextButton1'
-                        type='button'
-                        src={Right}
-                        onClick={() => {setNext(!next)}} /> :
-                    <img className='CardNextButton2'
-                        type='button'
-                        src={Left}
-                        onClick={() => {setNext(!next)}} /> }
-                </div> }
-                {card.Data.UID == currentUser.uid && 
-                    <div className='DeleteBox'>
-                        <img type='button'
-                            src={DeleteBtn} 
-                            className='CardDeleteButton'
-                            onClick={onDelete} />
-                    </div>}
-            </div>}
+            </div> 
             
             {more == false ? 
             <div className='CardCommentInput'>

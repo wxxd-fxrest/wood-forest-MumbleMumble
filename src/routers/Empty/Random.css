@@ -1,11 +1,14 @@
 
 .RandomData {
+    /* background-color: tomato; */
     display: block;
     flex-direction: row;
     width: 100%;
     overflow-y: scroll;
     height: 785px;
     margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .RandomDataHeader {
@@ -79,14 +82,36 @@
 }
 
 .RandomText {
+    /* background-color: blue; */
     display: block;
     padding: 10px 15px 10px 15px; 
     text-align: start;
     word-break: break-all;
     cursor: pointer;
+    position: relative;
+    min-height: 80px;
+    margin-bottom: 30px;
 }
 
 .RandomText > h3 {
+    /* background-color: antiquewhite; */
     font-size: 12px;
     font-weight: 500;
+}
+
+.RandomTag > div {
+    /* background-color: aliceblue; */
+    position: absolute;
+    display: flex;
+    width: 180px;
+    bottom: -23px;
+    left: 10px;
+}
+
+.RandomTag > div > span {
+    display: inline-flex;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 300;
+    margin-right: 5px;
 }
