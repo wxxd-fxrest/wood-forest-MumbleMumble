@@ -1,7 +1,6 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
 import None  from '../../../Image/Mumble_Profile_None.PNG' ;
 import '../../../routers/Card/Comment/CommentMore.css' ;
@@ -9,9 +8,6 @@ import '../../../routers/Card/Comment/CommentMore.css' ;
 const List = ({plusComment, commentData}) => {
     const [sendUserInfo, setSendUserInfo] = useState([]) ;
     const navigate = useNavigate();
-
-    // console.log("plusComment =>", plusComment)
-    // console.log("commentData =>", commentData)
 
     const getSendUserInfo = async () => {
         const getUserData = query(

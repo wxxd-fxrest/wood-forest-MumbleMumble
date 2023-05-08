@@ -3,13 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
 import { arrayRemove, arrayUnion, collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { db } from '../../firebase';
-import PostEmoticon from './PostEmoticon';
 import '../../routers/Post/Post.css' ;
 import Music from '../../Image/Mumble_Music1.png' ;
 import MusicBox from '../../Image/Mumble_Music2.png' ;
 import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
-import ImageBtn from '../../Image/expression_Icon/Mumble_image_icon.png' ;
 import { AuthContext } from '../../Context/AuthContext';
 import Like from '../../Image/Like/heart.png' ; 
 import unLike from '../../Image/Like/like.png' ; 
@@ -20,7 +18,6 @@ const Post = ({postData}) => {
     const navigate = useNavigate();
     const [currentData, setCurrentData] = useState([]) ; 
     const [next, setNext] = useState(false) ; 
-    const [imgOpen, setImgOpen] = useState(false) ; 
 
     const onCardPage = (e) => {
         e.preventDefault();
@@ -59,7 +56,6 @@ const Post = ({postData}) => {
             });
         }
     }
-
 
     useEffect(() => {
         CurrentUserInfo() ;

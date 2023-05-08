@@ -1,10 +1,7 @@
 .ProfileEdit {
-    /* background-color: rgb(56, 97, 246, 0.3); */
     display: inline-flex;
     justify-content: center;
     flex-flow: row wrap;
-    /* height: 500px;  */
-    /* border: solid 1px  #4093ff; */
     border-radius: 10px;
     overflow: hidden;
     z-index: 100000;
@@ -19,16 +16,10 @@
 }
 
 .ProfileEditContainer {
-
     display: inline-flex;
-    /* background-color: #2867fa; */
-
     flex-direction: column;
-    /* width: 300px; */
     margin: 10px;
     padding: 40px;
-    /* height: 300px; */
-    /* max-height: 80%; */
     position: relative;
     border-radius: 10px;
     align-items: center;
@@ -43,20 +34,14 @@
 }
 
 .ProfileEditTitle {
-    /* background-color: tomato; */
     display: inline-flex;
-    /* width: 100px; */
     margin: 3px 20px 0px 20px;
     font-size: 18px;
     font-weight: 600;
-    /* position: absolute; */
-    /* top: 90px; */
 }
 
 .EditBackBtn, .EditOkkBtn {
     background-color: #064df3;
-    /* position: absolute; */
-    /* top: 30px; */
     width: 60px;
     height: 30px;
     border-radius: 50px;
@@ -66,14 +51,6 @@
     font-size: 12px;
     color: #ffffff;
 }
-/* 
-.EditOkkBtn {
-    right: 45px;
-}
-
-.EditBackBtn {
-    left: 45px;
-} */
 
 .EditImg {
     width: 120px;
@@ -92,37 +69,13 @@
     border-radius: 50px 50px 50px 50px;
     padding: 10px 30px 10px 30px ; 
     font-size: 15px;
-    /* margin: 60px 10px 5px 10px; */
     background-color: #064df3;
     outline: none;
     width: 200px;
-    /* margin-left: 40px; */
-    /* margin-top: 0px; */
 }
 
 .EditInput::placeholder {
     color: #ffffff;
-}
-
-@media screen and (max-width: 750px) {
-    /* .ProfileEdit {
-        top: -200px;
-        left: 235%;
-    } */
-}
-
-@media screen and (max-width: 650px) {
-    .ProfileEdit {
-        /* top: 16%;
-        left: 110%; */
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .ProfileEdit {
-        /* top: 17%;
-        left: 80%; */
-    }
 }
 
 @media screen and (max-width: 550px) {

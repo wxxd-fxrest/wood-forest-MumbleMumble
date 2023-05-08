@@ -1,10 +1,6 @@
 import PostData from "../Post/PostData";
 import Home from "./Home";
 import '../../routers/Main/Main.css';
-import Random from "../Empty/Random";
-import { collection, onSnapshot, query } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { db } from "../../firebase";
 import RandomData from "../Empty/RandomData";
 
 const Main = () => {

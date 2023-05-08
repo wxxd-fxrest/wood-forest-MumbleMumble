@@ -1,16 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { arrayRemove, arrayUnion, collection, doc, getDocs, onSnapshot, query, updateDoc, where } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { db } from '../../firebase';
 import '../../routers/Post/Post.css' ;
-import { AuthContext } from '../../Context/AuthContext';
 import '../../routers/Empty/Random.css'; 
-import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
 import Random from './Random';
 
 const RandomData = () => {
     const [random, setRandom] = useState([]) ;
-    const [aa, setAa]  = useState([])
 
     const getRandom = () => {
         const CardCollection = query(

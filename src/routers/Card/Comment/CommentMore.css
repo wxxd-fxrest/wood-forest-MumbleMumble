@@ -5,11 +5,9 @@
 
 .CommentMore {
     background-color: #ffffff;
-    /* display: inline-block; */
 }
 
 .More {
-    /* border-bottom: solid 1px #ffa629; */
     min-height: 150px;
 }
 
@@ -18,9 +16,7 @@
 }
 
 .MoreProfile > div {
-    /* background-color: #7487cf; */
     background-color: #818181;
-    /* width: 100%; */
     display: flex;
     align-items: center;
     position: relative;
@@ -29,7 +25,6 @@
 }
 
 .MoreProfile > div > h4 {
-    /* background-color: aliceblue; */
     font-weight: 400;
     font-size: 15px;
     position: absolute;
@@ -39,7 +34,6 @@
 }
 
 .MoreProfile > div > img {
-    /* border: solid 1px #4177f6; */
     border: solid 1px #4a4a4a;
     border-radius: 100%;
     width: 25px;
@@ -63,7 +57,6 @@
 .MoreComment {
     margin: 10px;
     text-align: start;
-    /* background-color: tomato; */
     font-size: 13px;
     padding: 5px 10px 5px 10px;
 }

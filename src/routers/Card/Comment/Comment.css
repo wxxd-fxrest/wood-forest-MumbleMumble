@@ -9,8 +9,6 @@
     background-color: white;
     width: 100%;
     position: relative;
-    /* display: inline-block; */
-    /* border-bottom: solid 1px #ffa629; */
     margin-bottom: 5px;
 }
 
@@ -26,18 +24,15 @@
 }
 
 .CommentText > span {
-    /* background-color: violet; */
     display: inline-flex;
     padding: 15px;
     text-align: start;
     width: 100%;
     min-height: 100px;
-    /* border-bottom: solid 1px rgb(65, 119, 246, 0.3); */
     font-size: 13px;
 }
 
 .CommentProfile {
-    /* background-color: #3c6cde; */
     background-color: #616161;
     width: 100%;
     display: flex;
@@ -48,7 +43,6 @@
 }
 
 .commentPfofileImg {
-    /* border: solid 1px #4177f6; */
     border: solid 1px #4a4a4a;
     border-radius: 100%;
     width: 25px;
@@ -81,13 +75,6 @@
     filter: invert(100%) sepia(59%) saturate(1057%) hue-rotate(194deg) brightness(131%) contrast(107%);
 }
 
-/* .CommentRE {
-    background-color: rgb(216, 191, 191);
-    display: flex;
-    margin-left: 20px;
-    margin-bottom: 15px;
-} */
-
 .CommentBack {
     display: flex;
     justify-content: end;
@@ -96,18 +83,8 @@
 }
 
 .CommentMoreProps {
-    /* background-color: aliceblue; */
     position: relative;
     border-bottom: solid 1px rgb(65, 119, 246, 0.3);
-    /* margin: 0px 0px 15px 0px; */
-}
-
-.margin {
-    /* margin-top: -50px; */
-}
-
-.CommentMoreModal {
-    /* background-color:  rgb(65, 119, 246); */
 }
 
 .CommentMoreModal > div > textarea {
@@ -155,16 +132,9 @@
     cursor: pointer;
 }
 
-.CommentListProps {
-    /* background-color: #3c6cde; */
-    /* display: inline-block; */
-    /* border-bottom: solid 1px rgb(65, 119, 246, 0.3); */
-}
-
 .CommentRE {
     display: inline-flex;
     margin: 5px;
-    /* width: 100%; */
     height: 100%;
     width: 100%;
     align-items: center;
@@ -174,8 +144,6 @@
 .CommentRE > button {
     display: inline-flex;
     border: none;
-    /* width: 100%; */
-    /* height: 100%; */
     cursor: pointer;
     text-align: center;
     justify-content: center;

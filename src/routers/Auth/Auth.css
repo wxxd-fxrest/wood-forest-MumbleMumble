@@ -1,6 +1,5 @@
 .Auth {
     display: flex;
-    /* background-color: bisque; */
     justify-content: center;
 	flex-flow: row wrap;
     height: 500px; 

@@ -1,30 +1,19 @@
 import { addDoc, collection, Timestamp } from "firebase/firestore";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
-import { auth, db, storage } from "../../firebase";
+import { auth, db } from "../../firebase";
 import { v4 as uuidv4 } from 'uuid';
-import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage";
 import { useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import '../../routers/Main/Home.css';
 import Logo  from '../../Image/delete.png' ; 
-import IMG from '../../Image/Mumble_imgIcon.png' ;
 import ProfileEdit from "../Profile/ProfileEdit";
 import HomeIcon from '../../Image/Icons/Mumble_Icon_home.png';
 import WriteIcon from '../../Image/Icons/Mumble_Icon_edit.png';
 import ProfileIcon from '../../Image/Icons/Mumble_Icon_user.png';
 import EditIcon from '../../Image/Icons/Mumble_Icon_api.png';
 import LogOutIcon from '../../Image/Icons/Mumble_Icon_address-card.png';
-
-import Happy from '../../Image/expression_Icon/Mumble_expression_relax.png' ;
-import Angry from '../../Image/expression_Icon/Mumble_expression_angry.png' ; 
-import Crying from '../../Image/expression_Icon/Mumble_expression_crying.png' ;  
-import Difficulty from '../../Image/expression_Icon/Mumble_expression_Difficulty.png' ;  
-import CantChoose from '../../Image/expression_Icon/Mumble_expression_cant_choose.png' ;  
-import Zombie from '../../Image/expression_Icon/Mumble_expression_zombie.png' ;  
-
 import DELETE from '../../Image/Mumble_Delete_gif.gif';
-import BACKIMG from '../../Image/paper texture.jpg'; 
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
@@ -308,7 +297,6 @@ const Home = () => {
                                                         <button type="submit" onClick={getMusic}> ok </button> 
                                                     </div>
                                                 <div className="musicList">
-                                                    {/* {select ? <p> 🎶 노래를 선택하세요 🎶 </p> : musicList()} */}
                                                     {musicList()}
                                                 </div>
                                             </div>}

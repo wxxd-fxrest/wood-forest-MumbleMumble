@@ -1,5 +1,5 @@
-import { collection, onSnapshot, orderBy, query, where } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import Post from "./Post";
 import '../../routers/Post/Post.css' ;

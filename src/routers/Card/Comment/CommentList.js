@@ -1,6 +1,5 @@
 import { collection, limit, onSnapshot, orderBy, query } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../../Context/AuthContext";
+import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 import List from "./List";
 import '../../../routers/Card/Comment/CommentMore.css' ;

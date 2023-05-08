@@ -72,7 +72,6 @@ const Comment = ({commentData, setMore}) => {
                                 onClick={onProfilePage}/>}
                         <h4 onClick={onProfilePage}> {sendUserInfo.displayName} </h4>
                         {commentData.Data.Card_SendUID == currentUser.uid && 
-                            // <div className='commentDeleteBox'>
                                 <img type='button'
                                     src={DeleteBtn} 
                                     className='commentDeleteButton'

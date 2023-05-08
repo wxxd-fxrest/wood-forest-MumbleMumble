@@ -12,9 +12,6 @@ const More = ({plusComment, commentData}) => {
     const {currentUser} = useContext(AuthContext) ; 
     const navigate = useNavigate();
 
-    // console.log("plusComment =>", plusComment) ;
-    // console.log("commentData =>", commentData)
-
     const getSendUserInfo = async () => {
         const getUserData = query(
             collection(db, "UserInfo"), 

@@ -1,11 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { arrayRemove, arrayUnion, collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase';
 import '../../routers/Post/Post.css' ;
-import { AuthContext } from '../../Context/AuthContext';
 import '../../routers/Empty/Random.css'; 
-import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
 
 const Random = ({random}) => {
     const [currentData, setCurrentData] = useState([]) ; 
@@ -19,7 +17,6 @@ const Random = ({random}) => {
     const onProfilePage = (e) => {
         e.preventDefault();
         window.location.replace(`/profile/${random.Data.UID}`)
-        // navigate(`/profile/${random.Data.UID}`) ; 
     } ; 
 
     const CurrentUserInfo = async () => {
@@ -40,8 +37,6 @@ const Random = ({random}) => {
     return (
         <div className='Random'>
             <div className='RandomProfile'> 
-                {/* <img src={currentData.attachmentUrl} 
-                    onClick={onProfilePage}/> */}
                 <h5 onClick={onProfilePage}> {currentData.displayName} </h5>
             </div>
             <div className='RandomText' onClick={onCardPage}>
