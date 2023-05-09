@@ -294,10 +294,10 @@
         margin-top: -10px;
     }
     .PostNextButton1{
-        bottom: 90px;
+        bottom: 100px;
     }
     .PostNextButton2{
-        bottom: 90px;
+        bottom:  100px;
     }
     .PostCardImgUrl > img {
         height: 190px;
@@ -305,8 +305,11 @@
 }
 
 @media screen and (max-width: 700px) {
+    .PostBackGroundImg {
+        height: 280px;
+    }
     .PostForm {
-        bottom: 20px;
+        top: 70px;
         margin-left: 60px;
         margin-right: 60px;
     }
@@ -314,10 +317,10 @@
         margin-top: -5px;
     }
     .PostNextButton1{
-        bottom: 90px;
+        bottom: 130px;
     }
     .PostNextButton2{
-        bottom: 90px;
+        bottom: 130px;
     }
     .PostCardImgUrl > img {
         height: 190px;
@@ -329,21 +332,23 @@
 
 @media screen and (max-width: 650px) {
     .PostBackGroundImg {
-        height: 245px;
+        height: 290px;
     }
     .PostForm {
-        bottom: 25px;
+        top: 65px;
+        /* margin-left: 60px; */
+        /* margin-right: 60px; */
     }
     .PostMusicForm {
         margin-top: -0px;
     }
     .PostNextButton1{
-        bottom: 90px;
-        right: 20px;
+        bottom: 130px;
+        right: 30px;
     }
     .PostNextButton2{
-        bottom: 90px;
-        left: 20px;
+        bottom: 130px;
+        left: 30px;
     }
     .PostCardImgUrl > img {
         height: 200px;
@@ -352,16 +357,16 @@
 
 @media screen and (max-width: 600px) {
     .PostBackGroundImg {
-        height: 270px;
+        height: 320px;
     }
-    .PostForm {
-        top: 70px;
-    }
+    /* .PostForm {
+        top: 65px;
+    } */
     .PostNextButton1{
-        bottom: 110px;
+        bottom: 150px;
     }
     .PostNextButton2{
-        bottom: 110px;
+        bottom: 150px;
     }
     .PostCardImgUrl > img {
         height: 210px;
@@ -372,20 +377,40 @@
     .PostTagHeart {
         margin-top: 0px;
     }
+    .PostHeartForm {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 550px) {
+    .ProfileTrue > img {
+        display: none;
+    }
     .PostBackGroundImg {
-        height: 280px;
+        height: 350px;
     }
     .PostForm {
-        bottom: -35px;
+        top: 50px;
+    }
+    .PostNextButton1{
+        bottom: 180px;
+        right: 20px;
+    }
+    .PostNextButton2{
+        bottom: 180px;
+        left: 20px;
     }
     .PostCardImgUrl > img {
         height: 225px;
     }
+    .PostMusicForm {
+        margin-top: 40px;
+    }
     .ImgOpenBtn{
         top: -70px;
+    }
+    .PostTagHeart {
+        display: none;
     }
 }
 

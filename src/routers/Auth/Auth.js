@@ -2,7 +2,7 @@ import { useState } from "react";
 import LogIn from "./Log_in";
 import SignUp from "./Sign_up";
 import '../../routers/Auth/Auth.css' ; 
-import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
+import Logo  from '../../Image/Trash-mumble.png' ; 
 
 const Auth = () => {
     const [open, setOpen] = useState(false) ; 

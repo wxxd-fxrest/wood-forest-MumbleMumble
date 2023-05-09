@@ -31,7 +31,7 @@ const LogIn = () => {
 
     return(
         <div className="ComponentContainer">
-            <p> 로그인 </p>
+            <p> 로그인을 진행해주세요. </p>
             <form onSubmit={onSubmit} className="ComponentForm">
                 <input type="email"
                         name="email"

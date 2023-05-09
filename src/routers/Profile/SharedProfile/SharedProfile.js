@@ -1,19 +1,25 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import Music from '../../../Image/Mumble_Music1.png' ;
-import MusicBox from '../../../Image/Mumble_Music2.png' ;
 import '../../../routers/Post/Post.css' ;
-
-import Left from '../../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
-import Right from '../../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
-import BACKIMG from '../../../Image/paper texture.jpg'; 
-
-import Like from '../../../Image/Like/heart.png' ; 
-import unLike from '../../../Image/Like/like.png' ; 
 import { db } from "../../../firebase";
 import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
     
+import Music from '../../../Image/Mumble_Music1.png' ;
+import MusicBox from '../../../Image/Mumble_Music2.png' ;
+
+import Left from '../../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
+import Right from '../../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
+// Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
+
+import BACKIMG from '../../../Image/paper texture.jpg'; 
+// <a href="https://kr.freepik.com/free-vector/crumpled-paper-texture-realisric-crease-sheet_28312862.htm#query=paper%20texture&position=45&from_view=keyword&track=ais">작가 upklyak</a> 출처 Freepik 
+
+import Like from '../../../Image/Like/heart.png' ; 
+// <a href="https://www.flaticon.com/free-icons/heart" title="heart icons">Heart icons created by Freepik - Flaticon</a> 
+import unLike from '../../../Image/Like/like.png' ; 
+// <a href="https://www.flaticon.com/free-icons/heart" title="heart icons">Heart icons created by Freepik - Flaticon</a> 
+
 
 const SharedProfile = ({pofilePost, profileInfo}) => {
     const {currentUser} = useContext(AuthContext) ; 

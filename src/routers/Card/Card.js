@@ -4,19 +4,34 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthContext';
 import { db } from '../../firebase';
-import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
 import CardComment from './Comment/CardComment';
 import '../../routers/Card/Card.css';
+
 import Music from '../../Image/Mumble_Music1.png' ;
 import MusicBox from '../../Image/Mumble_Music2.png' ;
 
+import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
+// <a href="https://www.flaticon.com/kr/free-icons/" title="공고 아이콘">공고 아이콘  제작자: Slidicon - Flaticon</a>
+
 import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
+// Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
+
 import DeleteBtn from '../../Image/delete (1).png'; 
-import BACKIMG from '../../Image/paper texture.jpg'; 
+// <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by amoghdesign - Flaticon</a> 
+
+import BACKIMG from '../../Image/paper texture.jpg';
+// <a href="https://kr.freepik.com/free-vector/crumpled-paper-texture-realisric-crease-sheet_28312862.htm#query=paper%20texture&position=45&from_view=keyword&track=ais">작가 upklyak</a> 출처 Freepik 
+
+import OkBtn from '../../Image/delete-message.png' ;
+// <a href="https://www.flaticon.com/free-icons/topics" title="topics icons">Topics icons created by Bharat Icons - Flaticon</a>
 
 import Like from '../../Image/Like/heart.png' ; 
+// <a href="https://www.flaticon.com/free-icons/heart" title="heart icons">Heart icons created by Freepik - Flaticon</a> 
+
 import unLike from '../../Image/Like/like.png' ; 
+// <a href="https://www.flaticon.com/free-icons/heart" title="heart icons">Heart icons created by Freepik - Flaticon</a> 
+
 
 const Card = ({card}) => {
     const {currentUser} = useContext(AuthContext) ; 
@@ -42,17 +57,19 @@ const Card = ({card}) => {
     }, []) ; 
     
     const onSaveComment = async () => {
-        let CardDocID = card.DocID ;
-        await addDoc(collection(db, "Post", `${CardDocID}`, "Comment"), {
-            Card_OwnerUID : card.Data.UID,
+        if(comment) {
+            let CardDocID = card.DocID ;
+            await addDoc(collection(db, "Post", `${CardDocID}`, "Comment"), {
+                Card_OwnerUID : card.Data.UID,
 
-            CardDocID : CardDocID,
-            Comment : comment, 
+                CardDocID : CardDocID,
+                Comment : comment, 
 
-            Card_SendUID : currentUser.uid, 
-            date: Timestamp.now(),
-        })
-        setComment("") ; 
+                Card_SendUID : currentUser.uid, 
+                date: Timestamp.now(),
+            })
+            setComment("") ; 
+        }
     } ; 
 
 
@@ -175,7 +192,10 @@ const Card = ({card}) => {
                                 const {target : {value}} = e ; 
                                 setComment(value) ; 
                             }}/>
-                <button type='submit' onClick={onSaveComment}> OK </button>
+                <img src={OkBtn} 
+                    className={comment ? "OkBtnImg" : "OkBtnImgValue"}
+                    onClick={onSaveComment} />
+                {/* <button type='submit' onClick={onSaveComment}> OK </button> */}
                 </div>
             </div> : null}
             

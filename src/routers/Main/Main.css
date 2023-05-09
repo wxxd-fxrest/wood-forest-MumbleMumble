@@ -58,18 +58,18 @@
         display: none;
     }
 }
-
+/* 
 @media screen and (max-width: 800px) {
     .MainContainer {
         margin: 0px;
     }
     .MainHome {
-        width: 15%;
+        width: 25%;
     }
     .MainPost {
-        width: 85%;
+        width: 75%;
     }
     .MainEmpty {
         display: none;
     }
-}
+} */

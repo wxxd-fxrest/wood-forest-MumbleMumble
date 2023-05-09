@@ -64,7 +64,7 @@ const SharedProfileData = () => {
                         </div>
                     </div>
                     
-                    <div>
+                    <div className="SharedProfileMap">
                         {pofilePost.map((p, i) => (
                             <SharedProfile key={i} pofilePost={p} profileInfo={profileInfo}/>
                         ))}

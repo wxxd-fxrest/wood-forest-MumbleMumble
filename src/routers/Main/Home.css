@@ -1,3 +1,5 @@
+/* <a href="https://kr.freepik.com/free-vector/crumpled-paper-texture-realisric-crease-sheet_28312862.htm#query=paper%20texture&position=45&from_view=keyword&track=ais">작가 upklyak</a> 출처 Freepik  */
+
 .Home {
     display: block;
     z-index: 10000;
@@ -19,13 +21,8 @@
 }
 
 .HomeButtonForm > img {
-    /* background-color: #d3d3d3; */
-    width: 110px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    filter: drop-shadow(2px -2px 0px rgb(101, 100, 99));
-    -webkit-transform: rotate(130deg);
-    -moz-transform: rotate(130deg);
+    width: 210px;
+    cursor: pointer;
 }
 
 .HomeButton {
@@ -87,7 +84,8 @@
     width: 25px;
     height: auto;
     display: inline-flex;
-    margin: 8px;
+    margin-top: 8px;
+    margin-right: 5px;
     filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(2deg) brightness(103%) contrast(101%);
 }
 
@@ -97,7 +95,8 @@
     width: 25px;
     height: auto;
     display: inline-flex;
-    margin: 8px;
+    margin-top: 8px;
+    margin-right: 5px;
     filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(2deg) brightness(103%) contrast(101%);
 }
 
@@ -187,18 +186,19 @@
 .WriteTagForm > div {
     flex-direction: row;
     display: flex;
-    width: 100%;
     margin-bottom: 10px;
+    width: 100%;
 } 
 
 .WriteTagForm > div > input {
     display: flex;
-    width: 80%;
+    width: 75%;
     outline: none;
     border: none;
     height: 18px;
-    border-bottom: solid 1px #3861f6;
     padding: 10px;
+    background-color: #2867fa;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .WriteTagForm > div > input::placeholder {
@@ -208,20 +208,22 @@
 
 .WriteTagForm > div > button {
     display: inline-block;
-    width: 20%;
+    width: 15%;
     border: none;
     cursor: pointer;
+    background-color: #ff6929;
+    border-radius: 0px 5px 5px 0px;
 }
 
 .WriteTagForm > span {
     flex-direction: column;
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 100%;
     align-items: flex-start;
     margin-left: 10px;
-    font-size: 18px;
-    font-weight: 550;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .MusicImgAnonymous {
@@ -443,11 +445,17 @@
     .Btn > button {
         width: 50px;
     }
+    .Btn {
+        width: 160px;
+    }
+    .imgBtn > img, .imgBtn_on > img {
+        margin-right: 5px;
+    }
 }
 
 @media screen and (max-width: 1000px) {
     .WriteContainer {
-        left:  70%;
+        left:  40%;
     }
 }
 
@@ -455,15 +463,15 @@
 @media screen and (max-width: 900px) {
     .WriteContainer {
         width: 720px;
-        left:  60%;
+        left:  30%;
     }
 }
 
 @media screen and (max-width: 980px) {
-    .Btn {
+    /* .Btn {
         width: 120px;
-    }
-    .imgBtn > img, .imgBtn_on > img {
+    } */
+    /* .imgBtn > img, .imgBtn_on > img {
         margin-right: 6px;
     }
     .Btn > h4 {
@@ -472,11 +480,11 @@
     }
     .imgBtn, .imgBtn_on {
         width: 70px;
-    }
+    } */
 }
 
 @media screen and (max-width: 850px) {
-    .Btn {
+    /* .Btn {
         width: 80px;
     }
     .imgBtn > img, .imgBtn_on > img {
@@ -493,13 +501,35 @@
     .imgBtn, .imgBtn_on {
         width: 80px;
         margin: 0px;
+    } */
+    .WriteContainer {
+        left: 10%;
+    }
+    .HomeButtonForm > img {
+        width: 175px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .Btn {
+        width: 120px;
+    }
+    .imgBtn > img, .imgBtn_on > img {
+        margin-top: 8px;
+        margin-right: 5px;    
+    }
+    .Btn > h4 {
+        font-size: 17px;
+        left: 8px;
+    }
+    .imgBtn, .imgBtn_on {
+        width: 70px;
     }
 }
 
 @media screen and (max-width: 800px) {
     .WriteContainer {
         width: 500px;
-        left:  130%;
+        left:  80%;
         height: 600px;
     }
     .HomeWrite {
@@ -538,29 +568,57 @@
 
 @media screen and (max-width: 750px) {
     .HomeButtonForm > img {
-       width: 90px;
+        width: 165px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 }
 
 @media screen and (max-width: 700px) {
-    .HomeButtonForm > img {
+    /* .HomeButtonForm > img {
        width: 80px;
+    } */
+    .WriteContainer {
+        left: 50%;
     }
 }
 
 @media screen and (max-width: 650px) {
     .WriteContainer {
-        left:  100%;
+        left:  30%;
     }
+    /* .HomeButtonForm {
+        background-color: #8e97ad;
+    } */
     .HomeButtonForm > img {
-        width: 70px;
+        width: 130px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+     .Btn {
+        width: 80px;
+    }
+    .imgBtn > img, .imgBtn_on > img {
+        margin-right: 5px;
+    }
+    .imgBtn > img:hover, .imgBtn_on > img:hover {
+        margin-right: 5px;
+    }
+    .Btn > h4 {
+        font-size: 13px;
+        top: 5px;
+        left: 5px;
+    }
+    .imgBtn, .imgBtn_on {
+        width: 80px;
+        margin: 0px;
     }
 }
 
 @media screen and (max-width: 620px) {
-    .WriteContainer {
-        left:  80%;
-    }
+    /* .WriteContainer {
+        left:  30%;
+    } */
     .HomeButtonForm > img {
         opacity: 0;
     }
@@ -568,7 +626,8 @@
         width: 60px;
     }
     .imgBtn > img, .imgBtn_on > img {
-        margin-right: 3px;
+        margin-top: 8px;
+        margin-right: 5px;
     }
     .Btn > h4 {
         font-size: 10px;
@@ -584,32 +643,32 @@
 
 @media screen and (max-width: 600px) {
     .WriteContainer {
-        left:  50%;
+        left:  0%;
     }
 }
 
 @media screen and (max-width: 580px) {
     .WriteContainer {
-        left:  30%;
+        left:  0%;
     }
 }
 
 @media screen and (max-width: 560px) {
     .WriteContainer {
-        left:  30%;
+        left:  -30%;
     }
 }
 
 @media screen and (max-width: 540px) {
     .WriteContainer {
-        left:  20%;
+        left:  -50%;
     }
 }
 
 @media screen and (max-width: 510px) {
-    .WriteContainer {
+    /* .WriteContainer {
         left:  0%;
-    }
+    } */
 }
 
 @media screen and (max-width: 490px) {

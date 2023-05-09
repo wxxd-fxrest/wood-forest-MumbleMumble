@@ -6,14 +6,18 @@ import { v4 as uuidv4 } from 'uuid';
 import { useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import '../../routers/Main/Home.css';
-import Logo  from '../../Image/delete.png' ; 
 import ProfileEdit from "../Profile/ProfileEdit";
+
+import Logo  from '../../Image/Trash-mumble.png' ; 
+import DELETE from '../../Image/Mumble_Delete_gif.gif';
+
+// Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
 import HomeIcon from '../../Image/Icons/Mumble_Icon_home.png';
 import WriteIcon from '../../Image/Icons/Mumble_Icon_edit.png';
 import ProfileIcon from '../../Image/Icons/Mumble_Icon_user.png';
 import EditIcon from '../../Image/Icons/Mumble_Icon_api.png';
 import LogOutIcon from '../../Image/Icons/Mumble_Icon_address-card.png';
-import DELETE from '../../Image/Mumble_Delete_gif.gif';
+// Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
 
 const Home = () => {
     const {currentUser} = useContext(AuthContext) ;
@@ -166,7 +170,7 @@ const Home = () => {
                 onSubmit={(event) => {event.preventDefault()}}>
 
                 <div className="HomeButtonForm">
-                    <img src={Logo} />
+                    <img src={Logo} onClick={() => {navigate("/")}} />
                     <div className="HomeButton">
                         <div className="Btn">
                             <div className={pathname == "/" ? 'imgBtn_on' : 'imgBtn'}
@@ -215,6 +219,7 @@ const Home = () => {
                                     onClick={() => {
                                     signOut(auth) 
                                     navigate("/")
+                                    alert("로그아웃 되었습니다.")
                                     console.log("로그아웃 완료")}}>
                                 <img src={LogOutIcon} />
                             </div>

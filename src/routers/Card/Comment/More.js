@@ -3,9 +3,13 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthContext";
 import { db } from "../../../firebase";
-import None  from '../../../Image/Mumble_Profile_None.PNG' ;
 import '../../../routers/Card/Comment/CommentMore.css' ;
+
+import None  from '../../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
+// <a href="https://www.flaticon.com/kr/free-icons/" title="공고 아이콘">공고 아이콘  제작자: Slidicon - Flaticon</a>
+
 import DeleteBtn from '../../../Image/delete (1).png'; 
+// <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by amoghdesign - Flaticon</a> 
 
 const More = ({plusComment, commentData}) => {
     const [sendUserInfo, setSendUserInfo] = useState([]) ; 

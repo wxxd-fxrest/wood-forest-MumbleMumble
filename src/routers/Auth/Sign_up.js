@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
 import '../../routers/Auth/AuthComponent.css';
 import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
+// <a href="https://www.flaticon.com/kr/free-icons/" title="공고 아이콘">공고 아이콘  제작자: Slidicon - Flaticon</a>
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -39,7 +40,7 @@ const SignUp = () => {
     
     return(
         <div className="ComponentContainer">
-            <p> 회원가입 </p>
+            <p> 회원가입을 진행해주세요. </p>
             <form onSubmit={onSubmit} className="ComponentForm">
                 <input type="email"
                         name="email"

@@ -1,18 +1,18 @@
 .ComponentContainer {
     display: inline-flex;
-    background-color: #fe6929;
     flex-direction: column;
     width: 400px;
     margin: 10px;
     padding: 40px;
     height: 80%;
     max-height: 80%;
-    color: #ffffff;
+    color: #000000;
 }
 
 .ComponentContainer  > p {
     height: 30px;
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: 300;
     margin: 10px 10px 30px 10px;
 }
 
