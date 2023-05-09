@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/wood-forest-MumbleMumble/static/css/main.225d944e.css",
+    "main.js": "/wood-forest-MumbleMumble/static/js/main.a9eae0e7.js",
+    "static/media/paper texture.jpg": "/wood-forest-MumbleMumble/static/media/paper texture.946ad946fe819bd0906f.jpg",
+    "static/media/Mumble_Delete_gif.gif": "/wood-forest-MumbleMumble/static/media/Mumble_Delete_gif.078937c7b973a261ddda.gif",
+    "static/media/Trash-mumble.png": "/wood-forest-MumbleMumble/static/media/Trash-mumble.82e3bf81613510f6cc98.png",
+    "static/media/Mumble_Music1.png": "/wood-forest-MumbleMumble/static/media/Mumble_Music1.e1d595258d9bafc85d06.png",
+    "static/media/Mumble_Icon_api.png": "/wood-forest-MumbleMumble/static/media/Mumble_Icon_api.1737bfc0e48794be0c77.png",
+    "static/media/heart.png": "/wood-forest-MumbleMumble/static/media/heart.c412cbaead4744166c20.png",
+    "static/media/Mumble_Icon_angle-circle-right.png": "/wood-forest-MumbleMumble/static/media/Mumble_Icon_angle-circle-right.d4b1e96ee764b59764ed.png",
+    "static/media/Mumble_Icon_angle-circle-left.png": "/wood-forest-MumbleMumble/static/media/Mumble_Icon_angle-circle-left.fc959642aa61ae2fb39a.png",
+    "static/media/delete (1).png": "/wood-forest-MumbleMumble/static/media/delete (1).feea17f59e5936c9eda2.png",
+    "static/media/Mumble_Icon_edit.png": "/wood-forest-MumbleMumble/static/media/Mumble_Icon_edit.9fd71c55ed5fcd516d44.png",
+    "static/media/delete-message.png": "/wood-forest-MumbleMumble/static/media/delete-message.553eda3a6d4bed3f42a6.png",
+    "static/media/Mumble_Logo_icon.png": "/wood-forest-MumbleMumble/static/media/Mumble_Logo_icon.d6f9a5096662bb644ef4.png",
+    "static/media/Mumble_Icon_user.png": "/wood-forest-MumbleMumble/static/media/Mumble_Icon_user.5cdfd5220aa1731cfa3e.png",
+    "static/media/Mumble_Icon_address-card.png": "/wood-forest-MumbleMumble/static/media/Mumble_Icon_address-card.a172b351e6dc4cf285ce.png",
+    "static/media/like.png": "/wood-forest-MumbleMumble/static/media/like.bf2e642ba8736cc4acdc.png",
+    "index.html": "/wood-forest-MumbleMumble/index.html",
+    "main.225d944e.css.map": "/wood-forest-MumbleMumble/static/css/main.225d944e.css.map",
+    "main.a9eae0e7.js.map": "/wood-forest-MumbleMumble/static/js/main.a9eae0e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.225d944e.css",
+    "static/js/main.a9eae0e7.js"
+  ]
+}
