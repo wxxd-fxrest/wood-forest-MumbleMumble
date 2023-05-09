@@ -195,7 +195,7 @@ const Home = () => {
                         <div className="Btn">
                             <div className={pathUID == currentUser.uid ? 'imgBtn_on' : 'imgBtn'}
                                 onClick={() => {
-                                    window.location.replace(`/profile/${currentUser.uid}`)
+                                    navigate(`/profile/${currentUser.uid}`)
                                 }}>
                                 <img src={ProfileIcon} /> 
                             </div>

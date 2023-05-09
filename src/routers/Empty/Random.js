@@ -16,7 +16,7 @@ const Random = ({random}) => {
 
     const onProfilePage = (e) => {
         e.preventDefault();
-        window.location.replace(`/profile/${random.Data.UID}`)
+        navigate(`/profile/${random.Data.UID}`)
     } ; 
 
     const CurrentUserInfo = async () => {
