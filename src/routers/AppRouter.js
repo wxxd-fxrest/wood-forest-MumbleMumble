@@ -18,7 +18,7 @@ const AppRouter = () => {
 
     return(
         <div>
-            <BrowserRouter>
+            <BrowserRouter basename="wood-forest-MumbleMumble">
                 <Routes>
                     <Route>
                         <Route index element={
