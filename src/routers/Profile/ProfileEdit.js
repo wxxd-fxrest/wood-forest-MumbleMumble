@@ -7,8 +7,7 @@ import { getDownloadURL, ref, uploadBytes, uploadString } from "firebase/storage
 import { useNavigate } from 'react-router-dom';
 import '../../routers/Profile/ProfileEdit.css'; 
 
-import None  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
-// <a href="https://www.flaticon.com/kr/free-icons/" title="공고 아이콘">공고 아이콘  제작자: Slidicon - Flaticon</a>
+import None  from '../../Image/Trash-mumble.png' ; 
 
 const ProfileEdit = ({setEditOpen, editOpen}) => {
     const navigate = useNavigate();

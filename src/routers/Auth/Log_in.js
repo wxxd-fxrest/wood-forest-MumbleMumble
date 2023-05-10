@@ -25,7 +25,7 @@ const LogIn = () => {
             navigate("/");
             console.log("로그인 완료") ; 
         } catch (error) {
-            console.log(error) ;
+            alert(error.message) ;
         }
     } ; 
 

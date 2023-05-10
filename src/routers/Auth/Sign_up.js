@@ -4,8 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
 import '../../routers/Auth/AuthComponent.css';
-import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
-// <a href="https://www.flaticon.com/kr/free-icons/" title="공고 아이콘">공고 아이콘  제작자: Slidicon - Flaticon</a>
+import LogoImg  from '../../Image/Trash-mumble.png' ; 
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -29,12 +28,12 @@ const SignUp = () => {
                 uid: authData.user.uid,
                 email: email, 
                 displayName: "Unkown",
-                attachmentUrl: Logo,
+                attachmentUrl: LogoImg,
             })
             navigate("/");
-            console.log("회원가입 완료") ;
+            alert("회원가입 완료") ;
         } catch(error) {
-            console.log(error) ;
+            alert(error.message) ;
         }
     } ; 
     

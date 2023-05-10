@@ -53,13 +53,11 @@
 }
 
 .Btn > h4 {
-    color: #393939;
-    font-size: 19px;
     font-weight: 600;
     position: absolute;
-    top: 14px;
+    top: 10px;
     left: 20px;
-    font-size: 18px;
+    font-size: 22px;
     color: white;
     font-weight: 300;
 }
@@ -148,13 +146,18 @@
 
 .WriteHeader > h4 {
     color: black;
+    letter-spacing: 5px;
+    font-size: 20px;
+    margin-left: 5px;
 }
 
 .WriteHeader > p {
     position: absolute;
+    top: 23px;
     right: 40px;
     color: black;
     cursor: pointer;
+    font-size: 25px;
 }
 
 .HomeWrite {
@@ -202,8 +205,9 @@
 }
 
 .WriteTagForm > div > input::placeholder {
+    font-family: 'East Sea Dokdo', cursive;
     color: white;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .WriteTagForm > div > button {
@@ -213,6 +217,8 @@
     cursor: pointer;
     background-color: #ff6929;
     border-radius: 0px 5px 5px 0px;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 20px;
 }
 
 .WriteTagForm > span {
@@ -222,8 +228,9 @@
     height: 100%;
     align-items: flex-start;
     margin-left: 10px;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 3px;
 }
 
 .MusicImgAnonymous {
@@ -251,15 +258,17 @@
 }
 
 .anonymousForm > h4 {
-    font-size: 12px;
+    font-size: 15px;
+    letter-spacing: 3px;
 }
 
 .anonymousForm > span {
     width: 20px;
     border-radius: 5px;
     background-color: rgb(255, 105, 41);
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 2px;
     padding: 7px;
     margin-left: 5px;
     cursor: pointer;
@@ -267,7 +276,7 @@
 }
 
 .musicOnOff {
-    background-color: rgb(255, 166, 41, 0.5);
+    /* background-color: rgb(255, 166, 41, 0.5); */
     flex-direction: row;
     display: flex;
     padding: 10px;
@@ -280,8 +289,9 @@
     width: 20px;
     border-radius: 5px;
     background-color: #ff6929;
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 2px;
     padding: 7px;
     margin-left: 5px;
     cursor: pointer;
@@ -289,7 +299,8 @@
 }
 
 .musicOnOff > h4 {
-    font-size: 12px;
+    font-size: 15px;
+    letter-spacing: 3px;
 }
 
 .musicSelect {
@@ -309,6 +320,9 @@
 
 .musicSelect > input::placeholder {
     color: #3861f6;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 13px;
+    letter-spacing: 2px;
 }
 
 .musicSelect > span {
@@ -338,6 +352,9 @@
     margin-left: 10px;
     color: white;
     cursor: pointer;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 15px;
+    letter-spacing: 2px;
 }
 
 .musicList {
@@ -380,8 +397,10 @@
     background-color: tomato;
     border: none;
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 15px;
+    letter-spacing: 1px;
     color: white;
+    font-family: 'East Sea Dokdo', cursive;
 }
 
 .WriteFrom {
@@ -409,7 +428,10 @@
 }
 
 .WriteFrom > textarea::placeholder {
-    color: #393939;
+    color: #ffffff;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 18px;
+    letter-spacing: 2px;
 }
 
 .WriteDeleteBtn {
@@ -422,9 +444,11 @@
     background-color: #4c7ff7;
     border: none;
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 15px;
+    letter-spacing: 2px;
     color: white;
     cursor: pointer;
+    font-family: 'East Sea Dokdo', cursive;
 }
 
 
@@ -518,8 +542,9 @@
         margin-right: 5px;    
     }
     .Btn > h4 {
-        font-size: 17px;
-        left: 8px;
+        top: 12px;
+        font-size: 19px;
+        left: 16px;
     }
     .imgBtn, .imgBtn_on {
         width: 70px;
@@ -605,7 +630,7 @@
         margin-right: 5px;
     }
     .Btn > h4 {
-        font-size: 13px;
+        font-size: 16px;
         top: 5px;
         left: 5px;
     }
@@ -619,24 +644,35 @@
     /* .WriteContainer {
         left:  30%;
     } */
+    .HomeButton {
+        margin-top: 50px;
+    }
     .HomeButtonForm > img {
-        opacity: 0;
+        /* opacity: 0; */
+        display: none;
     }
     .Btn {
-        width: 60px;
+        width: 50px;
+        border-radius: 10px;
     }
     .imgBtn > img, .imgBtn_on > img {
         margin-top: 8px;
-        margin-right: 5px;
+        margin-right: 8px;
+    }
+    .imgBtn > img:hover, .imgBtn_on > img:hover {
+        margin-top: 8px;
+        margin-right: 8px;
     }
     .Btn > h4 {
-        font-size: 10px;
+        /* font-size: 13px;
         top: 3px;
-        left: 3px;
+        left: 3px; */
+        display: none;
     }
     .imgBtn, .imgBtn_on {
-        width: 60px;
+        width: 50px;
         margin: 0px;
+        border-radius: 10px;
     }
 }
 

@@ -9,9 +9,7 @@ import '../../routers/Card/Card.css';
 
 import Music from '../../Image/Mumble_Music1.png' ;
 import MusicBox from '../../Image/Mumble_Music2.png' ;
-
-import Logo  from '../../Image/expression_Icon/Mumble_Logo_icon.png' ; 
-// <a href="https://www.flaticon.com/kr/free-icons/" title="공고 아이콘">공고 아이콘  제작자: Slidicon - Flaticon</a>
+import Logo  from '../../Image/Trash-mumble.png' ; 
 
 import Left from '../../Image/Icons/Mumble_Icon_angle-circle-left.png'; 
 import Right from '../../Image/Icons/Mumble_Icon_angle-circle-right.png'; 
@@ -195,7 +193,6 @@ const Card = ({card}) => {
                 <img src={OkBtn} 
                     className={comment ? "OkBtnImg" : "OkBtnImgValue"}
                     onClick={onSaveComment} />
-                {/* <button type='submit' onClick={onSaveComment}> OK </button> */}
                 </div>
             </div> : null}
             

@@ -38,7 +38,7 @@
 .ProfileEditTitle {
     display: inline-flex;
     margin: 3px 20px 0px 20px;
-    font-size: 18px;
+    font-size: 23px;
     font-weight: 600;
 }
 
@@ -47,11 +47,11 @@
     width: 60px;
     height: 30px;
     border-radius: 50px;
-    font-size: 15px;
     border: none;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 18px;
     color: #ffffff;
+    font-family: 'East Sea Dokdo', cursive;
 }
 
 .EditImg {
@@ -78,6 +78,8 @@
 
 .EditInput::placeholder {
     color: #ffffff;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 650px) {

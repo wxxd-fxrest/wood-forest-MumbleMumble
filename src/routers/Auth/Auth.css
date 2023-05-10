@@ -52,11 +52,15 @@
     height: 50px;
     cursor: pointer;
     color: #b0c6fa;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 18px;
 }
 
 .Auth_Component > button:hover {
     background-color: rgb(56, 97, 246);
-    color: #b0c6fa;
+    color: #e4ecff;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 18px;
 }
 
 @media screen and (max-width: 1000px) {

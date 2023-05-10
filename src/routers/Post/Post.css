@@ -18,8 +18,8 @@
 }
 
 .PostDataHeader > h4 {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 300;
     color: #393939;
 }
 
@@ -92,26 +92,24 @@
 
 .ProfileTrue > h5 {
     margin-left: 8px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 400;
     cursor: pointer;
 }
 
 .PostAnonymous {
     margin-left: 8px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     cursor: pointer;
 }
 
 .PostForm { 
     position: absolute;
     height: 40%;
-    top: 29%;
+    top: 26%;
     right: 0px;
     left: 0px;
-    font-size: 15px;
-    font-weight: 400;
     text-align: start;
     padding: 10px;
     margin-left: 50px;
@@ -121,13 +119,14 @@
 }
 
 .PostForm > h3 {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 18px;
 }
 
 .PostTagHeart {
     position: relative;
-    top: -60px;
+    top: -70px;
     height: 20px;
     display: flex;
     padding: 10px;
@@ -153,7 +152,7 @@
 .PostTag > div > span {
     display: inline-flex;
     margin-top: 5px;
-    font-size: 13px;
+    font-size: 16px;
     margin-right: 5px;
 }
 
@@ -173,7 +172,7 @@
     position: absolute;
     display: flex;
     top: 0px;
-    right: 105px;
+    right: 80px;
     width: 20px;
     cursor: pointer;
 }
@@ -183,7 +182,7 @@
     display: flex;
     top: 5px;
     right: 0px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .PostNextButton1 {
@@ -376,6 +375,11 @@
     }
     .PostTagHeart {
         margin-top: 0px;
+    }
+    .PostTag {
+        width: 100%;
+        /* height: 20px; */
+        /* left: 0px; */
     }
     .PostHeartForm {
         display: none;

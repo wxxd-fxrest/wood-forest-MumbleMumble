@@ -54,7 +54,8 @@
 }
 
 .CardBackGroundImg {
-    height: 240px;
+    /* height: 240px; */
+    height: 30%;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -89,16 +90,16 @@
 
 .CardProfileTrue > h5 {
     margin-left: 8px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 400;
     cursor: pointer;
     z-index: 1;
 }
 
 .CardAnonymous {
     margin-left: 8px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .CardForm { 
@@ -107,8 +108,6 @@
     top: 29%;
     right: 0px;
     left: 0px;
-    font-size: 15px;
-    font-weight: 400;
     text-align: start;
     padding: 10px;
     margin-left: 50px;
@@ -117,8 +116,9 @@
 }
 
 .CardForm > h3 {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 18px;
 }
 
 .CardTagHeart {
@@ -149,7 +149,7 @@
 .CardTag > div > span {
     display: inline-flex;
     margin-top: 5px;
-    font-size: 13px;
+    font-size: 16px;
     margin-right: 5px;
 }
 
@@ -169,7 +169,7 @@
     position: absolute;
     display: flex;
     top: 0px;
-    right: 105px;
+    right: 80px;
     width: 20px;
 }
 
@@ -178,7 +178,7 @@
     display: flex;
     top: 5px;
     right: 0px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .CardNextButton1 {
@@ -220,8 +220,8 @@
     width: 25px;
     z-index: 100;
     position: absolute;
-    bottom: 0px;
-    right: 40px; 
+    bottom: 15px;
+    right: 15px; 
     cursor: pointer;  
 }
 
@@ -310,6 +310,8 @@
 
 .CardInputBox > textarea::placeholder {
     color: rgb(65, 119, 246);
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 18px;
 }
 
 .OkBtnImg {
@@ -451,9 +453,9 @@
 }
 
 @media screen and (max-width: 750px) {
-    .CardBackGroundImg {
-        height: 260px;
-    }
+    /* .CardBackGroundImg {
+        height: 30%;
+    } */
     .CardForm {
         top: 65px;
         height: 1000px;
@@ -462,18 +464,20 @@
         margin-top: 0px;
     }
     .CardDeleteButton {
-        top: 32px;
-        right: 30px;
+        bottom: 15px;
+        right: 15px;
     }
 }
 
 @media screen and (max-width: 700px) {
     .CardBackGroundImg {
-        height: 280px;
+        /* height: 280px; */
+        height: 30%;
     }
     .CardForm {
         margin-left: 60px;
         margin-right: 60px;
+        top: 48px;
     }
     .CardNextButton1{
         bottom: 110px;
@@ -481,11 +485,18 @@
     .CardNextButton2{
         bottom: 110px;
     }
+    .CardProfileTrue {
+        top: 20px;
+    }
+    /* .CardDeleteButton {
+        top: 25px;
+    } */
 }
 
 @media screen and (max-width: 650px) {
     .CardBackGroundImg {
-        height: 290px;
+        /* height: 290px; */
+        height: 33%;
     }
     .CardForm {
         bottom: 40px;
@@ -510,11 +521,15 @@
     .CardcommentTrue {
         height: 500px;
     }
+    .CardTagHeart {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .CardBackGroundImg {
-        height: 300px;
+        /* height: 300px; */
+        height: 36%;
     }
     .CardNextButton1{
         bottom: 120px;
@@ -522,49 +537,54 @@
     .CardNextButton2{
         bottom: 120px;
     }
-    .CardDeleteButton {
-        bottom: 15px;
-    }
     .Cardcomment {
         height: 350px;
     }
     .CardcommentTrue {
         height: 480px;
     }
-    .CardTagHeart {
-        display: none;
-    }
     .CardDeleteButton {
-        top: 35px;
-        right: 30px;
+        top: 25px;
     }
 }
 
 @media screen and (max-width: 550px) {
     .CardBackGroundImg {
-        height: 340px;
+        /* height: 340px; */
+        height: 36%;
     }
     .CardProfileTrue > img {
         display: none;
     }
     .CardForm {
-        top: 70px;
+        top: 40px;
     }
     .CardInputBox > button {
         width: 40px;
     }
     .CardDeleteButton {
-        top: 25px;
+        top: 15px;
         right: 20px;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 530px) {
     .CardBackGroundImg {
-        height: 400px;
+        /* height: 400px; */
+        height: 36%;
+    }
+    .CardProfileTrue > h5 {
+        display: none;
+    }
+    .CardAnonymous {
+        display: none;
     }
     .CardForm {
-        top: 55px;
+        top: 10px;
+    }
+    .CardDeleteButton {
+        top: 20px;
+        right: 20px;
     }
 }
 
