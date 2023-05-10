@@ -195,6 +195,7 @@ const Home = () => {
                         <div className="Btn"
                             onClick={() => {
                                 navigate(`/profile/${currentUser.uid}`)
+                                window.location.reload();
                             }}>
                             <div className={pathUID == currentUser.uid ? 'imgBtn_on' : 'imgBtn'}>
                                 <img src={ProfileIcon} /> 
@@ -202,13 +203,13 @@ const Home = () => {
                             <h4> Profile </h4>
                         </div>
 
-                        <div className="Btn"
-                            onClick={() => 
-                                {setWrite(false)
-                                setEditOpen(!editOpen)
-                            }}>
+                        <div className="Btn">
                             <div className={editOpen == true ? 'imgBtn_on' : 'imgBtn'}>
-                                <img src={EditIcon} />
+                                <img src={EditIcon} 
+                                    onClick={() => 
+                                        {setWrite(false)
+                                        setEditOpen(!editOpen)
+                                    }}/>
                             </div>
                             <h4> Edit </h4>
                             {editOpen == true && <ProfileEdit setEditOpen={setEditOpen} editOpen={editOpen}/>}

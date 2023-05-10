@@ -12,11 +12,13 @@ const Random = ({random}) => {
     const onCardPage = (e) => {
         e.preventDefault();
         navigate(`/card-page/${random.Data.UUID}`) ; 
+        window.location.reload();
     } ; 
 
     const onProfilePage = (e) => {
         e.preventDefault();
-        navigate(`/profile/${random.Data.UID}`)
+        navigate(`/profile/${random.Data.UID}`) ; 
+        window.location.reload() ;
     } ; 
 
     const CurrentUserInfo = async () => {
