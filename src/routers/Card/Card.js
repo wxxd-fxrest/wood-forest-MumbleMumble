@@ -103,6 +103,10 @@ const Card = ({card}) => {
         }
     }
 
+    const onSerchMusic = () => {
+        window.open(`https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${card.Data.Music}+${card.Data.artist}`, "_blank", )
+    }
+
     return(
         <div className='Card'>
             <div className='CardBackGroundImg'>
@@ -128,7 +132,7 @@ const Card = ({card}) => {
                                 <h4> {card.Data.Music} - {card.Data.artist}</h4>
                             </div>
                             <div className='CardMusic'>
-                                <div className='imgPostMusicBox'>
+                                <div className='imgCardMusicBox' onClick={onSerchMusic}>
                                     <img src={Music} className="img_Music"/>
                                     <img src={MusicBox} className="img_MusicBox" />
                                 </div>

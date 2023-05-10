@@ -54,6 +54,10 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
             });
         }
     }
+
+    const onSerchMusic = () => {
+        window.open(`https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${pofilePost.Data.Music}+${pofilePost.Data.artist}`, "_blank", )
+    }
     
     return(
         <div className="Post">
@@ -79,7 +83,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                                 <h4> {pofilePost.Data.Music} - {pofilePost.Data.artist}</h4>
                             </div>
                             <div className='PostMusic'>
-                                <div className='imgPostMusicBox'>
+                                <div className='imgPostMusicBox' onClick={onSerchMusic}>
                                     <img src={Music} className="img_Music"/>
                                     <img src={MusicBox} className="img_MusicBox" />
                                 </div>

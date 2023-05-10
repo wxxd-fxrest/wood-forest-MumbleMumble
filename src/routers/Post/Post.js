@@ -66,6 +66,10 @@ const Post = ({postData}) => {
         }
     }
 
+    const onSerchMusic = () => {
+        window.open(`https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${postData.Data.Music}+${postData.Data.artist}`, "_blank", )
+    }
+
     useEffect(() => {
         CurrentUserInfo() ;
         console.log(postData.Data.tagList[0])
@@ -97,7 +101,7 @@ const Post = ({postData}) => {
                                 <h4> {postData.Data.Music} - {postData.Data.artist}</h4>
                             </div>
                             <div className='PostMusic'>
-                                <div className='imgPostMusicBox'>
+                                <div className='imgPostMusicBox' onClick={onSerchMusic}>
                                     <img src={Music} className="img_Music"/>
                                     <img src={MusicBox} className="img_MusicBox" />
                                 </div>

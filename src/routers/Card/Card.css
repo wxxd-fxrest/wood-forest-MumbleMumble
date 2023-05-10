@@ -249,6 +249,7 @@
 
 .imgCardMusicBox {
     position: relative;
+    cursor: pointer;
 }
 
 .img_Music {
