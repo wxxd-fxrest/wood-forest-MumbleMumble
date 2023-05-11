@@ -25,7 +25,6 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
     const {currentUser} = useContext(AuthContext) ; 
     const navigate = useNavigate();
     const [next, setNext] = useState(false) ; 
-    const [imgOpen, setImgOpen] = useState(false) ; 
 
     const onCardPage = (e) => {
         e.preventDefault();
@@ -45,7 +44,7 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                 like: arrayUnion(currentUser.uid)
             });
         }
-    }
+    } ;
 
     const onClickLikeDelete = async () => {
         if(pofilePost.Data.like = currentUser.uid) {
@@ -53,11 +52,11 @@ const SharedProfile = ({pofilePost, profileInfo}) => {
                 like: arrayRemove(currentUser.uid)
             });
         }
-    }
+    } ;
 
     const onSerchMusic = () => {
         window.open(`https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${pofilePost.Data.Music}+${pofilePost.Data.artist}`, "_blank", )
-    }
+    } ;
     
     return(
         <div className="Post">

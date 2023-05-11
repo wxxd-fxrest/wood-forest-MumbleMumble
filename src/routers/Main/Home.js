@@ -113,7 +113,7 @@ const Home = () => {
             setWrite(!write) ; 
             setLoading(false) ; 
         }, 1500) ; 
-    }
+    } ; 
 
     const getMusic = async(event) => {
         event.preventDefault() ; 
@@ -277,36 +277,38 @@ const Home = () => {
                                     </div>
 
                                     <div className="musicForm">
-                                        {open ? <> {select[0] ? 
+                                        <div> {select[0] ? 
                                             <div className="musicCancleForm">
                                                 <p> {select[0].name} </p> 
                                                 <button type="button" 
                                                     onClick={() => {
                                                         setSelect([])                     
                                                     }}> Cancle </button>
-                                            </div> : <div>
+                                            </div> : <div className={open == false && "musicDontSelect"}>
                                                     <div className="musicSelect">
-                                                        <input type="text"
-                                                            required
-                                                            name="searchMusic"
-                                                            value={searchMusic} 
-                                                            onChange={onChange} 
-                                                            className="searchMusic"
-                                                            placeholder="제목"/>
-                                                        <input type="text"
-                                                            required
-                                                            name="serchArtist"
-                                                            value={serchArtist} 
-                                                            onChange={onChange} 
-                                                            className="serchArtist"
-                                                            placeholder="아티스트"/>
-                                                        <button type="submit" onClick={getMusic}> ok </button> 
+                                                            <input type="text"
+                                                                required
+                                                                name="searchMusic"
+                                                                value={searchMusic} 
+                                                                onChange={onChange} 
+                                                                className={open == true? "searchMusic" : "DontSearchMusic"}
+                                                                placeholder="제목"/>
+                                                            <input type="text"
+                                                                required
+                                                                name="serchArtist"
+                                                                value={serchArtist} 
+                                                                onChange={onChange} 
+                                                                className={open ? "serchArtist" : "DontSerchArtist"}
+                                                                placeholder="아티스트"/>
+                                                        <button type="submit" 
+                                                                onClick={getMusic}
+                                                                className={open ? "serchOK" : "DontSerchOK"}> ok </button> 
                                                     </div>
                                                 <div className="musicList">
                                                     {musicList()}
                                                 </div>
                                             </div>}
-                                        </> : null} 
+                                        </div> 
                                     </div>
                                 </div>
                             </div>

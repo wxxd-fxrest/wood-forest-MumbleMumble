@@ -32,7 +32,7 @@ const Comment = ({commentData, setMore}) => {
             Comment : comment, 
         })
         setComment("") ; 
-    }
+    } ;
 
 
     const onDelete = async() => {

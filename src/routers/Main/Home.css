@@ -99,7 +99,6 @@
 }
 
 .WriteContainer {
-    /* background-color: rgb(64, 150, 226); */
     display: inline-flex;
     width: 790px;
     height: 370px;
@@ -276,7 +275,6 @@
 }
 
 .musicOnOff {
-    /* background-color: rgb(255, 166, 41, 0.5); */
     flex-direction: row;
     display: flex;
     padding: 10px;
@@ -303,6 +301,38 @@
     letter-spacing: 3px;
 }
 
+.musicDontSelect {
+    background-color: rgb(56, 97, 246, 0.4);
+    pointer-events : none;
+}
+
+.DontSearchMusic, .DontSerchArtist {
+    background-color: rgb(56, 97, 246, 0.4);
+    border-radius: 3px;
+    border: none;
+    font-size: 12px;
+    width: 130px;
+    height: 20px;
+}
+
+.DontSearchMusic {
+    margin-right: 10px;
+}
+
+.DontSerchOK {
+    width: 30px;
+    height: 22px;
+    border-radius: 3px;
+    background-color: rgb(56, 97, 246, 0.4);
+    border: none;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
 .musicSelect {
     border-top: solid 1px #4177f6;
     border-bottom: solid 1px #4177f6;
@@ -314,7 +344,7 @@
     padding: 5px 10px 5px 10px;
 }
 
-.musicSelect > input {
+.searchMusic, .serchArtist{
     background-color: #e4eaff;
 }
 
@@ -343,7 +373,7 @@
     margin-right: 10px;
 }
 
-.musicSelect > button {
+.serchOK {
     width: 30px;
     height: 22px;
     border-radius: 3px;
@@ -491,41 +521,7 @@
     }
 }
 
-@media screen and (max-width: 980px) {
-    /* .Btn {
-        width: 120px;
-    } */
-    /* .imgBtn > img, .imgBtn_on > img {
-        margin-right: 6px;
-    }
-    .Btn > h4 {
-        font-size: 17px;
-        left: 8px;
-    }
-    .imgBtn, .imgBtn_on {
-        width: 70px;
-    } */
-}
-
 @media screen and (max-width: 850px) {
-    /* .Btn {
-        width: 80px;
-    }
-    .imgBtn > img, .imgBtn_on > img {
-        margin-right: 5px;
-    }
-    .imgBtn > img:hover, .imgBtn_on > img:hover {
-        margin-right: 5px;
-    }
-    .Btn > h4 {
-        font-size: 13px;
-        top: 5px;
-        left: 5px;
-    }
-    .imgBtn, .imgBtn_on {
-        width: 80px;
-        margin: 0px;
-    } */
     .WriteContainer {
         left: 10%;
     }
@@ -600,9 +596,6 @@
 }
 
 @media screen and (max-width: 700px) {
-    /* .HomeButtonForm > img {
-       width: 80px;
-    } */
     .WriteContainer {
         left: 50%;
     }
@@ -612,9 +605,6 @@
     .WriteContainer {
         left:  30%;
     }
-    /* .HomeButtonForm {
-        background-color: #8e97ad;
-    } */
     .HomeButtonForm > img {
         width: 130px;
         margin-top: 20px;
@@ -641,14 +631,10 @@
 }
 
 @media screen and (max-width: 620px) {
-    /* .WriteContainer {
-        left:  30%;
-    } */
     .HomeButton {
         margin-top: 50px;
     }
     .HomeButtonForm > img {
-        /* opacity: 0; */
         display: none;
     }
     .Btn {
@@ -664,9 +650,6 @@
         margin-right: 8px;
     }
     .Btn > h4 {
-        /* font-size: 13px;
-        top: 3px;
-        left: 3px; */
         display: none;
     }
     .imgBtn, .imgBtn_on {
@@ -699,12 +682,6 @@
     .WriteContainer {
         left:  -50%;
     }
-}
-
-@media screen and (max-width: 510px) {
-    /* .WriteContainer {
-        left:  0%;
-    } */
 }
 
 @media screen and (max-width: 490px) {

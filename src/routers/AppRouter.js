@@ -14,7 +14,7 @@ const AppRouter = () => {
         return <Navigate to="/auth" /> 
       }
       return children ;
-    }; 
+    } ; 
 
     return(
         <div>

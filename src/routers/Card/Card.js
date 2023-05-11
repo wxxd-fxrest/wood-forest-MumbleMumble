@@ -38,7 +38,6 @@ const Card = ({card}) => {
     const [currentData, setCurrentData] = useState([]) ;
     const [next, setNext] = useState(false) ; 
     const [more, setMore] = useState(false) ; 
-    const [imgOpen, setImgOpen] = useState(false) ; 
 
     const CurrentUserInfo = async () => {
         const getUserData = query(
@@ -93,7 +92,7 @@ const Card = ({card}) => {
                 like: arrayUnion(currentUser.uid)
             });
         }
-    }
+    } ;
 
     const onClickLikeDelete = async () => {
         if(card.Data.like = currentUser.uid) {
@@ -101,11 +100,11 @@ const Card = ({card}) => {
                 like: arrayRemove(currentUser.uid)
             });
         }
-    }
+    } ;
 
     const onSerchMusic = () => {
         window.open(`https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${card.Data.Music}+${card.Data.artist}`, "_blank", )
-    }
+    } ;
 
     return(
         <div className='Card'>

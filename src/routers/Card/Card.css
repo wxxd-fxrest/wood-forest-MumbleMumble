@@ -33,18 +33,6 @@
     height: 100%;
 }
 
-/* @media screen and (max-width: 1000px) {
-    .CardPageHome {
-        width: 20%;
-    }
-    .CardPageList {
-        width: 80%;
-    }
-    .CardEmpty {
-        display: none;
-    } 
-}*/
-
 .Card {
     display: block;
     height: 100%;
@@ -54,7 +42,6 @@
 }
 
 .CardBackGroundImg {
-    /* height: 240px; */
     height: 30%;
     overflow: hidden;
     position: relative;
@@ -360,66 +347,6 @@
     }
 }
 
-/* @media screen and (max-width: 1200px) {
-    .CardPageContainer {
-        margin: 0px 50px 0px 50px;
-    }
-    .CardPageHome {
-        width: 20%;
-    }
-    .CardPageList {
-        width: 55%;
-    }
-    .CardEmpty {
-        width: 25%;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .CardPageContainer {
-        margin: 0px 50px 0px 50px;
-    }
-    .CardPageHome {
-        width: 25%;
-    }
-    .CardPageList {
-        width: 55%;
-    }
-    .CardEmpty {
-        width: 20%;
-    }
-}
-
-@media screen and (max-width: 980px) {
-    .CardPageContainer {
-        margin: 0px;
-    }
-    .CardPageHome {
-        width: 20%;
-    }
-    .CardPageList {
-        width: 60%;
-    }
-    .CardEmpty {
-        width: 20%;   
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .CardPageContainer {
-        margin: 0px;
-    }
-    .CardPageHome {
-        width: 25%;
-    }
-    .CardPageList {
-        width: 75%;
-    }
-    .CardEmpty {
-        display: none;
-    }
-} */
-
 @media screen and (max-width: 1200px) {
     .CardPageContainer {
         margin: 0px 50px 0px 50px;
@@ -454,9 +381,6 @@
 }
 
 @media screen and (max-width: 750px) {
-    /* .CardBackGroundImg {
-        height: 30%;
-    } */
     .CardForm {
         top: 65px;
         height: 1000px;
@@ -472,7 +396,6 @@
 
 @media screen and (max-width: 700px) {
     .CardBackGroundImg {
-        /* height: 280px; */
         height: 30%;
     }
     .CardForm {
@@ -489,14 +412,10 @@
     .CardProfileTrue {
         top: 20px;
     }
-    /* .CardDeleteButton {
-        top: 25px;
-    } */
 }
 
 @media screen and (max-width: 650px) {
     .CardBackGroundImg {
-        /* height: 290px; */
         height: 33%;
     }
     .CardForm {
@@ -529,7 +448,6 @@
 
 @media screen and (max-width: 600px) {
     .CardBackGroundImg {
-        /* height: 300px; */
         height: 36%;
     }
     .CardNextButton1{
@@ -551,7 +469,6 @@
 
 @media screen and (max-width: 550px) {
     .CardBackGroundImg {
-        /* height: 340px; */
         height: 36%;
     }
     .CardProfileTrue > img {
@@ -571,7 +488,6 @@
 
 @media screen and (max-width: 530px) {
     .CardBackGroundImg {
-        /* height: 400px; */
         height: 36%;
     }
     .CardProfileTrue > h5 {

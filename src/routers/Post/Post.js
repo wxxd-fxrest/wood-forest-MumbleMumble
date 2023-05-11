@@ -56,7 +56,7 @@ const Post = ({postData}) => {
                 like: arrayUnion(currentUser.uid)
             });
         }
-    }
+    } ;
 
     const onClickLikeDelete = async () => {
         if(postData.Data.like = currentUser.uid) {
@@ -64,11 +64,11 @@ const Post = ({postData}) => {
                 like: arrayRemove(currentUser.uid)
             });
         }
-    }
+    } ;
 
     const onSerchMusic = () => {
         window.open(`https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=${postData.Data.Music}+${postData.Data.artist}`, "_blank", )
-    }
+    } ;
 
     useEffect(() => {
         CurrentUserInfo() ;

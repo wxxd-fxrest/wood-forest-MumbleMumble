@@ -21,7 +21,7 @@ const ProfileEdit = ({setEditOpen, editOpen}) => {
         if (name == "displayName") {
             setDisplayName(value) ; 
         } 
-    }
+    } ;
 
     const CurrentInfo = async() => {
         const getUserData = query(

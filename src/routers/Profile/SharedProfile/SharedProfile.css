@@ -43,7 +43,6 @@
 }
 
 .SharedProfileBox {
-    /* background-color: #358af9; */
     background-color: white;
     border-bottom: solid 1px #000000;
     padding: 10px;
@@ -210,63 +209,6 @@
         display: none;
     }
 }
-
-/* @media screen and (max-width: 1200px) {
-    .SharedProfileContainer {
-        margin: 0px 50px 0px 50px;
-    }
-    .SharedProfileHome {
-        width: 20%;
-    }
-    .SharedProfile {
-        width: 55%;
-    }
-    .SharedProfileEmpty {
-        width: 25%;   
-    }
-} */
-
-/* @media screen and (max-width: 1000px) {
-    .SharedProfileHome {
-        width: 25%;
-    }
-    .SharedProfile {
-        width: 55%;
-    }
-    .SharedProfileEmpty {
-        display: 20;
-    }
-} */
-
-/* @media screen and (max-width: 980px) {
-    .SharedProfileContainer {
-        margin: 0px;
-    }
-    .SharedProfileHome {
-        width: 20%;
-    }
-    .SharedProfile {
-        width: 60%;
-    }
-    .SharedProfileEmpty {
-        width: 20%;   
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .SharedProfileContainer {
-        margin: 0px;
-    }
-    .SharedProfileHome {
-        width: 25%;
-    }
-    .SharedProfile {
-        width: 75%;
-    }
-    .SharedProfileEmpty {
-        display: none;
-    }
-} */
 
 @media screen and (max-width: 700px) {
     .ProfileImgOpenBtn {
