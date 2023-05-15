@@ -125,7 +125,7 @@ const ProfileEdit = ({setEditOpen, editOpen}) => {
                             onChange={onFileChange}
                             required />
                         <label htmlFor="inputFile">
-                            <img src={None} alt="" width="50px"/>
+                            <img src={None} alt="" className='EditImg'/>
                         </label>
                     </>}
                 </>}
