@@ -51,6 +51,11 @@ const ProfileEdit = ({setEditOpen, editOpen}) => {
         }
     } ; 
 
+    const rePageLoade = () => {
+        navigate("/") ;
+        window.location.reload() ;
+    } ; 
+
     const onClick = async(event) => {
         event.preventDefault();
         try {
@@ -68,18 +73,22 @@ const ProfileEdit = ({setEditOpen, editOpen}) => {
                             attachmentUrl,
                             displayName,
                         })
+                        rePageLoade() ;
                     } else {
                         await updateDoc(doc(db, "UserInfo", `${currentUser.uid}`), {
                             attachmentUrl,
                         }) 
+                        rePageLoade() ;
                     }
                 })
+ 
             } else if (displayName !== "") {
                 await updateDoc(doc(db, "UserInfo", `${currentUser.uid}`), {
                     displayName,
                 })
+                rePageLoade() ;
             }
-            navigate("/");
+        setEditOpen(!editOpen) ;
         } catch(error) {
             console.log(error) ;
         }

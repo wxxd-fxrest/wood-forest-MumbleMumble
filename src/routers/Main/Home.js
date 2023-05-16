@@ -61,51 +61,55 @@ const Home = () => {
     } ; 
 
     const onSaveBtn = async () => {
-        setLoading(true) ; 
-        let tagEmpty = true
-        if(tag !== "") {
-            tagEmpty = false; 
-        }
-        try {
-            if(select[0] == null) {
-                await addDoc(collection(db, "Post"), {
-                    UID: currentUser.uid,
-                    UUID: uuidv4ID, 
-                    PostText: text, 
-                    date: Timestamp.now(),
-                    music: false, 
-                    anonymous, 
-                    selected,
-                    like: [], 
-                    tagList: tag,
-                    tagEmpty, 
-                })
-            } else {
-                await addDoc(collection(db, "Post"), {
-                    UID: currentUser.uid,
-                    UUID: uuidv4ID, 
-                    PostText: text, 
-                    date: Timestamp.now(),
-                    music: true, 
-                    artist: select[0].artist,
-                    Music: select[0].name,
-                    musicImage: select[0].image[2], 
-                    musicURL: select[0].url,
-                    anonymous, 
-                    selected,
-                    like: [], 
-                    tagList: tag,
-                    tagEmpty, 
-                })
+        if (text !== "") {
+            setLoading(true) ; 
+            let tagEmpty = true
+            if(tag !== "") {
+                tagEmpty = false; 
             }
-        } catch(error) {
-            console.log(error) ;
-        }         
-        setText("") ; 
-        setSelect([]) ; 
-        setSelected("") ;
-        setTag([]) ;
-        Timer()
+            try {
+                if(select[0] == null) {
+                    await addDoc(collection(db, "Post"), {
+                        UID: currentUser.uid,
+                        UUID: uuidv4ID, 
+                        PostText: text, 
+                        date: Timestamp.now(),
+                        music: false, 
+                        anonymous, 
+                        selected,
+                        like: [], 
+                        tagList: tag,
+                        tagEmpty, 
+                    })
+                } else {
+                    await addDoc(collection(db, "Post"), {
+                        UID: currentUser.uid,
+                        UUID: uuidv4ID, 
+                        PostText: text, 
+                        date: Timestamp.now(),
+                        music: true, 
+                        artist: select[0].artist,
+                        Music: select[0].name,
+                        musicImage: select[0].image[2], 
+                        musicURL: select[0].url,
+                        anonymous, 
+                        selected,
+                        like: [], 
+                        tagList: tag,
+                        tagEmpty, 
+                    })
+                }
+            } catch(error) {
+                console.log(error) ;
+            }         
+            setText("") ; 
+            setSelect([]) ; 
+            setSelected("") ;
+            setTag([]) ;
+            Timer()
+        } else {
+            alert("버리고 싶은 감정을 입력해주세요.") ; 
+        }
     } ; 
 
     const Timer = () => {
