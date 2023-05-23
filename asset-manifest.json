@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wood-forest-MumbleMumble/static/css/main.3830834f.css",
+    "main.css": "/wood-forest-MumbleMumble/static/css/main.d03d9528.css",
     "main.js": "/wood-forest-MumbleMumble/static/js/main.d2401c40.js",
     "static/media/paper texture.jpg": "/wood-forest-MumbleMumble/static/media/paper texture.946ad946fe819bd0906f.jpg",
     "static/media/Mumble_Delete_gif.gif": "/wood-forest-MumbleMumble/static/media/Mumble_Delete_gif.078937c7b973a261ddda.gif",
@@ -17,11 +17,11 @@
     "static/media/Mumble_Icon_address-card.png": "/wood-forest-MumbleMumble/static/media/Mumble_Icon_address-card.a172b351e6dc4cf285ce.png",
     "static/media/like.png": "/wood-forest-MumbleMumble/static/media/like.bf2e642ba8736cc4acdc.png",
     "index.html": "/wood-forest-MumbleMumble/index.html",
-    "main.3830834f.css.map": "/wood-forest-MumbleMumble/static/css/main.3830834f.css.map",
+    "main.d03d9528.css.map": "/wood-forest-MumbleMumble/static/css/main.d03d9528.css.map",
     "main.d2401c40.js.map": "/wood-forest-MumbleMumble/static/js/main.d2401c40.js.map"
   },
   "entrypoints": [
-    "static/css/main.3830834f.css",
+    "static/css/main.d03d9528.css",
     "static/js/main.d2401c40.js"
   ]
 }
