@@ -105,7 +105,7 @@
 
 .CommentMoreModal > div > textarea::placeholder {
     color: rgb(65, 119, 246);
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 18px;
 }
 
@@ -123,7 +123,7 @@
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 5px;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .CommentBackbtn {
@@ -140,14 +140,14 @@
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 5px;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .CommentRE {
     display: inline-flex;
     margin: 5px;
     height: 100%;
-    width: 100%;
+    width: 90%;
     align-items: center;
     justify-content: center;
 }
@@ -161,7 +161,7 @@
     font-size: 18px;
     font-weight: 300;
     letter-spacing: 5px;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     background-color: rgb(65, 119, 246);
     width: 60%;
     height: 30px;

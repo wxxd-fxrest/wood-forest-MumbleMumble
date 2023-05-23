@@ -204,7 +204,7 @@
 }
 
 .WriteTagForm > div > input::placeholder {
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     color: white;
     font-size: 22px;
 }
@@ -216,7 +216,7 @@
     cursor: pointer;
     background-color: #ff6929;
     border-radius: 0px 5px 5px 0px;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 20px;
 }
 
@@ -328,7 +328,7 @@
     margin-left: 10px;
     color: white;
     cursor: pointer;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 15px;
     letter-spacing: 2px;
 }
@@ -350,7 +350,7 @@
 
 .musicSelect > input::placeholder {
     color: #3861f6;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 13px;
     letter-spacing: 2px;
 }
@@ -382,7 +382,7 @@
     margin-left: 10px;
     color: white;
     cursor: pointer;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 15px;
     letter-spacing: 2px;
 }
@@ -430,7 +430,7 @@
     font-size: 15px;
     letter-spacing: 1px;
     color: white;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .WriteFrom {
@@ -459,7 +459,7 @@
 
 .WriteFrom > textarea::placeholder {
     color: #ffffff;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 18px;
     letter-spacing: 2px;
 }
@@ -478,7 +478,7 @@
     letter-spacing: 2px;
     color: white;
     cursor: pointer;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 

@@ -51,14 +51,14 @@
     height: 50px;
     cursor: pointer;
     color: #b0c6fa;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 18px;
 }
 
 .Auth_Component > button:hover {
     background-color: rgb(56, 97, 246);
     color: #e4ecff;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 18px;
 }
 

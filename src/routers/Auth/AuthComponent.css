@@ -34,7 +34,7 @@
 
 .ComponentForm > input::placeholder {
     color: #ffffff;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 20px;
 }
 
@@ -50,12 +50,12 @@
     border: none;
     cursor: pointer;
     color: #b0c6fa;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .ComponentForm > button:hover {
     background-color: #3861f6;
     color: #ffffff;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 18px;
 }

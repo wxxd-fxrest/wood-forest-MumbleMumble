@@ -51,7 +51,7 @@
     cursor: pointer;
     font-size: 18px;
     color: #ffffff;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .EditImg {
@@ -78,7 +78,7 @@
 
 .EditInput::placeholder {
     color: #ffffff;
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Nanum Brush Script', cursive;
     font-size: 20px;
 }
 
