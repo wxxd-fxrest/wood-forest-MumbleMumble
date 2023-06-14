@@ -53,13 +53,12 @@
 }
 
 .Btn > h4 {
-    font-weight: 600;
     position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 22px;
-    color: white;
+    top: 14px;
+    left: 18px;
+    font-size: 18px;
     font-weight: 300;
+    color: white;
 }
 
 .imgBtn:hover {
@@ -145,8 +144,7 @@
 
 .WriteHeader > h4 {
     color: black;
-    letter-spacing: 5px;
-    font-size: 20px;
+    font-size: 17px;
     margin-left: 5px;
 }
 
@@ -156,7 +154,7 @@
     right: 40px;
     color: black;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .HomeWrite {
@@ -204,9 +202,9 @@
 }
 
 .WriteTagForm > div > input::placeholder {
-    font-family: 'Nanum Brush Script', cursive;
+    /* font-family: 'Nanum Brush Script', cursive; */
     color: white;
-    font-size: 22px;
+    font-size: 15px;
 }
 
 .WriteTagForm > div > button {
@@ -216,8 +214,8 @@
     cursor: pointer;
     background-color: #ff6929;
     border-radius: 0px 5px 5px 0px;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 20px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 14px;
 }
 
 .WriteTagForm > span {
@@ -227,7 +225,7 @@
     height: 100%;
     align-items: flex-start;
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 300;
     letter-spacing: 3px;
 }
@@ -257,7 +255,7 @@
 }
 
 .anonymousForm > h4 {
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 3px;
 }
 
@@ -265,8 +263,8 @@
     width: 20px;
     border-radius: 5px;
     background-color: rgb(255, 105, 41);
-    font-size: 15px;
-    font-weight: 200;
+    font-size: 13px;
+    font-weight: 400;
     letter-spacing: 2px;
     padding: 7px;
     margin-left: 5px;
@@ -287,8 +285,8 @@
     width: 20px;
     border-radius: 5px;
     background-color: #ff6929;
-    font-size: 15px;
-    font-weight: 200;
+    font-size: 13px;
+    font-weight: 400;
     letter-spacing: 2px;
     padding: 7px;
     margin-left: 5px;
@@ -297,7 +295,7 @@
 }
 
 .musicOnOff > h4 {
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 3px;
 }
 
@@ -328,8 +326,8 @@
     margin-left: 10px;
     color: white;
     cursor: pointer;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 15px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 12px;
     letter-spacing: 2px;
 }
 
@@ -350,8 +348,8 @@
 
 .musicSelect > input::placeholder {
     color: #3861f6;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 13px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 12px;
     letter-spacing: 2px;
 }
 
@@ -382,8 +380,8 @@
     margin-left: 10px;
     color: white;
     cursor: pointer;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 15px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 12px;
     letter-spacing: 2px;
 }
 
@@ -396,13 +394,13 @@
 
 .musicList > p {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 12px;
     margin-top: 3px;
     color: #393939;
 }
 
 .musicListLI {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
     padding: 3px;
 }
@@ -416,7 +414,7 @@
 }
 
 .musicCancleForm > p {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
 }
 
@@ -427,10 +425,10 @@
     background-color: tomato;
     border: none;
     margin-left: 10px;
-    font-size: 15px;
+    font-size: 10px;
     letter-spacing: 1px;
     color: white;
-    font-family: 'Nanum Brush Script', cursive;
+    /* font-family: 'Nanum Brush Script', cursive; */
 }
 
 .WriteFrom {
@@ -459,8 +457,8 @@
 
 .WriteFrom > textarea::placeholder {
     color: #ffffff;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 18px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 13px;
     letter-spacing: 2px;
 }
 
@@ -474,11 +472,11 @@
     background-color: #4c7ff7;
     border: none;
     margin-left: 10px;
-    font-size: 15px;
+    font-size: 11px;
     letter-spacing: 2px;
     color: white;
     cursor: pointer;
-    font-family: 'Nanum Brush Script', cursive;
+    /* font-family: 'Nanum Brush Script', cursive; */
 }
 
 
@@ -538,9 +536,9 @@
         margin-right: 5px;    
     }
     .Btn > h4 {
-        top: 12px;
-        font-size: 19px;
-        left: 16px;
+        top: 15px;
+        font-size: 16px;
+        left: 13px;
     }
     .imgBtn, .imgBtn_on {
         width: 70px;
@@ -620,9 +618,13 @@
         margin-right: 5px;
     }
     .Btn > h4 {
-        font-size: 16px;
-        top: 5px;
-        left: 5px;
+                /* top: 14px;
+        left: 18px;
+        font-size: 18px;
+         */
+        font-size: 14px;
+        top: 6px;
+        left: 6px;
     }
     .imgBtn, .imgBtn_on {
         width: 80px;

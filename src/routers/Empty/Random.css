@@ -27,7 +27,7 @@
 }
 
 .RandomDataHeader > h4 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     color: rgb(255, 105, 41);
 }
@@ -67,7 +67,7 @@
 }
 
 .RandomProfile > h5 {
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     color: white;
 }
@@ -84,7 +84,7 @@
 }
 
 .RandomText > h3 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 20px;
 }

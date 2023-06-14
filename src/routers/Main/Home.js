@@ -122,7 +122,7 @@ const Home = () => {
     const getMusic = async(event) => {
         event.preventDefault() ; 
         const response = await fetch(`
-            https://ws.audioscrobbler.com/2.0/?method=track.search&track=${searchMusic.trim()}&artist=${serchArtist.trim()}&limit=1&api_key=2856d44ba61487909d1756d75157fbe5&format=json
+            https://ws.audioscrobbler.com/2.0/?method=track.search&track=${searchMusic.trim()}&artist=${serchArtist.trim()}&limit=1&api_key=${process.env.REACT_APP_MU_KEY}&format=json
         `) ;
         const json = await response.json() ; 
         setMusic(json.results.trackmatches.track) ; 

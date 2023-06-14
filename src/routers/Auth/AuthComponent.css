@@ -11,7 +11,7 @@
 
 .ComponentContainer  > p {
     height: 30px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
     margin: 10px 10px 30px 10px;
 }
@@ -34,8 +34,8 @@
 
 .ComponentForm > input::placeholder {
     color: #ffffff;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 20px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 14px;
 }
 
 .ComponentForm > button {
@@ -46,16 +46,16 @@
     border-radius: 50px;
     right: 10px;
     bottom: -40px;
-    font-size: 18px;
+    font-size: 14px;
     border: none;
     cursor: pointer;
     color: #b0c6fa;
-    font-family: 'Nanum Brush Script', cursive;
+    /* font-family: 'Nanum Brush Script', cursive; */
 }
 
 .ComponentForm > button:hover {
     background-color: #3861f6;
     color: #ffffff;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 18px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 14px;
 }

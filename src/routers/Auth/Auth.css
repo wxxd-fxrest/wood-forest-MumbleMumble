@@ -51,15 +51,15 @@
     height: 50px;
     cursor: pointer;
     color: #b0c6fa;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 18px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 14px;
 }
 
 .Auth_Component > button:hover {
     background-color: rgb(56, 97, 246);
     color: #e4ecff;
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 18px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 14px;
 }
 
 @media screen and (max-width: 1000px) {

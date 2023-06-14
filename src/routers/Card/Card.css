@@ -77,7 +77,7 @@
 
 .CardProfileTrue > h5 {
     margin-left: 8px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     cursor: pointer;
     z-index: 1;
@@ -85,7 +85,7 @@
 
 .CardAnonymous {
     margin-left: 8px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .CardForm > h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 18px;
 }
@@ -136,7 +136,7 @@
 .CardTag > div > span {
     display: inline-flex;
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 5px;
 }
 
@@ -165,7 +165,7 @@
     display: flex;
     top: 5px;
     right: 0px;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .CardNextButton1 {
@@ -298,8 +298,8 @@
 
 .CardInputBox > textarea::placeholder {
     color: rgb(65, 119, 246);
-    font-family: 'Nanum Brush Script', cursive;
-    font-size: 18px;
+    /* font-family: 'Nanum Brush Script', cursive; */
+    font-size: 12px;
 }
 
 .OkBtnImg {
