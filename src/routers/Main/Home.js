@@ -193,7 +193,7 @@ const Home = () => {
                             <div className={write == true ? 'imgBtn_on' : 'imgBtn'} >
                                 <img src={WriteIcon} /> 
                             </div>
-                            <h4> Wirte </h4>
+                            <h4> Write </h4>
                         </div>
                         
                         <div className="Btn"
